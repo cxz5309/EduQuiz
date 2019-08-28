@@ -15,6 +15,11 @@ public class GameManager_B : MonoBehaviour
 
     public Text QuizText;
 
+    public GameObject effSuccess;
+    public GameObject effFail;
+    public Transform effSpawn;
+
+
     public enum Gamestate
     {
         GamePlaying, GamePause, GameOver, GameClear        
@@ -119,8 +124,20 @@ public class GameManager_B : MonoBehaviour
             // 나머지 적들 파괴
         }
     }
-    
 
+    public void SuccessEffect()
+    {
+        GameObject effect = Instantiate(effSuccess);
+        effect.transform.position = effSpawn.transform.position;
+        Destroy(effect, 3f);
+    }
+
+    public void FailEffect()
+    {
+        GameObject effect = Instantiate(effFail);
+        effect.transform.position = effSpawn.transform.position;
+        Destroy(effect, 3f);
+    }
 
     private void OnDestroy()
     {
