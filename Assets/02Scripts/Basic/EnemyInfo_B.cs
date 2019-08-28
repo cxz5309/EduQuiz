@@ -108,12 +108,6 @@ public class EnemyInfo_B : MonoBehaviour
         // 초당 MoveSpeed의 거리를 이동
     }
 
-    void FastMove()
-    {
-        ani.SetBool("walk", false);
-        ani.SetBool("run", true);
-    }
-
     // 적 공격 메소드
     IEnumerator Attack() {
         ani.SetBool("walk", false);
