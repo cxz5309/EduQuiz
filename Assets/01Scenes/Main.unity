@@ -498,6 +498,11 @@ PrefabInstance:
       propertyPath: m_Text
       value: "\uC601\uC5B4"
       objectReference: {fileID: 0}
+    - target: {fileID: 114949154235260004, guid: 21a87f03fcc9b2245a77288be4683ffd,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 114948440495243766, guid: 21a87f03fcc9b2245a77288be4683ffd,
         type: 3}
       propertyPath: m_Text
