@@ -19,9 +19,8 @@ public class Item_B : MonoBehaviour
     {
         if (coll.gameObject.CompareTag("Bullet"))
         {   // 충돌한 오브젝트의 태그가 Bullet인 경우
-
             ItemManager_B.itemCount++;  // 생성가능한 아이템 갯수를 1개 늘려준다.
-            ItemManager_B.instance.itemSpawnChk[gameObject.layer] = 0;  // 체크 0으로
+            ItemManager_B.instance.itemSpawnChk[int.Parse(gameObject.name)] = 0;  // 체크 0으로
             Destroy(coll.gameObject);  // 총알 제거
             Destroy(gameObject);       // 아이템 제거
 

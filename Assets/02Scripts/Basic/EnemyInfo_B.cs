@@ -82,10 +82,10 @@ public class EnemyInfo_B : MonoBehaviour
                     switch (SceneManager.GetActiveScene().name)
                     {
                         case "BasicScene":
-                            MoveSpeed = speedChange(WaveManager_B.instance.hardMode);//영우
+                            MoveSpeed = speedChange(WaveManager_B.instance.hardMode);
                             break;
                         case "MathScene":
-                            MoveSpeed = speedChange(WaveManager_M.instance.hardMode);//영우
+                            MoveSpeed = speedChange(WaveManager_M.instance.hardMode);
                             break;
                     }
                 }
@@ -108,12 +108,6 @@ public class EnemyInfo_B : MonoBehaviour
         // 초당 MoveSpeed의 거리를 이동
     }
 
-    void FastMove()
-    {
-        ani.SetBool("walk", false);
-        ani.SetBool("run", true);
-    }
-
     // 적 공격 메소드
     IEnumerator Attack() {
         ani.SetBool("walk", false);
@@ -130,8 +124,6 @@ public class EnemyInfo_B : MonoBehaviour
         switch (SceneManager.GetActiveScene().name)
         {
             case "BasicScene":
-                WaveManager_B.instance.timeFlag = true;
-                // timeFlag를 true로 주어 3초간 딜레이를 준다.
                 GameManager_B.instance.QuizText.text = "Fail";
                 // Fail 표시
 
@@ -139,6 +131,9 @@ public class EnemyInfo_B : MonoBehaviour
                 {   // 플레이어 HP가 0보다 크면 다음레벨
                     WaveManager_B.instance.timeFlag = true;
                     // timeFlag를 true로 주어 3초간 딜레이를 준다.
+
+                    GameManager_B.instance.FailEffect();
+
                     if (WaveManager_B.instance.curWave < QuizManager_B.instance.dictionary.Count - 1)
                     {   // 문제가 더 남아있을 때
                         GameManager_B.instance.NextLevel();
@@ -156,11 +151,11 @@ public class EnemyInfo_B : MonoBehaviour
                 break;
             case "MathScene":
                 GameManager_M.instance.QuizText.text = "Fail";
-                WaveManager_M.instance.timeFlag = true;
-                // timeFlag를 true로 주어 3초간 딜레이를 준다.
 
                 if (hpManager.HP > 0)
                 {   // 플레이어 HP가 0보다 크면 다음레벨
+                    WaveManager_M.instance.timeFlag = true;
+                    // timeFlag를 true로 주어 3초간 딜레이를 준다.
                     if (WaveManager_M.instance.curWave < QuizManager_M.instance.dictionary.Count - 1)
                     {   // 문제가 더 남아있을 때
                         GameManager_M.instance.NextLevel();
@@ -203,8 +198,7 @@ public class EnemyInfo_B : MonoBehaviour
                         Sound.instance.Correct();
                         if (WaveManager_B.instance.curWave < QuizManager_B.instance.dictionary.Count - 1)
                         {   // 문제가 더 남아있을 때
-                            GameManager_B.instance.QuizText.text = "Success";
-                            // Success 표시
+                            GameManager_B.instance.SuccessEffect();
                             // 1초간 카운터하고 다음문제 넘어가기
                             GameManager_B.instance.NextLevel();
                         }
@@ -216,8 +210,9 @@ public class EnemyInfo_B : MonoBehaviour
                     else
                     {   // 오답일 때
                         Sound.instance.InCorrect();
-                        GameManager_B.instance.QuizText.text = "Fail";
-                        // Fail 표시
+
+                        GameManager_B.instance.FailEffect();
+
                         hpManager.HP -= 10;
                         // 플레이어에게 10 데미지를 줌.
                         hpManager.HeartCheck();

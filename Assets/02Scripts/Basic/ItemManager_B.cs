@@ -6,7 +6,7 @@ public class ItemManager_B : MonoBehaviour
 {
     public static ItemManager_B instance;
 
-    public Transform[] ItemSpawnPoint = new Transform[4];   
+    public Transform[] ItemSpawnPoint;   
     // 아이템 생성 위치를 저장하는 배열
 
     public GameObject HPItem;       // HPItem 오브젝트를 저장하는 변수
@@ -18,7 +18,7 @@ public class ItemManager_B : MonoBehaviour
     public static int itemCount;      // 동시 최대 생성가능한 아이템 개수를 저장하는 변수
                                       // 아이템이 사라졌을 때 변경해주기 위해 public 선언
 
-    public int[] itemSpawnChk = new int[4];
+    public int[] itemSpawnChk;
     // 랜덤숫자 반복 방지를 위한 체크배열 변수(스폰지역 수만큼 배열크기 지정)
 
 
@@ -29,6 +29,7 @@ public class ItemManager_B : MonoBehaviour
 
     void Start()
     {
+        itemSpawnChk = new int[ItemSpawnPoint.Length];
         itemCount = 3;
         // 아이템 최대 생성 개수
         HPSpawnTime = 6.0f;
@@ -89,7 +90,7 @@ public class ItemManager_B : MonoBehaviour
                 {   // 아이템이 생성안된 곳일 때
                     itemSpawnChk[itemPoint] = 1;    // 생성할 곳 체크
                     GameObject Obj = Instantiate(gameObject, ItemSpawnPoint[itemPoint].position, ItemSpawnPoint[itemPoint].rotation);
-                    Obj.layer = itemPoint;
+                    Obj.name = itemPoint.ToString();
                     itemCount--;    // 생성가능한 아이템 개수 -1
                     break;
                 }
