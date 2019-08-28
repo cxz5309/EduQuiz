@@ -16,7 +16,7 @@ public class WaveManager_B : MonoBehaviour
     public Text quizText;           // 지문 ui
 
     public Transform[] SpawnPoint = new Transform[7];   // 적 생성 위치를 저장하는 배열
-
+    public GameObject Countdown;
     public GameObject[] Enemy = new GameObject[5];
     //public GameObject Enemy;        // 적 캐릭터를 저장하는 변수
 
@@ -27,7 +27,6 @@ public class WaveManager_B : MonoBehaviour
     // 적을 죽였을때 3초간 딜레이를 주기 위한 변수
     private float limitTime = 3.0f;
     // 3초 딜레이
-
     public bool hardMode;//영우
 
     void Awake()
@@ -38,7 +37,7 @@ public class WaveManager_B : MonoBehaviour
 
     void Start()
     {
-        StartWave();
+        StartCoroutine(coStartCountdown());
         // 처음 웨이브 시작
         timeFlag = false;
         // 처음 timeFlag를 false로 지정해준다.
@@ -62,6 +61,13 @@ public class WaveManager_B : MonoBehaviour
                 // 다음 웨이브 시작
             }
         }
+    }
+
+    IEnumerator coStartCountdown()
+    {
+        Countdown.SetActive(true);
+        yield return new WaitForSeconds(4.2f);
+        StartWave();
     }
 
     // 웨이브 생성 메소드
@@ -91,8 +97,6 @@ public class WaveManager_B : MonoBehaviour
         }
     }
 
-
-    // 이부분 다시 정의 하시오 킹영우씨.
     public void DieEnemy()
     {
         curWaveEnemyCount--;
@@ -111,11 +115,11 @@ public class WaveManager_B : MonoBehaviour
 
     // 웨이브 시작하는 함수
     void StartWave()
-    {
+    {        
         curWave++;
         // 초기값 -1, 0부터 시작
 
-        stageText.text = "Stage " + (curWave+1);
+        stageText.text = "Stage " + (curWave + 1);
         // 현재 스테이지 출력
         quizText.text = QuizManager_B.instance.dictionary[curWave].quiz;
         // 인덱스 0부터 문제 출력
@@ -138,6 +142,7 @@ public class WaveManager_B : MonoBehaviour
             GameManager_B.instance.GameClear();
             // GameClear() 메소드 호출
         }
+        
     }
 
     // 적의 생성위치를 스폰위치 중에서 랜덤으로 결정해주는 메소드
