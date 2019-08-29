@@ -31,7 +31,7 @@ public class EnemyInfo_E : MonoBehaviour
     void Start()
     {
         GameObject spawn = Instantiate(spawnEffect, transform.position, transform.rotation);        // 적 스폰 이펙트 메소드 호출
-        Destroy(spawn, 1.0f);       // spawn 오브젝트 제거
+        Destroy(spawn, 5.0f);       // spawn 오브젝트 제거
     }
     
     void Update()
@@ -43,8 +43,8 @@ public class EnemyInfo_E : MonoBehaviour
     {
         if (coll.gameObject.CompareTag("Bullet"))
         {   // 충돌한 오브젝트의 태그가 Bullet인 경우
-            Destroy(coll.gameObject);   // 총알 제거  
-            
+            Destroy(coll.gameObject);   // 총알 제거
+
             if (WaveManager_E.instance.EnemyKillCnt == WaveManager_E.instance.EnemyCount - 1)
             {   // 해당 웨이브 몬스터 수만큼 적을 죽였다면 스테이지 클리어
                 getDamage();     // 적 제거
@@ -96,8 +96,10 @@ public class EnemyInfo_E : MonoBehaviour
     public void getDamage()     // 총알에 맞은 게임오브젝트 삭제하는 메소드
     {
         gameObject.SetActive(false);
-        GameObject hit = Instantiate(HitEffect, transform.position, transform.rotation); // hit GameObject 변수에 HitEffect를 충돌 위치에 생성
-        Destroy(hit, 1.0f);     // hit 오브젝트를 제거한다.
+        GameObject hit = Instantiate(HitEffect);    // hit GameObject 변수에 HitEffect를 충돌 위치에 생성한다.
+        hit.transform.position = gameObject.transform.position;
+        hit.transform.eulerAngles = new Vector3(-90, 0, 0);
+        Destroy(hit, 5.0f);      // hit 오브젝트를 제거한다.
 
     }
 

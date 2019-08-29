@@ -245,9 +245,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23b928af5f7438345996d107b025e3de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnEffect: {fileID: 4914799624656044950, guid: f3769efb18870eb47821951ee6c6adc4,
+  spawnEffect: {fileID: 2006185849832108736, guid: d5bb65369c41cff4f9455ab25994b6e5,
     type: 3}
-  HitEffect: {fileID: 6668631593257200190, guid: d57b9022c19ce6c408efd82e29c2946c,
+  HitEffect: {fileID: 1841958332890248155, guid: f34e716890c82524c98dd93d987fb8cd,
     type: 3}
   Player: {fileID: 107946, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
   MoveSpeed: 4
