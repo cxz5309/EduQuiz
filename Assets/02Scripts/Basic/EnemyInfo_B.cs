@@ -140,6 +140,7 @@ public class EnemyInfo_B : MonoBehaviour
     // 적 공격 메소드
     IEnumerator Attack() {
         ani.SetBool("walk", false);
+        ani.SetBool("run", false);
         ani.SetBool("right hook", true);      
         // 적의 Animator의 Shot을 true로 하여 공격하게 함.
         yield return new WaitForSeconds(3.0f);  
