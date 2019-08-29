@@ -27,7 +27,7 @@ public class WaveManager_B : MonoBehaviour
     // 적을 죽였을때 3초간 딜레이를 주기 위한 변수
     private float limitTime = 3.0f;
     // 3초 딜레이
-
+    public GameObject textMesh;
     public int hardMode;//영우
 
     void Awake()
@@ -38,7 +38,8 @@ public class WaveManager_B : MonoBehaviour
 
     void Start()
     {
-        StartWave();
+        FirstStart();
+        //StartWave();
         // 처음 웨이브 시작
         timeFlag = false;
         // 처음 timeFlag를 false로 지정해준다.
@@ -62,6 +63,13 @@ public class WaveManager_B : MonoBehaviour
                 // 다음 웨이브 시작
             }
         }
+    }
+
+    public void FirstStart()
+    {
+        textMesh.SetActive(true);
+        Animator ani = textMesh.GetComponent<Animator>();
+        ani.SetTrigger("StartCount");
     }
 
     // 웨이브 생성 메소드
