@@ -28,7 +28,7 @@ public class Item_E : MonoBehaviour
             Destroy(coll.gameObject);  // 총알 제거
             Destroy(gameObject);       // 아이템 제거
             ItemManager_E.itemCount++;  // 생성가능한 아이템 갯수를 1개 늘려준다.
-            ItemManager_E.instance.itemSpawnChk[gameObject.layer] = 0;  // 체크 0으로
+            ItemManager_E.instance.itemSpawnChk[int.Parse(gameObject.name)] = 0;  // 체크 0으로
 
             if (gameObject.CompareTag("HP"))
             {   // 충돌한 오브젝트의 태그가 HP인 경우

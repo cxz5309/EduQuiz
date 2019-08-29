@@ -16,19 +16,17 @@ public class WaveManager_E : MonoBehaviour
 
     public GameObject[] Enemy = new GameObject[9];      // 적 캐릭터를 저장하는 변수
     public GameObject LightChange;       // 배경 밤으로 변경
-    //영우
+
     public Text stageText;          // 스테이지 ui
     public Image stageImage;
 
     static int EnemyMaxCount = 9;
     public Transform[] SpawnPoint = new Transform[EnemyMaxCount];   // 적 생성 위치를 저장하는 배열
-    int[] itemSpawnChk = new int[EnemyMaxCount];
-    // 랜덤숫자 반복 방지를 위한 체크배열 변수(스폰지역 수만큼 배열크기 지정)
+    int[] itemSpawnChk = new int[EnemyMaxCount];         // 랜덤숫자 반복 방지를 위한 체크배열 변수(스폰지역 수만큼 배열크기 지정)
 
-    public bool WaveDelay;
-    // 적을 죽였을때 3초간 딜레이를 주기 위한 변수
-    private float limitTime = 3.0f;
-    // 3초 딜레이
+    public bool WaveDelay;      // 적을 죽였을때 3초간 딜레이를 주기 위한 변수
+    private float limitTime = 3.0f;     // 3초 딜레이
+
 
     public bool hardMode;//영우
 
@@ -112,15 +110,12 @@ public class WaveManager_E : MonoBehaviour
             }
             else
             {   // 남은시간 0이하일 때
-                timeOver = true;
-                // 타임오버
-                WaveDelay = true;
-                // 3초딜레이
+                timeOver = true;     // 타임오버
+                WaveDelay = true;   // 3초딜레이
                 hpManager.HP -= 10;
-                hpManager.HeartCheck();
-                // 플레이어 체력 감소 후 업데이트
-                GameManager.instance.EnemyDestroy();
-                // 모든 적 제거
+                hpManager.HeartCheck();  // 플레이어 체력 감소 후 업데이트
+                GameManager.instance.FailEffect();
+                GameManager.instance.EnemyDestroy();    // 모든 적 제거
             }
         }
     }
@@ -160,7 +155,7 @@ public class WaveManager_E : MonoBehaviour
         {   // 현재 남아있는 적이 없을때
             if (curWave < QuizManager_E.instance.dictionary.Count - 1)
             {   // 문제가 더 남아있을때
-                Debug.Log("3초 딜레이 중");
+
             }
             else
             {   // 남아있는 문제가 없으면 리턴
@@ -179,7 +174,6 @@ public class WaveManager_E : MonoBehaviour
 
         curWave++;
         // 초기값 -1, 0부터 시작
-        Debug.Log((curWave) + "단계");
 
         stageText.text = "Stage " + (curWave + 1);
         // 현재 스테이지 출력
@@ -199,7 +193,6 @@ public class WaveManager_E : MonoBehaviour
         {   // waveEnemyDic에 현재 스테이지인 curWave단계의 키가 존재 할때
             EnemyRandomSpawn();
             // 적 위치 랜덤 생성
-            Debug.Log("적 마리 수 : " + EnemyCount);
         }
         else
         {   // 모든 문제를 다 풀어서 더이상 문제가 남아있지 않을 때
