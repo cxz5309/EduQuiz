@@ -28,21 +28,21 @@ public class TmpLaycast : MonoBehaviour
                         ChangeScene(hitInfo.collider.tag);
                         break;
                     case "BasicScene":
-                        if (GameManager_B.instance.gamestate == GameManager_B.Gamestate.GamePlaying)
+                        if (GameManager.instance.gamestate == GameManager.Gamestate.GamePlaying)
                         {
                             Fire(hitInfo.point);
                             Debug.Log(" hit point : " + hitInfo.point);
                             // 마우스 왼쪽버튼 클릭하면 총알 발사
                             if (hitInfo.collider.tag == "Pause")
                             {
-                                GameManager_B.instance.GamePause();
+                                GameManager.instance.GamePause();
                             }
                         }
-                        else if (GameManager_B.instance.gamestate == GameManager_B.Gamestate.GamePause)
+                        else if (GameManager.instance.gamestate == GameManager.Gamestate.GamePause)
                         {
                             if (hitInfo.collider.tag == "Pause")
                             {
-                                GameManager_B.instance.GamePauseFin();
+                                GameManager.instance.GamePauseFin();
                             }
                             else
                             {
@@ -55,20 +55,20 @@ public class TmpLaycast : MonoBehaviour
                         }
                         break;
                     case "MathScene":
-                        if (GameManager_B.instance.gamestate == GameManager_B.Gamestate.GamePlaying)
+                        if (GameManager.instance.gamestate == GameManager.Gamestate.GamePlaying)
                         {
                             Fire(hitInfo.point);
                             // 마우스 왼쪽버튼 클릭하면 총알 발사
                             if (hitInfo.collider.tag == "Pause")
                             {
-                                GameManager_B.instance.GamePause();
+                                GameManager.instance.GamePause();
                             }
                         }
-                        else if (GameManager_B.instance.gamestate == GameManager_B.Gamestate.GamePause)
+                        else if (GameManager.instance.gamestate == GameManager.Gamestate.GamePause)
                         {
                             if (hitInfo.collider.tag == "Pause")
                             {
-                                GameManager_B.instance.GamePauseFin();
+                                GameManager.instance.GamePauseFin();
                             }
                             else
                             {
@@ -81,20 +81,20 @@ public class TmpLaycast : MonoBehaviour
                         }
                         break;
                     case "EnglishScene":
-                        if (GameManager_E.instance.gamestate == GameManager_E.Gamestate.GamePlaying)
+                        if (GameManager.instance.gamestate == GameManager.Gamestate.GamePlaying)
                         {
                             Fire(hitInfo.point);
                             // 마우스 왼쪽버튼 클릭하면 총알 발사
                             if (hitInfo.collider.tag == "Pause")
                             {
-                                GameManager_E.instance.GamePause();
+                                GameManager.instance.GamePause();
                             }
                         }
-                        else if (GameManager_E.instance.gamestate == GameManager_E.Gamestate.GamePause)
+                        else if (GameManager.instance.gamestate == GameManager.Gamestate.GamePause)
                         {
                             if (hitInfo.collider.tag == "Pause")
                             {
-                                GameManager_E.instance.GamePauseFin();
+                                GameManager.instance.GamePauseFin();
                             }
                             else
                             {

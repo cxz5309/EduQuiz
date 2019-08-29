@@ -207,12 +207,6 @@ MonoBehaviour:
   - {fileID: 1886988392}
   - {fileID: 1886988391}
   HP: 30
---- !u!1 &153824952 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1020790914344260, guid: 5d5ac58782c1ba447a96b8202247e565,
-    type: 3}
-  m_PrefabInstance: {fileID: 1886988389}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &170076733
 GameObject:
   m_ObjectHideFlags: 0
@@ -745,7 +739,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78316b749b937644f85fd36f8ac030b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EndUI: {fileID: 153824952}
+  EndUI: {fileID: 1886988396}
   StateUI: {fileID: 1146361170}
   QuizText: {fileID: 2053220172}
   effSuccess: {fileID: 4521126476091094244, guid: 8544490281f55aa4f94bde9b26087841,
@@ -1635,6 +1629,12 @@ MonoBehaviour:
   m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1886988396 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1020790914344260, guid: 5d5ac58782c1ba447a96b8202247e565,
+    type: 3}
+  m_PrefabInstance: {fileID: 1886988389}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1942746246
 GameObject:
   m_ObjectHideFlags: 0

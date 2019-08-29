@@ -138,7 +138,7 @@ public class WaveManager_M : MonoBehaviour
         }
         else
         {   // 모든 문제를 다 풀어서 더이상 문제가 남아있지 않을 때
-            GameManager_B.instance.GameClear();
+            GameManager.instance.GameClear();
             // GameClear() 메소드 호출
         }
     }

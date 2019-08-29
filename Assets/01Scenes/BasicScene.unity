@@ -1048,6 +1048,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d5ac58782c1ba447a96b8202247e565, type: 3}
+--- !u!1 &234711987 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1020790914344260, guid: 5d5ac58782c1ba447a96b8202247e565,
+    type: 3}
+  m_PrefabInstance: {fileID: 234711986}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &291654338
 GameObject:
   m_ObjectHideFlags: 0
@@ -3823,7 +3829,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78316b749b937644f85fd36f8ac030b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EndImage: {fileID: 1871783126}
+  EndUI: {fileID: 234711987}
   StateUI: {fileID: 530081240}
   QuizText: {fileID: 2091568668}
   effSuccess: {fileID: 4521126476091094244, guid: 8544490281f55aa4f94bde9b26087841,
@@ -5971,12 +5977,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2dc2fb6aea919f641912ceeea48de1df, type: 3}
---- !u!1 &1871783126 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1360869689719082, guid: 5d5ac58782c1ba447a96b8202247e565,
-    type: 3}
-  m_PrefabInstance: {fileID: 234711986}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1897118608
 GameObject:
   m_ObjectHideFlags: 0
