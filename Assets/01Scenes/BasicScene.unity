@@ -997,7 +997,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1360869689719082, guid: 5d5ac58782c1ba447a96b8202247e565, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5255732314725526048, guid: 5d5ac58782c1ba447a96b8202247e565,
         type: 3}
@@ -1031,7 +1031,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1020790914344260, guid: 5d5ac58782c1ba447a96b8202247e565, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1710819742749206, guid: 5d5ac58782c1ba447a96b8202247e565, type: 3}
       propertyPath: m_IsActive
@@ -3823,7 +3823,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78316b749b937644f85fd36f8ac030b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveManager: {fileID: 762131682}
   EndImage: {fileID: 1871783126}
   StateUI: {fileID: 530081240}
   QuizText: {fileID: 2091568668}

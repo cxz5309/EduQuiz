@@ -1,15 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using DG.Tweening;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class GameManager_B : MonoBehaviour
 {
     public static GameManager_B instance;
-    public WaveManager_B waveManager;
-    public GameObject EndImage;
+    public GameObject EndUI;
     public GameObject StateUI;
     //public GameObject HitPanel;
 
@@ -32,7 +31,15 @@ public class GameManager_B : MonoBehaviour
         instance = this;
         gamestate = Gamestate.GamePlaying;
         Time.timeScale = 1;
-        waveManager.InitWave();
+        switch (SceneManager.GetActiveScene().name)
+        {
+            case "BasicScene":
+                WaveManager_B.instance.InitWave();
+                break;
+            case "MathScene":
+                WaveManager_M.instance.InitWave();
+                break;
+        }
     }
 
     void Start()
@@ -46,25 +53,25 @@ public class GameManager_B : MonoBehaviour
     IEnumerator ButtonsOn()
     {
         yield return new WaitForSeconds(1f);
-        EndImage.SetActive(true);
+        EndUI.SetActive(true);
     }
 
 
     // 마우스 포인트 근처 타켓가져오는 메소드(미사용)
-    public GameObject GetClickedObject()
-    {   
-        RaycastHit hit;
-        GameObject target = null;
+    //public GameObject GetClickedObject()
+    //{   
+    //    RaycastHit hit;
+    //    GameObject target = null;
         
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        // 마우스 포인트 근처 좌표를 만든다.
+    //    Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+    //    // 마우스 포인트 근처 좌표를 만든다.
 
-        if (true == (Physics.Raycast(ray.origin, ray.direction * 10, out hit)))
-        {   // 마우스 근처에 오브젝트가 있는지 확인
-            target = hit.collider.gameObject;
-        }
-        return target;
-    }
+    //    if (true == (Physics.Raycast(ray.origin, ray.direction * 10, out hit)))
+    //    {   // 마우스 근처에 오브젝트가 있는지 확인
+    //        target = hit.collider.gameObject;
+    //    }
+    //    return target;
+    //}
 
     // 스테이지 클리어 메소드
     public void GameClear()     
@@ -88,14 +95,14 @@ public class GameManager_B : MonoBehaviour
     // 게임 일시정지 메소드
     public void GamePause()
     {
-        EndImage.SetActive(true);
+        EndUI.SetActive(true);
         gamestate = Gamestate.GamePause;
         Time.timeScale = 0;
     }
 
     public void GamePauseFin()
     {
-        EndImage.SetActive(false);
+        EndUI.SetActive(false);
         gamestate = Gamestate.GamePlaying;
         Time.timeScale = 1;
     }
@@ -104,8 +111,15 @@ public class GameManager_B : MonoBehaviour
     public void NextLevel()     
     {
         EnemyDestroy();
-        WaveManager_B.instance.DieEnemy();
-        //Debug.Log("레벨업");
+        switch (SceneManager.GetActiveScene().name)
+        {
+            case "BasicScene":
+                WaveManager_B.instance.DieEnemy();
+                break;
+            case "MathScene":
+                WaveManager_M.instance.DieEnemy();
+                break;
+        }
     }
     
     public void GameClose()
