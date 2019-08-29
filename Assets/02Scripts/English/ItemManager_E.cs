@@ -88,7 +88,7 @@ public class ItemManager_E : MonoBehaviour
                 {   // 아이템이 생성안된 곳일 때
                     itemSpawnChk[itemPoint] = 1;    // 생성할 곳 체크
                     GameObject Obj = Instantiate(gameObject, ItemSpawnPoint[itemPoint].position, ItemSpawnPoint[itemPoint].rotation);
-                    Obj.layer = itemPoint;
+                    Obj.name = itemPoint.ToString();
                     itemCount--;    // 생성가능한 아이템 개수 -1
                     break;
                 }

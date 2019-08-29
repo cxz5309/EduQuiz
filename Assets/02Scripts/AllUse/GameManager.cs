@@ -179,14 +179,14 @@ public class GameManager : MonoBehaviour
             // 나머지 적들 파괴
         }
     }
-    public void SuccessEffect()
+    public void SuccessEffect()     // 성공 이펙트
     {
         GameObject effect = Instantiate(effSuccess);
         effect.transform.position = effSpawn.transform.position;
         Destroy(effect, 3f);
     }
 
-    public void FailEffect()
+    public void FailEffect()        // 실패 이펙트
     {
         GameObject effect = Instantiate(effFail);
         effect.transform.position = effSpawn.transform.position;

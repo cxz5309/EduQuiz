@@ -141,22 +141,16 @@ public class EnemyInfo_B : MonoBehaviour
     IEnumerator Attack() {
         ani.SetBool("walk", false);
         ani.SetBool("run", false);
-        ani.SetBool("right hook", true);      
-        // 적의 Animator의 Shot을 true로 하여 공격하게 함.
-        yield return new WaitForSeconds(3.0f);  
-        // 1.0초간 대기
-        Destroy(gameObject);
-        // 자기자신 제거
-        hpManager.HP -= 10;
-        // 플레이어에게 10 데미지를 줌.
+        ani.SetBool("right hook", true);        // 적의 Animator의 Shot을 true로 하여 공격하게 함.
+
+        yield return new WaitForSeconds(3.0f);          // 3.0초간 대기
+        Destroy(gameObject);         // 자기자신 제거
+        hpManager.HP -= 10;          // 플레이어에게 10 데미지를 줌.
         hpManager.HeartCheck();
 
         switch (SceneManager.GetActiveScene().name)
         {
             case "BasicScene":
-                GameManager.instance.QuizText.text = "Fail";
-                // Fail 표시
-
                 if (hpManager.HP > 0)
                 {   // 플레이어 HP가 0보다 크면 다음레벨
                     WaveManager_B.instance.timeFlag = true;
@@ -175,17 +169,17 @@ public class EnemyInfo_B : MonoBehaviour
                 }
                 else
                 {
-                    // 플레이어 HP가 0일 때 게임 종료
-                    GameManager.instance.GameOver();
+                    GameManager.instance.GameOver();     // 플레이어 HP가 0일 때 게임 종료
                 }
                 break;
             case "MathScene":
-                GameManager.instance.QuizText.text = "Fail";
-
                 if (hpManager.HP > 0)
                 {   // 플레이어 HP가 0보다 크면 다음레벨
                     WaveManager_M.instance.timeFlag = true;
                     // timeFlag를 true로 주어 3초간 딜레이를 준다.
+
+                    GameManager.instance.FailEffect();
+
                     if (WaveManager_M.instance.curWave < QuizManager_M.instance.dictionary.Count - 1)
                     {   // 문제가 더 남아있을 때
                         GameManager.instance.NextLevel();
@@ -210,14 +204,11 @@ public class EnemyInfo_B : MonoBehaviour
     {
         if (coll.gameObject.CompareTag("Bullet"))
         {   // 충돌한 오브젝트의 태그가 Bullet인 경우
-            Destroy(coll.gameObject);   
-            // 총알 제거  
-            getDamage();
-            // 적 제거
-            GameObject hit = Instantiate(HitEffect, transform.position, transform.rotation);
-            // hit GameObject 변수에 HitEffect를 충돌 위치에 생성한다.
-            Destroy(hit, 1.0f);
-            // hit 오브젝트를 제거한다.
+            Destroy(coll.gameObject);   // 총알 제거
+            getDamage();        // 적 제거
+            GameObject hit = Instantiate(HitEffect, transform.position, transform.rotation);    // hit GameObject 변수에 HitEffect를 충돌 위치에 생성한다.
+            Destroy(hit, 1.0f);      // hit 오브젝트를 제거한다.
+
             switch (SceneManager.GetActiveScene().name)
             {
                 case "BasicScene":
@@ -229,7 +220,6 @@ public class EnemyInfo_B : MonoBehaviour
                         if (WaveManager_B.instance.curWave < QuizManager_B.instance.dictionary.Count - 1)
                         {   // 문제가 더 남아있을 때
                             GameManager.instance.SuccessEffect();
-                            // 1초간 카운터하고 다음문제 넘어가기
                             GameManager.instance.NextLevel();
                         }
                         else
@@ -270,7 +260,7 @@ public class EnemyInfo_B : MonoBehaviour
                         Sound.instance.Correct();
                         if (WaveManager_M.instance.curWave < QuizManager_M.instance.dictionary.Count - 1)
                         {   // 문제가 더 남아있을 때
-                            GameManager.instance.QuizText.text = "Success";
+                            GameManager.instance.SuccessEffect();
                             GameManager.instance.NextLevel();
                         }
                         else
@@ -281,8 +271,7 @@ public class EnemyInfo_B : MonoBehaviour
                     else
                     {   // 오답일 때
                         Sound.instance.InCorrect();
-                        GameManager.instance.QuizText.text = "Fail";
-                        // Fail 표시
+                        GameManager.instance.FailEffect();
                         hpManager.HP -= 10;
                         hpManager.HeartCheck();
                         
