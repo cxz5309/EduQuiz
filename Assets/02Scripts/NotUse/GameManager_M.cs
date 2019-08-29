@@ -26,6 +26,7 @@ public class GameManager_M : MonoBehaviour
     {
         instance = this;
         gamestate = Gamestate.GamePlaying;
+        Time.timeScale = 1;
         waveManager.InitWave();
     }
 
@@ -45,20 +46,20 @@ public class GameManager_M : MonoBehaviour
 
 
     // 마우스 포인트 근처 타켓가져오는 메소드(미사용)
-    public GameObject GetClickedObject()
-    {
-        RaycastHit hit;
-        GameObject target = null;
+    //public GameObject GetClickedObject()
+    //{
+    //    RaycastHit hit;
+    //    GameObject target = null;
 
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        // 마우스 포인트 근처 좌표를 만든다.
+    //    Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+    //    // 마우스 포인트 근처 좌표를 만든다.
 
-        if (true == (Physics.Raycast(ray.origin, ray.direction * 10, out hit)))
-        {   // 마우스 근처에 오브젝트가 있는지 확인
-            target = hit.collider.gameObject;
-        }
-        return target;
-    }
+    //    if (true == (Physics.Raycast(ray.origin, ray.direction * 10, out hit)))
+    //    {   // 마우스 근처에 오브젝트가 있는지 확인
+    //        target = hit.collider.gameObject;
+    //    }
+    //    return target;
+    //}
 
     // 스테이지 클리어 메소드
     public void GameClear()

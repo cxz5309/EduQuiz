@@ -44,20 +44,20 @@ public class Controller : SteamVR_LaserPointer
                 }
                 break;
             case "MathScene":
-                if (GameManager_M.instance.gamestate == GameManager_M.Gamestate.GamePlaying)
+                if (GameManager_B.instance.gamestate == GameManager_B.Gamestate.GamePlaying)
                 {
                     Fire(e.target.transform.position);
                     // 마우스 왼쪽버튼 클릭하면 총알 발사
                     if (e.target.gameObject.tag == "Pause")
                     {
-                        GameManager_M.instance.GamePause();
+                        GameManager_B.instance.GamePause();
                     }
                 }
-                else if (GameManager_M.instance.gamestate == GameManager_M.Gamestate.GamePause)
+                else if (GameManager_B.instance.gamestate == GameManager_B.Gamestate.GamePause)
                 {
                     if (e.target.gameObject.tag == "Pause")
                     {
-                        GameManager_M.instance.GamePauseFin();
+                        GameManager_B.instance.GamePauseFin();
                     }
                     else
                     {
