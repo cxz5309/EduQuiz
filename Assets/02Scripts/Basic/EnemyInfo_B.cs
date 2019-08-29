@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 using UnityEngine.AI;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -34,6 +35,8 @@ public class EnemyInfo_B : MonoBehaviour
     
     private bool result;
 
+    public enum State { Walk, Run, Stop};
+
     private void Awake()
     {
         hpManager = GameObject.Find("HPManager").GetComponent<HPManager_B>();
@@ -41,14 +44,21 @@ public class EnemyInfo_B : MonoBehaviour
 
     void Start()
     {
-        Item_B.timerFlag = false;
         GameObject spawn = Instantiate(spawnEffect, transform.position, transform.rotation);
         // 적 스폰 이펙트 메소드 호출
         Destroy(spawn, 1.0f);
         // spawn 오브젝트 제거
         ani = GetComponent<Animator>();
         // 적의 Animator를 가져온다.
-        ani.SetBool("walk", true);
+        switch (SceneManager.GetActiveScene().name)
+        {
+            case "BasicScene":
+                Move((State)WaveManager_B.instance.hardMode);
+                break;
+            case "MathScene":
+                Move((State)WaveManager_M.instance.hardMode);
+                break;
+        }
     }
 
     void Update()
@@ -72,39 +82,58 @@ public class EnemyInfo_B : MonoBehaviour
             // 플레이어 위치는 (0, 0, 0)이기 때문에 Vector3.zero를 사용
 
             if (DistanceToPlayer > 5.5f)
-            {   // 적과 플레이어 거리가 2.5보다 클때
-                if (Item_B.timerFlag)
-                {   // timerFlag 가 true 일때
-                    MoveSpeed = 0.0f;
-                }
-                else if (!Item_B.timerFlag)
-                {   // timerFlag 가 false 일때
-                    switch (SceneManager.GetActiveScene().name)
-                    {
-                        case "BasicScene":
-                            MoveSpeed = speedChange(WaveManager_B.instance.hardMode);
-                            break;
-                        case "MathScene":
-                            MoveSpeed = speedChange(WaveManager_M.instance.hardMode);
-                            break;
-                    }
-                }
-                Move();
-                // 적 이동 함수 호출
+            {   
             }
             else
             {
+                Move(State.Stop);
                 StartCoroutine(Attack());
             }
         }
     }
 
     // 적 이동 메소드
-    void Move()
+    public void Move(State state)
     {
+        switch (SceneManager.GetActiveScene().name)
+        {
+            case "BasicScene":
+                switch (state)
+                {
+                    case State.Walk:
+                        MoveSpeed = speedChange(WaveManager_B.instance.hardMode);
+                        ani.SetBool("walk", true);
+                        break;
+                    case State.Run:
+                        MoveSpeed = speedChange(WaveManager_B.instance.hardMode);
+                        ani.SetBool("run", true);
+                        break;
+                    case State.Stop:
+                        MoveSpeed = 0;
+                        break;
+                }
+                break;
+            case "MathScene":
+                switch (state)
+                {
+                    case State.Walk:
+                        MoveSpeed = speedChange(WaveManager_M.instance.hardMode);
+                        ani.SetBool("walk", true);
+                        break;
+                    case State.Run:
+                        MoveSpeed = speedChange(WaveManager_M.instance.hardMode);
+                        ani.SetBool("run", true);
+                        break;
+                    case State.Stop:
+                        MoveSpeed = 0;
+                        break;
+                }
+                break;
+        }
         transform.LookAt(Player.transform);
         // 적은 플레이어 방향을 바라봄.
-        transform.position += transform.forward * MoveSpeed * Time.deltaTime;
+        GetComponent<Rigidbody>().velocity = transform.forward * MoveSpeed;
+        //transform.position += transform.forward * MoveSpeed * Time.deltaTime;
         // 초당 MoveSpeed의 거리를 이동
     }
 
@@ -280,12 +309,12 @@ public class EnemyInfo_B : MonoBehaviour
     }
 
     // 노말, 하드모드에 따라 적 이동속도를 지정해주는 메소드
-    public float speedChange(bool hardMode = false)
+    public float speedChange(int hardMode)
     {   // 초기값 false
-        if (hardMode)
-            return 4f;
-        else
+        if(hardMode == 0)
             return 2.5f;
+        else
+            return 4f;
     }
 
     public void InitEnemyInfo(Enemy_B enemy)

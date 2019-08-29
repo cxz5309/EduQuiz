@@ -28,12 +28,12 @@ public class WaveManager_B : MonoBehaviour
     private float limitTime = 3.0f;
     // 3초 딜레이
 
-    public bool hardMode;//영우
+    public int hardMode;//영우
 
     void Awake()
     {
         instance = this;
-        hardMode = false;//영우
+        hardMode = 0;//영우
     }
 
     void Start()
@@ -122,7 +122,7 @@ public class WaveManager_B : MonoBehaviour
 
         if (curWave == 5)
         {   // 하드모드 단계를 정해주는 부분
-            hardMode = true;
+            hardMode = 1;
             // 하드모드 온
             LightChange.GetComponent<Light>().color = Color.black;
             // 배경 변경
