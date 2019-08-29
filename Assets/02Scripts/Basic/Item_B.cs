@@ -30,9 +30,10 @@ public class Item_B : MonoBehaviour
             else if (gameObject.CompareTag("Timer"))
             {   // 충돌한 오브젝트의 태그가 Timer 경우
                 StartCoroutine("EnemyStop");
-                Destroy(coll.gameObject);  // 총알 제거
-                Destroy(gameObject);       // 아이템 제거
             }
+
+            Destroy(coll.gameObject);  // 총알 제거
+            Destroy(gameObject);       // 아이템 제거
         }
     }
     
