@@ -50,30 +50,14 @@ public class EnemyInfo_B : MonoBehaviour
         // spawn 오브젝트 제거
         ani = GetComponent<Animator>();
         // 적의 Animator를 가져온다.
-        switch (SceneManager.GetActiveScene().name)
-        {
-            case "BasicScene":
-                Move((State)WaveManager_B.instance.hardMode);
-                break;
-            case "MathScene":
-                Move((State)WaveManager_M.instance.hardMode);
-                break;
-        }
+        Move((State)WaveManager_B.instance.hardMode);
     }
 
     void Update()
     {
         if (hpManager.HP <= 0)
         {   // 플레이어 HP가 0보다 작을 때
-            switch (SceneManager.GetActiveScene().name)
-            {
-                case "BasicScene":
-                    WaveManager_B.instance.timeFlag = false;
-                    break;
-                case "MathScene":
-                    WaveManager_M.instance.timeFlag = false;
-                    break;
-            }
+            WaveManager_B.instance.timeFlag = false;
         }
         else
         {   // 플레이어 ture
@@ -95,41 +79,21 @@ public class EnemyInfo_B : MonoBehaviour
     // 적 이동 메소드
     public void Move(State state)
     {
-        switch (SceneManager.GetActiveScene().name)
+        switch (state)
         {
-            case "BasicScene":
-                switch (state)
-                {
-                    case State.Walk:
-                        MoveSpeed = speedChange(WaveManager_B.instance.hardMode);
-                        ani.SetBool("walk", true);
-                        break;
-                    case State.Run:
-                        MoveSpeed = speedChange(WaveManager_B.instance.hardMode);
-                        ani.SetBool("run", true);
-                        break;
-                    case State.Stop:
-                        MoveSpeed = 0;
-                        break;
-                }
+            case State.Walk:
+                MoveSpeed = speedChange(WaveManager_B.instance.hardMode);
+                ani.SetBool("walk", true);
                 break;
-            case "MathScene":
-                switch (state)
-                {
-                    case State.Walk:
-                        MoveSpeed = speedChange(WaveManager_M.instance.hardMode);
-                        ani.SetBool("walk", true);
-                        break;
-                    case State.Run:
-                        MoveSpeed = speedChange(WaveManager_M.instance.hardMode);
-                        ani.SetBool("run", true);
-                        break;
-                    case State.Stop:
-                        MoveSpeed = 0;
-                        break;
-                }
+            case State.Run:
+                MoveSpeed = speedChange(WaveManager_B.instance.hardMode);
+                ani.SetBool("run", true);
+                break;
+            case State.Stop:
+                MoveSpeed = 0;
                 break;
         }
+            
         transform.LookAt(Player.transform);
         // 적은 플레이어 방향을 바라봄.
         GetComponent<Rigidbody>().velocity = transform.forward * MoveSpeed;
@@ -148,52 +112,41 @@ public class EnemyInfo_B : MonoBehaviour
         hpManager.HP -= 10;          // 플레이어에게 10 데미지를 줌.
         hpManager.HeartCheck();
 
-        switch (SceneManager.GetActiveScene().name)
-        {
-            case "BasicScene":
-                if (hpManager.HP > 0)
-                {   // 플레이어 HP가 0보다 크면 다음레벨
-                    WaveManager_B.instance.timeFlag = true;
-                    // timeFlag를 true로 주어 3초간 딜레이를 준다.
+        
+        if (hpManager.HP > 0)
+        {   // 플레이어 HP가 0보다 크면 다음레벨
+            WaveManager_B.instance.timeFlag = true;
+            // timeFlag를 true로 주어 3초간 딜레이를 준다.
 
-                    GameManager.instance.FailEffect();
-
+            switch (SceneManager.GetActiveScene().name)
+            {
+                case "BasicScene":
                     if (WaveManager_B.instance.curWave < QuizManager_B.instance.dictionary.Count - 1)
                     {   // 문제가 더 남아있을 때
+                        GameManager.instance.FailEffect();
                         GameManager.instance.NextLevel();
                     }
                     else
                     {   // 모든 문제를 풀었을 때
                         GameManager.instance.GameClear();
                     }
-                }
-                else
-                {
-                    GameManager.instance.GameOver();     // 플레이어 HP가 0일 때 게임 종료
-                }
-                break;
-            case "MathScene":
-                if (hpManager.HP > 0)
-                {   // 플레이어 HP가 0보다 크면 다음레벨
-                    WaveManager_M.instance.timeFlag = true;
-                    // timeFlag를 true로 주어 3초간 딜레이를 준다.
-
-                    GameManager.instance.FailEffect();
-
-                    if (WaveManager_M.instance.curWave < QuizManager_M.instance.dictionary.Count - 1)
+                    break;
+                case "MathScene":
+                    if (WaveManager_B.instance.curWave < QuizManager_M.instance.dictionary.Count - 1)
                     {   // 문제가 더 남아있을 때
+                        GameManager.instance.FailEffect();
                         GameManager.instance.NextLevel();
                     }
                     else
                     {   // 모든 문제를 풀었을 때
                         GameManager.instance.GameClear();
                     }
-                }
-                else if (hpManager.HP == 0)
-                {   // 플레이어 HP가 0일 때 게임 종료
-                    GameManager.instance.GameOver();
-                }
-                break;
+                    break;
+            }
+        }
+        else
+        {
+            GameManager.instance.GameOver();     // 플레이어 HP가 0일 때 게임 종료
         }
         
     }
@@ -230,7 +183,6 @@ public class EnemyInfo_B : MonoBehaviour
                     else
                     {   // 오답일 때
                         Sound.instance.InCorrect();
-                        GameManager.instance.FailEffect();
                         hpManager.HP -= 10;
                         // 플레이어에게 10 데미지를 줌.
                         hpManager.HeartCheck();
@@ -238,6 +190,7 @@ public class EnemyInfo_B : MonoBehaviour
                         {   // 플레이어 HP가 0보다 클 때
                             if (WaveManager_B.instance.curWave < QuizManager_B.instance.dictionary.Count - 1)
                             {   // 문제가 더 남아있을 때
+                                GameManager.instance.FailEffect();
                                 GameManager.instance.NextLevel();
                             }
                             else
@@ -252,13 +205,13 @@ public class EnemyInfo_B : MonoBehaviour
                     }
                     break;
                 case "MathScene":
-                    WaveManager_M.instance.timeFlag = true;
+                    WaveManager_B.instance.timeFlag = true;
                     // timeFlag를 true로 주어 3초간 딜레이를 준다.
                     // hit 오브젝트를 제거한다.
                     if (isRightResult())
                     {   // 정답일 때
                         Sound.instance.Correct();
-                        if (WaveManager_M.instance.curWave < QuizManager_M.instance.dictionary.Count - 1)
+                        if (WaveManager_B.instance.curWave < QuizManager_M.instance.dictionary.Count - 1)
                         {   // 문제가 더 남아있을 때
                             GameManager.instance.SuccessEffect();
                             GameManager.instance.NextLevel();
@@ -271,14 +224,14 @@ public class EnemyInfo_B : MonoBehaviour
                     else
                     {   // 오답일 때
                         Sound.instance.InCorrect();
-                        GameManager.instance.FailEffect();
                         hpManager.HP -= 10;
                         hpManager.HeartCheck();
                         
                         if (hpManager.HP > 0)
                         {   // 플레이어 HP가 0보다 클 때
-                            if (WaveManager_M.instance.curWave < QuizManager_M.instance.dictionary.Count - 1)
+                            if (WaveManager_B.instance.curWave < QuizManager_M.instance.dictionary.Count - 1)
                             {   // 문제가 더 남아있을 때
+                                GameManager.instance.FailEffect();
                                 GameManager.instance.NextLevel();
                             }
                             else
@@ -341,15 +294,10 @@ public class EnemyInfo_B : MonoBehaviour
         switch (SceneManager.GetActiveScene().name)
         {
             case "BasicScene":
+            case "MathScene":
                 if (WaveManager_B.instance != null)
                 {
                     WaveManager_B.instance.DieEnemy();
-                }
-                break;
-            case "MathScene":
-                if (WaveManager_M.instance != null)
-                {
-                    WaveManager_M.instance.DieEnemy();
                 }
                 break;
         }

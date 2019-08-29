@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class CountEvent : StateMachineBehaviour
 {
@@ -17,10 +18,15 @@ public class CountEvent : StateMachineBehaviour
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
-    //override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    
-    //}
+    override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+        switch (SceneManager.GetActiveScene().name)
+        {
+            case "EnglishScene":
+                WaveManager_E.instance.timerItemFlag = true;
+                break;
+        }
+    }
 
     //OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -33,6 +39,17 @@ public class CountEvent : StateMachineBehaviour
         else
         {
             animator.gameObject.SetActive(false);
+            switch (SceneManager.GetActiveScene().name)
+            {
+                case "BasicScene":
+                case "MathScene":
+                    WaveManager_B.instance.StartWave();
+                    break;
+                case "EnglishScene":
+                    WaveManager_E.instance.StartWave();
+                    WaveManager_E.instance.timerItemFlag = false;
+                    break;
+            }
         }
     }
 

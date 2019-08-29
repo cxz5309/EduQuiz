@@ -53,16 +53,7 @@ public class Item_B : MonoBehaviour
         // allCube에 "enemy" 태그를 가지는 오브젝트 전부 넣어줌.
         foreach (GameObject i in allCube)
         {
-            switch (SceneManager.GetActiveScene().name)
-            {
-                case "BasicScene":
-                    i.GetComponent<EnemyInfo_B>().Move((EnemyInfo_B.State)WaveManager_B.instance.hardMode);
-
-                    break;
-                case "MathScene":
-                    i.GetComponent<EnemyInfo_B>().Move((EnemyInfo_B.State)WaveManager_M.instance.hardMode);
-                    break;
-            }
+              i.GetComponent<EnemyInfo_B>().Move((EnemyInfo_B.State)WaveManager_B.instance.hardMode);
         }
     }
 

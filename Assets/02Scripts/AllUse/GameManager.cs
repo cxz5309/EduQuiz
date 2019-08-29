@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using DG.Tweening;
 using UnityEngine.UI;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class GameManager : MonoBehaviour
     //public GameObject HitPanel;
 
     public Text QuizText;
+
+    public GameObject textMesh;
 
     public GameObject effSuccess;
     public GameObject effFail;
@@ -32,10 +35,8 @@ public class GameManager : MonoBehaviour
         switch (SceneManager.GetActiveScene().name)
         {
             case "BasicScene":
-                WaveManager_B.instance.InitWave();
-                break;
             case "MathScene":
-                WaveManager_M.instance.InitWave();
+                WaveManager_B.instance.InitWave();
                 break;
             case "EnglishScene":
                 WaveManager_E.instance.InitWave();
@@ -80,14 +81,15 @@ public class GameManager : MonoBehaviour
     // 스테이지 클리어 메소드
     public void GameClear()     
     {
+        textMesh.SetActive(true);
+        textMesh.GetComponent<TextMeshPro>().text = "GameClear";
+        textMesh.GetComponent<Animator>().SetTrigger("GameClear");
         if (SceneManager.GetActiveScene().name == "EnglishScene")
         {
             WaveManager_E.instance.timerItemFlag = true;
         }
-        else
-        {
-            QuizText.text = "C L E A R";
-        }
+        effSuccess.SetActive(false);
+        effFail.SetActive(false);
         EnemyDestroy();
         ItemDestroy();
         gamestate = Gamestate.GameClear;
@@ -98,14 +100,15 @@ public class GameManager : MonoBehaviour
     // 게임 오버 메소드
     public void GameOver()
     {
+        textMesh.SetActive(true);
+        textMesh.GetComponent<TextMeshPro>().text = "GameOver";
+        textMesh.GetComponent<Animator>().SetTrigger("GameOver");
         if (SceneManager.GetActiveScene().name == "EnglishScene")
         {
             WaveManager_E.instance.timerItemFlag = true;
         }
-        else
-        {
-            QuizText.text = "Game Over";
-        }
+        effSuccess.SetActive(false);
+        effFail.SetActive(false);
         EnemyDestroy();
         ItemDestroy();
         StartCoroutine("ButtonsOn");
@@ -135,10 +138,8 @@ public class GameManager : MonoBehaviour
         switch (SceneManager.GetActiveScene().name)
         {
             case "BasicScene":
-                WaveManager_B.instance.DieEnemy();
-                break;
             case "MathScene":
-                WaveManager_M.instance.DieEnemy();
+                WaveManager_B.instance.DieEnemy();
                 break;
             case "EnglishScene":
                 WaveManager_E.instance.DieEnemy();

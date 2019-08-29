@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class WaveManager_B : MonoBehaviour
 {
@@ -17,7 +18,7 @@ public class WaveManager_B : MonoBehaviour
 
     public Transform[] SpawnPoint = new Transform[7];   // 적 생성 위치를 저장하는 배열
 
-    public GameObject[] Enemy = new GameObject[5];
+    public GameObject[] Enemy = new GameObject[9];
     //public GameObject Enemy;        // 적 캐릭터를 저장하는 변수
 
     int[] itemSpawnChk = new int[7];
@@ -78,24 +79,54 @@ public class WaveManager_B : MonoBehaviour
         Enemy_B enemy;
 
         List<Enemy_B> enemyList = new List<Enemy_B>();
-
-        for (int i = 0; i < 10; i++)//QuizManager_B.instance.dictionary.Count
+        switch (SceneManager.GetActiveScene().name)
         {
-            enemyList = new List<Enemy_B>();
-            enemy = new Enemy_B("Cube1", false, QuizManager_B.instance.dictionary[i].ans[0]);
-            // 정답인 적 생성(0)
-            enemyList.Add(enemy);
-            // 적 생성
-            for (int j = 1; j <= 3; j++)
-            {   
-                enemy = new Enemy_B("Cube1", true, QuizManager_B.instance.dictionary[i].ans[j]);
-                // 정답이 아닌 적 생성(1 ~ 3)
-                enemyList.Add(enemy);
-                // 적 생성
-            }
+            case "BasicScene":
+                for (int i = 0; i < 10; i++)
+                {
+                    enemyList = new List<Enemy_B>();
+                    enemy = new Enemy_B("Cube1", false, QuizManager_B.instance.dictionary[i].ans[0]);
+                    // 정답인 적 생성(0)
+                    enemyList.Add(enemy);
+                    // 적 생성
+                    for (int j = 1; j <= 3; j++)
+                    {
+                        enemy = new Enemy_B("Cube1", true, QuizManager_B.instance.dictionary[i].ans[j]);
+                        // 정답이 아닌 적 생성(1 ~ 3)
+                        enemyList.Add(enemy);
+                        // 적 생성
+                    }
 
-            waveEnemyDic.Add(i, enemyList);
-            // 웨이브 저장
+                    waveEnemyDic.Add(i, enemyList);
+                    // 웨이브 저장
+                }
+                break;
+            case "MathScene":
+                for (int i = 0; i < 10; i++) //QuizManager_M.instance.dictionary.Count 이 최대값
+                {
+
+                    enemyList = new List<Enemy_B>();
+
+                    for (int j = 0; j < 6; j++)
+                    {
+                        if (QuizManager_M.instance.dictionary[i].pass == j)
+                        {
+                            enemy = new Enemy_B("Cube1", false, QuizManager_M.instance.dictionary[i].ans[j]);
+                            // 정답인 적 생성(0)
+                        }
+                        else
+                        {
+                            enemy = new Enemy_B("Cube1", true, QuizManager_M.instance.dictionary[i].ans[j]);
+                            // 정답이 아닌 적 생성(1 ~ 3)
+                        }
+                        enemyList.Add(enemy);
+                        // 적 생성
+                    }
+
+                    waveEnemyDic.Add(i, enemyList);
+                    // 웨이브 저장
+                }
+                break;
         }
     }
 
@@ -107,26 +138,43 @@ public class WaveManager_B : MonoBehaviour
         
         if (curWaveEnemyCount == 0)
         {   // 현재 남아있는 적이 없을때
-            if (curWave < QuizManager_B.instance.dictionary.Count - 1)
-            {   // 문제가 더 남아있을때
+            switch (SceneManager.GetActiveScene().name)
+            {
+                case "BasicScene":
+                    if (curWave >= QuizManager_B.instance.dictionary.Count - 1)
+                    {
+                        return;
+                    } // 남아있는 문제가 없으면 리턴
+                    break;
+                case "MathScene":
+                    if (curWave >= QuizManager_M.instance.dictionary.Count - 1)
+                    {
+                        return;
+                    } // 남아있는 문제가 없으면 리턴
+                    break;
             }
-            else
-            {   // 남아있는 문제가 없으면 리턴
-                return;
-            }
+            
         }
     }
 
     // 웨이브 시작하는 함수
-    void StartWave()
+    public void StartWave()
     {
         curWave++;
         // 초기값 -1, 0부터 시작
 
         stageText.text = "Stage " + (curWave+1);
         // 현재 스테이지 출력
-        quizText.text = QuizManager_B.instance.dictionary[curWave].quiz;
-        // 인덱스 0부터 문제 출력
+        switch (SceneManager.GetActiveScene().name)
+        {
+            case "BasicScene":
+                quizText.text = QuizManager_B.instance.dictionary[curWave].quiz;
+                // 인덱스 0부터 문제 출력
+                break;
+            case "MathScene":
+                break;
+        }
+       
 
         if (curWave == 5)
         {   // 하드모드 단계를 정해주는 부분
@@ -156,31 +204,44 @@ public class WaveManager_B : MonoBehaviour
         List<Enemy_B> enemyList = waveEnemyDic[curWave];
         curWaveEnemyCount = enemyList.Count;
         // curWaveEnemyCount에 enemyList 개수만큼
-
-        // 랜덤숫자 반복 방지를 위한 체크배열 변수(스폰지역 수만큼 배열크기 지정)
-        for (int i = 0; i < enemyList.Count; i++)
-        {   // enemyList(적) 수만큼 반복
-            int enemyPoint = Random.Range(0, EnemySpawnChk.Length);
-            // EnemySpawnChk 배열의 크기만큼 랜덤시드
-            if (EnemySpawnChk[enemyPoint] == 0)
-            {   // 체크된 배열이 아닌경우
-                EnemySpawnChk[enemyPoint] = 1;
-                // 해당 랜덤숫자배열 체크
-                GameObject enemyObj = Instantiate(Enemy[EnemyTypeRandom()], SpawnPoint[enemyPoint].position, SpawnPoint[enemyPoint].rotation);
-                enemyObj.name = enemyList[i].name;
-                EnemyInfo_B enemyInfo = enemyObj.GetComponent<EnemyInfo_B>();
-                enemyInfo.InitEnemyInfo(enemyList[i]);
-            }
-            else if (EnemySpawnChk[enemyPoint] == 1)
-            {   // 이미 생성된 랜덤숫자일 때
-                i--;
-                // i를 한단계 되돌려준다.
-            }
-        }
-
-        for (int i = 0; i < EnemySpawnChk.Length; i++)
-        {   // 랜덤숫자배열 초기화
-            EnemySpawnChk[i] = 0;
+        switch (SceneManager.GetActiveScene().name)
+        {
+            case "BasicScene":
+                for (int i = 0; i < enemyList.Count; i++)
+                {   // enemyList(적) 수만큼 반복
+                    int enemyPoint = Random.Range(0, EnemySpawnChk.Length);
+                    // EnemySpawnChk 배열의 크기만큼 랜덤시드
+                    if (EnemySpawnChk[enemyPoint] == 0)
+                    {   // 체크된 배열이 아닌경우
+                        EnemySpawnChk[enemyPoint] = 1;
+                        // 해당 랜덤숫자배열 체크
+                        GameObject enemyObj = Instantiate(Enemy[EnemyTypeRandom()], SpawnPoint[enemyPoint].position, SpawnPoint[enemyPoint].rotation);
+                        enemyObj.name = enemyList[i].name;
+                        EnemyInfo_B enemyInfo = enemyObj.GetComponent<EnemyInfo_B>();
+                        enemyInfo.InitEnemyInfo(enemyList[i]);
+                    }
+                    else if (EnemySpawnChk[enemyPoint] == 1)
+                    {   // 이미 생성된 랜덤숫자일 때
+                        i--;
+                        // i를 한단계 되돌려준다.
+                    }
+                }
+                // 랜덤숫자 반복 방지를 위한 체크배열 변수(스폰지역 수만큼 배열크기 지정)
+                for (int i = 0; i < EnemySpawnChk.Length; i++)
+                {   // 랜덤숫자배열 초기화
+                    EnemySpawnChk[i] = 0;
+                }
+                break;
+            case "MathScene":
+                for (int i = 0; i < enemyList.Count; i++)
+                {
+                    GameObject enemyObj = Instantiate(Enemy[EnemyTypeRandom()], SpawnPoint[i].position, SpawnPoint[i].rotation);
+                    enemyObj.name = enemyList[i].name;
+                    EnemyInfo_B enemyInfo = enemyObj.GetComponent<EnemyInfo_B>();
+                    enemyInfo.InitEnemyInfo(enemyList[i]);
+                }
+                break;
+            
         }
     }
 

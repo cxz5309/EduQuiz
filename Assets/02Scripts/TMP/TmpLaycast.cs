@@ -21,7 +21,6 @@ public class TmpLaycast : MonoBehaviour
             {
                 int l = hitInfo.transform.gameObject.layer;
                 
-                Debug.Log(" hit object : " + hitInfo.collider.name);
                 switch (SceneManager.GetActiveScene().name)
                 {
                     case "Main":
@@ -31,7 +30,6 @@ public class TmpLaycast : MonoBehaviour
                         if (GameManager.instance.gamestate == GameManager.Gamestate.GamePlaying)
                         {
                             Fire(hitInfo.point);
-                            Debug.Log(" hit point : " + hitInfo.point);
                             // 마우스 왼쪽버튼 클릭하면 총알 발사
                             if (hitInfo.collider.tag == "Pause")
                             {

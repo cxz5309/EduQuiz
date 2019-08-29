@@ -27,7 +27,7 @@ public class WaveManager_E : MonoBehaviour
     public bool WaveDelay;      // 적을 죽였을때 3초간 딜레이를 주기 위한 변수
     private float limitTime = 3.0f;     // 3초 딜레이
 
-
+    public GameObject textMesh;
     public bool hardMode;//영우
 
     public HPManager_E hpManager;   // 
@@ -50,21 +50,16 @@ public class WaveManager_E : MonoBehaviour
     {
         hpManager = GameObject.Find("HPManager").GetComponent<HPManager_E>();
         // Player 오브젝트를 찾아서 PlayerCtrl 스크립트를 가져온다.
-        StartWave();
+        FirstStart();
         // 처음 웨이브 시작
         WaveDelay = false;
         timeOver = false;
         timerItemFlag = false;
         slider.value = timeRemaining;
     }
-
-    void FixedUpdate()
+    
+    void Update()
     {
-        if (hpManager.HP == 0)
-        {
-            GameManager.instance.GameOver();
-        }
-
         if (WaveDelay)
         {   // 적을 죽이면 timeFlag가 true가 되면서 3초간 시간이 흐르게 된다.
             if (limitTime > 0.0f)
@@ -84,6 +79,8 @@ public class WaveManager_E : MonoBehaviour
                 // timeFlag 다시 false로
                 limitTime = 1.5f;
                 // limitTime 초기화
+                if (hpManager.HP == 0)
+                    GameManager.instance.GameOver();
                 if (QuizManager_E.instance.dictionary[curWave] != null)
                 {   
                     StartWave();
@@ -119,7 +116,12 @@ public class WaveManager_E : MonoBehaviour
             }
         }
     }
-
+    public void FirstStart()
+    {
+        textMesh.SetActive(true);
+        Animator ani = textMesh.GetComponent<Animator>();
+        ani.SetTrigger("StartCount");
+    }
     // 웨이브 생성 메소드
     public void InitWave()
     {
@@ -165,7 +167,7 @@ public class WaveManager_E : MonoBehaviour
     }
 
     // 웨이브 시작하는 함수
-    void StartWave()
+    public void StartWave()
     {
         slider.value = timeRemaining;
         timeOver = false;
