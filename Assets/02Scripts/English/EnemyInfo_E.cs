@@ -68,7 +68,7 @@ public class EnemyInfo_E : MonoBehaviour
                 }
                 else
                 {   // 모든 문제를 풀었을 때
-                    GameManager_E.instance.GameClear();
+                    GameManager.instance.GameClear();
                 }
             }
 
@@ -102,18 +102,18 @@ public class EnemyInfo_E : MonoBehaviour
                     //{   // 플레이어 HP가 0보다 클 때
                     //    if (WaveManager_E.instance.curWave < QuizManager_E.instance.dictionary.Count - 1)
                     //    {   // 문제가 더 남아있을 때
-                    //        GameManager_E.instance.EnemyKillCount = 0;
+                    //        GameManager.instance.EnemyKillCount = 0;
                     //        // KillCount 초기화
-                    //        GameManager_E.instance.NextLevel();
+                    //        GameManager.instance.NextLevel();
                     //    }
                     //    else
                     //    {   // 모든 문제를 풀었을 때
-                    //        GameManager_E.instance.GameClear();
+                    //        GameManager.instance.GameClear();
                     //    }
                     //}
                     //else if (playerState.HP == 0)
                     //{   // 플레이어 HP가 0일 때 게임 종료
-                    //    GameManager_E.instance.GameOver();
+                    //    GameManager.instance.GameOver();
                     //}
                 }
             }

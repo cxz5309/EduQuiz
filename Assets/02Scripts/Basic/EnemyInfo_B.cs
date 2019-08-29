@@ -153,7 +153,7 @@ public class EnemyInfo_B : MonoBehaviour
         switch (SceneManager.GetActiveScene().name)
         {
             case "BasicScene":
-                GameManager_B.instance.QuizText.text = "Fail";
+                GameManager.instance.QuizText.text = "Fail";
                 // Fail 표시
 
                 if (hpManager.HP > 0)
@@ -161,25 +161,25 @@ public class EnemyInfo_B : MonoBehaviour
                     WaveManager_B.instance.timeFlag = true;
                     // timeFlag를 true로 주어 3초간 딜레이를 준다.
 
-                    GameManager_B.instance.FailEffect();
+                    GameManager.instance.FailEffect();
 
                     if (WaveManager_B.instance.curWave < QuizManager_B.instance.dictionary.Count - 1)
                     {   // 문제가 더 남아있을 때
-                        GameManager_B.instance.NextLevel();
+                        GameManager.instance.NextLevel();
                     }
                     else
                     {   // 모든 문제를 풀었을 때
-                        GameManager_B.instance.GameClear();
+                        GameManager.instance.GameClear();
                     }
                 }
                 else
                 {
                     // 플레이어 HP가 0일 때 게임 종료
-                    GameManager_B.instance.GameOver();
+                    GameManager.instance.GameOver();
                 }
                 break;
             case "MathScene":
-                GameManager_B.instance.QuizText.text = "Fail";
+                GameManager.instance.QuizText.text = "Fail";
 
                 if (hpManager.HP > 0)
                 {   // 플레이어 HP가 0보다 크면 다음레벨
@@ -187,16 +187,16 @@ public class EnemyInfo_B : MonoBehaviour
                     // timeFlag를 true로 주어 3초간 딜레이를 준다.
                     if (WaveManager_M.instance.curWave < QuizManager_M.instance.dictionary.Count - 1)
                     {   // 문제가 더 남아있을 때
-                        GameManager_B.instance.NextLevel();
+                        GameManager.instance.NextLevel();
                     }
                     else
                     {   // 모든 문제를 풀었을 때
-                        GameManager_B.instance.GameClear();
+                        GameManager.instance.GameClear();
                     }
                 }
                 else if (hpManager.HP == 0)
                 {   // 플레이어 HP가 0일 때 게임 종료
-                    GameManager_B.instance.GameOver();
+                    GameManager.instance.GameOver();
                 }
                 break;
         }
@@ -227,19 +227,19 @@ public class EnemyInfo_B : MonoBehaviour
                         Sound.instance.Correct();
                         if (WaveManager_B.instance.curWave < QuizManager_B.instance.dictionary.Count - 1)
                         {   // 문제가 더 남아있을 때
-                            GameManager_B.instance.SuccessEffect();
+                            GameManager.instance.SuccessEffect();
                             // 1초간 카운터하고 다음문제 넘어가기
-                            GameManager_B.instance.NextLevel();
+                            GameManager.instance.NextLevel();
                         }
                         else
                         {   // 모든 문제를 풀었을 때
-                            GameManager_B.instance.GameClear();
+                            GameManager.instance.GameClear();
                         }
                     }
                     else
                     {   // 오답일 때
                         Sound.instance.InCorrect();
-                        GameManager_B.instance.FailEffect();
+                        GameManager.instance.FailEffect();
                         hpManager.HP -= 10;
                         // 플레이어에게 10 데미지를 줌.
                         hpManager.HeartCheck();
@@ -247,16 +247,16 @@ public class EnemyInfo_B : MonoBehaviour
                         {   // 플레이어 HP가 0보다 클 때
                             if (WaveManager_B.instance.curWave < QuizManager_B.instance.dictionary.Count - 1)
                             {   // 문제가 더 남아있을 때
-                                GameManager_B.instance.NextLevel();
+                                GameManager.instance.NextLevel();
                             }
                             else
                             {   // 모든 문제를 풀었을 때
-                                GameManager_B.instance.GameClear();
+                                GameManager.instance.GameClear();
                             }
                         }
                         else
                         {   // 플레이어 HP가 0일 때 게임 종료
-                            GameManager_B.instance.GameOver();
+                            GameManager.instance.GameOver();
                         }
                     }
                     break;
@@ -269,18 +269,18 @@ public class EnemyInfo_B : MonoBehaviour
                         Sound.instance.Correct();
                         if (WaveManager_M.instance.curWave < QuizManager_M.instance.dictionary.Count - 1)
                         {   // 문제가 더 남아있을 때
-                            GameManager_B.instance.QuizText.text = "Success";
-                            GameManager_B.instance.NextLevel();
+                            GameManager.instance.QuizText.text = "Success";
+                            GameManager.instance.NextLevel();
                         }
                         else
                         {   // 모든 문제를 풀었을 때
-                            GameManager_B.instance.GameClear();
+                            GameManager.instance.GameClear();
                         }
                     }
                     else
                     {   // 오답일 때
                         Sound.instance.InCorrect();
-                        GameManager_B.instance.QuizText.text = "Fail";
+                        GameManager.instance.QuizText.text = "Fail";
                         // Fail 표시
                         hpManager.HP -= 10;
                         hpManager.HeartCheck();
@@ -289,16 +289,16 @@ public class EnemyInfo_B : MonoBehaviour
                         {   // 플레이어 HP가 0보다 클 때
                             if (WaveManager_M.instance.curWave < QuizManager_M.instance.dictionary.Count - 1)
                             {   // 문제가 더 남아있을 때
-                                GameManager_B.instance.NextLevel();
+                                GameManager.instance.NextLevel();
                             }
                             else
                             {   // 모든 문제를 풀었을 때
-                                GameManager_B.instance.GameClear();
+                                GameManager.instance.GameClear();
                             }
                         }
                         else
                         {   // 플레이어 HP가 0일 때 게임 종료
-                            GameManager_B.instance.GameOver();
+                            GameManager.instance.GameOver();
                         }
                     }
                     break;

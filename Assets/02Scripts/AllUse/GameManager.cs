@@ -5,9 +5,9 @@ using UnityEngine.SceneManagement;
 using DG.Tweening;
 using UnityEngine.UI;
 
-public class GameManager_B : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
-    public static GameManager_B instance;
+    public static GameManager instance;
     public GameObject EndUI;
     public GameObject StateUI;
     //public GameObject HitPanel;
@@ -38,6 +38,9 @@ public class GameManager_B : MonoBehaviour
                 break;
             case "MathScene":
                 WaveManager_M.instance.InitWave();
+                break;
+            case "EnglishScene":
+                WaveManager_E.instance.InitWave();
                 break;
         }
     }
@@ -76,8 +79,16 @@ public class GameManager_B : MonoBehaviour
     // 스테이지 클리어 메소드
     public void GameClear()     
     {
+        if (SceneManager.GetActiveScene().name == "EnglishScene")
+        {
+            WaveManager_E.instance.timerItemFlag = true;
+        }
+        else
+        {
+            QuizText.text = "C L E A R";
+        }
         EnemyDestroy();
-        QuizText.text = "C L E A R";
+        ItemDestroy();
         gamestate = Gamestate.GameClear;
         StartCoroutine("ButtonsOn");
         StateUI.SetActive(false);
@@ -86,7 +97,16 @@ public class GameManager_B : MonoBehaviour
     // 게임 오버 메소드
     public void GameOver()
     {
-        QuizText.text = "Game Over";
+        if (SceneManager.GetActiveScene().name == "EnglishScene")
+        {
+            WaveManager_E.instance.timerItemFlag = true;
+        }
+        else
+        {
+            QuizText.text = "Game Over";
+        }
+        EnemyDestroy();
+        ItemDestroy();
         StartCoroutine("ButtonsOn");
         gamestate = Gamestate.GameOver;
         StateUI.SetActive(false);
@@ -119,6 +139,9 @@ public class GameManager_B : MonoBehaviour
             case "MathScene":
                 WaveManager_M.instance.DieEnemy();
                 break;
+            case "EnglishScene":
+                WaveManager_E.instance.DieEnemy();
+                break;
         }
     }
     
@@ -138,7 +161,23 @@ public class GameManager_B : MonoBehaviour
             // 나머지 적들 파괴
         }
     }
-
+    public void ItemDestroy()
+    {
+        GameObject[] allHP = GameObject.FindGameObjectsWithTag("HP");
+        // allCube에 "enemy" 태그를 가지는 오브젝트 전부 넣어줌.
+        foreach (GameObject i in allHP)
+        {
+            Destroy(i.gameObject);
+            // 나머지 적들 파괴
+        }
+        GameObject[] allTimer = GameObject.FindGameObjectsWithTag("Timer");
+        // allCube에 "enemy" 태그를 가지는 오브젝트 전부 넣어줌.
+        foreach (GameObject i in allTimer)
+        {
+            Destroy(i.gameObject);
+            // 나머지 적들 파괴
+        }
+    }
     public void SuccessEffect()
     {
         GameObject effect = Instantiate(effSuccess);

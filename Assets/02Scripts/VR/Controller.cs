@@ -18,20 +18,20 @@ public class Controller : SteamVR_LaserPointer
                 ChangeScene(e.target.gameObject.tag);
                 break;
             case "BasicScene":
-                if (GameManager_B.instance.gamestate == GameManager_B.Gamestate.GamePlaying)
+                if (GameManager.instance.gamestate == GameManager.Gamestate.GamePlaying)
                 {
                     Fire(e.target.transform.position);
                     // 마우스 왼쪽버튼 클릭하면 총알 발사
                     if (e.target.gameObject.tag == "Pause")
                     {
-                        GameManager_B.instance.GamePause();
+                        GameManager.instance.GamePause();
                     }
                 }
-                else if(GameManager_B.instance.gamestate == GameManager_B.Gamestate.GamePause)
+                else if(GameManager.instance.gamestate == GameManager.Gamestate.GamePause)
                 {
                     if (e.target.gameObject.tag == "Pause")
                     {
-                        GameManager_B.instance.GamePauseFin();
+                        GameManager.instance.GamePauseFin();
                     }
                     else
                     {
@@ -44,20 +44,20 @@ public class Controller : SteamVR_LaserPointer
                 }
                 break;
             case "MathScene":
-                if (GameManager_B.instance.gamestate == GameManager_B.Gamestate.GamePlaying)
+                if (GameManager.instance.gamestate == GameManager.Gamestate.GamePlaying)
                 {
                     Fire(e.target.transform.position);
                     // 마우스 왼쪽버튼 클릭하면 총알 발사
                     if (e.target.gameObject.tag == "Pause")
                     {
-                        GameManager_B.instance.GamePause();
+                        GameManager.instance.GamePause();
                     }
                 }
-                else if (GameManager_B.instance.gamestate == GameManager_B.Gamestate.GamePause)
+                else if (GameManager.instance.gamestate == GameManager.Gamestate.GamePause)
                 {
                     if (e.target.gameObject.tag == "Pause")
                     {
-                        GameManager_B.instance.GamePauseFin();
+                        GameManager.instance.GamePauseFin();
                     }
                     else
                     {
@@ -70,20 +70,20 @@ public class Controller : SteamVR_LaserPointer
                 }
                 break;
             case "EnglishScene":
-                if (GameManager_E.instance.gamestate == GameManager_E.Gamestate.GamePlaying)
+                if (GameManager.instance.gamestate == GameManager.Gamestate.GamePlaying)
                 {
                     Fire(e.target.transform.position);
                     // 마우스 왼쪽버튼 클릭하면 총알 발사
                     if (e.target.gameObject.tag == "Pause")
                     {
-                        GameManager_E.instance.GamePause();
+                        GameManager.instance.GamePause();
                     }
                 }
-                else if (GameManager_E.instance.gamestate == GameManager_E.Gamestate.GamePause)
+                else if (GameManager.instance.gamestate == GameManager.Gamestate.GamePause)
                 {
                     if (e.target.gameObject.tag == "Pause")
                     {
-                        GameManager_E.instance.GamePauseFin();
+                        GameManager.instance.GamePauseFin();
                     }
                     else
                     {

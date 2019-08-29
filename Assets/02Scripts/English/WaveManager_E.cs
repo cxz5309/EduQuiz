@@ -64,7 +64,7 @@ public class WaveManager_E : MonoBehaviour
     {
         if (hpManager.HP == 0)
         {
-            GameManager_E.instance.GameOver();
+            GameManager.instance.GameOver();
         }
 
         if (WaveDelay)
@@ -93,7 +93,7 @@ public class WaveManager_E : MonoBehaviour
                 }
                 else if (QuizManager_E.instance.dictionary[curWave] == null)
                 {
-                    GameManager_E.instance.GameClear();
+                    GameManager.instance.GameClear();
                 }
             }
         }
@@ -119,7 +119,7 @@ public class WaveManager_E : MonoBehaviour
                 hpManager.HP -= 10;
                 hpManager.HeartCheck();
                 // 플레이어 체력 감소 후 업데이트
-                GameManager_E.instance.EnemyDestroy();
+                GameManager.instance.EnemyDestroy();
                 // 모든 적 제거
             }
         }
@@ -203,7 +203,7 @@ public class WaveManager_E : MonoBehaviour
         }
         else
         {   // 모든 문제를 다 풀어서 더이상 문제가 남아있지 않을 때
-            GameManager_E.instance.GameClear();
+            GameManager.instance.GameClear();
             // GameClear() 메소드 호출
         }
     }

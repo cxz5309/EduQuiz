@@ -822,7 +822,7 @@ MonoBehaviour:
   savedUp: {x: 0, y: 1, z: 0}
   savedRectSize: {x: 100, y: 30}
   savedColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  savedTextUV0: {x: 0, y: 0.37109375}
+  savedTextUV0: {x: 0.15625, y: 0.1875}
   savedFill: 0
 --- !u!114 &527140392
 MonoBehaviour:
@@ -1657,7 +1657,7 @@ MonoBehaviour:
   savedUp: {x: 0, y: 1, z: 0}
   savedRectSize: {x: 100, y: 30}
   savedColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  savedTextUV0: {x: 0.12109375, y: 0.1484375}
+  savedTextUV0: {x: 0.23046875, y: 0}
   savedFill: 0
 --- !u!114 &783913121
 MonoBehaviour:
@@ -2477,7 +2477,7 @@ MonoBehaviour:
   savedUp: {x: 0, y: 1, z: 0}
   savedRectSize: {x: 100, y: 30}
   savedColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  savedTextUV0: {x: 0.22265625, y: 0.2265625}
+  savedTextUV0: {x: 0.23046875, y: 0.1875}
   savedFill: 0
 --- !u!114 &1046017983
 MonoBehaviour:
@@ -2606,12 +2606,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1083393162}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24d3969fa7c3f974d8f1eb0b72eb20e6, type: 3}
+  m_Script: {fileID: 11500000, guid: 78316b749b937644f85fd36f8ac030b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveManager: {fileID: 762131682}
-  EndImage: {fileID: 1994640307}
+  EndUI: {fileID: 1020790953447158}
   StateUI: {fileID: 1476784711563658}
+  QuizText: {fileID: 0}
+  effSuccess: {fileID: 4521126476091094244, guid: 8544490281f55aa4f94bde9b26087841,
+    type: 3}
+  effFail: {fileID: 3611664481214425091, guid: b9330a0b83804d54fb20312379de842b, type: 3}
+  effSpawn: {fileID: 1745651206}
   gamestate: 0
 --- !u!1 &1107622504
 GameObject:
@@ -2745,7 +2749,7 @@ MonoBehaviour:
   savedUp: {x: 0, y: 1, z: 0}
   savedRectSize: {x: 160, y: 100}
   savedColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  savedTextUV0: {x: 0.1015625, y: 0.26953125}
+  savedTextUV0: {x: 0.171875, y: 0}
   savedFill: 0
 --- !u!114 &1152316484
 MonoBehaviour:
@@ -4145,6 +4149,51 @@ Transform:
   m_Father: {fileID: 1462458308}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1745651204
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1745651206}
+  - component: {fileID: 1745651205}
+  m_Layer: 0
+  m_Name: Spawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1745651205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1745651204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82a5e5d46a3f6ac4cb81b02f68c2c635, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: {r: 0, g: 0.08817577, b: 1, a: 1}
+  radius: 0.4
+--- !u!4 &1745651206
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1745651204}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: 0, y: 6, z: 12.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &1747215313
 GameObject:
   m_ObjectHideFlags: 0
@@ -5144,7 +5193,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1994640308
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5437,7 +5486,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1381037769339654
 GameObject:
   m_ObjectHideFlags: 0
@@ -5873,7 +5922,7 @@ MonoBehaviour:
   savedUp: {x: 0, y: 1, z: 0}
   savedRectSize: {x: 160, y: 100}
   savedColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  savedTextUV0: {x: 0.12890625, y: 0.19921875}
+  savedTextUV0: {x: 0.0625, y: 0.09375}
   savedFill: 0
 --- !u!114 &114675370267994126
 MonoBehaviour:
