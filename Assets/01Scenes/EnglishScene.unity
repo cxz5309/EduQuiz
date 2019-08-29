@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 1977880}
   - component: {fileID: 1977882}
   - component: {fileID: 1977881}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: cactus1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -199,7 +199,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5021544}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Cactus1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -376,7 +376,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 12286445}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Cactus2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -408,7 +408,7 @@ GameObject:
   - component: {fileID: 31544837}
   - component: {fileID: 31544839}
   - component: {fileID: 31544838}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: cactus2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -484,7 +484,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 34699975}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Aloe (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -560,7 +560,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 76894182}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Aloe (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -591,7 +591,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 87796578}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: cactus2 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -624,7 +624,7 @@ GameObject:
   - component: {fileID: 105107523}
   - component: {fileID: 105107525}
   - component: {fileID: 105107524}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -701,7 +701,7 @@ GameObject:
   - component: {fileID: 109119328}
   - component: {fileID: 109119330}
   - component: {fileID: 109119329}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cloud_05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -778,7 +778,7 @@ GameObject:
   - component: {fileID: 167615331}
   - component: {fileID: 167615333}
   - component: {fileID: 167615332}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: cactus3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -967,7 +967,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 188965225}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Aloe (22)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -998,7 +998,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 209082303}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Cactus1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1031,7 +1031,7 @@ GameObject:
   - component: {fileID: 214306096}
   - component: {fileID: 214306098}
   - component: {fileID: 214306097}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: cactus1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1109,7 +1109,7 @@ GameObject:
   - component: {fileID: 226674397}
   - component: {fileID: 226674399}
   - component: {fileID: 226674398}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cloud_05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1186,7 +1186,7 @@ GameObject:
   - component: {fileID: 235206471}
   - component: {fileID: 235206473}
   - component: {fileID: 235206472}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1261,7 +1261,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 242751429}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: cactus2 (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1318,7 +1318,7 @@ GameObject:
   - component: {fileID: 277171434}
   - component: {fileID: 277171436}
   - component: {fileID: 277171435}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1395,7 +1395,7 @@ GameObject:
   - component: {fileID: 287475103}
   - component: {fileID: 287475105}
   - component: {fileID: 287475104}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: cactus2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1473,7 +1473,7 @@ GameObject:
   - component: {fileID: 316449684}
   - component: {fileID: 316449686}
   - component: {fileID: 316449685}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1593,7 +1593,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 331142214}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Aloe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1624,7 +1624,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 333440479}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Aloe (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1657,7 +1657,7 @@ GameObject:
   - component: {fileID: 341049733}
   - component: {fileID: 341049735}
   - component: {fileID: 341049734}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1732,7 +1732,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 346584026}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: rock01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1765,7 +1765,7 @@ GameObject:
   - component: {fileID: 363200068}
   - component: {fileID: 363200070}
   - component: {fileID: 363200069}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1842,7 +1842,7 @@ GameObject:
   - component: {fileID: 378901941}
   - component: {fileID: 378901943}
   - component: {fileID: 378901942}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1917,7 +1917,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 386294148}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: cactus2 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1948,7 +1948,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 390591840}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Aloe (20)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1979,7 +1979,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 397539596}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: cactus2 (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2010,7 +2010,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 443904972}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: rock05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2043,7 +2043,7 @@ GameObject:
   - component: {fileID: 444371363}
   - component: {fileID: 444371365}
   - component: {fileID: 444371364}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cloud_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2170,7 +2170,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 456121753}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Aloe (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2203,7 +2203,7 @@ GameObject:
   - component: {fileID: 508438838}
   - component: {fileID: 508438840}
   - component: {fileID: 508438839}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2320,11 +2320,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DoNotTesselate: 0
-  savedPos: {x: 0, y: -7.3, z: 0}
+  savedPos: {x: 6.05, y: -7.46, z: -13.83}
   savedUp: {x: 0, y: 1, z: 0}
   savedRectSize: {x: 100, y: 30}
-  savedColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  savedTextUV0: {x: 0.15625, y: 0.1875}
+  savedColor: {r: 1, g: 1, b: 1, a: 1}
+  savedTextUV0: {x: 0.5, y: 0.34375}
   savedFill: 0
 --- !u!114 &527140392
 MonoBehaviour:
@@ -2339,7 +2339,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2347,11 +2347,11 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 9f3b245e31e2d3543939b4201ea553fd, type: 3}
-    m_FontSize: 20
-    m_FontStyle: 1
+    m_Font: {fileID: 12800000, guid: 18a3d820bcc93954eb7ad52fc9b2f71c, type: 3}
+    m_FontSize: 18
+    m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 2
+    m_MinSize: 1
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -2359,9 +2359,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'close
-
-'
+  m_Text: CLOSE
 --- !u!222 &527140393
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2381,7 +2379,7 @@ GameObject:
   - component: {fileID: 527655691}
   - component: {fileID: 527655693}
   - component: {fileID: 527655692}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: cactus1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2459,7 +2457,7 @@ GameObject:
   - component: {fileID: 551329925}
   - component: {fileID: 551329927}
   - component: {fileID: 551329926}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cloud_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2536,7 +2534,7 @@ GameObject:
   - component: {fileID: 560918776}
   - component: {fileID: 560918778}
   - component: {fileID: 560918777}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cloud_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2613,7 +2611,7 @@ GameObject:
   - component: {fileID: 583418128}
   - component: {fileID: 583418130}
   - component: {fileID: 583418129}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2688,7 +2686,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 603256766}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2766,7 +2764,7 @@ GameObject:
   - component: {fileID: 616800789}
   - component: {fileID: 616800791}
   - component: {fileID: 616800790}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cloud_06
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2843,7 +2841,7 @@ GameObject:
   - component: {fileID: 617391230}
   - component: {fileID: 617391232}
   - component: {fileID: 617391231}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cloud_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2920,7 +2918,7 @@ GameObject:
   - component: {fileID: 623723170}
   - component: {fileID: 623723172}
   - component: {fileID: 623723171}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2997,7 +2995,7 @@ GameObject:
   - component: {fileID: 636829963}
   - component: {fileID: 636829965}
   - component: {fileID: 636829964}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3074,7 +3072,7 @@ GameObject:
   - component: {fileID: 639244929}
   - component: {fileID: 639244931}
   - component: {fileID: 639244930}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Moon 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3194,7 +3192,7 @@ GameObject:
   - component: {fileID: 667148689}
   - component: {fileID: 667148691}
   - component: {fileID: 667148690}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3269,7 +3267,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 676921999}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: cactus2 (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3300,7 +3298,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 687413218}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: rock02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3333,7 +3331,7 @@ GameObject:
   - component: {fileID: 696538670}
   - component: {fileID: 696538672}
   - component: {fileID: 696538671}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cloud_06
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3408,7 +3406,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 719014290}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: cactus2 (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3441,7 +3439,7 @@ GameObject:
   - component: {fileID: 741601379}
   - component: {fileID: 741601381}
   - component: {fileID: 741601380}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cloud_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3516,7 +3514,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 742241581}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Cactus1 (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3625,7 +3623,7 @@ GameObject:
   - component: {fileID: 767717215}
   - component: {fileID: 767717217}
   - component: {fileID: 767717216}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: cactus2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3703,7 +3701,7 @@ GameObject:
   - component: {fileID: 770662887}
   - component: {fileID: 770662889}
   - component: {fileID: 770662888}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: cactus2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3821,11 +3819,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DoNotTesselate: 0
-  savedPos: {x: 0, y: -0.6999998, z: 0}
+  savedPos: {x: 6.05, y: -0.85999966, z: -13.83}
   savedUp: {x: 0, y: 1, z: 0}
   savedRectSize: {x: 100, y: 30}
-  savedColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  savedTextUV0: {x: 0.23046875, y: 0}
+  savedColor: {r: 1, g: 1, b: 1, a: 1}
+  savedTextUV0: {x: 0.609375, y: 0.2109375}
   savedFill: 0
 --- !u!114 &783913121
 MonoBehaviour:
@@ -3840,7 +3838,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -3848,11 +3846,11 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 9f3b245e31e2d3543939b4201ea553fd, type: 3}
-    m_FontSize: 20
-    m_FontStyle: 1
+    m_Font: {fileID: 12800000, guid: 18a3d820bcc93954eb7ad52fc9b2f71c, type: 3}
+    m_FontSize: 18
+    m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 2
+    m_MinSize: 1
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -3860,7 +3858,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: retry
+  m_Text: RETRY
 --- !u!222 &783913122
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3880,7 +3878,7 @@ GameObject:
   - component: {fileID: 790001689}
   - component: {fileID: 790001691}
   - component: {fileID: 790001690}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: cactus1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3956,7 +3954,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 791674901}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: cactus2 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3989,7 +3987,7 @@ GameObject:
   - component: {fileID: 795225597}
   - component: {fileID: 795225599}
   - component: {fileID: 795225598}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4109,7 +4107,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 801960894}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: rock02 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4176,7 +4174,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 809846240}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Aloe (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4209,7 +4207,7 @@ GameObject:
   - component: {fileID: 840354634}
   - component: {fileID: 840354636}
   - component: {fileID: 840354635}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cloud_06
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4342,7 +4340,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DoNotTesselate: 0
-  savedPos: {x: 0, y: -0.6999998, z: 0}
+  savedPos: {x: 6.05, y: -0.85999966, z: -13.83}
   savedUp: {x: 0, y: 1, z: 0}
   savedRectSize: {x: 100, y: 30}
   savedColor: {r: 1, g: 1, b: 1, a: 1}
@@ -4410,7 +4408,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 8e8051156b4decf4693f0648a48b3fc9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e87e973aa97e2cf41885259822725eb5, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4436,7 +4434,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 858445909}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: DesertScene
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4525,7 +4523,6 @@ Transform:
   - {fileID: 1129019307}
   - {fileID: 742241581}
   - {fileID: 1581997313}
-  - {fileID: 1935230223}
   m_Father: {fileID: 988185930}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4540,7 +4537,7 @@ GameObject:
   - component: {fileID: 870400859}
   - component: {fileID: 870400861}
   - component: {fileID: 870400860}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4615,7 +4612,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 877782342}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Aloe (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4646,7 +4643,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 895364291}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Cactus1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4677,7 +4674,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 898940443}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: cactus3 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4766,7 +4763,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DoNotTesselate: 0
-  savedPos: {x: 0, y: -7.3, z: 0}
+  savedPos: {x: 6.05, y: -7.46, z: -13.83}
   savedUp: {x: 0, y: 1, z: 0}
   savedRectSize: {x: 100, y: 30}
   savedColor: {r: 1, g: 1, b: 1, a: 1}
@@ -4834,7 +4831,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 8e8051156b4decf4693f0648a48b3fc9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 74976faeb568f074d9f1a4df7ca78d18, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4862,7 +4859,7 @@ GameObject:
   - component: {fileID: 902519785}
   - component: {fileID: 902519787}
   - component: {fileID: 902519786}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: cactus1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4940,7 +4937,7 @@ GameObject:
   - component: {fileID: 919271280}
   - component: {fileID: 919271282}
   - component: {fileID: 919271281}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5015,7 +5012,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 933158152}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: rock08 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5048,7 +5045,7 @@ GameObject:
   - component: {fileID: 941841165}
   - component: {fileID: 941841167}
   - component: {fileID: 941841166}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: cactus1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5225,7 +5222,7 @@ GameObject:
   - component: {fileID: 959293856}
   - component: {fileID: 959293858}
   - component: {fileID: 959293857}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5302,7 +5299,7 @@ GameObject:
   - component: {fileID: 963954233}
   - component: {fileID: 963954235}
   - component: {fileID: 963954234}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cloud_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5377,7 +5374,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 965727663}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: rock07 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5410,7 +5407,7 @@ GameObject:
   - component: {fileID: 978209058}
   - component: {fileID: 978209060}
   - component: {fileID: 978209059}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5485,7 +5482,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 988185930}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Map
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5557,7 +5554,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1006640853}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: rock05 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5589,7 +5586,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1014561363}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: rock07 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5667,7 +5664,7 @@ GameObject:
   - component: {fileID: 1020107768}
   - component: {fileID: 1020107770}
   - component: {fileID: 1020107769}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5744,7 +5741,7 @@ GameObject:
   - component: {fileID: 1039992271}
   - component: {fileID: 1039992273}
   - component: {fileID: 1039992272}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5819,7 +5816,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1041885294}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Aloe (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5892,11 +5889,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DoNotTesselate: 0
-  savedPos: {x: 0, y: -4, z: 0}
+  savedPos: {x: 6.05, y: -4.16, z: -13.83}
   savedUp: {x: 0, y: 1, z: 0}
   savedRectSize: {x: 100, y: 30}
-  savedColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  savedTextUV0: {x: 0.23046875, y: 0.1875}
+  savedColor: {r: 1, g: 1, b: 1, a: 1}
+  savedTextUV0: {x: 0.5, y: 0.21875}
   savedFill: 0
 --- !u!114 &1046017983
 MonoBehaviour:
@@ -5911,7 +5908,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -5919,11 +5916,11 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 9f3b245e31e2d3543939b4201ea553fd, type: 3}
-    m_FontSize: 20
-    m_FontStyle: 1
+    m_Font: {fileID: 12800000, guid: 18a3d820bcc93954eb7ad52fc9b2f71c, type: 3}
+    m_FontSize: 18
+    m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 2
+    m_MinSize: 1
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -5931,7 +5928,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: menu
+  m_Text: MENU
 --- !u!222 &1046017984
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5996,7 +5993,7 @@ GameObject:
   - component: {fileID: 1078713882}
   - component: {fileID: 1078713884}
   - component: {fileID: 1078713883}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6124,7 +6121,7 @@ GameObject:
   - component: {fileID: 1094460051}
   - component: {fileID: 1094460053}
   - component: {fileID: 1094460052}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: cactus3flower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6202,7 +6199,7 @@ GameObject:
   - component: {fileID: 1107622505}
   - component: {fileID: 1107622507}
   - component: {fileID: 1107622506}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cloud_04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6279,7 +6276,7 @@ GameObject:
   - component: {fileID: 1120258408}
   - component: {fileID: 1120258410}
   - component: {fileID: 1120258409}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: cactus1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6355,7 +6352,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1129019307}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Cactus1 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6388,7 +6385,7 @@ GameObject:
   - component: {fileID: 1147626165}
   - component: {fileID: 1147626167}
   - component: {fileID: 1147626166}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6463,7 +6460,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1149799934}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: cactus2 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6593,7 +6590,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1171327690}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Cactus1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6674,7 +6671,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1174953612}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Cactus1 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6707,7 +6704,7 @@ GameObject:
   - component: {fileID: 1194178252}
   - component: {fileID: 1194178254}
   - component: {fileID: 1194178253}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: cactus2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6826,7 +6823,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1201965449}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: rock07 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6857,7 +6854,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1213924879}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: cactus2 (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6933,7 +6930,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1234734573}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Aloe (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6964,7 +6961,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1262716045}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: cactus2 (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6994,7 +6991,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1273255053}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Cactus1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7063,7 +7060,7 @@ GameObject:
   - component: {fileID: 1314184445}
   - component: {fileID: 1314184447}
   - component: {fileID: 1314184446}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7138,7 +7135,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1328814497}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: rock07
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7169,7 +7166,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1330658761}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Aloe (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7202,7 +7199,7 @@ GameObject:
   - component: {fileID: 1338530354}
   - component: {fileID: 1338530356}
   - component: {fileID: 1338530355}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: cactus1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7325,7 +7322,7 @@ GameObject:
   - component: {fileID: 1353112572}
   - component: {fileID: 1353112574}
   - component: {fileID: 1353112573}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7400,7 +7397,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1357474515}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: cactus2 (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7431,7 +7428,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1364158608}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: cactus2 (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7464,7 +7461,7 @@ GameObject:
   - component: {fileID: 1380602058}
   - component: {fileID: 1380602060}
   - component: {fileID: 1380602059}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: cactus2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7542,7 +7539,7 @@ GameObject:
   - component: {fileID: 1384256120}
   - component: {fileID: 1384256122}
   - component: {fileID: 1384256121}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cloud_06
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7619,7 +7616,7 @@ GameObject:
   - component: {fileID: 1406073372}
   - component: {fileID: 1406073374}
   - component: {fileID: 1406073373}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cloud_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7694,7 +7691,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1415848369}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: cactus2 (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7834,7 +7831,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1427276493}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Cactus1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7867,7 +7864,7 @@ GameObject:
   - component: {fileID: 1441950136}
   - component: {fileID: 1441950138}
   - component: {fileID: 1441950137}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cloud_04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8039,7 +8036,7 @@ GameObject:
   - component: {fileID: 1451415710}
   - component: {fileID: 1451415712}
   - component: {fileID: 1451415711}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cloud_05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8116,7 +8113,7 @@ GameObject:
   - component: {fileID: 1462458308}
   - component: {fileID: 1462458307}
   - component: {fileID: 1462458306}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SkyDome
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8195,7 +8192,7 @@ GameObject:
   - component: {fileID: 1464345758}
   - component: {fileID: 1464345760}
   - component: {fileID: 1464345759}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: cactus1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8273,7 +8270,7 @@ GameObject:
   - component: {fileID: 1473694295}
   - component: {fileID: 1473694297}
   - component: {fileID: 1473694296}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cloud_05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8350,7 +8347,7 @@ GameObject:
   - component: {fileID: 1474304240}
   - component: {fileID: 1474304242}
   - component: {fileID: 1474304241}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8425,7 +8422,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1488143338}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: cactus2 (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8458,7 +8455,7 @@ GameObject:
   - component: {fileID: 1488849184}
   - component: {fileID: 1488849186}
   - component: {fileID: 1488849185}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cloud_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8533,7 +8530,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1498914909}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: rock02 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8564,7 +8561,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1509260573}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Cactus1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8597,7 +8594,7 @@ GameObject:
   - component: {fileID: 1525162959}
   - component: {fileID: 1525162961}
   - component: {fileID: 1525162960}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: cactus2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8675,7 +8672,7 @@ GameObject:
   - component: {fileID: 1539676711}
   - component: {fileID: 1539676713}
   - component: {fileID: 1539676712}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8797,7 +8794,7 @@ GameObject:
   - component: {fileID: 1559257519}
   - component: {fileID: 1559257521}
   - component: {fileID: 1559257520}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8872,7 +8869,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1569949154}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Aloe (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9042,7 +9039,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1581997313}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Cactus1 (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9073,7 +9070,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1583551136}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Aloe (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9106,7 +9103,7 @@ GameObject:
   - component: {fileID: 1586992170}
   - component: {fileID: 1586992172}
   - component: {fileID: 1586992171}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: cactus2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9184,7 +9181,7 @@ GameObject:
   - component: {fileID: 1595886080}
   - component: {fileID: 1595886082}
   - component: {fileID: 1595886081}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: cactus2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9262,7 +9259,7 @@ GameObject:
   - component: {fileID: 1595898071}
   - component: {fileID: 1595898073}
   - component: {fileID: 1595898072}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9339,7 +9336,7 @@ GameObject:
   - component: {fileID: 1609550010}
   - component: {fileID: 1609550012}
   - component: {fileID: 1609550011}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: cactus1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9415,7 +9412,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1619477118}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Aloe (19)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9448,7 +9445,7 @@ GameObject:
   - component: {fileID: 1622088568}
   - component: {fileID: 1622088570}
   - component: {fileID: 1622088569}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: cactus2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9526,7 +9523,7 @@ GameObject:
   - component: {fileID: 1647380213}
   - component: {fileID: 1647380215}
   - component: {fileID: 1647380214}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: cactus2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9602,7 +9599,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1647997956}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Cactus1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9633,7 +9630,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1648674069}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Cactus3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9666,7 +9663,7 @@ GameObject:
   - component: {fileID: 1662964336}
   - component: {fileID: 1662964338}
   - component: {fileID: 1662964337}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: cactus1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9744,7 +9741,7 @@ GameObject:
   - component: {fileID: 1673575208}
   - component: {fileID: 1673575210}
   - component: {fileID: 1673575209}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9819,7 +9816,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1677086037}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Aloe (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9852,7 +9849,7 @@ GameObject:
   - component: {fileID: 1686982515}
   - component: {fileID: 1686982517}
   - component: {fileID: 1686982516}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9929,7 +9926,7 @@ GameObject:
   - component: {fileID: 1694691603}
   - component: {fileID: 1694691605}
   - component: {fileID: 1694691604}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10006,7 +10003,7 @@ GameObject:
   - component: {fileID: 1699235541}
   - component: {fileID: 1699235543}
   - component: {fileID: 1699235542}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: cactus3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10085,7 +10082,7 @@ GameObject:
   - component: {fileID: 1713005066}
   - component: {fileID: 1713005068}
   - component: {fileID: 1713005067}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cloud_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10162,7 +10159,7 @@ GameObject:
   - component: {fileID: 1721843666}
   - component: {fileID: 1721843668}
   - component: {fileID: 1721843667}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: cactus2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10238,7 +10235,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1723698347}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Clouds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10338,7 +10335,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1733343346}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Moon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10371,7 +10368,7 @@ GameObject:
   - component: {fileID: 1743311791}
   - component: {fileID: 1743311793}
   - component: {fileID: 1743311792}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10572,7 +10569,7 @@ GameObject:
   - component: {fileID: 1750929663}
   - component: {fileID: 1750929665}
   - component: {fileID: 1750929664}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: cactus1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10780,7 +10777,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1765773776}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: rock08
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10811,7 +10808,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1769043749}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Aloe (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10844,7 +10841,7 @@ GameObject:
   - component: {fileID: 1778366109}
   - component: {fileID: 1778366111}
   - component: {fileID: 1778366110}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: cactus2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10920,7 +10917,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1779383030}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: rock01 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10953,7 +10950,7 @@ GameObject:
   - component: {fileID: 1786343492}
   - component: {fileID: 1786343494}
   - component: {fileID: 1786343493}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11028,7 +11025,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1798175192}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Cactus1 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11061,7 +11058,7 @@ GameObject:
   - component: {fileID: 1811869830}
   - component: {fileID: 1811869832}
   - component: {fileID: 1811869831}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cloud_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11138,7 +11135,7 @@ GameObject:
   - component: {fileID: 1818600351}
   - component: {fileID: 1818600353}
   - component: {fileID: 1818600352}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cloud_06
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11213,7 +11210,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1830011200}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Cactus1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11246,7 +11243,7 @@ GameObject:
   - component: {fileID: 1834306043}
   - component: {fileID: 1834306045}
   - component: {fileID: 1834306044}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: cactus3flower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11474,7 +11471,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DoNotTesselate: 0
-  savedPos: {x: 0, y: -4, z: 0}
+  savedPos: {x: 6.05, y: -4.16, z: -13.83}
   savedUp: {x: 0, y: 1, z: 0}
   savedRectSize: {x: 100, y: 30}
   savedColor: {r: 1, g: 1, b: 1, a: 1}
@@ -11542,7 +11539,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 8e8051156b4decf4693f0648a48b3fc9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e87e973aa97e2cf41885259822725eb5, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -11570,7 +11567,7 @@ GameObject:
   - component: {fileID: 1849776052}
   - component: {fileID: 1849776054}
   - component: {fileID: 1849776053}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11647,7 +11644,7 @@ GameObject:
   - component: {fileID: 1849929455}
   - component: {fileID: 1849929457}
   - component: {fileID: 1849929456}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: cactus1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11725,7 +11722,7 @@ GameObject:
   - component: {fileID: 1855603364}
   - component: {fileID: 1855603366}
   - component: {fileID: 1855603365}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11802,7 +11799,7 @@ GameObject:
   - component: {fileID: 1864352740}
   - component: {fileID: 1864352742}
   - component: {fileID: 1864352741}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cloud_04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11879,7 +11876,7 @@ GameObject:
   - component: {fileID: 1871014106}
   - component: {fileID: 1871014108}
   - component: {fileID: 1871014107}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11954,7 +11951,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1876205139}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Aloe (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11985,7 +11982,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1897247524}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Aloe (21)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12016,7 +12013,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1899373733}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Aloe (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12047,7 +12044,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1900116379}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Cactus1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12078,7 +12075,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1905035468}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Cactus1 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12111,7 +12108,7 @@ GameObject:
   - component: {fileID: 1908900645}
   - component: {fileID: 1908900647}
   - component: {fileID: 1908900646}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cloud_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12188,7 +12185,7 @@ GameObject:
   - component: {fileID: 1926885063}
   - component: {fileID: 1926885065}
   - component: {fileID: 1926885064}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12254,97 +12251,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1926885062}
   m_Mesh: {fileID: 4300000, guid: e44f8bbf9778c484ca4d63d534614d67, type: 3}
---- !u!1 &1935230222
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1935230223}
-  - component: {fileID: 1935230226}
-  - component: {fileID: 1935230225}
-  - component: {fileID: 1935230224}
-  m_Layer: 10
-  m_Name: Obstacle
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 1
-  m_StaticEditorFlags: 8
-  m_IsActive: 1
---- !u!4 &1935230223
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1935230222}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.46000004, y: 10, z: 19.119999}
-  m_LocalScale: {x: 6.791951, y: 6.791951, z: 6.791951}
-  m_Children: []
-  m_Father: {fileID: 858445909}
-  m_RootOrder: 71
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &1935230224
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1935230222}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &1935230225
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1935230222}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
---- !u!33 &1935230226
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1935230222}
-  m_Mesh: {fileID: 0}
 --- !u!1 &1942746246
 GameObject:
   m_ObjectHideFlags: 0
@@ -12399,7 +12305,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1945557152}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Cactus1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12430,7 +12336,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1948861922}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Aloe (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12463,7 +12369,7 @@ GameObject:
   - component: {fileID: 1959364021}
   - component: {fileID: 1959364023}
   - component: {fileID: 1959364022}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cloud_04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12632,7 +12538,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1976685342}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Aloe (18)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12708,10 +12614,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DoNotTesselate: 0
-  savedPos: {x: 0, y: -4, z: 0}
+  savedPos: {x: 6.05, y: -4.16, z: -13.83}
   savedUp: {x: 0, y: 1, z: 0}
   savedRectSize: {x: 100, y: 130}
-  savedColor: {r: 1, g: 1, b: 1, a: 1}
+  savedColor: {r: 1, g: 1, b: 1, a: 0.8627451}
   savedTextUV0: {x: 0, y: 0}
   savedFill: 1
 --- !u!114 &1994640310
@@ -12727,15 +12633,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.8627451}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 9c0068a62e7a92d40824e0b03460035a, type: 3}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: a09325c4a2605874eab6bb7573edd9c7, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -12760,7 +12666,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2014006189}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Aloe (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12793,7 +12699,7 @@ GameObject:
   - component: {fileID: 2022514238}
   - component: {fileID: 2022514240}
   - component: {fileID: 2022514239}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: cactus1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12869,7 +12775,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2038606323}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: cactus2 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12902,7 +12808,7 @@ GameObject:
   - component: {fileID: 2049126798}
   - component: {fileID: 2049126800}
   - component: {fileID: 2049126799}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cloud_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12979,7 +12885,7 @@ GameObject:
   - component: {fileID: 2092129342}
   - component: {fileID: 2092129344}
   - component: {fileID: 2092129343}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sun 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13054,7 +12960,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2096132683}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Cactus1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13087,7 +12993,7 @@ GameObject:
   - component: {fileID: 2108877973}
   - component: {fileID: 2108877975}
   - component: {fileID: 2108877974}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: cactus1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13165,7 +13071,7 @@ GameObject:
   - component: {fileID: 2110500175}
   - component: {fileID: 2110500177}
   - component: {fileID: 2110500176}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: cactus1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13288,7 +13194,7 @@ GameObject:
   - component: {fileID: 2137584345}
   - component: {fileID: 2137584347}
   - component: {fileID: 2137584346}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: cactus2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13366,7 +13272,7 @@ GameObject:
   - component: {fileID: 2142742985}
   - component: {fileID: 2142742987}
   - component: {fileID: 2142742986}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: cactus1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13444,7 +13350,7 @@ GameObject:
   - component: {fileID: 2143448487}
   - component: {fileID: 2143448489}
   - component: {fileID: 2143448488}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: cactus1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14032,7 +13938,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DoNotTesselate: 0
-  savedPos: {x: -14.5, y: -2.9865131, z: 0}
+  savedPos: {x: -13.400001, y: -2.1265125, z: 0}
   savedUp: {x: 0, y: 1, z: 0}
   savedRectSize: {x: 100, y: 100}
   savedColor: {r: 1, g: 1, b: 1, a: 1}
@@ -14161,7 +14067,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1020790953447158}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -13.83}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.05}
   m_Children:
   - {fileID: 1994640308}
@@ -14170,7 +14076,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -7}
+  m_AnchoredPosition: {x: 6.05, y: -8.15}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224058985497706890
@@ -14244,7 +14150,7 @@ RectTransform:
   m_GameObject: {fileID: 1804054286223530}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.301294, y: 1.3029107, z: 1.8581421}
+  m_LocalScale: {x: 1.1007125, y: 1.10208, z: 1.5717281}
   m_Children:
   - {fileID: 5609138309144653428}
   m_Father: {fileID: 224058985497706890}
@@ -14252,7 +14158,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.27469754}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -145, y: -28.600002}
+  m_AnchoredPosition: {x: -134, y: -20}
   m_SizeDelta: {x: 0, y: 27.469753}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224367300756324178
@@ -14397,7 +14303,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DoNotTesselate: 0
-  savedPos: {x: -14.760259, y: -2.7910767, z: 0}
+  savedPos: {x: -13.620143, y: -1.8612003, z: 0}
   savedUp: {x: 0, y: 1, z: 0}
   savedRectSize: {x: 100, y: 100}
   savedColor: {r: 1, g: 1, b: 1, a: 1}

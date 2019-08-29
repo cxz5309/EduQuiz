@@ -44,12 +44,10 @@ public class EnemyInfo_B : MonoBehaviour
 
     void Start()
     {
-        GameObject spawn = Instantiate(spawnEffect, transform.position, transform.rotation);
-        // 적 스폰 이펙트 메소드 호출
-        Destroy(spawn, 1.0f);
-        // spawn 오브젝트 제거
-        ani = GetComponent<Animator>();
-        // 적의 Animator를 가져온다.
+        GameObject spawn = Instantiate(spawnEffect, transform.position, transform.rotation);    // 적 스폰 이펙트 메소드 호출
+        Destroy(spawn, 5.0f);    // spawn 오브젝트 제거
+        ani = GetComponent<Animator>();     // 적의 Animator를 가져온다.
+
         switch (SceneManager.GetActiveScene().name)
         {
             case "BasicScene":
@@ -205,9 +203,11 @@ public class EnemyInfo_B : MonoBehaviour
         if (coll.gameObject.CompareTag("Bullet"))
         {   // 충돌한 오브젝트의 태그가 Bullet인 경우
             Destroy(coll.gameObject);   // 총알 제거
+            GameObject hit = Instantiate(HitEffect);    // hit GameObject 변수에 HitEffect를 충돌 위치에 생성한다.
+            hit.transform.position = gameObject.transform.position;
+            hit.transform.eulerAngles = new Vector3(-90, 0, 0);
+            Destroy(hit, 5.0f);      // hit 오브젝트를 제거한다.
             getDamage();        // 적 제거
-            GameObject hit = Instantiate(HitEffect, transform.position, transform.rotation);    // hit GameObject 변수에 HitEffect를 충돌 위치에 생성한다.
-            Destroy(hit, 1.0f);      // hit 오브젝트를 제거한다.
 
             switch (SceneManager.GetActiveScene().name)
             {

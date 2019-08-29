@@ -1806,7 +1806,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1021302228166533
 GameObject:
   m_ObjectHideFlags: 0
@@ -1818,7 +1818,7 @@ GameObject:
   - component: {fileID: 4438937319185547}
   - component: {fileID: 33754084622060361}
   - component: {fileID: 23777147060393225}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cloud_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1836,7 +1836,7 @@ GameObject:
   - component: {fileID: 4658212924964057}
   - component: {fileID: 33138455920712587}
   - component: {fileID: 23474207041495571}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sun 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1854,7 +1854,7 @@ GameObject:
   - component: {fileID: 4825953448462205}
   - component: {fileID: 33986952075347003}
   - component: {fileID: 23165132440905745}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cloud_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1872,7 +1872,7 @@ GameObject:
   - component: {fileID: 4215470908924435}
   - component: {fileID: 33416874416689241}
   - component: {fileID: 23216800422523605}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: lowpoly_stage (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1890,7 +1890,7 @@ GameObject:
   - component: {fileID: 4723575719187947}
   - component: {fileID: 33443660547335159}
   - component: {fileID: 23608115311814637}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: lowpoly_stage (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1908,7 +1908,7 @@ GameObject:
   - component: {fileID: 4787282862793663}
   - component: {fileID: 33182362970109663}
   - component: {fileID: 23375166268573641}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cloud_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1926,7 +1926,7 @@ GameObject:
   - component: {fileID: 4233623720774153}
   - component: {fileID: 33706351426656263}
   - component: {fileID: 23238965637458657}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cloud_04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1944,7 +1944,7 @@ GameObject:
   - component: {fileID: 4270737164082139}
   - component: {fileID: 33217839830403721}
   - component: {fileID: 23668672860915421}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Flower (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1962,7 +1962,7 @@ GameObject:
   - component: {fileID: 4387892543695985}
   - component: {fileID: 33725350616863187}
   - component: {fileID: 23886536165000205}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: lowpoly_stage (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1980,7 +1980,7 @@ GameObject:
   - component: {fileID: 4746327192213857}
   - component: {fileID: 33685715825697501}
   - component: {fileID: 23399611535758939}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Moon 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1998,7 +1998,7 @@ GameObject:
   - component: {fileID: 4950844526175637}
   - component: {fileID: 33860073028689409}
   - component: {fileID: 23467253883961987}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: lowpoly_tree_001 (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2016,7 +2016,7 @@ GameObject:
   - component: {fileID: 4198869269419345}
   - component: {fileID: 33919118240769947}
   - component: {fileID: 23624640696902451}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: lowpoly_stage (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2053,7 +2053,7 @@ GameObject:
   - component: {fileID: 4733668220537235}
   - component: {fileID: 33694200229998273}
   - component: {fileID: 23370169119656833}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cloud_04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2071,7 +2071,7 @@ GameObject:
   - component: {fileID: 4247902212652231}
   - component: {fileID: 33194395731130893}
   - component: {fileID: 23734977718286305}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cloud_04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2089,7 +2089,7 @@ GameObject:
   - component: {fileID: 4601212644312573}
   - component: {fileID: 33128499514536729}
   - component: {fileID: 23040549073201655}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cloud_06
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2107,7 +2107,7 @@ GameObject:
   - component: {fileID: 4157813315076923}
   - component: {fileID: 33495095753554999}
   - component: {fileID: 23025952098171231}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: lowpoly_stage (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2125,7 +2125,7 @@ GameObject:
   - component: {fileID: 4963019991791883}
   - component: {fileID: 33296346450000549}
   - component: {fileID: 23543660924858891}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: lowpoly_stage (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2143,7 +2143,7 @@ GameObject:
   - component: {fileID: 4274275416196951}
   - component: {fileID: 33629192708144851}
   - component: {fileID: 23708958667213029}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: lowpoly_tree_001 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2161,7 +2161,7 @@ GameObject:
   - component: {fileID: 4536402330117719}
   - component: {fileID: 33440786273523523}
   - component: {fileID: 23437443974178519}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: lowpoly_tree_005 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2179,7 +2179,7 @@ GameObject:
   - component: {fileID: 4983924352051005}
   - component: {fileID: 33351989780718641}
   - component: {fileID: 23312351815025821}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: lowpoly_rock_001 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2197,7 +2197,7 @@ GameObject:
   - component: {fileID: 4741590126852501}
   - component: {fileID: 33588920473242513}
   - component: {fileID: 23967380034672917}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cloud_06
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2215,7 +2215,7 @@ GameObject:
   - component: {fileID: 4973486642505057}
   - component: {fileID: 33660258433461559}
   - component: {fileID: 23792265876064731}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cloud_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2254,7 +2254,7 @@ GameObject:
   - component: {fileID: 4699252347914427}
   - component: {fileID: 33104937961567181}
   - component: {fileID: 23813110480329063}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: lowpoly_stage (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2272,7 +2272,7 @@ GameObject:
   - component: {fileID: 4549787753084135}
   - component: {fileID: 33181587446343201}
   - component: {fileID: 23220073883958535}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cloud_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2309,7 +2309,7 @@ GameObject:
   - component: {fileID: 4947316350414299}
   - component: {fileID: 33363888606613651}
   - component: {fileID: 23593286590957019}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: lowpoly_stage (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2347,7 +2347,7 @@ GameObject:
   - component: {fileID: 4475944500919653}
   - component: {fileID: 33992703731858411}
   - component: {fileID: 23492985901861797}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: lowpoly_tree_001 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2363,7 +2363,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4727842698720059}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Moon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2381,7 +2381,7 @@ GameObject:
   - component: {fileID: 4155637781118539}
   - component: {fileID: 33294540143975511}
   - component: {fileID: 23951286053510677}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Flower (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2399,7 +2399,7 @@ GameObject:
   - component: {fileID: 4223390741063771}
   - component: {fileID: 33876160470334867}
   - component: {fileID: 23745407224670233}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cloud_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2415,7 +2415,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4817043530750171}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2433,7 +2433,7 @@ GameObject:
   - component: {fileID: 4733946682023147}
   - component: {fileID: 33452171417005797}
   - component: {fileID: 23833772019980873}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Flower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2451,7 +2451,7 @@ GameObject:
   - component: {fileID: 4675087520279215}
   - component: {fileID: 33099400323773021}
   - component: {fileID: 23883844459504139}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: lowpoly_tree_005 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2485,7 +2485,7 @@ GameObject:
   - component: {fileID: 4141341331445355}
   - component: {fileID: 33629602127004409}
   - component: {fileID: 23732663342831413}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cloud_04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2503,7 +2503,7 @@ GameObject:
   - component: {fileID: 4385339378756633}
   - component: {fileID: 33629609154996143}
   - component: {fileID: 23871066640805601}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cloud_05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2521,7 +2521,7 @@ GameObject:
   - component: {fileID: 4126377087728913}
   - component: {fileID: 33272702970269635}
   - component: {fileID: 23021218722301339}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cloud_06
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2539,7 +2539,7 @@ GameObject:
   - component: {fileID: 4895859370184599}
   - component: {fileID: 33347946704438525}
   - component: {fileID: 23775656550591385}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cloud_05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2557,7 +2557,7 @@ GameObject:
   - component: {fileID: 4722236823383535}
   - component: {fileID: 33878457707280605}
   - component: {fileID: 23887094989846211}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cloud_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2575,7 +2575,7 @@ GameObject:
   - component: {fileID: 4356435185227073}
   - component: {fileID: 33490854088612699}
   - component: {fileID: 23739776981777913}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: lowpoly_tree_001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2593,7 +2593,7 @@ GameObject:
   - component: {fileID: 4386840316520883}
   - component: {fileID: 33703974320953179}
   - component: {fileID: 23922114523247379}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: lowpoly_tree_001 (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2611,7 +2611,7 @@ GameObject:
   - component: {fileID: 4895269285376103}
   - component: {fileID: 33215791792478421}
   - component: {fileID: 23546720030335961}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cloud_06
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2648,7 +2648,7 @@ GameObject:
   - component: {fileID: 4247427781166217}
   - component: {fileID: 33803818300508713}
   - component: {fileID: 23440426905193901}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: lowpoly_rock_001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2666,7 +2666,7 @@ GameObject:
   - component: {fileID: 4842385428165079}
   - component: {fileID: 33210954140545935}
   - component: {fileID: 23851438447801917}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cloud_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2684,7 +2684,7 @@ GameObject:
   - component: {fileID: 4024343365782547}
   - component: {fileID: 33904306230900631}
   - component: {fileID: 23252580620299569}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: lowpoly_rock_001 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2702,7 +2702,7 @@ GameObject:
   - component: {fileID: 4592856870971127}
   - component: {fileID: 33511915262459257}
   - component: {fileID: 23305845771568259}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: lowpoly_tree_005 (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2720,7 +2720,7 @@ GameObject:
   - component: {fileID: 4542494982434769}
   - component: {fileID: 33985786307006907}
   - component: {fileID: 23737138678753549}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: lowpoly_tree_001 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2738,7 +2738,7 @@ GameObject:
   - component: {fileID: 4134426870276231}
   - component: {fileID: 33448076286434747}
   - component: {fileID: 23809770862398719}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: lowpoly_tree_001 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2756,7 +2756,7 @@ GameObject:
   - component: {fileID: 4401866274222417}
   - component: {fileID: 33763032627166359}
   - component: {fileID: 23000774634435775}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Flower (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2774,7 +2774,7 @@ GameObject:
   - component: {fileID: 4663394034713325}
   - component: {fileID: 33242525594447873}
   - component: {fileID: 23087072236186429}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cloud_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2792,7 +2792,7 @@ GameObject:
   - component: {fileID: 4100943102306595}
   - component: {fileID: 33542157827591595}
   - component: {fileID: 23216423913818855}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: lowpoly_tree_005 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2829,7 +2829,7 @@ GameObject:
   - component: {fileID: 4927122946123467}
   - component: {fileID: 33917502761709145}
   - component: {fileID: 23474466135064187}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: lowpoly_stage (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2847,7 +2847,7 @@ GameObject:
   - component: {fileID: 4704250574684345}
   - component: {fileID: 33218585122294081}
   - component: {fileID: 23128352816016095}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Stars
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2865,7 +2865,7 @@ GameObject:
   - component: {fileID: 4887309786165681}
   - component: {fileID: 33764784221800269}
   - component: {fileID: 23206140335370257}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cloud_05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2883,7 +2883,7 @@ GameObject:
   - component: {fileID: 4584812636394345}
   - component: {fileID: 33267014221732543}
   - component: {fileID: 23234129300361965}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: lowpoly_tree_001 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2901,7 +2901,7 @@ GameObject:
   - component: {fileID: 4263158928362945}
   - component: {fileID: 33518485325730215}
   - component: {fileID: 23430381052434085}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: lowpoly_tree_005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2919,7 +2919,7 @@ GameObject:
   - component: {fileID: 4546514303148625}
   - component: {fileID: 33071426848136695}
   - component: {fileID: 23731941035841279}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: lowpoly_stage (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2937,7 +2937,7 @@ GameObject:
   - component: {fileID: 4499461256780489}
   - component: {fileID: 33237776549421455}
   - component: {fileID: 23666608710689301}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cloud_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2976,7 +2976,7 @@ GameObject:
   - component: {fileID: 4789203325342255}
   - component: {fileID: 33801200556823963}
   - component: {fileID: 23418511027112825}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: lowpoly_stage (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3013,7 +3013,7 @@ GameObject:
   - component: {fileID: 4023146618491703}
   - component: {fileID: 33884695261332561}
   - component: {fileID: 23422936888622079}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cloud_05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3031,7 +3031,7 @@ GameObject:
   - component: {fileID: 4677376051698551}
   - component: {fileID: 33924258458138359}
   - component: {fileID: 23348514441849949}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: lowpoly_tree_001 (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3050,7 +3050,7 @@ GameObject:
   - component: {fileID: 33552019861292885}
   - component: {fileID: 23808754995707881}
   - component: {fileID: 64751738971163059}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3068,7 +3068,7 @@ GameObject:
   - component: {fileID: 4300042315729255}
   - component: {fileID: 33546421720224657}
   - component: {fileID: 23146149381590627}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SkyDome
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3086,7 +3086,7 @@ GameObject:
   - component: {fileID: 4093908293677239}
   - component: {fileID: 33950743912228471}
   - component: {fileID: 23322189175511629}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: lowpoly_tree_005 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3104,7 +3104,7 @@ GameObject:
   - component: {fileID: 4366692056725837}
   - component: {fileID: 33117535551425197}
   - component: {fileID: 23741420842641265}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: lowpoly_stage (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3122,7 +3122,7 @@ GameObject:
   - component: {fileID: 4898615246634197}
   - component: {fileID: 33025602696392157}
   - component: {fileID: 23680155210088995}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: lowpoly_stage (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3140,7 +3140,7 @@ GameObject:
   - component: {fileID: 4061144016553549}
   - component: {fileID: 33322383105773991}
   - component: {fileID: 23567959052515551}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cloud_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3158,7 +3158,7 @@ GameObject:
   - component: {fileID: 4158749469345161}
   - component: {fileID: 33535677472547949}
   - component: {fileID: 23984115786788535}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cloud_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3176,7 +3176,7 @@ GameObject:
   - component: {fileID: 4332761873223729}
   - component: {fileID: 33498932270998721}
   - component: {fileID: 23256928854833693}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: lowpoly_stage (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3213,7 +3213,7 @@ GameObject:
   - component: {fileID: 4988601844615281}
   - component: {fileID: 33221964252786531}
   - component: {fileID: 23546882113857323}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: lowpoly_rock_001 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3231,7 +3231,7 @@ GameObject:
   - component: {fileID: 4893915259732571}
   - component: {fileID: 33361903042268627}
   - component: {fileID: 23416857747607769}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: lowpoly_tree_005 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3247,7 +3247,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4298711715274433}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Map
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3265,7 +3265,7 @@ GameObject:
   - component: {fileID: 4653318741693537}
   - component: {fileID: 33911502431302625}
   - component: {fileID: 23502668860199819}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: lowpoly_stage (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3283,7 +3283,7 @@ GameObject:
   - component: {fileID: 4121529951783125}
   - component: {fileID: 33941203812062361}
   - component: {fileID: 23854959330406295}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cloud_06
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3301,7 +3301,7 @@ GameObject:
   - component: {fileID: 4067943053303463}
   - component: {fileID: 33757716890555213}
   - component: {fileID: 23787956308071863}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: lowpoly_stage (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3317,7 +3317,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4678334248044749}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Clouds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3354,7 +3354,7 @@ GameObject:
   - component: {fileID: 4997556638589059}
   - component: {fileID: 33218770713427397}
   - component: {fileID: 23511841575974505}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: lowpoly_stage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7851,7 +7851,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 8e8051156b4decf4693f0648a48b3fc9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e6d0e297e4512fe4b8e8fe357714a52f, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7873,7 +7873,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DoNotTesselate: 0
-  savedPos: {x: 0, y: -6.3300004, z: -0.9299998}
+  savedPos: {x: 0, y: -4.08, z: -10.75}
   savedUp: {x: 0, y: 1, z: 0}
   savedRectSize: {x: 100, y: 30}
   savedColor: {r: 1, g: 1, b: 1, a: 1}
@@ -7921,11 +7921,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DoNotTesselate: 0
-  savedPos: {x: 0, y: -6.3300004, z: -0.9299998}
+  savedPos: {x: 0, y: -4.08, z: -10.75}
   savedUp: {x: 0, y: 1, z: 0}
   savedRectSize: {x: 100, y: 30}
-  savedColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  savedTextUV0: {x: 0.05859375, y: 0.21875}
+  savedColor: {r: 1, g: 1, b: 1, a: 1}
+  savedTextUV0: {x: 0.7265625, y: 0.2734375}
   savedFill: 0
 --- !u!114 &114342280764369477
 MonoBehaviour:
@@ -8003,7 +8003,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -8011,11 +8011,11 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 9f3b245e31e2d3543939b4201ea553fd, type: 3}
-    m_FontSize: 20
-    m_FontStyle: 1
+    m_Font: {fileID: 12800000, guid: 18a3d820bcc93954eb7ad52fc9b2f71c, type: 3}
+    m_FontSize: 18
+    m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 2
+    m_MinSize: 1
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -8023,7 +8023,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: retry
+  m_Text: RETRY
 --- !u!114 &114406684155826847
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8044,7 +8044,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 8e8051156b4decf4693f0648a48b3fc9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e6d0e297e4512fe4b8e8fe357714a52f, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8088,10 +8088,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DoNotTesselate: 0
-  savedPos: {x: 0, y: -5.21, z: -0.9299998}
+  savedPos: {x: 0, y: -4.08, z: -10.75}
   savedUp: {x: 0, y: 1, z: 0}
   savedRectSize: {x: 100, y: 130}
-  savedColor: {r: 1, g: 1, b: 1, a: 1}
+  savedColor: {r: 1, g: 1, b: 1, a: 0.8627451}
   savedTextUV0: {x: 0, y: 0}
   savedFill: 1
 --- !u!114 &114548557104504417
@@ -8111,7 +8111,7 @@ MonoBehaviour:
   savedUp: {x: 0, y: 1, z: 0}
   savedRectSize: {x: 160, y: 100}
   savedColor: {r: 1, g: 1, b: 1, a: 1}
-  savedTextUV0: {x: 0.5, y: 0}
+  savedTextUV0: {x: 0.67578125, y: 0}
   savedFill: 0
 --- !u!114 &114610432774499805
 MonoBehaviour:
@@ -8126,7 +8126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -8134,11 +8134,11 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 9f3b245e31e2d3543939b4201ea553fd, type: 3}
-    m_FontSize: 20
-    m_FontStyle: 1
+    m_Font: {fileID: 12800000, guid: 18a3d820bcc93954eb7ad52fc9b2f71c, type: 3}
+    m_FontSize: 18
+    m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 2
+    m_MinSize: 1
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -8146,7 +8146,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: menu
+  m_Text: MENU
 --- !u!114 &114650918484228187
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8196,7 +8196,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DoNotTesselate: 0
-  savedPos: {x: 0, y: -3.1599998, z: -0.9299998}
+  savedPos: {x: 0, y: -0.77999973, z: -10.75}
   savedUp: {x: 0, y: 1, z: 0}
   savedRectSize: {x: 100, y: 30}
   savedColor: {r: 1, g: 1, b: 1, a: 1}
@@ -8215,15 +8215,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.8627451}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 9c0068a62e7a92d40824e0b03460035a, type: 3}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: a09325c4a2605874eab6bb7573edd9c7, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -8263,11 +8263,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DoNotTesselate: 0
-  savedPos: {x: 0, y: -3.1599998, z: -0.9299998}
+  savedPos: {x: 0, y: -0.77999973, z: -10.75}
   savedUp: {x: 0, y: 1, z: 0}
   savedRectSize: {x: 100, y: 30}
-  savedColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  savedTextUV0: {x: 0.05859375, y: 0.1171875}
+  savedColor: {r: 1, g: 1, b: 1, a: 1}
+  savedTextUV0: {x: 0.7265625, y: 0.3359375}
   savedFill: 0
 --- !u!222 &222062953205732907
 CanvasRenderer:
@@ -8391,7 +8391,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1020789569604897}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -8.03}
+  m_LocalPosition: {x: 0, y: 0, z: -17.85}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.05}
   m_Children:
   - {fileID: 224181196410366305}
@@ -8400,7 +8400,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -5.65}
+  m_AnchoredPosition: {x: 0, y: -6.26}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224058985019802205
@@ -8669,7 +8669,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -8677,11 +8677,11 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 9f3b245e31e2d3543939b4201ea553fd, type: 3}
-    m_FontSize: 20
-    m_FontStyle: 1
+    m_Font: {fileID: 12800000, guid: 18a3d820bcc93954eb7ad52fc9b2f71c, type: 3}
+    m_FontSize: 18
+    m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 2
+    m_MinSize: 1
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -8689,9 +8689,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'close
-
-'
+  m_Text: CLOSE
 --- !u!222 &2151280457896864521
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8795,7 +8793,7 @@ MonoBehaviour:
   savedUp: {x: 0, y: 1, z: 0}
   savedRectSize: {x: 160, y: 100}
   savedColor: {r: 1, g: 1, b: 1, a: 1}
-  savedTextUV0: {x: 0.140625, y: 0.076171875}
+  savedTextUV0: {x: 0.4765625, y: 0}
   savedFill: 0
 --- !u!1 &3952350598957339387
 GameObject:
@@ -8842,7 +8840,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DoNotTesselate: 0
-  savedPos: {x: 0, y: -3.1599998, z: -0.9299998}
+  savedPos: {x: 0, y: -7.38, z: -10.75}
   savedUp: {x: 0, y: 1, z: 0}
   savedRectSize: {x: 100, y: 30}
   savedColor: {r: 1, g: 1, b: 1, a: 1}
@@ -9068,11 +9066,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DoNotTesselate: 0
-  savedPos: {x: 0, y: -3.1599998, z: -0.9299998}
+  savedPos: {x: 0, y: -7.38, z: -10.75}
   savedUp: {x: 0, y: 1, z: 0}
   savedRectSize: {x: 100, y: 30}
-  savedColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  savedTextUV0: {x: 0, y: 0.0078125}
+  savedColor: {r: 1, g: 1, b: 1, a: 1}
+  savedTextUV0: {x: 0.67578125, y: 0.21875}
   savedFill: 0
 --- !u!114 &8340695672483767613
 MonoBehaviour:
@@ -9094,7 +9092,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 8e8051156b4decf4693f0648a48b3fc9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 74976faeb568f074d9f1a4df7ca78d18, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
