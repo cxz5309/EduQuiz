@@ -29,8 +29,6 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         instance = this;
-        gamestate = Gamestate.GamePlaying;
-        Time.timeScale = 1;
         switch (SceneManager.GetActiveScene().name)
         {
             case "BasicScene":
@@ -47,6 +45,8 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        gamestate = Gamestate.GamePlaying;
+        Time.timeScale = 1;
         StateUI.SetActive(true);
         // State UI 활성화
     }
@@ -55,8 +55,9 @@ public class GameManager : MonoBehaviour
     // 다시하기 버튼 메소드
     IEnumerator ButtonsOn()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2.5f);
         EndUI.SetActive(true);
+        Time.timeScale = 0;
     }
 
 
@@ -65,7 +66,7 @@ public class GameManager : MonoBehaviour
     //{   
     //    RaycastHit hit;
     //    GameObject target = null;
-        
+
     //    Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
     //    // 마우스 포인트 근처 좌표를 만든다.
 
