@@ -35,6 +35,7 @@ public class QuizManager_B : MonoBehaviour
         instance = this;
 
         dictionary = new Dictionary<int, Value_B>();
+
         dictionary.Add(0, new Value_B(0,
             "나는 캄캄한 (  )에 등불도 없이 걸어가다 넘어져 무릎을 다쳤다.",
             "밤", "아침", "낮", "해질녁", 0));
