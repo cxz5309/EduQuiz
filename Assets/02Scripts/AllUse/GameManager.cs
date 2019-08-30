@@ -32,6 +32,10 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         instance = this;
+    }
+
+    void Start()
+    {
         switch (SceneManager.GetActiveScene().name)
         {
             case "BasicScene":
@@ -42,10 +46,7 @@ public class GameManager : MonoBehaviour
                 WaveManager_E.instance.InitWave();
                 break;
         }
-    }
 
-    void Start()
-    {
         gamestate = Gamestate.GamePlaying;
         Time.timeScale = 1;
         StateUI.SetActive(true);
