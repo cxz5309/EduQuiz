@@ -163,23 +163,23 @@ public class GameManager : MonoBehaviour
             // 나머지 적들 파괴
         }
     }
+
     public void ItemDestroy()
     {
         GameObject[] allHP = GameObject.FindGameObjectsWithTag("HP");
         // allCube에 "enemy" 태그를 가지는 오브젝트 전부 넣어줌.
         foreach (GameObject i in allHP)
         {
-            Destroy(i.gameObject);
-            // 나머지 적들 파괴
+            Destroy(i.gameObject);      // 나머지 적들 파괴
         }
         GameObject[] allTimer = GameObject.FindGameObjectsWithTag("Timer");
         // allCube에 "enemy" 태그를 가지는 오브젝트 전부 넣어줌.
         foreach (GameObject i in allTimer)
         {
-            Destroy(i.gameObject);
-            // 나머지 적들 파괴
+            Destroy(i.gameObject);        // 나머지 적들 파괴
         }
     }
+
     public void SuccessEffect()     // 성공 이펙트
     {
         GameObject effect = Instantiate(effSuccess);
