@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -11335,7 +11335,7 @@ MonoBehaviour:
   savedUp: {x: 0, y: 1, z: 0}
   savedRectSize: {x: 160, y: 100}
   savedColor: {r: 1, g: 1, b: 1, a: 1}
-  savedTextUV0: {x: 0.82421875, y: 0}
+  savedTextUV0: {x: 0.16796875, y: 0.25390625}
   savedFill: 0
 --- !u!114 &114610432028159498
 MonoBehaviour:
@@ -11388,7 +11388,7 @@ MonoBehaviour:
   savedUp: {x: 0, y: 1, z: 0}
   savedRectSize: {x: 871.4, y: 127.32}
   savedColor: {r: 1, g: 1, b: 1, a: 1}
-  savedTextUV0: {x: 0.23046875, y: 0}
+  savedTextUV0: {x: 0.1875, y: 0}
   savedFill: 0
 --- !u!114 &114679477676329416
 MonoBehaviour:
@@ -12224,7 +12224,7 @@ GameObject:
   - component: {fileID: 461773845636701480}
   m_Layer: 5
   m_Name: Close
-  m_TagString: basicRetry
+  m_TagString: Close
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12254,7 +12254,7 @@ MonoBehaviour:
   savedUp: {x: 0, y: 1, z: 0}
   savedRectSize: {x: 160, y: 100}
   savedColor: {r: 1, g: 1, b: 1, a: 1}
-  savedTextUV0: {x: 0.79296875, y: 0.1875}
+  savedTextUV0: {x: 0.44921875, y: 0}
   savedFill: 0
 --- !u!1 &3952350597690413356
 GameObject:

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5938,7 +5938,7 @@ MonoBehaviour:
   savedUp: {x: 0, y: 1, z: 0}
   savedRectSize: {x: 160, y: 100}
   savedColor: {r: 1, g: 1, b: 1, a: 1}
-  savedTextUV0: {x: 0.0234375, y: 0}
+  savedTextUV0: {x: 0.5, y: 0}
   savedFill: 0
 --- !u!114 &1152316484
 MonoBehaviour:
@@ -13315,7 +13315,7 @@ MonoBehaviour:
   savedUp: {x: 0, y: 1, z: 0}
   savedRectSize: {x: 160, y: 100}
   savedColor: {r: 1, g: 1, b: 1, a: 1}
-  savedTextUV0: {x: 0.5, y: 0}
+  savedTextUV0: {x: 0.67578125, y: 0}
   savedFill: 0
 --- !u!114 &114675370267994126
 MonoBehaviour:
@@ -14014,7 +14014,7 @@ GameObject:
   - component: {fileID: 9051763629807366057}
   m_Layer: 5
   m_Name: Close
-  m_TagString: Untagged
+  m_TagString: Close
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -18,6 +18,10 @@ public class Controller : SteamVR_LaserPointer
                 ChangeScene(e.target.gameObject.tag);
                 break;
             case "BasicScene":
+                if (e.target.gameObject.tag == "Close")
+                {
+                    Application.Quit();
+                }
                 if (GameManager.instance.gamestate == GameManager.Gamestate.GamePlaying)
                 {
                     Fire(e.target.transform.position);
@@ -44,6 +48,10 @@ public class Controller : SteamVR_LaserPointer
                 }
                 break;
             case "MathScene":
+                if (e.target.gameObject.tag == "Close")
+                {
+                    Application.Quit();
+                }
                 if (GameManager.instance.gamestate == GameManager.Gamestate.GamePlaying)
                 {
                     Fire(e.target.transform.position);
@@ -70,6 +78,10 @@ public class Controller : SteamVR_LaserPointer
                 }
                 break;
             case "EnglishScene":
+                if (e.target.gameObject.tag == "Close")
+                {
+                    Application.Quit();
+                }
                 if (GameManager.instance.gamestate == GameManager.Gamestate.GamePlaying)
                 {
                     Fire(e.target.transform.position);
