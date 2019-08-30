@@ -128,7 +128,8 @@ public class Controller : SteamVR_LaserPointer
 
     void Fire(Vector3 target)
     {
-        Instantiate(Bullet, FirePos.position, FirePos.rotation).GetComponent<Rigidbody>().velocity = (target - this.transform.position) * 10;
+        Instantiate(Bullet, FirePos.position, FirePos.rotation);
+            //.GetComponent<Rigidbody>().velocity = (target - this.transform.position) * 10;
         Sound.instance.shoot_sound();
     }
 }
