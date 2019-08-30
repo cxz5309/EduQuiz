@@ -616,7 +616,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnEffect: {fileID: 2006185849832108736, guid: d5bb65369c41cff4f9455ab25994b6e5,
     type: 3}
-  HitEffect: {fileID: 1841958332890248155, guid: f34e716890c82524c98dd93d987fb8cd,
+  HitEffect: {fileID: 6668631593257200190, guid: d57b9022c19ce6c408efd82e29c2946c,
     type: 3}
   Player: {fileID: 107946, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
   MoveSpeed: 4
