@@ -334,7 +334,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera: {fileID: 267485742}
-  Bullet: {fileID: 3722632481595169237, guid: 60835cba9fa11a94c9d6ce28b964a4c3, type: 3}
+  Bullet: {fileID: 1698648575761504, guid: cf263124cbe15f448b6a2ec0ef11bd54, type: 3}
 --- !u!1 &1586634373
 GameObject:
   m_ObjectHideFlags: 0

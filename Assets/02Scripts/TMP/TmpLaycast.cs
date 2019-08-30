@@ -137,7 +137,8 @@ public class TmpLaycast : MonoBehaviour
     }
     void Fire(Vector3 target)
     {
-        Instantiate(Bullet, this.transform.position, this.transform.rotation).GetComponent<Rigidbody>().velocity=(target-this.transform.position)*10;
+        Instantiate(Bullet, this.transform.position, this.transform.rotation);
+        //.GetComponent<Rigidbody>().velocity = (target - this.transform.position) * 10;
         Sound.instance.shoot_sound();
     }
 }
