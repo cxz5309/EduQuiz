@@ -18,6 +18,7 @@ TagManager:
   - englishRetry
   - Pause
   - Camera
+  - Close
   layers:
   - Default
   - TransparentFX
