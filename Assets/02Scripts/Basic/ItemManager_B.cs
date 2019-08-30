@@ -30,16 +30,11 @@ public class ItemManager_B : MonoBehaviour
     void Start()
     {
         itemSpawnChk = new int[ItemSpawnPoint.Length];
-        itemCount = 3;
-        // 아이템 최대 생성 개수
-        HPSpawnTime = 6.0f;
-        // 처음 HPSpawnTime 60초로 지정
-        TimerSpawnTime = 6.0f;
-        // 처음 TimerSpawnTime 60초로 지정
-        StartCoroutine("HPSpawn");
-        // HP 아이템을 생성하는 코루틴 함수를 사용
-        StartCoroutine("TimerSpawn");
-        // Timer 아이템을 생성하는 코루틴 함수를 사용
+        itemCount = 3;      // 아이템 최대 생성 개수
+        HPSpawnTime = 1.0f;     // 처음 HPSpawnTime 1초로 지정
+        TimerSpawnTime = 1.0f;      // 처음 TimerSpawnTime 1초로 지정
+        StartCoroutine("HPSpawn");      // HP 아이템을 생성하는 코루틴 함수를 사용
+        StartCoroutine("TimerSpawn");       // Timer 아이템을 생성하는 코루틴 함수를 사용
     }
 
     // HP 아이템 생성하는 함수
@@ -47,12 +42,9 @@ public class ItemManager_B : MonoBehaviour
     {
         while (true)
         {   // while문으로 코루틴을 지속
-            yield return new WaitForSeconds(HPSpawnTime);
-            // HPSpawnTime만큼 대기
-            EventItemSpawnPoint(HPItem);
-            // HP 아이템 생성
-            HPSpawnTime = Random.Range(6, 10);
-            // HP 아이템 생성 간격 다시 지정
+            yield return new WaitForSeconds(HPSpawnTime);       // HPSpawnTime만큼 대기
+            EventItemSpawnPoint(HPItem);        // HP 아이템 생성
+            HPSpawnTime = Random.Range(25, 30);     // HP 아이템 생성 간격 다시 지정
         }
     }
 
@@ -61,12 +53,9 @@ public class ItemManager_B : MonoBehaviour
     {
         while (true)
         {   // while문으로 코루틴을 지속
-            yield return new WaitForSeconds(TimerSpawnTime);
-            // TimerSpawnTime만큼 대기
-            EventItemSpawnPoint(TimerItem);
-            // Timer 아이템 생성
-            TimerSpawnTime = Random.Range(6, 10);
-            // Timer 아이템 생성 간격 다시 지정
+            yield return new WaitForSeconds(TimerSpawnTime);        // TimerSpawnTime만큼 대기
+            EventItemSpawnPoint(TimerItem);      // Timer 아이템 생성
+            TimerSpawnTime = Random.Range(25, 30);       // Timer 아이템 생성 간격 다시 지정
         }
     }
 
@@ -76,14 +65,12 @@ public class ItemManager_B : MonoBehaviour
     {
         while (true)
         {
-            int itemPoint = Random.Range(0, itemSpawnChk.Length);
-            // itemSpawnChk 배열의 크기만큼 랜덤시드
+            int itemPoint = Random.Range(0, itemSpawnChk.Length);       // itemSpawnChk 배열의 크기만큼 랜덤시드
 
             if (itemCount == 0)
             {   // 생성가능한 아이템 개수가 0일때
                 break;
             }
-
             else if (itemCount != 0)
             {   // 생성가능한 아이템 개수가 0이 아닐때
                 if (itemSpawnChk[itemPoint] == 0)

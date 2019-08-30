@@ -31,10 +31,10 @@ public class ItemManager_E : MonoBehaviour
     {
         itemCount = 3;
         // 아이템 최대 생성 개수
-        HPSpawnTime = 6.0f;
-        // 처음 HPSpawnTime 60초로 지정
-        TimerSpawnTime = 6.0f;
-        // 처음 TimerSpawnTime 60초로 지정
+        HPSpawnTime = 1.0f;
+        // 처음 HPSpawnTime 30초로 지정
+        TimerSpawnTime = 1.0f;
+        // 처음 TimerSpawnTime 30초로 지정
         StartCoroutine("HPSpawn");
         // HP 아이템을 생성하는 코루틴 함수를 사용
         StartCoroutine("TimerSpawn");
@@ -50,7 +50,7 @@ public class ItemManager_E : MonoBehaviour
             // HPSpawnTime만큼 대기
             EventItemSpawnPoint(HPItem);
             // HP 아이템 생성
-            HPSpawnTime = Random.Range(6, 10);
+            HPSpawnTime = Random.Range(25, 30);
             // HP 아이템 생성 간격 다시 지정
         }
     }
@@ -64,7 +64,7 @@ public class ItemManager_E : MonoBehaviour
             // TimerSpawnTime만큼 대기
             EventItemSpawnPoint(TimerItem);
             // Timer 아이템 생성
-            TimerSpawnTime = Random.Range(6, 10);
+            TimerSpawnTime = Random.Range(25, 30);
             // Timer 아이템 생성 간격 다시 지정
         }
     }
