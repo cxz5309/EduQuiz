@@ -7,7 +7,10 @@ public class TmpLaycast : MonoBehaviour
 {
     public Camera camera;
     public GameObject Bullet;
-    // Update is called once per frame
+
+    public Transform firePos;
+
+
     void Update()
     {
 
@@ -135,9 +138,10 @@ public class TmpLaycast : MonoBehaviour
                 break;
         }
     }
+
     void Fire(Vector3 target)
     {
-        Instantiate(Bullet, this.transform.position, this.transform.rotation);
+        Instantiate(Bullet, firePos.position, firePos.rotation);
         //.GetComponent<Rigidbody>().velocity = (target - this.transform.position) * 10;
         Sound.instance.shoot_sound();
     }

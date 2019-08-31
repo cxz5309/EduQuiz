@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.IO;
 
 
 public class Value_B
@@ -25,63 +26,45 @@ public class QuizManager_B : MonoBehaviour
 {
     public static QuizManager_B instance;
 
-    public Dictionary<int, Value_B> dictionary;
+    public Dictionary<int, Value_B> dictionary = new Dictionary<int, Value_B>();
     public Dictionary<int, Value_B> dictionary_temp;   // 문제를 섞기 위한 임시 변수
 
 
-    private void Start()
-    {
-        
-    }
 
     void Awake()
     {
         instance = this;
 
+        LoadMap();
 
-        dictionary = new Dictionary<int, Value_B>();
-
-        TextAsset textAsset = Resources.Load<TextAsset>("Datas");
-
-        string[] lines = textAsset.text.Split('\n');
-
-        foreach (string line in lines)
-        {
-            string[] words = line.Split(',');
-
-            dictionary.Add(int.Parse(words[0]), new Value_B(words[1], words[2], words[3], words[4], words[5], int.Parse(words[6])));
-        }
-
-        Debug.Log("문제 개수 : " + dictionary.Count);
-        Debug.Log("문제 개수 : " + dictionary[0].quiz);
-
-        //dictionary = new Dictionary<int, Value_B>();
-
-        //dictionary.Add(0, new Value_B("나는 캄캄한 (  )에 등불도 없이 걸어가다 넘어져 무릎을 다쳤다.", "밤", "아침", "낮", "해질녁", 0));
-        //dictionary.Add(1, new Value_B("반대쪽으로 틀다", "되틀다", "배틀다", "외틀다", "안틀다", 0));
-        //dictionary.Add(2, new Value_B("그릇 위까지 수북하게 담은 밥", "감투밥", "구메밥", "고두밥", "가윗밥", 0));
-        //dictionary.Add(3, new Value_B("남쪽에서 부는 바람을 이르는 말", "마파람", "샛바람", "하늬바람", "된바람", 0));
-        //dictionary.Add(4, new Value_B("'옆에서'를 정확하게 소리내어 읽은 것은?", "여페서", "옆해서", "여베서", "엽해서", 0));
-        //dictionary.Add(5, new Value_B("'받았어'를 정확하게 소리내어 읽은 것은?", "바다써", "받아써", "바닸어", "밨아써", 0));
-        //dictionary.Add(6, new Value_B("'앞으로'를 정확하게 소리내어 읽은 것은?", "아프로", "앞프로", "압으로", "압프로", 0));
-        //dictionary.Add(7, new Value_B("알맞은 문장 부호를 만들어 보세요. < 규현아, 무슨 노래를 부르니( ) >", "?", ".", ",", "!", 0));
-        //dictionary.Add(8, new Value_B("어름치는 (  )에 사는 동물입니다.", "강", "바다", "산", "호수", 0));
-        //dictionary.Add(9, new Value_B("몸이 굳게 억세다", "걱세다", "까세다", "꺽세다", "검세다", 0));
-        //dictionary.Add(10, new Value_B("ㅂ + ㅏ + ㅇ = (    )", "방", "봉", "붕", "뱅", 0));
-        //dictionary.Add(11, new Value_B("ㅇ + ㅜ + ㅓ + ㄹ = (    )", "월", "왈", "울", "얼", 0));
-        //dictionary.Add(12, new Value_B("글자와 소리가 다른 낱말은?", "국어", "개미", "노래", "여우", 0));
-        //dictionary.Add(13, new Value_B("낱말을 정확하게 소리 내어 읽은 것은?", "얼음-[어름]", "낙엽-[낙겹]", "놀이-[놀리]", "학원-[학권]", 0));
-        //dictionary.Add(14, new Value_B("문장의 의마가 잘 드러나게 한 번 띄어 읽어야 할 곳은? < 가벼운 ① 먹이는 ② 혼자 ③ 나릅니다. ④ >", "②", "①", "③", "④", 0));
-        //dictionary.Add(15, new Value_B("다음 뜻에 알맞는 낱말은? < 무엇에 대해서 물어보다. >", "질문하다", "정리하다", "부탁하다", "일어서다", 0));
-        //dictionary.Add(16, new Value_B("다음 뜻에 알맞는 낱말은? < 어떤 일을 해달라고 말하다. >", "부탁하다", "정리하다", "질문하다", "일어서다", 0));
-        //dictionary.Add(17, new Value_B("다음 뜻에 알맞는 낱말은? < 흐트러져 있는 것을 한데 모으다. >", "정리하다", "부탁하다", "질문하다", "일어서다", 0));
-        //dictionary.Add(18, new Value_B("'깨끗한'과 반대의 뜻을 가진 낱말은?", "더러운", "맛있는", "부지런한", "깔끔한", 0));
-        //dictionary.Add(19, new Value_B("'다음 중 흉내 내는 말이 아닌 것은?", "발가락", "뽕", "쏙", "꼼틀꼼틀", 0));
         //RandomNumber();     // 문제 랜덤섞기
     }
 
-    //문제 랜덤섞기 메소드
-    void RandomNumber()
+    public void LoadMap()
+    {
+        TextAsset data = Resources.Load("Datas", typeof(TextAsset)) as TextAsset;
+        StringReader strReader = new StringReader(data.text);
+
+        string source = strReader.ReadLine();
+
+        int row = 0;
+
+        while (source != null)
+        {
+            string[] words = source.Split(',');
+
+            dictionary.Add(int.Parse(words[0]), new Value_B(words[1], words[2], words[3], words[4], words[5], 0));
+
+            row++;
+            source = strReader.ReadLine();
+        }
+        strReader.Close();
+
+        Debug.Log("딕셔너리 개수 : " + dictionary.Count + " / " + dictionary[0].quiz);
+    }
+
+
+    void RandomNumber()         //문제 랜덤섞기 메소드
     {
         System.Random prng = new System.Random();
 
