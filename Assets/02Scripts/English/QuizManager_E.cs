@@ -11,8 +11,8 @@ public class Val
     
     public Val(int _cnt, string _alpha)
     {
-        this.cnt = _cnt;
-        this.alpha = _alpha;
+        cnt = _cnt;
+        alpha = _alpha;
     }
 }
 
@@ -20,82 +20,81 @@ public class Value_E
 {
     public int num;         // 문제 번호
     public string quiz;     // 문제 지문
-    //public string[] ans = new string[4];    // 답1, 2, 3, 4
     public Sprite sprite;
 
-    public Val[] val = new Val[10];
+    public Val[] val;
 
     public Value_E(int _num, Sprite _sprite, Val _ans1, Val _ans2, Val _ans3)
     {
-        this.num = _num;
-        this.sprite = _sprite;
-        this.val[0] = _ans1;
-        this.val[1] = _ans2;
-        this.val[2] = _ans3;
+        num = _num;
+        sprite = _sprite;
+        val[0] = _ans1;
+        val[1] = _ans2;
+        val[2] = _ans3;
     }
 
     public Value_E(int _num, Sprite _sprite, Val _ans1, Val _ans2, Val _ans3, Val _ans4)
     {
-        this.num = _num;
-        this.sprite = _sprite;
-        this.val[0] = _ans1;
-        this.val[1] = _ans2;
-        this.val[2] = _ans3;
-        this.val[3] = _ans4;
+        num = _num;
+        sprite = _sprite;
+        val[0] = _ans1;
+        val[1] = _ans2;
+        val[2] = _ans3;
+        val[3] = _ans4;
     }
     
     // overrode
     public Value_E(int _num, Sprite _sprite, Val _ans1, Val _ans2, Val _ans3, Val _ans4, Val _ans5)
     {
-        this.num = _num;
-        this.sprite = _sprite;
-        this.val[0] = _ans1;
-        this.val[1] = _ans2;
-        this.val[2] = _ans3;
-        this.val[3] = _ans4;
-        this.val[4] = _ans5;
+        num = _num;
+        sprite = _sprite;
+        val[0] = _ans1;
+        val[1] = _ans2;
+        val[2] = _ans3;
+        val[3] = _ans4;
+        val[4] = _ans5;
     }
 
     // overrode
     public Value_E(int _num, Sprite _sprite, Val _ans1, Val _ans2, Val _ans3, Val _ans4, Val _ans5, Val _ans6)
     {
-        this.num = _num;
-        this.sprite = _sprite;
-        this.val[0] = _ans1;
-        this.val[1] = _ans2;
-        this.val[2] = _ans3;
-        this.val[3] = _ans4;
-        this.val[4] = _ans5;
-        this.val[5] = _ans6;
+        num = _num;
+        sprite = _sprite;
+        val[0] = _ans1;
+        val[1] = _ans2;
+        val[2] = _ans3;
+        val[3] = _ans4;
+        val[4] = _ans5;
+        val[5] = _ans6;
     }
 
     // overrode
     public Value_E(int _num, Sprite _sprite, Val _ans1, Val _ans2, Val _ans3, Val _ans4, Val _ans5, Val _ans6, Val _ans7)
     {
-        this.num = _num;
-        this.sprite = _sprite;
-        this.val[0] = _ans1;
-        this.val[1] = _ans2;
-        this.val[2] = _ans3;
-        this.val[3] = _ans4;
-        this.val[4] = _ans5;
-        this.val[5] = _ans6;
-        this.val[6] = _ans7;
+        num = _num;
+        sprite = _sprite;
+        val[0] = _ans1;
+        val[1] = _ans2;
+        val[2] = _ans3;
+        val[3] = _ans4;
+        val[4] = _ans5;
+        val[5] = _ans6;
+        val[6] = _ans7;
     }
 
     // overrode
     public Value_E(int _num, Sprite _sprite, Val _ans1, Val _ans2, Val _ans3, Val _ans4, Val _ans5, Val _ans6, Val _ans7, Val _ans8)
     {
-        this.num = _num;
-        this.sprite = _sprite;
-        this.val[0] = _ans1;
-        this.val[1] = _ans2;
-        this.val[2] = _ans3;
-        this.val[3] = _ans4;
-        this.val[4] = _ans5;
-        this.val[5] = _ans6;
-        this.val[6] = _ans7;
-        this.val[7] = _ans8;
+        num = _num;
+        sprite = _sprite;
+        val[0] = _ans1;
+        val[1] = _ans2;
+        val[2] = _ans3;
+        val[3] = _ans4;
+        val[4] = _ans5;
+        val[5] = _ans6;
+        val[6] = _ans7;
+        val[7] = _ans8;
     }
 }
 
@@ -233,14 +232,6 @@ public class QuizManager_E : MonoBehaviour
         num = 38;
         dictionary.Add(num, new Value_E(num, Resources.Load<Sprite>("water"),
             new Val(0, "W"), new Val(1, "A"), new Val(2, "T"), new Val(3, "E"), new Val(4, "R")));
-
-
-
-
-
-        /*  dictionary.Add(, new Value(,
-            "",
-            "", "", "", "", 0));  */
 
         RandomNumber();     // 문제 랜덤섞기
     }

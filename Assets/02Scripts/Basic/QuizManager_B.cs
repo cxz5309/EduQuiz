@@ -42,7 +42,7 @@ public class QuizManager_B : MonoBehaviour
 
     public void LoadMap()
     {
-        TextAsset data = Resources.Load("Datas", typeof(TextAsset)) as TextAsset;
+        TextAsset data = Resources.Load("BasicDatas", typeof(TextAsset)) as TextAsset;
         StringReader strReader = new StringReader(data.text);
 
         string source = strReader.ReadLine();
