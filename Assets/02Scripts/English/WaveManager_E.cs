@@ -122,6 +122,7 @@ public class WaveManager_E : MonoBehaviour
         Animator ani = textMesh.GetComponent<Animator>();
         ani.SetTrigger("StartCount");
     }
+
     // 웨이브 생성 메소드
     public void InitWave()
     {

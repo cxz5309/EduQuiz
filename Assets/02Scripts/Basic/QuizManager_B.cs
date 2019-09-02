@@ -60,7 +60,7 @@ public class QuizManager_B : MonoBehaviour
         }
         strReader.Close();
 
-        Debug.Log("딕셔너리 개수 : " + dictionary.Count + " / " + dictionary[0].quiz);
+        Debug.Log("영어 딕셔너리 개수 : " + dictionary.Count + " / " + dictionary[0].quiz);
     }
 
 
