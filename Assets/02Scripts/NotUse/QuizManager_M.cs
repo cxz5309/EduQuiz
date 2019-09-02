@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.IO;
+using UnityEngine.SceneManagement;
 
 
 public class Value_M
@@ -31,12 +32,8 @@ public class QuizManager_M : MonoBehaviour
 
     void Awake()
     {
-        instance = this;
-
         LoadMap();
-
-
-        //RandomNumber();     // 문제 랜덤섞기
+        RandomNumber();     // 문제 랜덤섞기
     }
 
     public void LoadMap()

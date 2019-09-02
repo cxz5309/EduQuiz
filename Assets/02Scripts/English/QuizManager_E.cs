@@ -22,7 +22,7 @@ public class Value_E
     public string quiz;     // 문제 지문
     public Sprite sprite;
 
-    public Val[] val;
+    public Val[] val = new Val[10];
 
     public Value_E(int _num, Sprite _sprite, Val _ans1, Val _ans2, Val _ans3)
     {

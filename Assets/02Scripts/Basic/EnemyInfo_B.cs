@@ -120,18 +120,8 @@ public class EnemyInfo_B : MonoBehaviour
             switch (SceneManager.GetActiveScene().name)
             {
                 case "BasicScene":
-                    if (WaveManager_B.instance.curWave < QuizManager_B.instance.dictionary.Count - 1)
-                    {   // 문제가 더 남아있을 때
-                        GameManager.instance.FailEffect();
-                        GameManager.instance.NextLevel();
-                    }
-                    else
-                    {   // 모든 문제를 풀었을 때
-                        GameManager.instance.GameClear();
-                    }
-                    break;
                 case "MathScene":
-                    if (WaveManager_B.instance.curWave < QuizManager_M.instance.dictionary.Count - 1)
+                    if (WaveManager_B.instance.curWave < QuizManager_B.instance.dictionary.Count - 1)
                     {   // 문제가 더 남아있을 때
                         GameManager.instance.FailEffect();
                         GameManager.instance.NextLevel();
@@ -168,8 +158,10 @@ public class EnemyInfo_B : MonoBehaviour
             switch (SceneManager.GetActiveScene().name)
             {
                 case "BasicScene":
+                case "MathScene":
                     WaveManager_B.instance.timeFlag = true;
                     // timeFlag를 true로 주어 3초간 딜레이를 준다.
+                    // hit 오브젝트를 제거한다.
                     if (isRightResult())
                     {   // 정답일 때
                         Sound.instance.Correct();
@@ -187,52 +179,11 @@ public class EnemyInfo_B : MonoBehaviour
                     {   // 오답일 때
                         Sound.instance.InCorrect();
                         hpManager.HP -= 10;
-                        // 플레이어에게 10 데미지를 줌.
-                        hpManager.HeartCheck();
-                        if (hpManager.HP > 0)
-                        {   // 플레이어 HP가 0보다 클 때
-                            if (WaveManager_B.instance.curWave < QuizManager_B.instance.dictionary.Count - 1)
-                            {   // 문제가 더 남아있을 때
-                                GameManager.instance.FailEffect();
-                                GameManager.instance.NextLevel();
-                            }
-                            else
-                            {   // 모든 문제를 풀었을 때
-                                GameManager.instance.GameClear();
-                            }
-                        }
-                        else
-                        {   // 플레이어 HP가 0일 때 게임 종료
-                            GameManager.instance.GameOver();
-                        }
-                    }
-                    break;
-                case "MathScene":
-                    WaveManager_B.instance.timeFlag = true;
-                    // timeFlag를 true로 주어 3초간 딜레이를 준다.
-                    // hit 오브젝트를 제거한다.
-                    if (isRightResult())
-                    {   // 정답일 때
-                        Sound.instance.Correct();
-                        if (WaveManager_B.instance.curWave < QuizManager_M.instance.dictionary.Count - 1)
-                        {   // 문제가 더 남아있을 때
-                            GameManager.instance.SuccessEffect();
-                            GameManager.instance.NextLevel();
-                        }
-                        else
-                        {   // 모든 문제를 풀었을 때
-                            GameManager.instance.GameClear();
-                        }
-                    }
-                    else
-                    {   // 오답일 때
-                        Sound.instance.InCorrect();
-                        hpManager.HP -= 10;
                         hpManager.HeartCheck();
                         
                         if (hpManager.HP > 0)
                         {   // 플레이어 HP가 0보다 클 때
-                            if (WaveManager_B.instance.curWave < QuizManager_M.instance.dictionary.Count - 1)
+                            if (WaveManager_B.instance.curWave < QuizManager_B.instance.dictionary.Count - 1)
                             {   // 문제가 더 남아있을 때
                                 GameManager.instance.FailEffect();
                                 GameManager.instance.NextLevel();

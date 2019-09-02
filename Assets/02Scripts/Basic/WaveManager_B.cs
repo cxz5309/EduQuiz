@@ -85,13 +85,13 @@ public class WaveManager_B : MonoBehaviour
                 for (int i = 0; i < 10; i++)
                 {
                     enemyList = new List<Enemy_B>();
-                    enemy = new Enemy_B("Cube1", false, QuizManager_B.instance.dictionary[i].ans[0]);
+                    enemy = new Enemy_B("Cube1", false, QuizManager_B.instance.dictionary[i].ansB[0]);
                     // 정답인 적 생성(0)
                     enemyList.Add(enemy);
                     // 적 생성
                     for (int j = 1; j <= 3; j++)
                     {
-                        enemy = new Enemy_B("Cube1", true, QuizManager_B.instance.dictionary[i].ans[j]);
+                        enemy = new Enemy_B("Cube1", true, QuizManager_B.instance.dictionary[i].ansB[j]);
                         // 정답이 아닌 적 생성(1 ~ 3)
                         enemyList.Add(enemy);
                         // 적 생성
@@ -102,21 +102,21 @@ public class WaveManager_B : MonoBehaviour
                 }
                 break;
             case "MathScene":
-                for (int i = 0; i < 10; i++) //QuizManager_M.instance.dictionary.Count 이 최대값
+                for (int i = 0; i < 10; i++) //QuizManager_B.instance.dictionary.Count 이 최대값
                 {
 
                     enemyList = new List<Enemy_B>();
 
                     for (int j = 0; j < 6; j++)
                     {
-                        if (QuizManager_M.instance.dictionary[i].pass == j)
+                        if (QuizManager_B.instance.dictionary[i].passM == j)
                         {
-                            enemy = new Enemy_B("Cube1", false, QuizManager_M.instance.dictionary[i].ans[j]);
+                            enemy = new Enemy_B("Cube1", false, QuizManager_B.instance.dictionary[i].ansM[j]);
                             // 정답인 적 생성(0)
                         }
                         else
                         {
-                            enemy = new Enemy_B("Cube1", true, QuizManager_M.instance.dictionary[i].ans[j]);
+                            enemy = new Enemy_B("Cube1", true, QuizManager_B.instance.dictionary[i].ansM[j]);
                             // 정답이 아닌 적 생성(1 ~ 3)
                         }
                         enemyList.Add(enemy);
@@ -141,13 +141,8 @@ public class WaveManager_B : MonoBehaviour
             switch (SceneManager.GetActiveScene().name)
             {
                 case "BasicScene":
-                    if (curWave >= QuizManager_B.instance.dictionary.Count - 1)
-                    {
-                        return;
-                    } // 남아있는 문제가 없으면 리턴
-                    break;
                 case "MathScene":
-                    if (curWave >= QuizManager_M.instance.dictionary.Count - 1)
+                    if (curWave >= QuizManager_B.instance.dictionary.Count - 1)
                     {
                         return;
                     } // 남아있는 문제가 없으면 리턴
