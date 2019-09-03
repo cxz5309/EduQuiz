@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HPManager_E : MonoBehaviour
-{
+public class HPManager : MonoBehaviour { 
+
     public GameObject[] heart = new GameObject[5];
     // 플레이어의 몫을 표시할 오브젝트(최대 5개)
     public int HP;          // 플레이어 HP 저장
@@ -11,17 +11,18 @@ public class HPManager_E : MonoBehaviour
     private void Start()
     {
         HP = 30;
-        Debug.Log(HP + "플");
-
-        Debug.Log(HP + "플하트체크");
         HeartCheck();
     }
-
+    
     public void HeartCheck()
     {
         if (HP == 60)
         {   // 최대 체력 50
             HP = 50;
+        }
+        if (HP <= 0)
+        {
+            HP = 0;
         }
         for (int i = 0; i < HP / 10; i++)
         {   // 0부터 현재 HP까지의 하트 온
@@ -35,6 +36,5 @@ public class HPManager_E : MonoBehaviour
             }
             heart[i].SetActive(false);
         }
-        
     }
 }

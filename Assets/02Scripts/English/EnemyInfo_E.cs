@@ -18,7 +18,6 @@ public class Enemy_E
     }
 }
 
-[RequireComponent (typeof (NavMeshAgent))]
 public class EnemyInfo_E : MonoBehaviour
 {
     public GameObject spawnEffect;  // 적이 생성되면 발생하는 이펙트

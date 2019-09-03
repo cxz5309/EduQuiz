@@ -24,7 +24,7 @@ public class WaveManager_B : MonoBehaviour
     int[] itemSpawnChk = new int[7];
     // 랜덤숫자 반복 방지를 위한 체크배열 변수(스폰지역 수만큼 배열크기 지정)
 
-    public bool timeFlag;
+    public bool WaveDelay;
     // 적을 죽였을때 3초간 딜레이를 주기 위한 변수
     private float limitTime = 3.0f;
     // 3초 딜레이
@@ -42,22 +42,22 @@ public class WaveManager_B : MonoBehaviour
         FirstStart();
         //StartWave();
         // 처음 웨이브 시작
-        timeFlag = false;
-        // 처음 timeFlag를 false로 지정해준다.
+        WaveDelay = false;
+        // 처음 WaveDelay를 false로 지정해준다.
     }
 
     void Update()
     {
-        if (timeFlag)
-        {   // 적을 죽이면 timeFlag가 true가 되면서 3초간 시간이 흐르게 된다.
+        if (WaveDelay)
+        {   // 적을 죽이면 WaveDelay가 true가 되면서 3초간 시간이 흐르게 된다.
             if (limitTime > 0.0f)
             {   // 아직 제한 시간이 남았을때
                 limitTime -= Time.deltaTime;
             }
             else
             {   // 제한 시간 다 지났을때
-                timeFlag = false;
-                // timeFlag 다시 false로
+                WaveDelay = false;
+                // WaveDelay 다시 false로
                 limitTime = 3.0f;
                 // limitTime 초기화
                 StartWave();

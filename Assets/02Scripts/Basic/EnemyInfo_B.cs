@@ -20,10 +20,9 @@ public class Enemy_B
     }
 }
 
-[RequireComponent (typeof (NavMeshAgent))]
 public class EnemyInfo_B : MonoBehaviour
 {
-    private HPManager_B hpManager;   // 
+    private HPManager hpManager;   // 
     public GameObject spawnEffect;  // 적이 생성되면 발생하는 이펙트
     public GameObject HitEffect;    // 적이 죽으면 발생하는 이펙트
     public GameObject Player;
@@ -39,7 +38,7 @@ public class EnemyInfo_B : MonoBehaviour
 
     private void Awake()
     {
-        hpManager = GameObject.Find("HPManager").GetComponent<HPManager_B>();
+        hpManager = GameObject.Find("HPManager").GetComponent<HPManager>();
     }
 
     void Start()
@@ -48,31 +47,49 @@ public class EnemyInfo_B : MonoBehaviour
         Destroy(spawn, 5.0f);       // spawn 오브젝트 제거
 
         ani = GetComponent<Animator>();      // 적의 Animator를 가져온다.
-
-        Move((State)WaveManager_B.instance.hardMode);
+        switch (SceneManager.GetActiveScene().name)
+        {
+            case "BasicScene":
+            case "MathScene":
+                Move((State)WaveManager_B.instance.hardMode);
+                break;
+            case "EnglishScene":
+                
+                break;
+        }
     }
 
     void Update()
     {
-        if (hpManager.HP <= 0)
-        {   // 플레이어 HP가 0보다 작을 때
-            WaveManager_B.instance.timeFlag = false;
-        }
-        else
-        {   // 플레이어 ture
-            DistanceToPlayer = Vector3.Distance(transform.position, Player.transform.position);
-            // 적과 플레이어 사이의 거리를 구해서 DistanceToPlayer 변수에 저장
-            // 플레이어 위치는 (0, 0, 0)이기 때문에 Vector3.zero를 사용
+        switch (SceneManager.GetActiveScene().name)
+        {
+            case "BasicScene":
+            case "MathScene":
+                if (hpManager.HP <= 0)
+                {   // 플레이어 HP가 0보다 작을 때
+                    WaveManager_B.instance.WaveDelay = false;
+                }
+                else
+                {   // 플레이어 ture
+                    DistanceToPlayer = Vector3.Distance(transform.position, Player.transform.position);
+                    // 적과 플레이어 사이의 거리를 구해서 DistanceToPlayer 변수에 저장
+                    // 플레이어 위치는 (0, 0, 0)이기 때문에 Vector3.zero를 사용
 
-            if (DistanceToPlayer > 5.5f)
-            {   
-            }
-            else
-            {
-                Move(State.Stop);
-                StartCoroutine(Attack());
-            }
+                    if (DistanceToPlayer > 5.5f)
+                    {
+                    }
+                    else
+                    {
+                        Move(State.Stop);
+                        StartCoroutine(Attack());
+                    }
+                }
+                break;
+            case "EnglishScene":
+
+                break;
         }
+        
     }
 
     // 적 이동 메소드
@@ -114,8 +131,8 @@ public class EnemyInfo_B : MonoBehaviour
         
         if (hpManager.HP > 0)
         {   // 플레이어 HP가 0보다 크면 다음레벨
-            WaveManager_B.instance.timeFlag = true;
-            // timeFlag를 true로 주어 3초간 딜레이를 준다.
+            WaveManager_B.instance.WaveDelay = true;
+            // WaveDelay를 true로 주어 3초간 딜레이를 준다.
 
             switch (SceneManager.GetActiveScene().name)
             {
@@ -159,8 +176,8 @@ public class EnemyInfo_B : MonoBehaviour
             {
                 case "BasicScene":
                 case "MathScene":
-                    WaveManager_B.instance.timeFlag = true;
-                    // timeFlag를 true로 주어 3초간 딜레이를 준다.
+                    WaveManager_B.instance.WaveDelay = true;
+                    // WaveDelay를 true로 주어 3초간 딜레이를 준다.
                     // hit 오브젝트를 제거한다.
                     if (isRightResult())
                     {   // 정답일 때

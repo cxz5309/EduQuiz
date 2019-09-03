@@ -30,7 +30,7 @@ public class WaveManager_E : MonoBehaviour
     public GameObject textMesh;
     public bool hardMode;//영우
 
-    public HPManager_E hpManager;   // 
+    public HPManager hpManager;   // 
     public Slider slider;
     public bool timeOver;
     float timeRemaining = 20.0f;     // 제한시간
@@ -48,7 +48,7 @@ public class WaveManager_E : MonoBehaviour
 
     void Start()
     {
-        hpManager = GameObject.Find("HPManager").GetComponent<HPManager_E>();
+        hpManager = GameObject.Find("HPManager").GetComponent<HPManager>();
         // Player 오브젝트를 찾아서 PlayerCtrl 스크립트를 가져온다.
         FirstStart();
         // 처음 웨이브 시작

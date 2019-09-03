@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Item_E : MonoBehaviour
 {
-    private HPManager_E hpManager;   // PlayerCtrl 스크립트를 가져오는 변수
+    private HPManager hpManager;   // PlayerCtrl 스크립트를 가져오는 변수
 
     public static Item_E instance;
     
@@ -16,7 +16,7 @@ public class Item_E : MonoBehaviour
 
     void Start()
     {
-        hpManager = GameObject.Find("HPManager").GetComponent<HPManager_E>();
+        hpManager = GameObject.Find("HPManager").GetComponent<HPManager>();
         // Player 오브젝트를 찾아서 PlayerCtrl 스크립트를 가져온다.
     }
 
@@ -27,8 +27,8 @@ public class Item_E : MonoBehaviour
         {   // 충돌한 오브젝트의 태그가 Bullet인 경우
             Destroy(coll.gameObject);  // 총알 제거
             Destroy(gameObject);       // 아이템 제거
-            ItemManager_E.itemCount++;  // 생성가능한 아이템 갯수를 1개 늘려준다.
-            ItemManager_E.instance.itemSpawnChk[int.Parse(gameObject.name)] = 0;  // 체크 0으로
+            ItemManager.itemCount++;  // 생성가능한 아이템 갯수를 1개 늘려준다.
+            ItemManager.instance.itemSpawnChk[int.Parse(gameObject.name)] = 0;  // 체크 0으로
 
             if (gameObject.CompareTag("HP"))
             {   // 충돌한 오브젝트의 태그가 HP인 경우

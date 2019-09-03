@@ -5,12 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class Item_B : MonoBehaviour
 {
-    private HPManager_B hpManager;   // PlayerCtrl 스크립트를 가져오는 변수
+    private HPManager hpManager;   // PlayerCtrl 스크립트를 가져오는 변수
     public static bool timerFlag;     // 타이머가 작동하는지 안하는지
 
     void Start()
     {
-        hpManager = GameObject.Find("HPManager").GetComponent<HPManager_B>();
+        hpManager = GameObject.Find("HPManager").GetComponent<HPManager>();
         // Player 오브젝트를 찾아서 PlayerCtrl 스크립트를 가져온다.
     }
 
@@ -19,8 +19,8 @@ public class Item_B : MonoBehaviour
     {
         if (coll.gameObject.CompareTag("Bullet"))
         {   // 충돌한 오브젝트의 태그가 Bullet인 경우
-            ItemManager_B.itemCount++;  // 생성가능한 아이템 갯수를 1개 늘려준다.
-            ItemManager_B.instance.itemSpawnChk[int.Parse(gameObject.name)] = 0;  // 체크 0으로
+            ItemManager.itemCount++;  // 생성가능한 아이템 갯수를 1개 늘려준다.
+            ItemManager.instance.itemSpawnChk[int.Parse(gameObject.name)] = 0;  // 체크 0으로
             
             if (gameObject.CompareTag("HP"))
             {   // 충돌한 오브젝트의 태그가 HP인 경우
@@ -29,7 +29,15 @@ public class Item_B : MonoBehaviour
             }
             else if (gameObject.CompareTag("Timer"))
             {   // 충돌한 오브젝트의 태그가 Timer 경우
-                StartCoroutine("EnemyStop");
+                switch (SceneManager.GetActiveScene().name)
+                {
+                    case "BasicScene":
+                    case "MathScene":
+                        StartCoroutine("EnemyStop");
+                        break;
+                    case "EnglishScene":
+                        break;
+                }
             }
 
             Destroy(coll.gameObject);  // 총알 제거

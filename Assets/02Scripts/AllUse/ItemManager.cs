@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemManager_B : MonoBehaviour
+public class ItemManager : MonoBehaviour
 {
-    public static ItemManager_B instance;
+    public static ItemManager instance;
 
     public Transform[] ItemSpawnPoint;   
     // 아이템 생성 위치를 저장하는 배열
