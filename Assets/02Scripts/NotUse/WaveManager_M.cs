@@ -72,21 +72,21 @@
 
 //        List<Enemy_B> enemyList = new List<Enemy_B>();
 
-//        for (int i = 0; i < 10; i++) //QuizManager_B.instance.dictionary.Count 이 최대값
+//        for (int i = 0; i < 10; i++) //QuizManager.instance.dictionary.Count 이 최대값
 //        {
 
 //            enemyList = new List<Enemy_B>();
 
 //            for (int j = 0; j < 6; j++)
 //            {
-//                if (QuizManager_B.instance.dictionary[i].pass == j)
+//                if (QuizManager.instance.dictionary[i].pass == j)
 //                {
-//                    enemy = new Enemy_B("Cube1", false, QuizManager_B.instance.dictionary[i].ans[j]);
+//                    enemy = new Enemy_B("Cube1", false, QuizManager.instance.dictionary[i].ans[j]);
 //                    // 정답인 적 생성(0)
 //                }
 //                else
 //                {
-//                    enemy = new Enemy_B("Cube1", true, QuizManager_B.instance.dictionary[i].ans[j]);
+//                    enemy = new Enemy_B("Cube1", true, QuizManager.instance.dictionary[i].ans[j]);
 //                    // 정답이 아닌 적 생성(1 ~ 3)
 //                }
 //                enemyList.Add(enemy);
@@ -104,7 +104,7 @@
         
 //        if (curWaveEnemyCount == 0)
 //        {   // 현재 남아있는 적이 없을때
-//            if (curWave < QuizManager_B.instance.dictionary.Count - 1)
+//            if (curWave < QuizManager.instance.dictionary.Count - 1)
 //            {   // 문제가 더 남아있을때
 //            }
 //            else

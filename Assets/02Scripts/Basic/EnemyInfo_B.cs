@@ -138,7 +138,7 @@ public class EnemyInfo_B : MonoBehaviour
             {
                 case "BasicScene":
                 case "MathScene":
-                    if (WaveManager_B.instance.curWave < QuizManager_B.instance.dictionary.Count - 1)
+                    if (WaveManager_B.instance.curWave < QuizManager.instance.dictionary.Count - 1)
                     {   // 문제가 더 남아있을 때
                         GameManager.instance.FailEffect();
                         GameManager.instance.NextLevel();
@@ -182,7 +182,7 @@ public class EnemyInfo_B : MonoBehaviour
                     if (isRightResult())
                     {   // 정답일 때
                         Sound.instance.Correct();
-                        if (WaveManager_B.instance.curWave < QuizManager_B.instance.dictionary.Count - 1)
+                        if (WaveManager_B.instance.curWave < QuizManager.instance.dictionary.Count - 1)
                         {   // 문제가 더 남아있을 때
                             GameManager.instance.SuccessEffect();
                             GameManager.instance.NextLevel();
@@ -200,7 +200,7 @@ public class EnemyInfo_B : MonoBehaviour
                         
                         if (hpManager.HP > 0)
                         {   // 플레이어 HP가 0보다 클 때
-                            if (WaveManager_B.instance.curWave < QuizManager_B.instance.dictionary.Count - 1)
+                            if (WaveManager_B.instance.curWave < QuizManager.instance.dictionary.Count - 1)
                             {   // 문제가 더 남아있을 때
                                 GameManager.instance.FailEffect();
                                 GameManager.instance.NextLevel();

@@ -8,9 +8,9 @@ public class Enemy_E
 {
     public string name;             // 이름 ( 프리팹 이름 )
     public int result;             // 정답 유무
-    public Val meshNum;
+    public Alpha meshNum;
 
-    public Enemy_E(string _name, int _result, Val _meshNum)
+    public Enemy_E(string _name, int _result, Alpha _meshNum)
     {
         this.name = _name;
         this.result = _result;
@@ -50,7 +50,7 @@ public class EnemyInfo_E : MonoBehaviour
 
                 GameManager.instance.SuccessEffect();       // 성공 이펙트
 
-                if (WaveManager_E.instance.curWave < QuizManager_E.instance.dictionary.Count - 1)
+                if (WaveManager_E.instance.curWave < QuizManager.instance.dictionary.Count - 1)
                 {   // 문제가 더 남아있을 때
                     WaveManager_E.instance.EnemyKillCnt = 0;
                     // KillCount 초기화

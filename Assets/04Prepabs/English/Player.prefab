@@ -103,7 +103,6 @@ GameObject:
   - component: {fileID: 985898516635565279}
   - component: {fileID: 985898516635565278}
   - component: {fileID: 985898516635565277}
-  - component: {fileID: 8481337321857329194}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -171,28 +170,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &8481337321857329194
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 985898516635565275}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba87637ff09274344b9a351bf5363bfe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  heart:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  HP: 0
-  FirePos: {fileID: 0}
-  Bullet: {fileID: 0}
-  fpsCam: {fileID: 0}
 --- !u!1 &985898516865411230
 GameObject:
   m_ObjectHideFlags: 0
@@ -377,7 +354,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 985898517553166030}
-  - component: {fileID: 985898517553166064}
   - component: {fileID: 985898517553166031}
   m_Layer: 0
   m_Name: FireFos
@@ -400,20 +376,6 @@ Transform:
   m_Father: {fileID: 985898516865411201}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &985898517553166064
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 985898517553166029}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2384436c9eb2814299301a5134f381e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  color: {r: 0, g: 1, b: 0, a: 1}
-  radius: 0.1
 --- !u!120 &985898517553166031
 LineRenderer:
   m_ObjectHideFlags: 0

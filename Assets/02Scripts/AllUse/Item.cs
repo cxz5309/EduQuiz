@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Item_B : MonoBehaviour
+public class Item : MonoBehaviour
 {
     private HPManager hpManager;   // PlayerCtrl 스크립트를 가져오는 변수
-    public static bool timerFlag;     // 타이머가 작동하는지 안하는지
 
     void Start()
     {
@@ -24,8 +23,7 @@ public class Item_B : MonoBehaviour
             
             if (gameObject.CompareTag("HP"))
             {   // 충돌한 오브젝트의 태그가 HP인 경우
-                hpManager.HP += 10;  // 플레이어의 HP 회복
-                hpManager.HeartCheck();   // 플레이어의 HP 업데이트
+                GetHp();
             }
             else if (gameObject.CompareTag("Timer"))
             {   // 충돌한 오브젝트의 태그가 Timer 경우
@@ -36,6 +34,7 @@ public class Item_B : MonoBehaviour
                         StartCoroutine("EnemyStop");
                         break;
                     case "EnglishScene":
+                        GetEnglishTimer();
                         break;
                 }
             }
@@ -44,7 +43,15 @@ public class Item_B : MonoBehaviour
             Destroy(gameObject);       // 아이템 제거
         }
     }
-    
+    void GetHp()
+    {
+        hpManager.HP += 10;  // 플레이어의 HP 회복
+        hpManager.HeartCheck();   // 플레이어의 HP 업데이트
+    }
+    void GetEnglishTimer()
+    {
+        WaveManager_E.instance.timerItemFlag = true;  // 적 타이머 시작
+    }
     public void StartTimer()
     {
         GameObject[] allCube = GameObject.FindGameObjectsWithTag("enemy");

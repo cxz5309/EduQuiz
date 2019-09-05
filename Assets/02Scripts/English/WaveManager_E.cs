@@ -26,6 +26,7 @@ public class WaveManager_E : MonoBehaviour
 
     public bool WaveDelay;      // 적을 죽였을때 3초간 딜레이를 주기 위한 변수
     private float limitTime = 3.0f;     // 3초 딜레이
+    float stopTime = 3f;
 
     public GameObject textMesh;
     public bool hardMode;//영우
@@ -81,12 +82,12 @@ public class WaveManager_E : MonoBehaviour
                 // limitTime 초기화
                 if (hpManager.HP == 0)
                     GameManager.instance.GameOver();
-                if (QuizManager_E.instance.dictionary[curWave] != null)
+                if (QuizManager.instance.dictionary[curWave] != null)
                 {   
                     StartWave();
                     // 다음 웨이브 시작
                 }
-                else if (QuizManager_E.instance.dictionary[curWave] == null)
+                else if (QuizManager.instance.dictionary[curWave] == null)
                 {
                     GameManager.instance.GameClear();
                 }
@@ -103,6 +104,12 @@ public class WaveManager_E : MonoBehaviour
                 }
                 else
                 {
+                    stopTime -= Time.fixedDeltaTime;
+                    if (stopTime < 0)
+                    {
+                        timerItemFlag = false;
+                        stopTime = 3f;
+                    }
                 }
             }
             else
@@ -136,9 +143,9 @@ public class WaveManager_E : MonoBehaviour
 
             for (int j = 0; j < 10; j++)
             {
-                if (QuizManager_E.instance.dictionary[i].val[j] != null)
+                if (QuizManager.instance.dictionary[i].alphas[j] != null)
                 {
-                    enemy = new Enemy_E("Cube1", j, QuizManager_E.instance.dictionary[i].val[j]);
+                    enemy = new Enemy_E("Cube1", j, QuizManager.instance.dictionary[i].alphas[j]);
                     enemyList.Add(enemy);
                 }
             }
@@ -148,7 +155,6 @@ public class WaveManager_E : MonoBehaviour
         }
     }
 
-
     // 이부분 다시 정의 하시오 킹영우씨.
     public void DieEnemy()
     {
@@ -156,7 +162,7 @@ public class WaveManager_E : MonoBehaviour
         
         if (curWaveEnemyCount == 0)
         {   // 현재 남아있는 적이 없을때
-            if (curWave < QuizManager_E.instance.dictionary.Count - 1)
+            if (curWave < QuizManager.instance.dictionary.Count - 1)
             {   // 문제가 더 남아있을때
 
             }
@@ -180,7 +186,7 @@ public class WaveManager_E : MonoBehaviour
 
         stageText.text = "Stage " + (curWave + 1);
         // 현재 스테이지 출력
-        Sprite newSprite = QuizManager_E.instance.dictionary[curWave].sprite;
+        Sprite newSprite = QuizManager.instance.dictionary[curWave].sprite;
         stageImage.overrideSprite = newSprite;
         // 이미지 출력
 
