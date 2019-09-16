@@ -15,6 +15,10 @@ public class Controller : SteamVR_LaserPointer
         switch (SceneManager.GetActiveScene().name)
         {
             case "Main":
+                if (e.target.gameObject.tag == "Close")
+                {
+                    Application.Quit();
+                }
                 ChangeScene(e.target.gameObject.tag);
                 break;
             case "BasicScene":

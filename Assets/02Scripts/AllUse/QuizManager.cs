@@ -4,17 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.IO;
 using UnityEngine.SceneManagement;
-public class Alpha
-{
-    public int cnt;
-    public string alpha;
 
-    public Alpha(int _cnt, string _alpha)
-    {
-        cnt = _cnt;
-        alpha = _alpha;
-    }
-}
 public class Value
 {
 
@@ -22,7 +12,7 @@ public class Value
     public string[] ans;   // 답
 
     public Sprite sprite;//영어 그림
-    public Alpha[] alphas = new Alpha[10];//영어 알파벳
+    public string[] alphas = new string[10];//영어 알파벳
 
     public int pass;    // 정답 0번자리
 
@@ -50,12 +40,11 @@ public class Value
     }
     public Value(Sprite _sprite, string _ans)
     {
-        ans = new string[10];
 
         sprite = _sprite;
         for (int i = 0; i < _ans.Length; i++)
         {
-            alphas[i] = new Alpha(i, _ans[i].ToString());
+            alphas[i] = _ans[i].ToString();
         }
     }
 }
@@ -81,6 +70,7 @@ public class QuizManager : MonoBehaviour
         TextAsset data;
         StringReader strReader;
         string source;
+
         switch (SceneManager.GetActiveScene().name)
         {
             case "BasicScene":
@@ -125,9 +115,8 @@ public class QuizManager : MonoBehaviour
                 while (source != null)
                 {
                     string[] words = source.Split(',');
-
-                    dictionary.Add(int.Parse(words[0]), new Value(Resources.Load<Sprite>(words[1]), words[1].ToUpper()));
-
+                    
+                    dictionary.Add(int.Parse(words[0]), new Value(Resources.Load<Sprite>("EnglishIMG/" + words[1]), words[1].ToUpper()));
                     source = strReader.ReadLine();
                 }
                 strReader.Close();

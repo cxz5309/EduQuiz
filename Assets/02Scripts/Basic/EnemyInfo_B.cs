@@ -22,7 +22,6 @@ public class Enemy_B
 
 public class EnemyInfo_B : MonoBehaviour
 {
-    private HPManager hpManager;   // 
     public GameObject spawnEffect;  // 적이 생성되면 발생하는 이펙트
     public GameObject HitEffect;    // 적이 죽으면 발생하는 이펙트
     public GameObject Player;
@@ -35,12 +34,8 @@ public class EnemyInfo_B : MonoBehaviour
     private bool result;
 
     public enum State { Walk, Run, Stop};
-
-    private void Awake()
-    {
-        hpManager = GameObject.Find("HPManager").GetComponent<HPManager>();
-    }
-
+    State nowState;
+    
     void Start()
     {
         GameObject spawn = Instantiate(spawnEffect, transform.position, transform.rotation);        // 적 스폰 이펙트 메소드 호출
@@ -65,7 +60,7 @@ public class EnemyInfo_B : MonoBehaviour
         {
             case "BasicScene":
             case "MathScene":
-                if (hpManager.HP <= 0)
+                if (HPManager.instance.HP <= 0)
                 {   // 플레이어 HP가 0보다 작을 때
                     WaveManager_B.instance.WaveDelay = false;
                 }
@@ -75,10 +70,7 @@ public class EnemyInfo_B : MonoBehaviour
                     // 적과 플레이어 사이의 거리를 구해서 DistanceToPlayer 변수에 저장
                     // 플레이어 위치는 (0, 0, 0)이기 때문에 Vector3.zero를 사용
 
-                    if (DistanceToPlayer > 5.5f)
-                    {
-                    }
-                    else
+                    if (DistanceToPlayer <= 5.5f)
                     {
                         Move(State.Stop);
                         StartCoroutine(Attack());
@@ -109,12 +101,25 @@ public class EnemyInfo_B : MonoBehaviour
                 MoveSpeed = 0;
                 break;
         }
-            
+        nowState = state;    
         transform.LookAt(Player.transform);
         // 적은 플레이어 방향을 바라봄.
         GetComponent<Rigidbody>().velocity = transform.forward * MoveSpeed;
         //transform.position += transform.forward * MoveSpeed * Time.deltaTime;
         // 초당 MoveSpeed의 거리를 이동
+    }
+
+    public void stopSeconds(float time)
+    {
+        StartCoroutine(stopSecondsInvoke());
+    }
+
+    IEnumerator stopSecondsInvoke()
+    {
+        State tmp = nowState;
+        Move(State.Stop);
+        yield return new WaitForSeconds(3.0f);          // 3.0초간 대기
+        Move(tmp);
     }
 
     // 적 공격 메소드
@@ -125,11 +130,11 @@ public class EnemyInfo_B : MonoBehaviour
 
         yield return new WaitForSeconds(3.0f);          // 3.0초간 대기
         Destroy(gameObject);         // 자기자신 제거
-        hpManager.HP -= 10;          // 플레이어에게 10 데미지를 줌.
-        hpManager.HeartCheck();
+        HPManager.instance.HP -= 10;          // 플레이어에게 10 데미지를 줌.
+        HPManager.instance.HeartCheck();
 
         
-        if (hpManager.HP > 0)
+        if (HPManager.instance.HP > 0)
         {   // 플레이어 HP가 0보다 크면 다음레벨
             WaveManager_B.instance.WaveDelay = true;
             // WaveDelay를 true로 주어 3초간 딜레이를 준다.
@@ -195,10 +200,10 @@ public class EnemyInfo_B : MonoBehaviour
                     else
                     {   // 오답일 때
                         Sound.instance.InCorrect();
-                        hpManager.HP -= 10;
-                        hpManager.HeartCheck();
+                        HPManager.instance.HP -= 10;
+                        HPManager.instance.HeartCheck();
                         
-                        if (hpManager.HP > 0)
+                        if (HPManager.instance.HP > 0)
                         {   // 플레이어 HP가 0보다 클 때
                             if (WaveManager_B.instance.curWave < QuizManager.instance.dictionary.Count - 1)
                             {   // 문제가 더 남아있을 때

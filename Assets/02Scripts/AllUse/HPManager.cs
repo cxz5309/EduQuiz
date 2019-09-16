@@ -2,11 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HPManager : MonoBehaviour { 
+public class HPManager : MonoBehaviour {
+
+    public static HPManager instance;
 
     public GameObject[] heart = new GameObject[5];
     // 플레이어의 몫을 표시할 오브젝트(최대 5개)
     public int HP;          // 플레이어 HP 저장
+
+    void Awake()
+    {
+        instance = this;
+    }
 
     private void Start()
     {
@@ -36,5 +43,10 @@ public class HPManager : MonoBehaviour {
             }
             heart[i].SetActive(false);
         }
+    }
+
+    private void OnDestroy()
+    {
+        instance = null;
     }
 }

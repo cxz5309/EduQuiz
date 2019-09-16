@@ -31,7 +31,6 @@ public class WaveManager_E : MonoBehaviour
     public GameObject textMesh;
     public bool hardMode;//영우
 
-    public HPManager hpManager;   // 
     public Slider slider;
     public bool timeOver;
     float timeRemaining = 20.0f;     // 제한시간
@@ -49,8 +48,6 @@ public class WaveManager_E : MonoBehaviour
 
     void Start()
     {
-        hpManager = GameObject.Find("HPManager").GetComponent<HPManager>();
-        // Player 오브젝트를 찾아서 PlayerCtrl 스크립트를 가져온다.
         FirstStart();
         // 처음 웨이브 시작
         WaveDelay = false;
@@ -80,7 +77,7 @@ public class WaveManager_E : MonoBehaviour
                 // timeFlag 다시 false로
                 limitTime = 1.5f;
                 // limitTime 초기화
-                if (hpManager.HP == 0)
+                if (HPManager.instance.HP == 0)
                     GameManager.instance.GameOver();
                 if (QuizManager.instance.dictionary[curWave] != null)
                 {   
@@ -116,8 +113,8 @@ public class WaveManager_E : MonoBehaviour
             {   // 남은시간 0이하일 때
                 timeOver = true;     // 타임오버
                 WaveDelay = true;   // 3초딜레이
-                hpManager.HP -= 10;
-                hpManager.HeartCheck();  // 플레이어 체력 감소 후 업데이트
+                HPManager.instance.HP -= 10;
+                HPManager.instance.HeartCheck();  // 플레이어 체력 감소 후 업데이트
                 GameManager.instance.FailEffect();
                 GameManager.instance.EnemyDestroy();    // 모든 적 제거
             }
@@ -155,7 +152,6 @@ public class WaveManager_E : MonoBehaviour
         }
     }
 
-    // 이부분 다시 정의 하시오 킹영우씨.
     public void DieEnemy()
     {
         curWaveEnemyCount--;
@@ -223,6 +219,7 @@ public class WaveManager_E : MonoBehaviour
         // 랜덤숫자 반복 방지를 위한 체크배열 변수(스폰지역 수만큼 배열크기 지정)
         for (int i = 0; i < enemyList.Count; i++)
         {   // enemyList(적) 수만큼 반복
+
             int enemyPoint = Random.Range(0, EnemySpawnChk.Length);
             // EnemySpawnChk 배열의 크기만큼 랜덤시드
             if (EnemySpawnChk[enemyPoint] == 0)

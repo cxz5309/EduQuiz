@@ -31,7 +31,7 @@ public class Item : MonoBehaviour
                 {
                     case "BasicScene":
                     case "MathScene":
-                        StartCoroutine("EnemyStop");
+                        StartTimer();
                         break;
                     case "EnglishScene":
                         GetEnglishTimer();
@@ -58,27 +58,7 @@ public class Item : MonoBehaviour
         // allCube에 "enemy" 태그를 가지는 오브젝트 전부 넣어줌.
         foreach (GameObject i in allCube)
         {
-            i.GetComponent<EnemyInfo_B>().Move(EnemyInfo_B.State.Stop);
-        }
-    }
-
-    public void EndTimer()
-    {
-        GameObject[] allCube = GameObject.FindGameObjectsWithTag("enemy");
-        // allCube에 "enemy" 태그를 가지는 오브젝트 전부 넣어줌.
-        foreach (GameObject i in allCube)
-        {
-              i.GetComponent<EnemyInfo_B>().Move((EnemyInfo_B.State)WaveManager_B.instance.hardMode);
-        }
-    }
-
-    IEnumerator EnemyStop()
-    {
-        for (int i = 0; i < 2; i++)
-        {
-            if(i==0) StartTimer();
-            if(i==1) EndTimer();
-            yield return new WaitForSeconds(3f);
+            i.GetComponent<EnemyInfo_B>().stopSeconds(3f);
         }
     }
 }

@@ -8,9 +8,9 @@ public class Enemy_E
 {
     public string name;             // 이름 ( 프리팹 이름 )
     public int result;             // 정답 유무
-    public Alpha meshNum;
+    public string meshNum;
 
-    public Enemy_E(string _name, int _result, Alpha _meshNum)
+    public Enemy_E(string _name, int _result, string _meshNum)
     {
         this.name = _name;
         this.result = _result;
@@ -87,7 +87,7 @@ public class EnemyInfo_E : MonoBehaviour
     {
         result = enemy.result;
         //transform.position = enemy.spawnPos;
-        this.transform.Find("TextMesh").GetComponent<TextMesh>().text = enemy.meshNum.alpha;
+        this.transform.Find("TextMesh").GetComponent<TextMesh>().text = enemy.meshNum;
         gameObject.SetActive(true);
     }
 

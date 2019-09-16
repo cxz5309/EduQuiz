@@ -27,9 +27,17 @@ public class TmpLaycast : MonoBehaviour
                 switch (SceneManager.GetActiveScene().name)
                 {
                     case "Main":
+                        if (hitInfo.collider.tag == "Close")
+                        {
+                            Debug.Log("GameClose");
+                        }
                         ChangeScene(hitInfo.collider.tag);
                         break;
                     case "BasicScene":
+                        if (hitInfo.collider.tag == "Close")
+                        {
+                            Debug.Log("GameClose");
+                        }
                         if (GameManager.instance.gamestate == GameManager.Gamestate.GamePlaying)
                         {
                             Fire(hitInfo.point);
@@ -56,6 +64,10 @@ public class TmpLaycast : MonoBehaviour
                         }
                         break;
                     case "MathScene":
+                        if (hitInfo.collider.tag == "Close")
+                        {
+                            Debug.Log("GameClose");
+                        }
                         if (GameManager.instance.gamestate == GameManager.Gamestate.GamePlaying)
                         {
                             Fire(hitInfo.point);
@@ -82,6 +94,10 @@ public class TmpLaycast : MonoBehaviour
                         }
                         break;
                     case "EnglishScene":
+                        if (hitInfo.collider.tag == "Close")
+                        {
+                            Debug.Log("GameClose");
+                        }
                         if (GameManager.instance.gamestate == GameManager.Gamestate.GamePlaying)
                         {
                             Fire(hitInfo.point);

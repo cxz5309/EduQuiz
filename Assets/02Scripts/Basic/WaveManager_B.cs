@@ -20,10 +20,7 @@ public class WaveManager_B : MonoBehaviour
 
     public GameObject[] Enemy = new GameObject[9];
     //public GameObject Enemy;        // 적 캐릭터를 저장하는 변수
-
-    int[] itemSpawnChk = new int[7];
-    // 랜덤숫자 반복 방지를 위한 체크배열 변수(스폰지역 수만큼 배열크기 지정)
-
+    
     public bool WaveDelay;
     // 적을 죽였을때 3초간 딜레이를 주기 위한 변수
     private float limitTime = 3.0f;
@@ -115,7 +112,6 @@ public class WaveManager_B : MonoBehaviour
     }
 
 
-    // 이부분 다시 정의 하시오 킹영우씨.
     public void DieEnemy()
     {
         curWaveEnemyCount--;
