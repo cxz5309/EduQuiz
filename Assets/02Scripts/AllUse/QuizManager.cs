@@ -138,4 +138,8 @@ public class QuizManager : MonoBehaviour
             dictionary[randomIndex] = dictionary_temp[randomIndex];
         }
     }
+    private void OnDestroy()
+    {
+        instance = null;
+    }
 }

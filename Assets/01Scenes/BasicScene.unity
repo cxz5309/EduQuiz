@@ -2885,9 +2885,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   curWave: -1
+  EnemyCount: 0
   LightChange: {fileID: 170076733}
   stageText: {fileID: 114365333421567030}
   quizText: {fileID: 114181627229553262}
+  stageImage: {fileID: 0}
   SpawnPoint:
   - {fileID: 42326440}
   - {fileID: 326024575}
@@ -6813,7 +6815,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: '0
+  m_text: '3
 
 '
   m_isRightToLeft: 0
@@ -11302,7 +11304,7 @@ MonoBehaviour:
   savedUp: {x: 0, y: 1, z: 0}
   savedRectSize: {x: 871.4, y: 127.32}
   savedColor: {r: 1, g: 1, b: 1, a: 1}
-  savedTextUV0: {x: 0.6328125, y: 0.109375}
+  savedTextUV0: {x: 0.88671875, y: 0.5}
   savedFill: 0
 --- !u!114 &114679477676329416
 MonoBehaviour:

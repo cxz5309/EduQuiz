@@ -23,7 +23,7 @@ public class CountEvent : StateMachineBehaviour
         switch (SceneManager.GetActiveScene().name)
         {
             case "EnglishScene":
-                WaveManager_E.instance.timerItemFlag = true;
+                SliderController.instance.WaitSlider();
                 break;
         }
     }
@@ -39,15 +39,12 @@ public class CountEvent : StateMachineBehaviour
         else
         {
             animator.gameObject.SetActive(false);
+            WaveManager.instance.StartWave();
+
             switch (SceneManager.GetActiveScene().name)
-            {
-                case "BasicScene":
-                case "MathScene":
-                    WaveManager_B.instance.StartWave();
-                    break;
+            {                    
                 case "EnglishScene":
-                    WaveManager_E.instance.StartWave();
-                    WaveManager_E.instance.timerItemFlag = false;
+                    SliderController.instance.ResumeSlider();
                     break;
             }
         }

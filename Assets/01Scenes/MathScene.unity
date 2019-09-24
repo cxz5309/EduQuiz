@@ -172,9 +172,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: '0
-
-'
+  m_text: 3
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -243,9 +241,9 @@ MonoBehaviour:
   m_margin: {x: -19.164888, y: 0, z: -19.210932, w: 0}
   m_textInfo:
     textComponent: {fileID: 23219145}
-    characterCount: 2
+    characterCount: 1
     spriteCount: 0
-    spaceCount: 1
+    spaceCount: 0
     wordCount: 1
     linkCount: 0
     lineCount: 1
@@ -639,8 +637,8 @@ MonoBehaviour:
   - {fileID: 1067874555}
   - {fileID: 2125029998}
   - {fileID: 609751591}
-  HPItem: {fileID: 6364665034652912178, guid: 99df326a5f8b4d2429ee3e63870d12fa, type: 3}
-  TimerItem: {fileID: 1982678067354403905, guid: e7763948a3b925b4bb9bd7cf57a682c8,
+  HPItem: {fileID: 2467464232049461944, guid: a8a00cfeee70ba840be6e0c539df4ee7, type: 3}
+  TimerItem: {fileID: 6266670642988534825, guid: a11c6977f77c9e74aae80901786507c9,
     type: 3}
   itemSpawnChk: 00000000000000000000000000000000
 --- !u!1 &609751590
@@ -775,9 +773,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   curWave: -1
+  EnemyCount: 0
   LightChange: {fileID: 170076733}
   stageText: {fileID: 114365333882695649}
   quizText: {fileID: 0}
+  stageImage: {fileID: 0}
   SpawnPoint:
   - {fileID: 42326440}
   - {fileID: 326024575}
@@ -8051,7 +8051,7 @@ MonoBehaviour:
   savedUp: {x: 0, y: 1, z: 0}
   savedRectSize: {x: 160, y: 100}
   savedColor: {r: 1, g: 1, b: 1, a: 1}
-  savedTextUV0: {x: 0.5, y: 0}
+  savedTextUV0: {x: 0.17578125, y: 0.28515625}
   savedFill: 0
 --- !u!114 &114650918484228187
 MonoBehaviour:

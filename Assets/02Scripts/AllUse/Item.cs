@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class Item : MonoBehaviour
 {
     private HPManager hpManager;   // PlayerCtrl 스크립트를 가져오는 변수
-
+    public float stopTime = 3f;
     void Start()
     {
         hpManager = GameObject.Find("HPManager").GetComponent<HPManager>();
@@ -34,7 +34,7 @@ public class Item : MonoBehaviour
                         StartTimer();
                         break;
                     case "EnglishScene":
-                        GetEnglishTimer();
+                        StartEnglishTimer();
                         break;
                 }
             }
@@ -48,9 +48,9 @@ public class Item : MonoBehaviour
         hpManager.HP += 10;  // 플레이어의 HP 회복
         hpManager.HeartCheck();   // 플레이어의 HP 업데이트
     }
-    void GetEnglishTimer()
+    void StartEnglishTimer()
     {
-        WaveManager_E.instance.timerItemFlag = true;  // 적 타이머 시작
+        SliderController.instance.WaitSliderForSeconds(stopTime);
     }
     public void StartTimer()
     {
@@ -58,7 +58,7 @@ public class Item : MonoBehaviour
         // allCube에 "enemy" 태그를 가지는 오브젝트 전부 넣어줌.
         foreach (GameObject i in allCube)
         {
-            i.GetComponent<EnemyInfo_B>().stopSeconds(3f);
+            i.GetComponent<EnemyInfo_B>().stopSeconds(stopTime);
         }
     }
 }

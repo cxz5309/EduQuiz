@@ -4,27 +4,13 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
 
-public class Enemy_E
-{
-    public string name;             // 이름 ( 프리팹 이름 )
-    public int result;             // 정답 유무
-    public string meshNum;
-
-    public Enemy_E(string _name, int _result, string _meshNum)
-    {
-        this.name = _name;
-        this.result = _result;
-        this.meshNum = _meshNum;
-    }
-}
-
 public class EnemyInfo_E : MonoBehaviour
 {
     public GameObject spawnEffect;  // 적이 생성되면 발생하는 이펙트
     public GameObject HitEffect;    // 적이 죽으면 발생하는 이펙트
     public GameObject Player;
 
-    int result;
+    int order;
 
 
     void Start()
@@ -44,55 +30,52 @@ public class EnemyInfo_E : MonoBehaviour
         {   // 충돌한 오브젝트의 태그가 Bullet인 경우
             Destroy(coll.gameObject);   // 총알 제거
 
-            if (WaveManager_E.instance.EnemyKillCnt == WaveManager_E.instance.EnemyCount - 1)
+            if (WaveManager.instance.EnemyKillCnt == WaveManager.instance.EnemyCount - 1)
             {   // 해당 웨이브 몬스터 수만큼 적을 죽였다면 스테이지 클리어
-                getDamage();     // 적 제거
+                DamageIffect();     // 적 제거
 
                 GameManager.instance.SuccessEffect();       // 성공 이펙트
 
-                if (WaveManager_E.instance.curWave < QuizManager.instance.dictionary.Count - 1)
+                if (WaveManager.instance.curWave < QuizManager.instance.dictionary.Count - 1)
                 {   // 문제가 더 남아있을 때
-                    WaveManager_E.instance.EnemyKillCnt = 0;
+                    WaveManager.instance.EnemyKillCnt = 0;
                     // KillCount 초기화
-                    WaveManager_E.instance.WaveDelay = true;
-                    // timeFlag를 true로 주어 3초간 딜레이를 준다.
-                    WaveManager_E.instance.timerItemFlag = true;
-                    // timerItemFlag true로 주어 타이머를 정지시킨다.
+                    WaveManager.instance.WaveDelayStart();
                 }
                 else
                 {   // 모든 문제를 풀었을 때
-                    GameManager.instance.GameClear();
+                    //GameManager.instance.GameClear();
                 }
             }
 
-            else if(WaveManager_E.instance.EnemyKillCnt != WaveManager_E.instance.EnemyCount)
+            else if(WaveManager.instance.EnemyKillCnt != WaveManager.instance.EnemyCount)
             { 
-                if (WaveManager_E.instance.EnemyKillCnt == isRightResult())
+                if (WaveManager.instance.EnemyKillCnt == isRightOrder())
                 {   // 정답일 때
                     Sound.instance.Correct();
-                    WaveManager_E.instance.EnemyKillCnt++;      // 적 죽인 수 ++
-                    getDamage();         // 적 제거
+                    WaveManager.instance.EnemyKillCnt++;      // 적 죽인 수 ++
+                    DamageIffect();         // 적 제거
                 }
-                else if (WaveManager_E.instance.EnemyKillCnt != isRightResult())
+                else if (WaveManager.instance.EnemyKillCnt != isRightOrder())
                 {   // 오답일 때
                     Sound.instance.InCorrect();
-                    WaveManager_E.instance.slider.value -= 5.0f;        // 답이 틀릴때마다 타이머 5초씩 감소
+                    SliderController.instance.ChangeSliderValue(-5f);// 답이 틀릴때마다 타이머 5초씩 감소
                 }
             }
         }
     }
 
 
-    public void InitEnemyInfo(Enemy_E enemy)
+    public void InitEnemyInfo(Enemy enemy)
     {
-        result = enemy.result;
+        order = enemy.order;
         //transform.position = enemy.spawnPos;
         this.transform.Find("TextMesh").GetComponent<TextMesh>().text = enemy.meshNum;
         gameObject.SetActive(true);
     }
 
     
-    public void getDamage()     // 총알에 맞은 게임오브젝트 삭제하는 메소드
+    public void DamageIffect()     // 총알에 맞은 게임오브젝트 삭제하는 메소드
     {
         gameObject.SetActive(false);
         GameObject hit = Instantiate(HitEffect);    // hit GameObject 변수에 HitEffect를 충돌 위치에 생성한다.
@@ -103,16 +86,9 @@ public class EnemyInfo_E : MonoBehaviour
     }
 
 
-    public int isRightResult()      // 답이 아닌지 맞는지 리턴해주는 메소드
+    public int isRightOrder()      // 답이 아닌지 맞는지 리턴해주는 메소드
     {
-        return result;
+        return order;
     }
-
-    private void OnDisable()
-    {
-        if (WaveManager_E.instance != null)
-        {
-            WaveManager_E.instance.DieEnemy();
-        }
-    }
+    
 }

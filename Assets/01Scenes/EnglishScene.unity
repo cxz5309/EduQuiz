@@ -2157,8 +2157,8 @@ MonoBehaviour:
   - {fileID: 1067874555}
   - {fileID: 2125029998}
   - {fileID: 609751591}
-  HPItem: {fileID: 5599857784540580865, guid: dce4f2f0177740e4a939d909ae88dcca, type: 3}
-  TimerItem: {fileID: 6067672173643077623, guid: 7dd96c53a868aca4da24e934c929f522,
+  HPItem: {fileID: 2467464232049461944, guid: a8a00cfeee70ba840be6e0c539df4ee7, type: 3}
+  TimerItem: {fileID: 6266670642988534825, guid: a11c6977f77c9e74aae80901786507c9,
     type: 3}
   itemSpawnChk: 000000000000000000000000
 --- !u!1 &456121752
@@ -3477,24 +3477,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 762131680}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ddf750fa6428ecb4fbd98d419c30000a, type: 3}
+  m_Script: {fileID: 11500000, guid: 1de7845c7ffb5be438e2d69aee6ae36b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   curWave: -1
-  curWaveEnemyCount: 0
-  EnemyCount: 0
-  Enemy:
-  - {fileID: 8945953346576835133, guid: 9c66e6b7cf9cee5448f9fa48717d53e4, type: 3}
-  - {fileID: 6242700053567473906, guid: 582b89fea141ce84c8e09d02c33e3261, type: 3}
-  - {fileID: 2246350840960406282, guid: ce142974881ec2549995ded790e19962, type: 3}
-  - {fileID: 8047890207634137927, guid: f08c93a65f6195545b654fccb99fc2c2, type: 3}
-  - {fileID: 1987658193075302386, guid: ee4507d78c6b4bd468f56ed9a07b0e6c, type: 3}
-  - {fileID: 4125594518295230727, guid: 21dbc58d3205e93499ea00067177f7ae, type: 3}
-  - {fileID: 4449044950285963301, guid: 2229850190544594ca7020dac0420586, type: 3}
-  - {fileID: 7481252832948781638, guid: 27db66766786b014ea9fe36d19577304, type: 3}
-  - {fileID: 1006504322301372834, guid: e45facb84f9b94144a688d571b34f9b5, type: 3}
+  EnemyCount: 9
   LightChange: {fileID: 170076733}
   stageText: {fileID: 114365333421567030}
+  quizText: {fileID: 0}
   stageImage: {fileID: 4839891081182437423}
   SpawnPoint:
   - {fileID: 42326440}
@@ -3506,12 +3496,19 @@ MonoBehaviour:
   - {fileID: 1556394743}
   - {fileID: 1234692837}
   - {fileID: 1017357203}
-  WaveDelay: 0
+  Enemy:
+  - {fileID: 8945953346576835133, guid: 9c66e6b7cf9cee5448f9fa48717d53e4, type: 3}
+  - {fileID: 6242700053567473906, guid: 582b89fea141ce84c8e09d02c33e3261, type: 3}
+  - {fileID: 2246350840960406282, guid: ce142974881ec2549995ded790e19962, type: 3}
+  - {fileID: 8047890207634137927, guid: f08c93a65f6195545b654fccb99fc2c2, type: 3}
+  - {fileID: 1987658193075302386, guid: ee4507d78c6b4bd468f56ed9a07b0e6c, type: 3}
+  - {fileID: 4125594518295230727, guid: 21dbc58d3205e93499ea00067177f7ae, type: 3}
+  - {fileID: 4449044950285963301, guid: 2229850190544594ca7020dac0420586, type: 3}
+  - {fileID: 7481252832948781638, guid: 27db66766786b014ea9fe36d19577304, type: 3}
+  - {fileID: 1006504322301372834, guid: e45facb84f9b94144a688d571b34f9b5, type: 3}
+  WaveDelaying: 0
   textMesh: {fileID: 2071798505}
   hardMode: 0
-  slider: {fileID: 943210979}
-  timeOver: 0
-  timerItemFlag: 0
   EnemyKillCnt: 0
 --- !u!1 &767717214
 GameObject:
@@ -4620,6 +4617,7 @@ GameObject:
   m_Component:
   - component: {fileID: 943210978}
   - component: {fileID: 943210979}
+  - component: {fileID: 943210980}
   m_Layer: 5
   m_Name: TimerSlider
   m_TagString: Untagged
@@ -4709,6 +4707,18 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &943210980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 943210977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ee20bb43db186d45ae94f02c9b0ad98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &959293855
 GameObject:
   m_ObjectHideFlags: 0
@@ -12035,9 +12045,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: '0
-
-'
+  m_text: 3
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -12106,9 +12114,9 @@ MonoBehaviour:
   m_margin: {x: -19.164888, y: 0, z: -19.210932, w: 0}
   m_textInfo:
     textComponent: {fileID: 2071798507}
-    characterCount: 2
+    characterCount: 1
     spriteCount: 0
-    spaceCount: 1
+    spaceCount: 0
     wordCount: 1
     linkCount: 0
     lineCount: 1

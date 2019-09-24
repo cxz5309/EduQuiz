@@ -36,17 +36,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        switch (SceneManager.GetActiveScene().name)
-        {
-            case "BasicScene":
-            case "MathScene":
-                WaveManager_B.instance.InitWave();
-                break;
-            case "EnglishScene":
-                WaveManager_E.instance.InitWave();
-                break;
-        }
-
+        WaveManager.instance.InitWave();
         gamestate = Gamestate.GamePlaying;
         Time.timeScale = 1;
         StateUI.SetActive(true);
@@ -80,19 +70,20 @@ public class GameManager : MonoBehaviour
     //}
 
     // 스테이지 클리어 메소드
-    public void GameClear()     
+    public void GameClear()
     {
+        Debug.Log("!!!!!");
+        EnemyDestroy();
+        ItemDestroy();
         textMesh.SetActive(true);
         textMesh.GetComponent<TextMeshPro>().text = "GameClear";
         textMesh.GetComponent<Animator>().SetTrigger("GameClear");
         if (SceneManager.GetActiveScene().name == "EnglishScene")
         {
-            WaveManager_E.instance.timerItemFlag = true;
+            SliderController.instance.WaitSlider();
         }
         effSuccess.SetActive(false);
         effFail.SetActive(false);
-        EnemyDestroy();
-        ItemDestroy();
         gamestate = Gamestate.GameClear;
         StartCoroutine("ButtonsOn");
         StateUI.SetActive(false);
@@ -101,17 +92,17 @@ public class GameManager : MonoBehaviour
     // 게임 오버 메소드
     public void GameOver()
     {
+        EnemyDestroy();
+        ItemDestroy();
         textMesh.SetActive(true);
         textMesh.GetComponent<TextMeshPro>().text = "GameOver";
         textMesh.GetComponent<Animator>().SetTrigger("GameOver");
         if (SceneManager.GetActiveScene().name == "EnglishScene")
         {
-            WaveManager_E.instance.timerItemFlag = true;
+            SliderController.instance.WaitSlider();
         }
         effSuccess.SetActive(false);
         effFail.SetActive(false);
-        EnemyDestroy();
-        ItemDestroy();
         StartCoroutine("ButtonsOn");
         gamestate = Gamestate.GameOver;
         StateUI.SetActive(false);
@@ -136,16 +127,10 @@ public class GameManager : MonoBehaviour
     public void NextLevel()     
     {
         EnemyDestroy();
-        switch (SceneManager.GetActiveScene().name)
-        {
-            case "BasicScene":
-            case "MathScene":
-                WaveManager_B.instance.DieEnemy();
-                break;
-            case "EnglishScene":
-                WaveManager_E.instance.DieEnemy();
-                break;
-        }
+        
+                WaveManager.instance.StartWave();
+                // WaveDelay를 true로 주어 3초간 딜레이를 준다.
+                
     }
     
     public void GameClose()

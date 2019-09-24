@@ -7,7 +7,7 @@
 //{
 //    public static WaveManager_M instance;
 
-//    private Dictionary<int, List<Enemy_B>> waveEnemyDic = new Dictionary<int, List<Enemy_B>>();
+//    private Dictionary<int, List<Enemy>> waveEnemyDic = new Dictionary<int, List<Enemy>>();
 
 //    public int curWave = -1;       // 현재 스테이지 변수
 
@@ -68,25 +68,25 @@
 //    // 웨이브 생성 메소드
 //    public void InitWave()
 //    {
-//        Enemy_B enemy;
+//        Enemy enemy;
 
-//        List<Enemy_B> enemyList = new List<Enemy_B>();
+//        List<Enemy> enemyList = new List<Enemy>();
 
 //        for (int i = 0; i < 10; i++) //QuizManager.instance.dictionary.Count 이 최대값
 //        {
 
-//            enemyList = new List<Enemy_B>();
+//            enemyList = new List<Enemy>();
 
 //            for (int j = 0; j < 6; j++)
 //            {
 //                if (QuizManager.instance.dictionary[i].pass == j)
 //                {
-//                    enemy = new Enemy_B("Cube1", false, QuizManager.instance.dictionary[i].ans[j]);
+//                    enemy = new Enemy("Cube1", false, QuizManager.instance.dictionary[i].ans[j]);
 //                    // 정답인 적 생성(0)
 //                }
 //                else
 //                {
-//                    enemy = new Enemy_B("Cube1", true, QuizManager.instance.dictionary[i].ans[j]);
+//                    enemy = new Enemy("Cube1", true, QuizManager.instance.dictionary[i].ans[j]);
 //                    // 정답이 아닌 적 생성(1 ~ 3)
 //                }
 //                enemyList.Add(enemy);
@@ -148,7 +148,7 @@
 //    {
 //        int[] EnemySpawnChk = new int[7];
 
-//        List<Enemy_B> enemyList = waveEnemyDic[curWave];
+//        List<Enemy> enemyList = waveEnemyDic[curWave];
 //        curWaveEnemyCount = enemyList.Count;
 //        // curWaveEnemyCount에 enemyList 개수만큼
 
