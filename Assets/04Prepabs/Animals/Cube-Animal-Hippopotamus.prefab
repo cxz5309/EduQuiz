@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2246350840960896800}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: joint16 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2246350840960896802}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: joint16
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69,7 +69,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2246350840960896804}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: joint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,7 +100,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2246350840960896806}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: joint19
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -131,7 +131,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2246350840960896808}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: group16
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -167,7 +167,7 @@ GameObject:
   - component: {fileID: 2246350840960406281}
   - component: {fileID: 164210098987809415}
   - component: {fileID: 5325331459711492629}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube-Animal-Hippopotamus
   m_TagString: enemy
   m_Icon: {fileID: 0}
@@ -250,6 +250,7 @@ MonoBehaviour:
     type: 3}
   Player: {fileID: 107946, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
   MoveSpeed: 4
+  isAtacking: 0
 --- !u!65 &164210098987809415
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -288,7 +289,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2246350840960896812}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: joint15
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -319,7 +320,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2246350840960896814}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: joint1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -351,7 +352,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2246350840960896816}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: joint36
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -381,7 +382,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2246350840960896818}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: joint35
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -412,7 +413,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2246350840960896820}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: joint4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -444,7 +445,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2246350840960896822}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: joint36 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -474,7 +475,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2246350840960896824}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: joint32
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -505,7 +506,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2246350840960896826}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: joint3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -538,7 +539,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2246350840960896828}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: joint33 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -568,7 +569,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2246350840960896830}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: joint33
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -598,7 +599,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2246350840960896872}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: pasted__transform36
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -628,7 +629,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2246350840960896874}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: pasted__transform35
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -658,7 +659,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2246350840960896768}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: pasted__group18
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -691,7 +692,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2246350840960896770}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: nurbsCircle15
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -722,7 +723,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2246350840960896772}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: pasted__pasted__default1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -760,7 +761,7 @@ GameObject:
   - component: {fileID: 2246350840960896774}
   - component: {fileID: 2246350840961666826}
   - component: {fileID: 2246350840962665930}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: pasted__pasted__default001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -835,7 +836,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2246350840960896776}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: joint45
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -866,7 +867,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2246350840960896778}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: joint41
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -897,7 +898,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2246350840960896780}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: nurbsCircle1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -928,7 +929,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2246350840960896782}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: joint6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -961,7 +962,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2246350840960896784}
   - component: {fileID: 2246350840963587586}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: pasted__polySurface128
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1043,7 +1044,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2246350840960896786}
   - component: {fileID: 2246350840963587596}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: pasted__polySurface127
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1125,7 +1126,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2246350840960896788}
   - component: {fileID: 2246350840963587590}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: pasted__polySurface130
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1207,7 +1208,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2246350840960896790}
   - component: {fileID: 2246350840963587584}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: pasted__polySurface129
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1289,7 +1290,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2246350840960896792}
   - component: {fileID: 2246350840963587594}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: pasted__polySurface124
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1373,7 +1374,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2246350840960896794}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: pasted__pasted__Object001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1407,7 +1408,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2246350840960896796}
   - component: {fileID: 2246350840963587598}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: pasted__polySurface126
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1489,7 +1490,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2246350840960896798}
   - component: {fileID: 2246350840963587592}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: pasted__polySurface125
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1572,7 +1573,7 @@ GameObject:
   - component: {fileID: 7627416440149607105}
   - component: {fileID: 5464617908367981733}
   - component: {fileID: 6113552367645831853}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TextMesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -37,7 +37,8 @@ public class EnemyInfo_B : MonoBehaviour
     private float DistanceToPlayer;      // 적과 플레이어 사이의 거리
 
     private Animator ani;       // 적의 Animator를 가져오는 변수
-    
+
+    public bool isAtacking;
     private bool result;
 
     public enum State { Walk, Run, Stop, Attack};
@@ -56,7 +57,6 @@ public class EnemyInfo_B : MonoBehaviour
                 Move((State)WaveManager.instance.hardMode);
                 break;
             case "EnglishScene":
-                
                 break;
         }
     }
@@ -73,8 +73,10 @@ public class EnemyInfo_B : MonoBehaviour
                     // 적과 플레이어 사이의 거리를 구해서 DistanceToPlayer 변수에 저장
                     // 플레이어 위치는 (0, 0, 0)이기 때문에 Vector3.zero를 사용
 
-                    if (DistanceToPlayer < 5.5f)
+                    if (DistanceToPlayer < 5.5f&&!isAtacking)
                     {
+                        Debug.Log("just do it!");
+                        isAtacking = true;
                         DistanceToPlayer = 5.5f;
                         Move(State.Attack);
                         StartCoroutine(coAttack());
@@ -135,16 +137,18 @@ public class EnemyInfo_B : MonoBehaviour
     IEnumerator coAttack()
     {
         yield return new WaitForSeconds(3f);
+        GameManager.instance.FailEffect();
         WaveManager.instance.WaveDelayStart();
         HPManager.instance.HP -= 10;          // 플레이어에게 10 데미지를 줌.
         HPManager.instance.HeartCheck();
-        Destroy(gameObject);         // 자기자신 제거                    }
+        isAtacking = false;
     }
     
 
     // 충돌 처리하는 메소드
     void OnCollisionEnter(Collision coll)
     {
+        Physics.IgnoreLayerCollision(9, 9);
         if (coll.gameObject.CompareTag("Bullet"))
         {   // 충돌한 오브젝트의 태그가 Bullet인 경우
             Destroy(coll.gameObject);   // 총알 제거
@@ -158,15 +162,14 @@ public class EnemyInfo_B : MonoBehaviour
                     if (isRightResult())
                     {   // 정답일 때
                         GameManager.instance.SuccessEffect();
-
                         Sound.instance.Correct();
                     }
                     else
                     {   // 오답일 때
+                        GameManager.instance.FailEffect();
                         Sound.instance.InCorrect();
                         HPManager.instance.HP -= 10;
                         HPManager.instance.HeartCheck();
-                        GameManager.instance.FailEffect();
                     }
                     WaveManager.instance.WaveDelayStart();
                     break;

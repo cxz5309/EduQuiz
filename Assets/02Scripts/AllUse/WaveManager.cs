@@ -10,7 +10,8 @@ public class WaveManager : MonoBehaviour
 
     private Dictionary<int, List<Enemy>> waveEnemyDic = new Dictionary<int, List<Enemy>>();
     public int curWave = -1;       // 현재 스테이지 변수
-    public int EnemyCount;
+    public int lastWave = 6;    //최종 스테이지
+    public int hardWave = 3;    //하드모드 진입 직전 스테이지
 
     public GameObject LightChange;       // 배경 밤으로 변경
     //영우
@@ -18,17 +19,19 @@ public class WaveManager : MonoBehaviour
     public Text quizText;           // 지문 ui
     public Image stageImage;
 
-    private int enemyMaxCount;
     public Transform[] SpawnPoint = new Transform[9];   // 적 생성 위치를 저장하는 배열
     public GameObject[] Enemy = new GameObject[9];        // 적 캐릭터를 저장하는 변수
+
+    private int enemyMaxCount;
+
+    public int EnemyCount;
+    public int EnemyKillCnt;
     
     public bool WaveDelaying;
-    // 적을 죽였을때 3초간 딜레이를 주기 위한 변수
     private float delayTime = 3.0f;
     // 3초 딜레이
-    public GameObject textMesh;
+    public GameObject countText;
     public int hardMode;//영우
-    public int EnemyKillCnt;
 
     void Awake()
     {
@@ -43,12 +46,6 @@ public class WaveManager : MonoBehaviour
         FirstStart();
         //StartWave();
         // 처음 웨이브 시작
-        switch (SceneManager.GetActiveScene().name)
-        {
-            case "EnglishScene":
-                SliderController.instance.WaitSlider();
-                break;
-        }
     }
 
     void Update()
@@ -84,24 +81,23 @@ public class WaveManager : MonoBehaviour
             {
                 GameManager.instance.NextLevel();
             }
+            switch (SceneManager.GetActiveScene().name)
+            {
+                case "EnglishScene":
+                    SliderController.instance.ResumeSlider();
+                    break;
+            }
+            WaveDelaying = false;
         }
         else
         {
             GameManager.instance.GameOver();
         }
-        switch (SceneManager.GetActiveScene().name)
-        {
-            case "EnglishScene":
-                SliderController.instance.ResumeSlider();
-                break;
-        }
-        WaveDelaying = false;
-
     }
     public void FirstStart()
     {
-        textMesh.SetActive(true);
-        Animator ani = textMesh.GetComponent<Animator>();
+        countText.SetActive(true);
+        Animator ani = countText.GetComponent<Animator>();
         ani.SetTrigger("StartCount");
     }
 
@@ -125,7 +121,7 @@ public class WaveManager : MonoBehaviour
         {
             case "BasicScene":
             case "MathScene":
-                for (int i = 0; i < 10; i++)
+                for (int i = 0; i < lastWave; i++)
                 {
                     enemyList = new List<Enemy>();
 
@@ -150,7 +146,7 @@ public class WaveManager : MonoBehaviour
                 }
                 break;
             case "EnglishScene":
-                for (int i = 0; i < 10; i++)
+                for (int i = 0; i < lastWave; i++)
                 {
                     enemyList = new List<Enemy>();
 
@@ -193,11 +189,11 @@ public class WaveManager : MonoBehaviour
                 break;
         }
 
-        if (curWave == 5)
+        if (curWave == hardWave)
         {   // 하드모드 단계를 정해주는 부분
             hardMode = 1;
             // 하드모드 온
-            LightChange.GetComponent<Light>().color = Color.black;
+            LightChange.GetComponent<Light>().color = new Color(0,0,0,0.7f);
             // 배경 변경
         }
 

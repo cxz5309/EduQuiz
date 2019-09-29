@@ -18,6 +18,8 @@ public class ItemManager : MonoBehaviour
     public static int itemCount;      // 동시 최대 생성가능한 아이템 개수를 저장하는 변수
                                       // 아이템이 사라졌을 때 변경해주기 위해 public 선언
 
+    public bool itemSpawnStop = false;
+
     public int[] itemSpawnChk;
     // 랜덤숫자 반복 방지를 위한 체크배열 변수(스폰지역 수만큼 배열크기 지정)
 
@@ -40,10 +42,11 @@ public class ItemManager : MonoBehaviour
     // HP 아이템 생성하는 함수
     IEnumerator HPSpawn()
     {
-        while (true)
+        while (!itemSpawnStop)
         {   // while문으로 코루틴을 지속
             yield return new WaitForSeconds(HPSpawnTime);       // HPSpawnTime만큼 대기
-            EventItemSpawnPoint(HPItem);        // HP 아이템 생성
+            if(!itemSpawnStop)
+                EventItemSpawnPoint(HPItem);        // HP 아이템 생성
             HPSpawnTime = Random.Range(25, 30);     // HP 아이템 생성 간격 다시 지정
         }
     }
@@ -51,10 +54,11 @@ public class ItemManager : MonoBehaviour
     // TImer 아이템 생성하는 함수
     IEnumerator TimerSpawn()
     {
-        while (true)
+        while (!itemSpawnStop)
         {   // while문으로 코루틴을 지속
             yield return new WaitForSeconds(TimerSpawnTime);        // TimerSpawnTime만큼 대기
-            EventItemSpawnPoint(TimerItem);      // Timer 아이템 생성
+            if (!itemSpawnStop)
+                EventItemSpawnPoint(TimerItem);      // Timer 아이템 생성
             TimerSpawnTime = Random.Range(25, 30);       // Timer 아이템 생성 간격 다시 지정
         }
     }

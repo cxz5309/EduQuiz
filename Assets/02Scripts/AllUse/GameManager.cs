@@ -11,11 +11,14 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public GameObject EndUI;
     public GameObject StateUI;
+    public GameObject ResultUI;
     //public GameObject HitPanel;
 
     public Text QuizText;
 
-    public GameObject textMesh;
+    public GameObject CountText;
+    public GameObject StageStateText;
+    public GameObject GameStateText;
 
     public GameObject effSuccess;
     public GameObject effFail;
@@ -42,68 +45,61 @@ public class GameManager : MonoBehaviour
         StateUI.SetActive(true);
         // State UI 활성화
     }
-
-
-    // 다시하기 버튼 메소드
-    IEnumerator ButtonsOn()
+   
+    // 결과 버튼 메소드
+    IEnumerator coResultButtonsOn()
     {
         yield return new WaitForSeconds(2.5f);
-        EndUI.SetActive(true);
-        Time.timeScale = 0;
+        ResultUI.SetActive(true);
     }
 
-
-    // 마우스 포인트 근처 타켓가져오는 메소드(미사용)
-    //public GameObject GetClickedObject()
-    //{   
-    //    RaycastHit hit;
-    //    GameObject target = null;
-
-    //    Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-    //    // 마우스 포인트 근처 좌표를 만든다.
-
-    //    if (true == (Physics.Raycast(ray.origin, ray.direction * 10, out hit)))
-    //    {   // 마우스 근처에 오브젝트가 있는지 확인
-    //        target = hit.collider.gameObject;
-    //    }
-    //    return target;
-    //}
+    // 다시하기 버튼 메소드
+    IEnumerator coMenuButtonsOn()
+    {
+        yield return new WaitForSeconds(10f);
+        EndUI.SetActive(true);
+        ResultUI.SetActive(false);
+        Time.timeScale = 0;
+    }
+    
+    public void MenuButtonsOn()
+    {
+        StartCoroutine(coMenuButtonsOn());
+    }
 
     // 스테이지 클리어 메소드
     public void GameClear()
     {
-        Debug.Log("!!!!!");
+        ItemManager.instance.itemSpawnStop = true;
         EnemyDestroy();
         ItemDestroy();
-        textMesh.SetActive(true);
-        textMesh.GetComponent<TextMeshPro>().text = "GameClear";
-        textMesh.GetComponent<Animator>().SetTrigger("GameClear");
+        GameStateText.SetActive(true);
+        GameStateText.GetComponent<TextMeshPro>().text = "GameClear";
+        GameStateText.GetComponent<Animator>().SetTrigger("GameClear");
         if (SceneManager.GetActiveScene().name == "EnglishScene")
         {
             SliderController.instance.WaitSlider();
         }
-        effSuccess.SetActive(false);
-        effFail.SetActive(false);
+        DataSave.instance.AddGold(5);
         gamestate = Gamestate.GameClear;
-        StartCoroutine("ButtonsOn");
+        StartCoroutine("coResultButtonsOn");
         StateUI.SetActive(false);
     }
 
     // 게임 오버 메소드
     public void GameOver()
     {
+        ItemManager.instance.itemSpawnStop = true;
         EnemyDestroy();
         ItemDestroy();
-        textMesh.SetActive(true);
-        textMesh.GetComponent<TextMeshPro>().text = "GameOver";
-        textMesh.GetComponent<Animator>().SetTrigger("GameOver");
+        GameStateText.SetActive(true);
+        GameStateText.GetComponent<TextMeshPro>().text = "GameOver";
+        GameStateText.GetComponent<Animator>().SetTrigger("GameOver");
         if (SceneManager.GetActiveScene().name == "EnglishScene")
         {
             SliderController.instance.WaitSlider();
         }
-        effSuccess.SetActive(false);
-        effFail.SetActive(false);
-        StartCoroutine("ButtonsOn");
+        StartCoroutine("coResultButtonsOn");
         gamestate = Gamestate.GameOver;
         StateUI.SetActive(false);
     }
@@ -127,9 +123,8 @@ public class GameManager : MonoBehaviour
     public void NextLevel()     
     {
         EnemyDestroy();
-        
-                WaveManager.instance.StartWave();
-                // WaveDelay를 true로 주어 3초간 딜레이를 준다.
+        WaveManager.instance.StartWave();
+        // WaveDelay를 true로 주어 3초간 딜레이를 준다.
                 
     }
     
@@ -168,16 +163,16 @@ public class GameManager : MonoBehaviour
 
     public void SuccessEffect()     // 성공 이펙트
     {
-        GameObject effect = Instantiate(effSuccess);
-        effect.transform.position = effSpawn.transform.position;
-        Destroy(effect, 3f);
+        StageStateText.SetActive(true);
+        StageStateText.GetComponent<TextMeshPro>().text = "Success";
+        StageStateText.GetComponent<Animator>().SetTrigger("Success");
     }
 
     public void FailEffect()        // 실패 이펙트
     {
-        GameObject effect = Instantiate(effFail);
-        effect.transform.position = effSpawn.transform.position;
-        Destroy(effect, 3f);
+        StageStateText.SetActive(true);
+        StageStateText.GetComponent<TextMeshPro>().text = "Fail";
+        StageStateText.GetComponent<Animator>().SetTrigger("Fail");
     }
 
     private void OnDestroy()
