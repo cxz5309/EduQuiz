@@ -5,7 +5,6 @@ TagManager:
   serializedVersion: 2
   tags:
   - Bullet
-  - enemy
   - basic
   - math
   - eng
@@ -19,6 +18,7 @@ TagManager:
   - Pause
   - Camera
   - Close
+  - store
   layers:
   - Default
   - TransparentFX

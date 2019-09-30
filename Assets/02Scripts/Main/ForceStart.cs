@@ -10,7 +10,7 @@ public class ForceStart : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().name.CompareTo("Logo") != 0)
         {
-            SceneManager.LoadScene("Logo");
+           // SceneManager.LoadScene("Logo");
         }
     }
 }

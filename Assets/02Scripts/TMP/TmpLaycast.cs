@@ -8,14 +8,12 @@ public class TmpLaycast : MonoBehaviour
     public Camera camera;
     public GameObject Bullet;
 
-    public Transform firePos;
-
-
     void Update()
     {
 
         if (Input.GetMouseButtonUp(0))
         {
+
             Ray ray = camera.ScreenPointToRay(Input.mousePosition);
 
             RaycastHit hitInfo;
@@ -27,16 +25,45 @@ public class TmpLaycast : MonoBehaviour
                 switch (SceneManager.GetActiveScene().name)
                 {
                     case "Main":
-                        if (hitInfo.collider.tag == "Close")
+                        if (hitInfo.transform.gameObject.layer == 5)
                         {
-                            Debug.Log("GameClose");
+                            if (hitInfo.collider.tag == "Close")
+                            {
+                                Debug.Log("GameClose");
+                            }
+                            ChangeScene(hitInfo.collider.tag);
                         }
-                        ChangeScene(hitInfo.collider.tag);
+                        else
+                        {
+                            gameObject.transform.position = hitInfo.point + new Vector3(0, 3.7f, 0);
+                        }
+                        break;
+                    case "StoreScene":
+                        gameObject.transform.position = hitInfo.point + new Vector3(0, 3.7f, 0);
                         break;
                     case "BasicScene":
-                        if (hitInfo.collider.tag == "Close")
+                        if (hitInfo.transform.gameObject.layer == 5)
                         {
-                            Debug.Log("GameClose");
+                            if (hitInfo.collider.tag == "Close")
+                            {
+                                Debug.Log("GameClose");
+                            }
+                            
+                            else if (GameManager.instance.gamestate == GameManager.Gamestate.GamePause)
+                            {
+                                if (hitInfo.collider.tag == "Pause")
+                                {
+                                    GameManager.instance.GamePauseFin();
+                                }
+                                else
+                                {
+                                    ChangeScene(hitInfo.collider.tag);
+                                }
+                            }
+                            else
+                            {
+                                ChangeScene(hitInfo.collider.tag);
+                            }
                         }
                         if (GameManager.instance.gamestate == GameManager.Gamestate.GamePlaying)
                         {
@@ -46,27 +73,31 @@ public class TmpLaycast : MonoBehaviour
                             {
                                 GameManager.instance.GamePause();
                             }
-                        }
-                        else if (GameManager.instance.gamestate == GameManager.Gamestate.GamePause)
-                        {
-                            if (hitInfo.collider.tag == "Pause")
-                            {
-                                GameManager.instance.GamePauseFin();
-                            }
-                            else
-                            {
-                                ChangeScene(hitInfo.collider.tag);
-                            }
-                        }
-                        else
-                        {
-                            ChangeScene(hitInfo.collider.tag);
                         }
                         break;
                     case "MathScene":
-                        if (hitInfo.collider.tag == "Close")
+                        if (hitInfo.transform.gameObject.layer == 5)
                         {
-                            Debug.Log("GameClose");
+                            if (hitInfo.collider.tag == "Close")
+                            {
+                                Debug.Log("GameClose");
+                            }
+                           
+                            else if (GameManager.instance.gamestate == GameManager.Gamestate.GamePause)
+                            {
+                                if (hitInfo.collider.tag == "Pause")
+                                {
+                                    GameManager.instance.GamePauseFin();
+                                }
+                                else
+                                {
+                                    ChangeScene(hitInfo.collider.tag);
+                                }
+                            }
+                            else
+                            {
+                                ChangeScene(hitInfo.collider.tag);
+                            }
                         }
                         if (GameManager.instance.gamestate == GameManager.Gamestate.GamePlaying)
                         {
@@ -76,27 +107,31 @@ public class TmpLaycast : MonoBehaviour
                             {
                                 GameManager.instance.GamePause();
                             }
-                        }
-                        else if (GameManager.instance.gamestate == GameManager.Gamestate.GamePause)
-                        {
-                            if (hitInfo.collider.tag == "Pause")
-                            {
-                                GameManager.instance.GamePauseFin();
-                            }
-                            else
-                            {
-                                ChangeScene(hitInfo.collider.tag);
-                            }
-                        }
-                        else
-                        {
-                            ChangeScene(hitInfo.collider.tag);
                         }
                         break;
                     case "EnglishScene":
-                        if (hitInfo.collider.tag == "Close")
+                        if (hitInfo.transform.gameObject.layer == 5)
                         {
-                            Debug.Log("GameClose");
+                            if (hitInfo.collider.tag == "Close")
+                            {
+                                Debug.Log("GameClose");
+                            }
+                          
+                            else if (GameManager.instance.gamestate == GameManager.Gamestate.GamePause)
+                            {
+                                if (hitInfo.collider.tag == "Pause")
+                                {
+                                    GameManager.instance.GamePauseFin();
+                                }
+                                else
+                                {
+                                    ChangeScene(hitInfo.collider.tag);
+                                }
+                            }
+                            else
+                            {
+                                ChangeScene(hitInfo.collider.tag);
+                            }
                         }
                         if (GameManager.instance.gamestate == GameManager.Gamestate.GamePlaying)
                         {
@@ -106,21 +141,6 @@ public class TmpLaycast : MonoBehaviour
                             {
                                 GameManager.instance.GamePause();
                             }
-                        }
-                        else if (GameManager.instance.gamestate == GameManager.Gamestate.GamePause)
-                        {
-                            if (hitInfo.collider.tag == "Pause")
-                            {
-                                GameManager.instance.GamePauseFin();
-                            }
-                            else
-                            {
-                                ChangeScene(hitInfo.collider.tag);
-                            }
-                        }
-                        else
-                        {
-                            ChangeScene(hitInfo.collider.tag);
                         }
                         break;
                 }
@@ -131,6 +151,9 @@ public class TmpLaycast : MonoBehaviour
     {
         switch (e)
         {
+            case "main":
+                SceneManager.LoadScene("Main", LoadSceneMode.Single);
+                break;
             case "basic":
                 SceneManager.LoadScene("BasicScene", LoadSceneMode.Single);
                 break;
@@ -140,8 +163,8 @@ public class TmpLaycast : MonoBehaviour
             case "eng":
                 SceneManager.LoadScene("EnglishScene", LoadSceneMode.Single);
                 break;
-            case "main":
-                SceneManager.LoadScene("Main", LoadSceneMode.Single);
+            case "store":
+                SceneManager.LoadScene("StoreScene", LoadSceneMode.Single);
                 break;
             case "basicRetry":
                 SceneManager.LoadScene("BasicLoding", LoadSceneMode.Single);

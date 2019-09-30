@@ -15,16 +15,44 @@ public class Controller : SteamVR_LaserPointer
         switch (SceneManager.GetActiveScene().name)
         {
             case "Main":
-                if (e.target.gameObject.tag == "Close")
+                if (e.target.gameObject.layer == 5)
                 {
-                    Application.Quit();
+                    if (e.target.gameObject.tag == "Close")
+                    {
+                        Application.Quit();
+                    }
+                    ChangeScene(e.target.gameObject.tag);
                 }
-                ChangeScene(e.target.gameObject.tag);
+                else
+                {
+                    //텔레포트 구현할것
+                }
+                break;
+            case "StoreScene":
+                gameObject.transform.position = hitInfo.point + new Vector3(0, 3.7f, 0);
                 break;
             case "BasicScene":
-                if (e.target.gameObject.tag == "Close")
+                if (e.target.gameObject.layer == 5)
                 {
-                    Application.Quit();
+                    if (e.target.gameObject.tag == "Close")
+                    {
+                        Application.Quit();
+                    }
+                    else if (GameManager.instance.gamestate == GameManager.Gamestate.GamePause)
+                    {
+                        if (e.target.gameObject.tag == "Pause")
+                        {
+                            GameManager.instance.GamePauseFin();
+                        }
+                        else
+                        {
+                            ChangeScene(e.target.gameObject.tag);
+                        }
+                    }
+                    else
+                    {
+                        ChangeScene(e.target.gameObject.tag);
+                    }
                 }
                 if (GameManager.instance.gamestate == GameManager.Gamestate.GamePlaying)
                 {
@@ -34,27 +62,30 @@ public class Controller : SteamVR_LaserPointer
                     {
                         GameManager.instance.GamePause();
                     }
-                }
-                else if(GameManager.instance.gamestate == GameManager.Gamestate.GamePause)
-                {
-                    if (e.target.gameObject.tag == "Pause")
-                    {
-                        GameManager.instance.GamePauseFin();
-                    }
-                    else
-                    {
-                        ChangeScene(e.target.gameObject.tag);
-                    }
-                }
-                else
-                {
-                    ChangeScene(e.target.gameObject.tag);
                 }
                 break;
             case "MathScene":
-                if (e.target.gameObject.tag == "Close")
+                if (e.target.gameObject.layer == 5)
                 {
-                    Application.Quit();
+                    if (e.target.gameObject.tag == "Close")
+                    {
+                        Application.Quit();
+                    }
+                    else if (GameManager.instance.gamestate == GameManager.Gamestate.GamePause)
+                    {
+                        if (e.target.gameObject.tag == "Pause")
+                        {
+                            GameManager.instance.GamePauseFin();
+                        }
+                        else
+                        {
+                            ChangeScene(e.target.gameObject.tag);
+                        }
+                    }
+                    else
+                    {
+                        ChangeScene(e.target.gameObject.tag);
+                    }
                 }
                 if (GameManager.instance.gamestate == GameManager.Gamestate.GamePlaying)
                 {
@@ -64,27 +95,30 @@ public class Controller : SteamVR_LaserPointer
                     {
                         GameManager.instance.GamePause();
                     }
-                }
-                else if (GameManager.instance.gamestate == GameManager.Gamestate.GamePause)
-                {
-                    if (e.target.gameObject.tag == "Pause")
-                    {
-                        GameManager.instance.GamePauseFin();
-                    }
-                    else
-                    {
-                        ChangeScene(e.target.gameObject.tag);
-                    }
-                }
-                else
-                {
-                    ChangeScene(e.target.gameObject.tag);
                 }
                 break;
             case "EnglishScene":
-                if (e.target.gameObject.tag == "Close")
+                if (e.target.gameObject.layer == 5)
                 {
-                    Application.Quit();
+                    if (e.target.gameObject.tag == "Close")
+                    {
+                        Application.Quit();
+                    }
+                    else if (GameManager.instance.gamestate == GameManager.Gamestate.GamePause)
+                    {
+                        if (e.target.gameObject.tag == "Pause")
+                        {
+                            GameManager.instance.GamePauseFin();
+                        }
+                        else
+                        {
+                            ChangeScene(e.target.gameObject.tag);
+                        }
+                    }
+                    else
+                    {
+                        ChangeScene(e.target.gameObject.tag);
+                    }
                 }
                 if (GameManager.instance.gamestate == GameManager.Gamestate.GamePlaying)
                 {
@@ -94,21 +128,6 @@ public class Controller : SteamVR_LaserPointer
                     {
                         GameManager.instance.GamePause();
                     }
-                }
-                else if (GameManager.instance.gamestate == GameManager.Gamestate.GamePause)
-                {
-                    if (e.target.gameObject.tag == "Pause")
-                    {
-                        GameManager.instance.GamePauseFin();
-                    }
-                    else
-                    {
-                        ChangeScene(e.target.gameObject.tag);
-                    }
-                }
-                else
-                {
-                    ChangeScene(e.target.gameObject.tag);
                 }
                 break;
         }
@@ -128,6 +147,9 @@ public class Controller : SteamVR_LaserPointer
                 break;
             case "main":
                 SceneManager.LoadScene("Main", LoadSceneMode.Single);
+                break;
+            case "store":
+                SceneManager.LoadScene("StoreScene", LoadSceneMode.Single);
                 break;
             case "basicRetry":
                 SceneManager.LoadScene("BasicLoding", LoadSceneMode.Single);

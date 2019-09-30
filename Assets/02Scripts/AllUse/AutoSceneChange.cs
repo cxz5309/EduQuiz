@@ -21,6 +21,9 @@ public class AutoSceneChange : MonoBehaviour
             case "EnglishLoding":
                 StartCoroutine(EnglishChangeScene());
                 break;
+            case "StoreLoding":
+                StartCoroutine(StoreChangeScene());
+                break;
 
         }
     }
@@ -39,6 +42,11 @@ public class AutoSceneChange : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         SceneManager.LoadScene("EnglishScene");
+    }
+    IEnumerator StoreChangeScene()
+    {
+        yield return new WaitForSeconds(1);
+        SceneManager.LoadScene("StoreScene");
     }
 }
 

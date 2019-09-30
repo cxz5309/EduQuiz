@@ -4152,7 +4152,7 @@ MonoBehaviour:
   EnemyCount: 9
   EnemyKillCnt: 0
   WaveDelaying: 0
-  textMesh: {fileID: 2071798505}
+  countText: {fileID: 2071798505}
   hardMode: 0
 --- !u!1 &767717214
 GameObject:
@@ -8260,8 +8260,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 400, y: 400, z: 5}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 397.9765, y: 403.8997, z: 31.634975}
+  m_Center: {x: -1.0117446, y: 19.416653, z: 1.2983484}
 --- !u!114 &1425791170
 MonoBehaviour:
   m_ObjectHideFlags: 0
