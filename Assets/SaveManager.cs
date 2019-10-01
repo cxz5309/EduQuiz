@@ -6,6 +6,8 @@ public class SaveManager : MonoBehaviour
 {
     public static SaveManager instance;
 
+    public DataSave initData;
+
     private void Awake()
     {
         instance = this;
@@ -13,8 +15,9 @@ public class SaveManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log(DataSave.instance.Gold);
+
     }
+
 
     private void OnDestroy()
     {

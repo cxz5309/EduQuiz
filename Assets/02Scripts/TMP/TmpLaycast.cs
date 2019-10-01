@@ -7,10 +7,9 @@ public class TmpLaycast : MonoBehaviour
 {
     public Camera camera;
     public GameObject Bullet;
-
+    
     void Update()
     {
-
         if (Input.GetMouseButtonUp(0))
         {
 
@@ -147,6 +146,13 @@ public class TmpLaycast : MonoBehaviour
             }
         }
     }
+
+    public void ChangeWeapon()
+    {
+        //!!!!!!!!!!!!!!!!!!!!
+    }
+
+
     public void ChangeScene(string e)
     {
         switch (e)

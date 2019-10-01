@@ -75,7 +75,6 @@ public class EnemyInfo_B : MonoBehaviour
 
                     if (DistanceToPlayer < 5.5f&&!isAtacking)
                     {
-                        Debug.Log("just do it!");
                         isAtacking = true;
                         DistanceToPlayer = 5.5f;
                         Move(State.Attack);

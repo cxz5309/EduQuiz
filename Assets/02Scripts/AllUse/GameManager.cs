@@ -80,7 +80,7 @@ public class GameManager : MonoBehaviour
         {
             SliderController.instance.WaitSlider();
         }
-        DataSave.instance.AddGold(5);
+        DataSave.instance.data.AddGold(5);
         gamestate = Gamestate.GameClear;
         StartCoroutine("coResultButtonsOn");
         StateUI.SetActive(false);

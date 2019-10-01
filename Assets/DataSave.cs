@@ -26,21 +26,71 @@ using UnityEngine.SceneManagement;
 //    }
 //}
 
+public class Data
+{
+    private int gold = 0;
+    public int nowWeapon;
+    private bool[] availableWeapon;
+    private int[] availableHousing; //0 : 사용불가, 1 : 사용가능, 2 : 사용됨
+    public enum ItemType
+    {
+        Weapon, Housing
+    }
+
+    public int Gold { get => gold; set => gold = value; }
+
+    public void AddGold(int getGold)
+    {
+        Gold += getGold;
+        Debug.Log(Gold);
+    }
+
+    public void Charge(int nowGold, int chargeGold, ItemType itemType, int itemNum)
+    {
+        if (nowGold < chargeGold) {
+            Debug.Log("구매 불가");
+        }
+        else {
+            switch (itemType)
+            {
+                case ItemType.Weapon:
+                    ChargeWeapon(chargeGold, itemNum);
+                    break;
+                case ItemType.Housing:
+                    ChargeHousing(chargeGold, itemNum);
+                    break;
+            }
+        }
+    }
+    void ChargeWeapon(int chargeGold, int weaponNum)
+    {
+        availableWeapon[weaponNum] = false;
+    }
+    void ChargeHousing(int chargeGold, int housingNum)
+    {
+        availableHousing[housingNum] = 1;
+    }
+    public void ChangeWeaponData(int weaponNum)
+    {
+        nowWeapon = weaponNum;
+    }
+    public void SetHousingData(int housingNum)
+    {
+        availableHousing[housingNum] = 2;
+    }
+}
+
+
 public class DataSave : MonoBehaviour
 {
     public static DataSave instance;
+    public Data data;
 
     //public UserInfo userInfo;
     //public LevelInfo basicLevelInfo;
     //public LevelInfo mahtLevelInfo;
     //public LevelInfo englishLevelInfo;
 
-    private int gold = 0;
-    private int nowWeapon;
-    private bool[] availableWeapon;
-    private int[] availableHouseParts;//0 : 사용불가, 1 : 사용가능, 2 : 사용됨
-
-    public int Gold { get => gold; set => gold = value; }
 
     private void Awake()
     {
@@ -49,15 +99,10 @@ public class DataSave : MonoBehaviour
     
     private void Start()
     {
+        
     }
-
-    public void AddGold(int getGold)
-    {
-        this.Gold += getGold;
-        Debug.Log(Gold);
-    }
-
-
+    
+    
     private void OnDestroy()
     {
         instance = null;

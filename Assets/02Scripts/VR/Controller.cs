@@ -29,7 +29,7 @@ public class Controller : SteamVR_LaserPointer
                 }
                 break;
             case "StoreScene":
-                gameObject.transform.position = hitInfo.point + new Vector3(0, 3.7f, 0);
+                //텔레포트 구현할 것
                 break;
             case "BasicScene":
                 if (e.target.gameObject.layer == 5)

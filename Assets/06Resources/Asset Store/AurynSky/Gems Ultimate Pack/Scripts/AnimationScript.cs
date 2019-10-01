@@ -20,7 +20,7 @@ public class AnimationScript : MonoBehaviour
             transform.DOJump(player, 3, 2, 2).OnComplete(() =>
             {
                 doMoving = false;
-                DataSave.instance.AddGold(5);
+                DataSave.instance.data.AddGold(5);
                 Destroy(this);
             });
         });
