@@ -19,6 +19,10 @@ TagManager:
   - Camera
   - Close
   - store
+  - enemy
+  - projectile
+  - FxTemporaire
+  - NPC
   layers:
   - Default
   - TransparentFX

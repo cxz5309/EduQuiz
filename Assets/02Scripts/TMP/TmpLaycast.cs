@@ -38,7 +38,14 @@ public class TmpLaycast : MonoBehaviour
                         }
                         break;
                     case "StoreScene":
-                        gameObject.transform.position = hitInfo.point + new Vector3(0, 3.7f, 0);
+                        if (hitInfo.collider.tag == "NPC")
+                        {
+                            Debug.Log("상점 on");
+                        }
+                        else
+                        {
+                            gameObject.transform.position = hitInfo.point + new Vector3(0, 3.7f, 0);
+                        }
                         break;
                     case "BasicScene":
                         if (hitInfo.transform.gameObject.layer == 5)
