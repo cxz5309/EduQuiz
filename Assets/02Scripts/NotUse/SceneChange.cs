@@ -9,6 +9,9 @@ public class SceneChange : MonoBehaviour
     private GameObject player;
     public static SceneChange instance;
 
+    public GameObject storeUI;
+
+
     void OnEnable()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -49,6 +52,23 @@ public class SceneChange : MonoBehaviour
     private void OnDestroy()
     {
         instance = null;
+    }
+
+
+
+    public void SetStoreActive()    // 상점 활성화 설정
+    {
+        if (storeUI.activeSelf == true)
+        {
+            Debug.Log("상점 off");
+            storeUI.SetActive(false);
+        }
+        else if (storeUI.activeSelf == false)
+        {
+            Debug.Log("상점 on");
+            // 여기에 텔레포트 작동 멈추게
+            storeUI.SetActive(true);
+        }
     }
 }
 

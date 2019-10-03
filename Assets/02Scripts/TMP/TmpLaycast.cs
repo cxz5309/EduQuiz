@@ -40,7 +40,7 @@ public class TmpLaycast : MonoBehaviour
                     case "StoreScene":
                         if (hitInfo.collider.tag == "NPC")
                         {
-                            Debug.Log("상점 on");
+                            SceneChange.instance.SetStoreActive();
                         }
                         else
                         {
