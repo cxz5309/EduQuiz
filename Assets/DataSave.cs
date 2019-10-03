@@ -39,6 +39,12 @@ public class Data
 
     public int Gold { get => gold; set => gold = value; }
 
+    public Data(int Gold, int nowWeapon)
+    {
+        this.nowWeapon = nowWeapon;
+        this.Gold = Gold;
+    }
+
     public void AddGold(int getGold)
     {
         Gold += getGold;
@@ -95,8 +101,9 @@ public class DataSave : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        data = new Data(0, 3);
     }
-    
+
     private void Start()
     {
         

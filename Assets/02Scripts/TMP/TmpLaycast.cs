@@ -7,7 +7,12 @@ public class TmpLaycast : MonoBehaviour
 {
     public Camera camera;
     public GameObject Bullet;
-    
+
+    private void Start()
+    {
+        ChangeWeapon(DataSave.instance.data.nowWeapon);
+    }
+
     void Update()
     {
         if (Input.GetMouseButtonUp(0))
@@ -38,13 +43,20 @@ public class TmpLaycast : MonoBehaviour
                         }
                         break;
                     case "StoreScene":
-                        if (hitInfo.collider.tag == "NPC")
+                        if (hitInfo.transform.gameObject.layer == 5)
                         {
-                            SceneChange.instance.SetStoreActive();
+                            //상점 기능 참조
                         }
                         else
                         {
-                            gameObject.transform.position = hitInfo.point + new Vector3(0, 3.7f, 0);
+                            if (hitInfo.collider.tag == "NPC")
+                            {
+                                StoreManager.instance.SetStoreActive();
+                            }
+                            else
+                            {
+                                gameObject.transform.position = hitInfo.point + new Vector3(0, 3.7f, 0);
+                            }
                         }
                         break;
                     case "BasicScene":
@@ -154,9 +166,9 @@ public class TmpLaycast : MonoBehaviour
         }
     }
 
-    public void ChangeWeapon()
+    public void ChangeWeapon(int projectileNum)
     {
-        //!!!!!!!!!!!!!!!!!!!!
+        Bullet = Resources.Load<GameObject>("Prefabs/Projectile/Projectile " + projectileNum.ToString());
     }
 
 

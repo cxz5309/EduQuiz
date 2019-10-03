@@ -31,7 +31,7 @@ public class EnemyInfo_B : MonoBehaviour
 {
     public GameObject spawnEffect;  // 적이 생성되면 발생하는 이펙트
     public GameObject HitEffect;    // 적이 죽으면 발생하는 이펙트
-    public GameObject Player;
+    private GameObject Player;
 
     public float MoveSpeed;       // 적 이동 속도
     private float DistanceToPlayer;      // 적과 플레이어 사이의 거리
@@ -46,6 +46,8 @@ public class EnemyInfo_B : MonoBehaviour
     
     void Start()
     {
+        Player = GameObject.FindGameObjectWithTag("Player");
+
         GameObject spawn = Instantiate(spawnEffect, transform.position, transform.rotation);        // 적 스폰 이펙트 메소드 호출
         Destroy(spawn, 5.0f);       // spawn 오브젝트 제거
 

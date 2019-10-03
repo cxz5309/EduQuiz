@@ -15,6 +15,8 @@ public class EnemyInfo_E : MonoBehaviour
 
     void Start()
     {
+        Player = GameObject.FindGameObjectWithTag("Player");
+
         GameObject spawn = Instantiate(spawnEffect, transform.position, transform.rotation);        // 적 스폰 이펙트 메소드 호출
         Destroy(spawn, 5.0f);       // spawn 오브젝트 제거
     }

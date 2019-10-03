@@ -29,7 +29,21 @@ public class Controller : SteamVR_LaserPointer
                 }
                 break;
             case "StoreScene":
-                //텔레포트 구현할 것
+                if (e.target.gameObject.layer == 5)
+                {
+                    //상점 기능 참조
+                }
+                else
+                {
+                    if (e.target.gameObject.tag == "NPC")
+                    {
+                        StoreManager.instance.SetStoreActive();
+                    }
+                    else
+                    {
+                        //텔레포트 구현할것
+                    }
+                }
                 break;
             case "BasicScene":
                 if (e.target.gameObject.layer == 5)
