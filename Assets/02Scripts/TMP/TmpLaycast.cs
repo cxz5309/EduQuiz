@@ -7,6 +7,7 @@ public class TmpLaycast : MonoBehaviour
 {
     public Camera camera;
     public GameObject Bullet;
+    string tag = "";
 
     private void Start()
     {
@@ -35,7 +36,26 @@ public class TmpLaycast : MonoBehaviour
                             {
                                 Debug.Log("GameClose");
                             }
-                            ChangeScene(hitInfo.collider.tag);
+                            switch (hitInfo.collider.name)
+                            {
+                                case "Basic":
+                                case "Math":
+                                case "English":
+                                    tag = hitInfo.collider.tag;
+                                    MainManager.instance.OpenGrade();
+                                    break;
+                                case "Grade1":
+                                case "Grade2":
+                                case "Grade3":
+                                    MainManager.instance.OpenLevel();
+                                    Debug.Log(tag);
+                                    break;
+                                case "Level1":
+                                case "Level2":
+                                case "Level3":
+                                    ChangeScene(tag);
+                                    break;
+                            }
                         }
                         else
                         {
@@ -193,11 +213,10 @@ public class TmpLaycast : MonoBehaviour
     {
         Bullet = Resources.Load<GameObject>("Prefabs/Projectile/Projectile " + (++projectileNum).ToString());
     }
-
-
-    public void ChangeScene(string e)
+    
+    public void ChangeScene(string tag)
     {
-        switch (e)
+        switch (tag)
         {
             case "main":
                 SceneManager.LoadScene("Main", LoadSceneMode.Single);

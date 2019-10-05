@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 
 //public class UserInfo
 //{
-//    private string name;
 //    private int id;
+//    private string name;
 //    private int password;
 //}
 
