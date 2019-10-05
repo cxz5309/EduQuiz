@@ -7,6 +7,7 @@ public class StoreManager : MonoBehaviour
     public static StoreManager instance;
 
     public GameObject storeUI;
+    public bool getStoreActive;
 
     private void Awake()
     {
@@ -19,12 +20,13 @@ public class StoreManager : MonoBehaviour
         {
             Debug.Log("상점 off");
             storeUI.SetActive(false);
+            getStoreActive = false;
         }
         else if (storeUI.activeSelf == false)
         {
             Debug.Log("상점 on");
-            // 여기에 텔레포트 작동 멈추게
             storeUI.SetActive(true);
+            getStoreActive = true;
         }
     }
     private void OnDestroy()

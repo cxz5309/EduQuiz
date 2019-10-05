@@ -23,6 +23,8 @@ TagManager:
   - projectile
   - FxTemporaire
   - NPC
+  - Left
+  - Right
   layers:
   - Default
   - TransparentFX

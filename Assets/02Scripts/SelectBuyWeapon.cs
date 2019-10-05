@@ -1,10 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.EventSystems;
 
 public class SelectBuyWeapon : MonoBehaviour
 {
+    public static SelectBuyWeapon instance;
+
+    public GameObject storeUI;
+    public bool getStoreActive;
+
     public GameObject Chapters;
     public GameObject [] ChapterArr;
 
@@ -14,7 +19,12 @@ public class SelectBuyWeapon : MonoBehaviour
     private int size = 400;
     private int speed = 5;
     private int chapIndex;
-    
+
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     void Start()
     {
@@ -30,7 +40,7 @@ public class SelectBuyWeapon : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.D))
         {
-            Rignt();
+            Right();
         }
 
         Chapters.transform.localPosition = Vector2.Lerp(Chapters.transform.localPosition, nextPos, Time.deltaTime * speed);
@@ -56,7 +66,7 @@ public class SelectBuyWeapon : MonoBehaviour
         UpdateStage(chapIndex);
     }
 
-    public void Rignt()
+    public void Right()
     {
         chapIndex += 1;
         if (chapIndex >= ChapterArr.Length)

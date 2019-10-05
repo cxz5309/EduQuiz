@@ -22,6 +22,8 @@ public class TmpLaycast : MonoBehaviour
 
             RaycastHit hitInfo;
 
+            
+
             if (Physics.Raycast(ray, out hitInfo, 100f))
             {
                 int l = hitInfo.transform.gameObject.layer;
@@ -49,13 +51,32 @@ public class TmpLaycast : MonoBehaviour
                         }
                         else
                         {
-                            if (hitInfo.collider.tag == "NPC")
+                            if (StoreManager.instance.getStoreActive == false)
                             {
-                                StoreManager.instance.SetStoreActive();
+                                if (hitInfo.collider.tag == "NPC")
+                                {
+                                    StoreManager.instance.SetStoreActive();
+                                }
+                                else
+                                {
+                                    gameObject.transform.position = hitInfo.point + new Vector3(0, 3.7f, 0);
+                                }
                             }
-                            else
+                            else if (StoreManager.instance.getStoreActive == true)
                             {
-                                gameObject.transform.position = hitInfo.point + new Vector3(0, 3.7f, 0);
+                                Debug.Log(hitInfo.collider.tag);
+                                switch (hitInfo.collider.tag)
+                                {
+                                    case "Close":
+                                        StoreManager.instance.SetStoreActive();
+                                        break;
+                                    case "Left":
+                                        SelectBuyWeapon.instance.Left();
+                                        break;
+                                    case "Right":
+                                        SelectBuyWeapon.instance.Right();
+                                        break;
+                                }
                             }
                         }
                         break;
@@ -161,6 +182,8 @@ public class TmpLaycast : MonoBehaviour
                             }
                         }
                         break;
+
+
                 }
             }
         }
