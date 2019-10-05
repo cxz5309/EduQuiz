@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 108445672794197852}
   - component: {fileID: 54966962217690858}
   - component: {fileID: 135786414431410116}
-  - component: {fileID: 4797189515938782444}
+  - component: {fileID: 3119173610720011819}
   m_Layer: 0
   m_Name: Projectile 8
   m_TagString: Bullet
@@ -4851,7 +4851,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.05
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4797189515938782444
+--- !u!114 &3119173610720011819
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

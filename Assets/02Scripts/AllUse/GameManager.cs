@@ -73,6 +73,7 @@ public class GameManager : MonoBehaviour
         ItemManager.instance.itemSpawnStop = true;
         EnemyDestroy();
         ItemDestroy();
+        DataSave.instance.data.AddGold(1);
         GameStateText.SetActive(true);
         GameStateText.GetComponent<TextMeshPro>().text = "GameClear";
         GameStateText.GetComponent<Animator>().SetTrigger("GameClear");

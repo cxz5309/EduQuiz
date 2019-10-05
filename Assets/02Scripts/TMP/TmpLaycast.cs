@@ -22,8 +22,6 @@ public class TmpLaycast : MonoBehaviour
 
             RaycastHit hitInfo;
 
-            
-
             if (Physics.Raycast(ray, out hitInfo, 100f))
             {
                 int l = hitInfo.transform.gameObject.layer;
@@ -49,7 +47,6 @@ public class TmpLaycast : MonoBehaviour
                         {
                             if (StoreManager.instance.getStoreActive == true)
                             {
-                                Debug.Log(hitInfo.collider.tag);
                                 switch (hitInfo.collider.tag)
                                 {
                                     case "Close":
@@ -71,6 +68,10 @@ public class TmpLaycast : MonoBehaviour
                                 if (hitInfo.collider.tag == "NPC")
                                 {
                                     StoreManager.instance.SetStoreActive();
+                                }
+                                else if(hitInfo.collider.tag == "main")
+                                {
+                                    ChangeScene(hitInfo.collider.tag);
                                 }
                                 else
                                 {
@@ -190,7 +191,7 @@ public class TmpLaycast : MonoBehaviour
 
     public void ChangeWeapon(int projectileNum)
     {
-        Bullet = Resources.Load<GameObject>("Prefabs/Projectile/Projectile " + projectileNum.ToString());
+        Bullet = Resources.Load<GameObject>("Prefabs/Projectile/Projectile " + (++projectileNum).ToString());
     }
 
 
@@ -227,7 +228,7 @@ public class TmpLaycast : MonoBehaviour
 
     void Fire(Vector3 target)
     {
-        Instantiate(Bullet, this.transform.position, this.transform.rotation).transform.forward = target - this.transform.position;
+        Instantiate(Bullet, this.transform.position + new Vector3(0,0,1.5f), this.transform.rotation).transform.forward = target - this.transform.position;
         //.GetComponent<Rigidbody>().velocity = (target - this.transform.position) * 10;
         Sound.instance.shoot_sound();
     }

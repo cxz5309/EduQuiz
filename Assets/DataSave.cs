@@ -29,26 +29,47 @@ using UnityEngine.SceneManagement;
 public class Data
 {
     private int gold = 0;
-    public int nowWeapon;
-    private bool[] availableWeapon;
-    private int[] availableHousing; //0 : 사용불가, 1 : 사용가능, 2 : 사용됨
+    public int nowWeapon = 0;
+    private int[] availableWeapon = new int[25]; //0 : 사용불가, 1 : 사용가능
+    private int[] availableHousing = new int[25]; //0 : 사용불가, 1 : 사용가능, 2 : 사용됨
     public enum ItemType
     {
         Weapon, Housing
     }
 
-    public int Gold { get => gold; set => gold = value; }
+    //기본 생성자, logo씬 awake시(캐릭터자체에 달려있는 DataSave awake시) db에 있는 정보 받아오기
+    public Data()
+    {
+        var inventoryData = DataService.Instance.GetData<Table.Data>(1);
 
-    public Data(int Gold, int nowWeapon)
+        this.gold = inventoryData.gold;
+        this.nowWeapon = inventoryData.now_weapon;
+        Debug.Log("최초골드:" + this.gold);
+        Debug.Log("현재 웨폰:" + this.nowWeapon);
+        for (int i=0; i < inventoryData.available_weapon.Length; i++)
+        {
+            this.availableWeapon[i] = int.Parse(inventoryData.available_weapon[i].ToString());
+            if (availableWeapon[i] == 1)
+                Debug.Log("이용가능한 웨폰번호 : " + (i+1));
+        }
+        for(int i = 0; i < inventoryData.available_housing.Length; i++)
+        {
+            this.availableHousing[i] = int.Parse(inventoryData.available_housing[i].ToString());
+            if (availableWeapon[i] == 1)
+                Debug.Log("이용가능한 하우징번호 : " + (i+1));
+        }
+    }
+
+    public Data(int gold, int nowWeapon)
     {
         this.nowWeapon = nowWeapon;
-        this.Gold = Gold;
+        this.gold = gold;
     }
 
     public void AddGold(int getGold)
     {
-        Gold += getGold;
-        Debug.Log(Gold);
+        gold += getGold;
+        Debug.Log("gold : " + gold);
     }
 
     public void Charge(int nowGold, int chargeGold, ItemType itemType, int itemNum)
@@ -70,7 +91,7 @@ public class Data
     }
     void ChargeWeapon(int chargeGold, int weaponNum)
     {
-        availableWeapon[weaponNum] = false;
+        availableWeapon[weaponNum] = 1;
     }
     void ChargeHousing(int chargeGold, int housingNum)
     {
@@ -101,7 +122,7 @@ public class DataSave : MonoBehaviour
     private void Awake()
     {
         instance = this;
-        data = new Data(0, 3);
+        data = new Data();
     }
 
     private void Start()

@@ -7,7 +7,6 @@ public class AutoSceneChange : MonoBehaviour
 {
     private void Awake()
     {
-        Time.timeScale = 1;
     }
     void Start()
     {

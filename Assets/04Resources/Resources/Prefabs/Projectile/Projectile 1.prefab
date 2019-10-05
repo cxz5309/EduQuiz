@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 108874886764331828}
   - component: {fileID: 54785160050736224}
   - component: {fileID: 135257664758760022}
-  - component: {fileID: 5428217613767213427}
+  - component: {fileID: 3919561742803757594}
   m_Layer: 0
   m_Name: Projectile 1
   m_TagString: Bullet
@@ -30,8 +30,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1698648575761504}
-  m_LocalRotation: {x: -0.040621758, y: 0.33051327, z: 0.014240299, w: 0.94281924}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -4716,7 +4716,7 @@ MonoBehaviour:
   UseFirePointRotation: 0
   rotationOffset: {x: 0, y: 0, z: 0}
   hit: {fileID: 1012929371636226, guid: 7e59152fc3be99d4aa2760fb61212ce2, type: 3}
-  flash: {fileID: 0}
+  flash: {fileID: 1179295499806372, guid: a18abcc036ab57445b15bc526991da46, type: 3}
   Detached: []
 --- !u!199 &199286290415937754
 ParticleSystemRenderer:
@@ -4847,7 +4847,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.05
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5428217613767213427
+--- !u!114 &3919561742803757594
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 54396376801286146}
   - component: {fileID: 135341010408950620}
   - component: {fileID: 199988492110645152}
-  - component: {fileID: 3411343234870186701}
+  - component: {fileID: 2797218842939549102}
   m_Layer: 0
   m_Name: Projectile 3
   m_TagString: Bullet
@@ -4807,7 +4807,7 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
---- !u!114 &3411343234870186701
+--- !u!114 &2797218842939549102
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
