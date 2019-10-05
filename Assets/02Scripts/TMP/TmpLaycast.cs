@@ -47,22 +47,7 @@ public class TmpLaycast : MonoBehaviour
                     case "StoreScene":
                         if (hitInfo.transform.gameObject.layer == 5)
                         {
-                            //상점 기능 참조
-                        }
-                        else
-                        {
-                            if (StoreManager.instance.getStoreActive == false)
-                            {
-                                if (hitInfo.collider.tag == "NPC")
-                                {
-                                    StoreManager.instance.SetStoreActive();
-                                }
-                                else
-                                {
-                                    gameObject.transform.position = hitInfo.point + new Vector3(0, 3.7f, 0);
-                                }
-                            }
-                            else if (StoreManager.instance.getStoreActive == true)
+                            if (StoreManager.instance.getStoreActive == true)
                             {
                                 Debug.Log(hitInfo.collider.tag);
                                 switch (hitInfo.collider.tag)
@@ -76,6 +61,20 @@ public class TmpLaycast : MonoBehaviour
                                     case "Right":
                                         SelectBuyWeapon.instance.Right();
                                         break;
+                                }
+                            }
+                        }
+                        else
+                        {
+                            if (StoreManager.instance.getStoreActive == false)
+                            {
+                                if (hitInfo.collider.tag == "NPC")
+                                {
+                                    StoreManager.instance.SetStoreActive();
+                                }
+                                else
+                                {
+                                    gameObject.transform.position = hitInfo.point + new Vector3(0, 3.7f, 0);
                                 }
                             }
                         }
