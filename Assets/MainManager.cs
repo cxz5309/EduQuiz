@@ -10,9 +10,19 @@ public class MainManager : MonoBehaviour
     public GameObject GradeUI;
     public GameObject LevelUI;
 
+    public string themeSound;
+    private AudioManager theAudio;
+
+
     private void Awake()
     {
         instance = this;
+    }
+
+    private void Start()
+    {
+        theAudio = FindObjectOfType<AudioManager>();
+        theAudio.Play(themeSound);
     }
 
     public void OpenGrade()
@@ -28,6 +38,7 @@ public class MainManager : MonoBehaviour
 
     private void OnDestroy()
     {
+        theAudio.Stop(themeSound);
         instance = null;
     }
 }

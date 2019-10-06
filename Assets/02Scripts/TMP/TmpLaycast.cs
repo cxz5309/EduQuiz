@@ -8,9 +8,14 @@ public class TmpLaycast : MonoBehaviour
     public Camera camera;
     public GameObject Bullet;
     string tag = "";
+    
+    public string shotSound;
+    private AudioManager theAudio;
+
 
     private void Start()
     {
+        theAudio = FindObjectOfType<AudioManager>();
         ChangeWeapon(DataSave.instance.data.nowWeapon);
     }
 
@@ -268,6 +273,6 @@ public class TmpLaycast : MonoBehaviour
     {
         Instantiate(Bullet, this.transform.position + new Vector3(0,0,1.5f), this.transform.rotation).transform.forward = target - this.transform.position;
         //.GetComponent<Rigidbody>().velocity = (target - this.transform.position) * 10;
-        Sound.instance.shoot_sound();
+        theAudio.Play(shotSound);
     }
 }
