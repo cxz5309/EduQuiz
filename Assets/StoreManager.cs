@@ -6,8 +6,11 @@ public class StoreManager : MonoBehaviour
 {
     public static StoreManager instance;
 
-    public GameObject storeUI;
+    public GameObject storeScreen;
+    public GameObject buyScreen;
     public bool getStoreActive;
+    public bool getBuyActive;
+
 
     private void Awake()
     {
@@ -16,19 +19,32 @@ public class StoreManager : MonoBehaviour
 
     public void SetStoreActive()    // 상점 활성화 설정
     {
-        if (storeUI.activeSelf == true)
+        if (storeScreen.activeSelf == true)
         {
-            Debug.Log("상점 off");
-            storeUI.SetActive(false);
+            storeScreen.SetActive(false);
             getStoreActive = false;
         }
-        else if (storeUI.activeSelf == false)
+        else if (storeScreen.activeSelf == false)
         {
-            Debug.Log("상점 on");
-            storeUI.SetActive(true);
+            storeScreen.SetActive(true);
             getStoreActive = true;
         }
     }
+
+    public void SetBuyActive()      // 구매 화면 활성화 설정
+    {
+        if (buyScreen.activeSelf == true)
+        {
+            buyScreen.SetActive(false);
+            getBuyActive = false;
+        }
+        else if (buyScreen.activeSelf == false)
+        {
+            buyScreen.SetActive(true);
+            getBuyActive = true;
+        }
+    }
+
     private void OnDestroy()
     {
         instance = null;

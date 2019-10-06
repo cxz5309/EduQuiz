@@ -34,14 +34,14 @@ public class SelectBuyWeapon : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            Left();
-        }
-        else if (Input.GetKeyDown(KeyCode.D))
-        {
-            Right();
-        }
+        //if (Input.GetKeyDown(KeyCode.A))
+        //{
+        //    Left();
+        //}
+        //else if (Input.GetKeyDown(KeyCode.D))
+        //{
+        //    Right();
+        //}
 
         Chapters.transform.localPosition = Vector2.Lerp(Chapters.transform.localPosition, nextPos, Time.deltaTime * speed);
     }

@@ -25,6 +25,9 @@ TagManager:
   - NPC
   - Left
   - Right
+  - Buy
+  - Confirm
+  - Cancel
   layers:
   - Default
   - TransparentFX

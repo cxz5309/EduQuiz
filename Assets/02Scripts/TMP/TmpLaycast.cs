@@ -66,18 +66,37 @@ public class TmpLaycast : MonoBehaviour
                         if (hitInfo.transform.gameObject.layer == 5)
                         {
                             if (StoreManager.instance.getStoreActive == true)
-                            {
-                                switch (hitInfo.collider.tag)
-                                {
-                                    case "Close":
-                                        StoreManager.instance.SetStoreActive();
-                                        break;
-                                    case "Left":
-                                        SelectBuyWeapon.instance.Left();
-                                        break;
-                                    case "Right":
-                                        SelectBuyWeapon.instance.Right();
-                                        break;
+                            {   // 상점 켜졌을 때
+                                if (StoreManager.instance.getBuyActive == false)
+                                {   // 구매창 안켜졌을 때
+                                    switch (hitInfo.collider.tag)
+                                    {
+                                        case "Close":
+                                            StoreManager.instance.SetStoreActive();
+                                            break;
+                                        case "Left":
+                                            SelectBuyWeapon.instance.Left();
+                                            break;
+                                        case "Right":
+                                            SelectBuyWeapon.instance.Right();
+                                            break;
+                                        case "Buy":
+                                            StoreManager.instance.SetBuyActive();
+                                            break;
+                                    }
+                                }
+                                else
+                                {   // 구매창 켜졌을 때
+                                    switch (hitInfo.collider.tag)
+                                    {
+                                        case "Confirm":
+                                            // ##############여기에 구매했을때 로직 넣어주면 됌#####################################################################
+                                            // SelectBuyWeapon의 현재 선택된 무기 배열 번호를 참조하면 됌
+                                            break;
+                                        case "Cancel":
+                                            StoreManager.instance.SetBuyActive();
+                                            break;
+                                    }
                                 }
                             }
                         }
