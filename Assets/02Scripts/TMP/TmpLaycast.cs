@@ -10,6 +10,10 @@ public class TmpLaycast : MonoBehaviour
     public GameObject FirePos;
     string tag = "";
 
+    public bool triggerSwitch;
+    public string shotSound;
+    private AudioManager theAudio;
+
     private void Start()
     {
         theAudio = FindObjectOfType<AudioManager>();
@@ -18,7 +22,7 @@ public class TmpLaycast : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             triggerSwitch = (triggerSwitch == true) ? false : true;
         }

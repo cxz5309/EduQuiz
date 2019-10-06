@@ -591,6 +591,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9437be881ad682348bd31aa228922027, type: 3}
+--- !u!1 &427165534 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1501084758933746, guid: 9437be881ad682348bd31aa228922027,
+    type: 3}
+  m_PrefabInstance: {fileID: 427165533}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &427165535
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 427165534}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.05115634, y: 0.006333998, z: 0.101953104}
+  m_Center: {x: 3.6240412e-12, y: 0.0008180419, z: -0.024601636}
 --- !u!4 &433510857 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 2dc2fb6aea919f641912ceeea48de1df,
@@ -763,8 +782,6 @@ MonoBehaviour:
   GradeUI: {fileID: 1050835724}
   LevelUI: {fileID: 1304359694}
   themeSound: Main
-  shotSound: Shot
-  hitSound: Hit
 --- !u!4 &490903667
 Transform:
   m_ObjectHideFlags: 0
