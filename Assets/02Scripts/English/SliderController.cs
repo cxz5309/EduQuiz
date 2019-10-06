@@ -41,7 +41,8 @@ public class SliderController : MonoBehaviour
     }
     public void StartSlider()
     {
-        slider.value = 20f;  // 제한시간
+        slider.maxValue = 100f;
+        slider.value = 100f;  // 제한시간
     }
     public void WaitSlider()
     {

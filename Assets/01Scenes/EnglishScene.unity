@@ -11862,7 +11862,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DoNotTesselate: 0
-  savedPos: {x: 0.5061657, y: 7.6490993, z: 0}
+  savedPos: {x: 1.1931657, y: 7.8570004, z: 0}
   savedUp: {x: 0, y: 1, z: 0}
   savedRectSize: {x: 720.3, y: 28.200003}
   savedColor: {r: 0.08077519, g: 0.8396226, b: 0, a: 1}
@@ -12917,7 +12917,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DoNotTesselate: 0
-  savedPos: {x: 0.813, y: 7.6490993, z: 0}
+  savedPos: {x: 1.5, y: 7.8570004, z: 0}
   savedUp: {x: 0, y: 1, z: 0}
   savedRectSize: {x: 730.3, y: 28.200003}
   savedColor: {r: 0, g: 0, b: 0, a: 1}
