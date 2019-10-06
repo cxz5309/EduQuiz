@@ -7,7 +7,9 @@ public class TmpLaycast : MonoBehaviour
 {
     public Camera camera;
     public GameObject Bullet;
+    public GameObject FirePos;
     string tag = "";
+    public bool triggerSwitch;
 
     private void Start()
     {
@@ -16,6 +18,10 @@ public class TmpLaycast : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKey(KeyCode.Space))
+        {
+            triggerSwitch = (triggerSwitch == true) ? false : true;
+        }
         if (Input.GetMouseButtonUp(0))
         {
 
@@ -48,18 +54,28 @@ public class TmpLaycast : MonoBehaviour
                                 case "Grade2":
                                 case "Grade3":
                                     MainManager.instance.OpenLevel();
-                                    Debug.Log(tag);
                                     break;
                                 case "Level1":
                                 case "Level2":
                                 case "Level3":
                                     ChangeScene(tag);
                                     break;
+                                case "Store":
+                                    ChangeScene(hitInfo.collider.tag);
+                                    break;
                             }
+                            
                         }
                         else
                         {
-                            gameObject.transform.position = hitInfo.point + new Vector3(0, 3.7f, 0);
+                            if (!triggerSwitch)
+                            { 
+                                gameObject.transform.position = hitInfo.point + new Vector3(0, 3.7f, 0);
+                            }
+                        }
+                        if (triggerSwitch)
+                        {
+                            Fire(hitInfo.point);
                         }
                         break;
                     case "StoreScene":
@@ -90,8 +106,9 @@ public class TmpLaycast : MonoBehaviour
                                     switch (hitInfo.collider.tag)
                                     {
                                         case "Confirm":
-                                            // ##############여기에 구매했을때 로직 넣어주면 됌#####################################################################
+                                            DataSave.instance.data.Charge(DataSave.instance.data.gold, 1, Data.ItemType.Weapon, SelectBuyWeapon.instance.chapIndex);
                                             // SelectBuyWeapon의 현재 선택된 무기 배열 번호를 참조하면 됌
+                                            ChangeWeapon(DataSave.instance.data.nowWeapon);
                                             break;
                                         case "Cancel":
                                             StoreManager.instance.SetBuyActive();
@@ -266,7 +283,7 @@ public class TmpLaycast : MonoBehaviour
 
     void Fire(Vector3 target)
     {
-        Instantiate(Bullet, this.transform.position + new Vector3(0,0,1.5f), this.transform.rotation).transform.forward = target - this.transform.position;
+        Instantiate(Bullet, FirePos.transform.position, this.transform.rotation).transform.forward = target - this.transform.position;
         //.GetComponent<Rigidbody>().velocity = (target - this.transform.position) * 10;
         Sound.instance.shoot_sound();
     }

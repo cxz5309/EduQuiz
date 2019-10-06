@@ -15,10 +15,10 @@ public class SelectBuyWeapon : MonoBehaviour
 
     Vector2 nextPos;
 
+    public int chapIndex { get; set; }
     private int distance;
     private int size = 400;
     private int speed = 5;
-    private int chapIndex;
 
 
     private void Awake()

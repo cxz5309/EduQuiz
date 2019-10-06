@@ -28,7 +28,7 @@ using UnityEngine.SceneManagement;
 
 public class Data
 {
-    private int gold = 0;
+    public int gold = 0;
     public int nowWeapon = 0;
     private int[] availableWeapon = new int[25]; //0 : 사용불가, 1 : 사용가능
     private int[] availableHousing = new int[25]; //0 : 사용불가, 1 : 사용가능, 2 : 사용됨
@@ -75,7 +75,7 @@ public class Data
     public void Charge(int nowGold, int chargeGold, ItemType itemType, int itemNum)
     {
         if (nowGold < chargeGold) {
-            Debug.Log("구매 불가");
+            Debug.Log("돈 부족");
         }
         else {
             switch (itemType)
@@ -91,13 +91,43 @@ public class Data
     }
     void ChargeWeapon(int chargeGold, int weaponNum)
     {
-        availableWeapon[weaponNum] = 1;
+        var inventoryData = DataService.Instance.GetData<Table.Data>(1);
+
+        //now_weapon수정하기
+        inventoryData.now_weapon = weaponNum;
+
+        if (availableWeapon[weaponNum] != 1)
+        {
+            
+            {//available_weapon문자열 수정하기
+                string tmpWeaponList = inventoryData.available_weapon;
+                char[] phraseAsChars = tmpWeaponList.ToCharArray();
+                if (phraseAsChars[weaponNum] == '0')
+                    phraseAsChars[weaponNum] = '1';
+                else
+                    phraseAsChars[weaponNum] = '0';
+                inventoryData.available_weapon = new string(phraseAsChars);
+            }
+
+           
+            Debug.Log(chargeGold + "원에 " + weaponNum + "무기 구입");
+            availableWeapon[weaponNum] = 1;
+        }
+        else
+        {
+            Debug.Log("이미 가지고있는 무기입니다");
+        }
+        Debug.Log("현재 무기 변경됨" + weaponNum + "무기");
+
+        ChangeNowWeaponData(weaponNum);
+        //테이블 값 수정하기
+        int result = DataService.Instance.UpdateData<Table.Data>(inventoryData);
     }
     void ChargeHousing(int chargeGold, int housingNum)
     {
         availableHousing[housingNum] = 1;
     }
-    public void ChangeWeaponData(int weaponNum)
+    public void ChangeNowWeaponData(int weaponNum)
     {
         nowWeapon = weaponNum;
     }
