@@ -762,6 +762,9 @@ MonoBehaviour:
   GameUI: {fileID: 1350297486}
   GradeUI: {fileID: 1050835724}
   LevelUI: {fileID: 1304359694}
+  themeSound: Main
+  shotSound: Shot
+  hitSound: Hit
 --- !u!4 &490903667
 Transform:
   m_ObjectHideFlags: 0

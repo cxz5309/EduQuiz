@@ -54,13 +54,13 @@ public class EnemyInfo_E : MonoBehaviour
             { 
                 if (WaveManager.instance.EnemyKillCnt == isRightOrder())
                 {   // 정답일 때
-                    Sound.instance.Correct();
+                    //Sound.instance.Correct();
                     WaveManager.instance.EnemyKillCnt++;      // 적 죽인 수 ++
                     DamageIffect();         // 적 제거
                 }
                 else if (WaveManager.instance.EnemyKillCnt != isRightOrder())
                 {   // 오답일 때
-                    Sound.instance.InCorrect();
+                    //Sound.instance.InCorrect();
                     SliderController.instance.ChangeSliderValue(-5f);// 답이 틀릴때마다 타이머 5초씩 감소
                 }
             }

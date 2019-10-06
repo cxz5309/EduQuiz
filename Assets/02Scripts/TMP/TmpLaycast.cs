@@ -9,10 +9,10 @@ public class TmpLaycast : MonoBehaviour
     public GameObject Bullet;
     public GameObject FirePos;
     string tag = "";
-    public bool triggerSwitch;
 
     private void Start()
     {
+        theAudio = FindObjectOfType<AudioManager>();
         ChangeWeapon(DataSave.instance.data.nowWeapon);
     }
 
@@ -285,6 +285,6 @@ public class TmpLaycast : MonoBehaviour
     {
         Instantiate(Bullet, FirePos.transform.position, this.transform.rotation).transform.forward = target - this.transform.position;
         //.GetComponent<Rigidbody>().velocity = (target - this.transform.position) * 10;
-        Sound.instance.shoot_sound();
+        theAudio.Play(shotSound);
     }
 }

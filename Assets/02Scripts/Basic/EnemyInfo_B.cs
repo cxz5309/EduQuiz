@@ -163,12 +163,12 @@ public class EnemyInfo_B : MonoBehaviour
                     if (isRightResult())
                     {   // 정답일 때
                         GameManager.instance.SuccessEffect();
-                        Sound.instance.Correct();
+                        //Sound.instance.Correct();
                     }
                     else
                     {   // 오답일 때
                         GameManager.instance.FailEffect();
-                        Sound.instance.InCorrect();
+                        //Sound.instance.InCorrect();
                         HPManager.instance.HP -= 10;
                         HPManager.instance.HeartCheck();
                     }

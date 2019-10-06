@@ -23,6 +23,9 @@ public class GameManager : MonoBehaviour
     public GameObject effSuccess;
     public GameObject effFail;
     public Transform effSpawn;
+    
+    public string themeSound;
+    private AudioManager theAudio;
 
 
     public enum Gamestate
@@ -39,6 +42,9 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        theAudio = FindObjectOfType<AudioManager>();
+        theAudio.Play(themeSound);
+
         WaveManager.instance.InitWave();
         gamestate = Gamestate.GamePlaying;
         Time.timeScale = 1;
@@ -177,6 +183,7 @@ public class GameManager : MonoBehaviour
 
     private void OnDestroy()
     {
+        theAudio.Stop(themeSound);
         instance = null;
     }
 }
