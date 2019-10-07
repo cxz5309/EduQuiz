@@ -19,10 +19,6 @@ public class GameManager : MonoBehaviour
     public GameObject CountText;
     public GameObject StageStateText;
     public GameObject GameStateText;
-
-    public GameObject effSuccess;
-    public GameObject effFail;
-    public Transform effSpawn;
     
     public string themeSound;
     private AudioManager theAudio;
@@ -51,7 +47,21 @@ public class GameManager : MonoBehaviour
         StateUI.SetActive(true);
         // State UI 활성화
     }
-   
+    float time = 0;
+
+    private void Update()
+    {
+        if (!WaveManager.instance.WaveDelaying)
+        {
+            time += Time.fixedDeltaTime;
+        }
+        else
+        {
+            Debug.Log(time);
+            time = 0;
+        }
+    }
+
     // 결과 버튼 메소드
     IEnumerator coResultButtonsOn()
     {
@@ -83,10 +93,7 @@ public class GameManager : MonoBehaviour
         GameStateText.SetActive(true);
         GameStateText.GetComponent<TextMeshPro>().text = "GameClear";
         GameStateText.GetComponent<Animator>().SetTrigger("GameClear");
-        if (SceneManager.GetActiveScene().name == "EnglishScene")
-        {
             SliderController.instance.WaitSlider();
-        }
         gamestate = Gamestate.GameClear;
         StartCoroutine("coResultButtonsOn");
         StateUI.SetActive(false);
@@ -101,10 +108,9 @@ public class GameManager : MonoBehaviour
         GameStateText.SetActive(true);
         GameStateText.GetComponent<TextMeshPro>().text = "GameOver";
         GameStateText.GetComponent<Animator>().SetTrigger("GameOver");
-        if (SceneManager.GetActiveScene().name == "EnglishScene")
-        {
+
             SliderController.instance.WaitSlider();
-        }
+
         StartCoroutine("coResultButtonsOn");
         gamestate = Gamestate.GameOver;
         StateUI.SetActive(false);

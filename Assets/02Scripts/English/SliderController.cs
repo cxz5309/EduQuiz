@@ -25,7 +25,7 @@ public class SliderController : MonoBehaviour
         {
             if (!sliderWait)
             {
-                slider.value -= Time.deltaTime * (WaveManager.instance.hardMode+1);
+                slider.value -= Time.deltaTime * (slider.maxValue / WaveManager.instance.waveTime());
             }
         }
         else

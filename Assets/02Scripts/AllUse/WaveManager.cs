@@ -31,6 +31,9 @@ public class WaveManager : MonoBehaviour
     private float delayTime = 3.0f;
     // 3초 딜레이
     public GameObject countText;
+
+    public int level;
+    public float defaultTime;
     public int hardMode;//영우
 
     void Awake()
@@ -47,10 +50,7 @@ public class WaveManager : MonoBehaviour
         //StartWave();
         // 처음 웨이브 시작
     }
-
-    void Update()
-    {
-    }
+    
     public void WaveDelayStart()
     {
         if (!WaveDelaying)
@@ -63,12 +63,9 @@ public class WaveManager : MonoBehaviour
     {
         WaveDelaying = true;
         GameManager.instance.EnemyDestroy();
-        switch (SceneManager.GetActiveScene().name)
-        {
-            case "EnglishScene":
+        
                 SliderController.instance.WaitSlider();
-                break;
-        }
+        
         yield return new WaitForSeconds(delayTime);
         if (HPManager.instance.HP > 0)
         {
@@ -81,12 +78,9 @@ public class WaveManager : MonoBehaviour
             {
                 GameManager.instance.NextLevel();
             }
-            switch (SceneManager.GetActiveScene().name)
-            {
-                case "EnglishScene":
+            
                     SliderController.instance.ResumeSlider();
-                    break;
-            }
+             
             WaveDelaying = false;
         }
         else
@@ -112,9 +106,14 @@ public class WaveManager : MonoBehaviour
         {
             case "BasicScene":
                 CubeNum = 4;
+                defaultTime = 12f;
                 break;
             case "MathScene":
                 CubeNum = 6;
+                defaultTime = 12f;
+                break;
+            case "EnglishScene":
+                defaultTime = 20f;
                 break;
         }
         switch (SceneManager.GetActiveScene().name)
@@ -173,6 +172,7 @@ public class WaveManager : MonoBehaviour
         curWave++;        // 초기값 -1, 0부터 시작
         stageText.text = "Stage " + (curWave + 1);
         // 현재 스테이지 출력
+        SliderController.instance.StartSlider();
 
         switch (SceneManager.GetActiveScene().name)
         {
@@ -181,7 +181,6 @@ public class WaveManager : MonoBehaviour
                 // 인덱스 0부터 문제 출력
                 break;
             case "EnglishScene":
-                SliderController.instance.StartSlider();
                 EnemyKillCnt = 0;
                 Sprite newSprite = QuizManager.instance.dictionary[curWave].sprite;
                 stageImage.overrideSprite = newSprite;
@@ -214,6 +213,13 @@ public class WaveManager : MonoBehaviour
             // 적 위치 랜덤 생성
         }
     }
+
+    public float waveTime()
+    {
+        return defaultTime / (1 + (hardMode * 0.5f)) / (1+(level * 0.1f));
+    }
+
+
     public void initSpawnCount()
     {
         switch (SceneManager.GetActiveScene().name)

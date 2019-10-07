@@ -20,12 +20,7 @@ public class CountEvent : StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        switch (SceneManager.GetActiveScene().name)
-        {
-            case "EnglishScene":
-                SliderController.instance.WaitSlider();
-                break;
-        }
+        SliderController.instance.WaitSlider();
     }
 
     //OnStateExit is called when a transition ends and the state machine finishes evaluating this state
@@ -41,12 +36,9 @@ public class CountEvent : StateMachineBehaviour
             animator.gameObject.SetActive(false);
             WaveManager.instance.StartWave();
 
-            switch (SceneManager.GetActiveScene().name)
-            {                    
-                case "EnglishScene":
+            
                     SliderController.instance.ResumeSlider();
-                    break;
-            }
+             
         }
     }
 

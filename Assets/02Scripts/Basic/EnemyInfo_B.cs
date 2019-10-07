@@ -47,6 +47,7 @@ public class EnemyInfo_B : MonoBehaviour
     void Start()
     {
         Player = GameObject.FindGameObjectWithTag("Player");
+        DistanceToPlayer = Vector3.Distance(transform.position, Player.transform.position);
 
         GameObject spawn = Instantiate(spawnEffect, transform.position, transform.rotation);        // 적 스폰 이펙트 메소드 호출
         Destroy(spawn, 5.0f);       // spawn 오브젝트 제거
@@ -75,10 +76,10 @@ public class EnemyInfo_B : MonoBehaviour
                     // 적과 플레이어 사이의 거리를 구해서 DistanceToPlayer 변수에 저장
                     // 플레이어 위치는 (0, 0, 0)이기 때문에 Vector3.zero를 사용
 
-                    if (DistanceToPlayer < 5.5f&&!isAtacking)
+                    if (DistanceToPlayer < 5f && !isAtacking)
                     {
                         isAtacking = true;
-                        DistanceToPlayer = 5.5f;
+                        DistanceToPlayer = 5f;
                         Move(State.Attack);
                         StartCoroutine(coAttack());
                     }
@@ -97,11 +98,11 @@ public class EnemyInfo_B : MonoBehaviour
         switch (state)
         {
             case State.Walk:
-                MoveSpeed = speedChange(WaveManager.instance.hardMode);
+                MoveSpeed = DistanceToPlayer / (WaveManager.instance.waveTime()-2f);
                 ani.SetBool("walk", true);
                 break;
             case State.Run:
-                MoveSpeed = speedChange(WaveManager.instance.hardMode);
+                MoveSpeed = DistanceToPlayer / (WaveManager.instance.waveTime()-2f);
                 ani.SetBool("run", true);
                 break;
             case State.Attack:
@@ -137,7 +138,7 @@ public class EnemyInfo_B : MonoBehaviour
 
     IEnumerator coAttack()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(4f);
         GameManager.instance.FailEffect();
         WaveManager.instance.WaveDelayStart();
         HPManager.instance.HP -= 10;          // 플레이어에게 10 데미지를 줌.
