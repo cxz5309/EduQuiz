@@ -141,106 +141,40 @@ public class TmpLaycast : MonoBehaviour
                         }
                         break;
                     case "BasicScene":
-                        if (hitInfo.transform.gameObject.layer == 5)
-                        {
-                            if (hitInfo.collider.tag == "Close")
-                            {
-                                Debug.Log("GameClose");
-                            }
-                            
-                            else if (GameManager.instance.gamestate == GameManager.Gamestate.GamePause)
-                            {
-                                if (hitInfo.collider.tag == "Pause")
-                                {
-                                    GameManager.instance.GamePauseFin();
-                                }
-                                else
-                                {
-                                    ChangeScene(hitInfo.collider.tag);
-                                }
-                            }
-                            else
-                            {
-                                ChangeScene(hitInfo.collider.tag);
-                            }
-                        }
-                        if (GameManager.instance.gamestate == GameManager.Gamestate.GamePlaying)
-                        {
-                            Fire(hitInfo.point);
-                            // 마우스 왼쪽버튼 클릭하면 총알 발사
-                            if (hitInfo.collider.tag == "Pause")
-                            {
-                                GameManager.instance.GamePause();
-                            }
-                        }
-                        break;
                     case "MathScene":
-                        if (hitInfo.transform.gameObject.layer == 5)
-                        {
-                            if (hitInfo.collider.tag == "Close")
-                            {
-                                Debug.Log("GameClose");
-                            }
-                           
-                            else if (GameManager.instance.gamestate == GameManager.Gamestate.GamePause)
-                            {
-                                if (hitInfo.collider.tag == "Pause")
-                                {
-                                    GameManager.instance.GamePauseFin();
-                                }
-                                else
-                                {
-                                    ChangeScene(hitInfo.collider.tag);
-                                }
-                            }
-                            else
-                            {
-                                ChangeScene(hitInfo.collider.tag);
-                            }
-                        }
-                        if (GameManager.instance.gamestate == GameManager.Gamestate.GamePlaying)
-                        {
-                            Fire(hitInfo.point);
-                            // 마우스 왼쪽버튼 클릭하면 총알 발사
-                            if (hitInfo.collider.tag == "Pause")
-                            {
-                                GameManager.instance.GamePause();
-                            }
-                        }
-                        break;
                     case "EnglishScene":
                         if (hitInfo.transform.gameObject.layer == 5)
                         {
+                            Debug.Log(GameManager.instance.gamestate);
+
                             if (hitInfo.collider.tag == "Close")
                             {
                                 Debug.Log("GameClose");
                             }
-                          
-                            else if (GameManager.instance.gamestate == GameManager.Gamestate.GamePause)
+
+                            else if (hitInfo.collider.tag == "Pause")
                             {
-                                if (hitInfo.collider.tag == "Pause")
+                                if (GameManager.instance.gamestate == GameManager.Gamestate.GamePause)
                                 {
                                     GameManager.instance.GamePauseFin();
                                 }
-                                else
+                                else if (GameManager.instance.gamestate == GameManager.Gamestate.GamePlaying)
                                 {
-                                    ChangeScene(hitInfo.collider.tag);
+                                    GameManager.instance.GamePause();
                                 }
                             }
                             else
                             {
                                 ChangeScene(hitInfo.collider.tag);
+                                Fire(hitInfo.point);
                             }
                         }
-                        if (GameManager.instance.gamestate == GameManager.Gamestate.GamePlaying)
+                        else
                         {
                             Fire(hitInfo.point);
-                            // 마우스 왼쪽버튼 클릭하면 총알 발사
-                            if (hitInfo.collider.tag == "Pause")
-                            {
-                                GameManager.instance.GamePause();
-                            }
                         }
+                        // 마우스 왼쪽버튼 클릭하면 총알 발사
+
                         break;
 
 

@@ -7,7 +7,6 @@ public class SelectBuyWeapon : MonoBehaviour
 {
     public static SelectBuyWeapon instance;
 
-    public GameObject storeUI;
     public bool getStoreActive;
 
     public GameObject Chapters;

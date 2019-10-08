@@ -3252,6 +3252,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camera: {fileID: 170659017}
   Bullet: {fileID: 1698648575761504, guid: cf263124cbe15f448b6a2ec0ef11bd54, type: 3}
+  FirePos: {fileID: 0}
+  triggerSwitch: 0
+  shotSound: 
 --- !u!114 &1056125799
 MonoBehaviour:
   m_ObjectHideFlags: 0

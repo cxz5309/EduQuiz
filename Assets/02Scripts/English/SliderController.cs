@@ -16,7 +16,7 @@ public class SliderController : MonoBehaviour
     void Start()
     {
         slider = GetComponent<Slider>();
-        sliderWait = false;
+        sliderWait = true;
         StartSlider();
     }
     void Update()

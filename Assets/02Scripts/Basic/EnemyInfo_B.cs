@@ -98,11 +98,11 @@ public class EnemyInfo_B : MonoBehaviour
         switch (state)
         {
             case State.Walk:
-                MoveSpeed = DistanceToPlayer / (WaveManager.instance.waveTime()-2f);
+                MoveSpeed = (DistanceToPlayer-5f) / (WaveManager.instance.waveTime()-3f);
                 ani.SetBool("walk", true);
                 break;
             case State.Run:
-                MoveSpeed = DistanceToPlayer / (WaveManager.instance.waveTime()-2f);
+                MoveSpeed = (DistanceToPlayer-5f) / (WaveManager.instance.waveTime()-3f);
                 ani.SetBool("run", true);
                 break;
             case State.Attack:
