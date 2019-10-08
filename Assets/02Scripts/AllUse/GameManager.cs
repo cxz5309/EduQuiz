@@ -47,21 +47,6 @@ public class GameManager : MonoBehaviour
         StateUI.SetActive(true);
         // State UI 활성화
     }
-    float time = 0;
-
-    private void Update()
-    {
-        if (!WaveManager.instance.WaveDelaying)
-        {
-            time += Time.fixedDeltaTime;
-        }
-        else
-        {
-            Debug.Log(time);
-            time = 0;
-        }
-    }
-
     // 결과 버튼 메소드
     IEnumerator coResultButtonsOn()
     {
@@ -126,9 +111,9 @@ public class GameManager : MonoBehaviour
 
     public void GamePauseFin()
     {
+        Time.timeScale = 1;
         EndUI.SetActive(false);
         gamestate = Gamestate.GamePlaying;
-        Time.timeScale = 1;
     }
 
     // 다음 레벨 메소드

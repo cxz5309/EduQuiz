@@ -16,8 +16,9 @@ public class WaveManager : MonoBehaviour
     public GameObject LightChange;       // 배경 밤으로 변경
     //영우
     public Text stageText;          // 스테이지 ui
-    public Text quizText;           // 지문 ui
-    public Image stageImage;
+
+    public Text basicText;           // 지문 ui
+    public Image englishImage;
 
     public Transform[] SpawnPoint = new Transform[9];   // 적 생성 위치를 저장하는 배열
     public GameObject[] Enemy = new GameObject[9];        // 적 캐릭터를 저장하는 변수
@@ -177,13 +178,13 @@ public class WaveManager : MonoBehaviour
         switch (SceneManager.GetActiveScene().name)
         {
             case "BasicScene":
-                quizText.text = QuizManager.instance.dictionary[curWave].quiz;
+                basicText.text = QuizManager.instance.dictionary[curWave].quiz;
                 // 인덱스 0부터 문제 출력
                 break;
             case "EnglishScene":
                 EnemyKillCnt = 0;
                 Sprite newSprite = QuizManager.instance.dictionary[curWave].sprite;
-                stageImage.overrideSprite = newSprite;
+                englishImage.overrideSprite = newSprite;
                 // 이미지 출력
                 break;
         }

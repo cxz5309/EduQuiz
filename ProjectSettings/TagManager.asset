@@ -10,7 +10,6 @@ TagManager:
   - eng
   - HP
   - Timer
-  - Retry
   - main
   - basicRetry
   - mathRetry
@@ -28,6 +27,8 @@ TagManager:
   - Buy
   - Confirm
   - Cancel
+  - Inventory
+  - Select
   layers:
   - Default
   - TransparentFX
