@@ -2163,6 +2163,7 @@ MonoBehaviour:
     type: 3}
   itemSpawnStop: 0
   itemSpawnChk: 00000000000000000000000000000000
+  itemSound: ItemGenerate
 --- !u!1001 &483389843
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3819,8 +3820,8 @@ MonoBehaviour:
   hardWave: 3
   LightChange: {fileID: 170076733}
   stageText: {fileID: 114365333421567030}
-  quizText: {fileID: 114181627229553262}
-  stageImage: {fileID: 0}
+  basicText: {fileID: 114181627229553262}
+  englishImage: {fileID: 0}
   SpawnPoint:
   - {fileID: 42326440}
   - {fileID: 326024575}
@@ -5070,6 +5071,8 @@ MonoBehaviour:
   StageStateText: {fileID: 1176116088}
   GameStateText: {fileID: 1212337540}
   themeSound: Theme01
+  successSound: Success
+  failSound: Fail
   gamestate: 0
 --- !u!1 &1099669995
 GameObject:
@@ -12978,7 +12981,7 @@ MonoBehaviour:
   savedUp: {x: 0, y: 1, z: 0}
   savedRectSize: {x: 871.4, y: 127.32}
   savedColor: {r: 1, g: 1, b: 1, a: 1}
-  savedTextUV0: {x: 0.1875, y: 0}
+  savedTextUV0: {x: 0, y: 0.1171875}
   savedFill: 0
 --- !u!114 &114679477676329416
 MonoBehaviour:

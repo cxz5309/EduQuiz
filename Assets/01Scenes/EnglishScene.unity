@@ -2292,6 +2292,7 @@ MonoBehaviour:
     type: 3}
   itemSpawnStop: 0
   itemSpawnChk: 000000000000000000000000
+  itemSound: ItemGenerate
 --- !u!1 &456121752
 GameObject:
   m_ObjectHideFlags: 0
@@ -3975,8 +3976,8 @@ MonoBehaviour:
   hardWave: 3
   LightChange: {fileID: 170076733}
   stageText: {fileID: 114365333421567030}
-  quizText: {fileID: 0}
-  stageImage: {fileID: 4839891081182437423}
+  basicText: {fileID: 0}
+  englishImage: {fileID: 4839891081182437423}
   SpawnPoint:
   - {fileID: 42326440}
   - {fileID: 326024575}
@@ -4001,6 +4002,8 @@ MonoBehaviour:
   EnemyKillCnt: 0
   WaveDelaying: 0
   countText: {fileID: 2071798505}
+  level: 0
+  defaultTime: 0
   hardMode: 0
 --- !u!1 &767717214
 GameObject:
@@ -6343,11 +6346,9 @@ MonoBehaviour:
   CountText: {fileID: 2071798505}
   StageStateText: {fileID: 574731745}
   GameStateText: {fileID: 379840541}
-  effSuccess: {fileID: 4521126476091094244, guid: 8544490281f55aa4f94bde9b26087841,
-    type: 3}
-  effFail: {fileID: 3611664481214425091, guid: b9330a0b83804d54fb20312379de842b, type: 3}
-  effSpawn: {fileID: 1745651206}
   themeSound: Theme01
+  successSound: Success
+  failSound: Fail
   gamestate: 0
 --- !u!1 &1094460050
 GameObject:
@@ -6776,7 +6777,7 @@ MonoBehaviour:
   savedUp: {x: 0, y: 1, z: 0}
   savedRectSize: {x: 160, y: 100}
   savedColor: {r: 1, g: 1, b: 1, a: 1}
-  savedTextUV0: {x: 0.5, y: 0}
+  savedTextUV0: {x: 0, y: 0.0078125}
   savedFill: 0
 --- !u!114 &1152316484
 MonoBehaviour:
@@ -14251,7 +14252,7 @@ MonoBehaviour:
   savedUp: {x: 0, y: 1, z: 0}
   savedRectSize: {x: 160, y: 100}
   savedColor: {r: 1, g: 1, b: 1, a: 1}
-  savedTextUV0: {x: 0.67578125, y: 0}
+  savedTextUV0: {x: 0.5, y: 0}
   savedFill: 0
 --- !u!114 &114675370267994126
 MonoBehaviour:

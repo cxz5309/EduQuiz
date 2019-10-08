@@ -474,7 +474,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55c63f737f505e34aa2c52b36b708dc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  storeUI: {fileID: 0}
   getStoreActive: 0
   Chapters: {fileID: 91186599}
   ChapterArr:

@@ -23,6 +23,9 @@ public class ItemManager : MonoBehaviour
     public int[] itemSpawnChk;
     // 랜덤숫자 반복 방지를 위한 체크배열 변수(스폰지역 수만큼 배열크기 지정)
 
+    public string itemSound = "ItemGenerate";
+    private AudioManager theAudio;
+
 
     void Awake()
     {
@@ -31,6 +34,8 @@ public class ItemManager : MonoBehaviour
 
     void Start()
     {
+        theAudio = FindObjectOfType<AudioManager>();
+
         itemSpawnChk = new int[ItemSpawnPoint.Length];
         itemCount = 3;      // 아이템 최대 생성 개수
         HPSpawnTime = 1.0f;     // 처음 HPSpawnTime 1초로 지정
@@ -79,6 +84,9 @@ public class ItemManager : MonoBehaviour
             {   // 생성가능한 아이템 개수가 0이 아닐때
                 if (itemSpawnChk[itemPoint] == 0)
                 {   // 아이템이 생성안된 곳일 때
+
+                    theAudio.Play(itemSound);
+
                     itemSpawnChk[itemPoint] = 1;    // 생성할 곳 체크
                     GameObject Obj = Instantiate(gameObject, ItemSpawnPoint[itemPoint].position, ItemSpawnPoint[itemPoint].rotation);
                     Obj.name = itemPoint.ToString();
