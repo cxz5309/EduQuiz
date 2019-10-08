@@ -41,11 +41,16 @@ public class EnemyInfo_B : MonoBehaviour
     public bool isAtacking;
     private bool result;
 
+    public string dieSound = "MonsterDie";
+    private AudioManager theAudio;
+
     public enum State { Walk, Run, Stop, Attack};
     State nowState;
     
     void Start()
     {
+        theAudio = FindObjectOfType<AudioManager>();
+
         Player = GameObject.FindGameObjectWithTag("Player");
         DistanceToPlayer = Vector3.Distance(transform.position, Player.transform.position);
 
@@ -155,6 +160,7 @@ public class EnemyInfo_B : MonoBehaviour
         {   // 충돌한 오브젝트의 태그가 Bullet인 경우
             Destroy(coll.gameObject);   // 총알 제거
             DamageIffect();        // 적 제거
+            theAudio.Play(dieSound);
 
             switch (SceneManager.GetActiveScene().name)
             {

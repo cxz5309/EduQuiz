@@ -497,7 +497,7 @@ MonoBehaviour:
   Bullet: {fileID: 1698648575761504, guid: cf263124cbe15f448b6a2ec0ef11bd54, type: 3}
   FirePos: {fileID: 336358655}
   triggerSwitch: 0
-  shotSound: 
+  shotSound: Shot
 --- !u!114 &1487092246
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -10,11 +10,15 @@ public class EnemyInfo_E : MonoBehaviour
     public GameObject HitEffect;    // 적이 죽으면 발생하는 이펙트
     public GameObject Player;
 
+    public string dieSound = "MonsterDie";
+    private AudioManager theAudio;
+
     int order;
 
 
     void Start()
     {
+        theAudio = FindObjectOfType<AudioManager>();
         Player = GameObject.FindGameObjectWithTag("Player");
 
         GameObject spawn = Instantiate(spawnEffect, transform.position, transform.rotation);        // 적 스폰 이펙트 메소드 호출
@@ -38,6 +42,7 @@ public class EnemyInfo_E : MonoBehaviour
 
                 GameManager.instance.SuccessEffect();       // 성공 이펙트
 
+
                 if (WaveManager.instance.curWave < QuizManager.instance.dictionary.Count - 1)
                 {   // 문제가 더 남아있을 때
                     WaveManager.instance.EnemyKillCnt = 0;
@@ -54,7 +59,7 @@ public class EnemyInfo_E : MonoBehaviour
             { 
                 if (WaveManager.instance.EnemyKillCnt == isRightOrder())
                 {   // 정답일 때
-                    //Sound.instance.Correct();
+                    theAudio.Play(dieSound);
                     WaveManager.instance.EnemyKillCnt++;      // 적 죽인 수 ++
                     DamageIffect();         // 적 제거
                 }
