@@ -29,6 +29,7 @@ TagManager:
   - Cancel
   - Inventory
   - Select
+  - Setting
   layers:
   - Default
   - TransparentFX

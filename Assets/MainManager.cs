@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MainManager : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class MainManager : MonoBehaviour
     public string themeSound;
     private AudioManager theAudio;
 
+    public Text text;
+
 
     private void Awake()
     {
@@ -23,6 +26,11 @@ public class MainManager : MonoBehaviour
     {
         theAudio = FindObjectOfType<AudioManager>();
         theAudio.Play(themeSound);
+    }
+
+    private void Update()
+    {
+        Debug.Log(text.GetComponent<Transform>().position);
     }
 
     public void OpenGrade()
