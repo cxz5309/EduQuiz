@@ -595,6 +595,7 @@ MonoBehaviour:
     type: 3}
   itemSpawnStop: 0
   itemSpawnChk: 00000000000000000000000000000000
+  itemSound: 
 --- !u!1 &541004231
 GameObject:
   m_ObjectHideFlags: 0
@@ -960,8 +961,8 @@ MonoBehaviour:
   hardWave: 3
   LightChange: {fileID: 170076733}
   stageText: {fileID: 114365333882695649}
-  quizText: {fileID: 0}
-  stageImage: {fileID: 0}
+  basicText: {fileID: 0}
+  englishImage: {fileID: 0}
   SpawnPoint:
   - {fileID: 42326440}
   - {fileID: 326024575}
@@ -1627,6 +1628,8 @@ MonoBehaviour:
   StageStateText: {fileID: 1629709674}
   GameStateText: {fileID: 2042094066}
   themeSound: Theme01
+  successSound: Success
+  failSound: Fail
   gamestate: 0
 --- !u!1 &1096671782
 GameObject:

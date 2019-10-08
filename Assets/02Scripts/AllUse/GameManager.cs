@@ -21,6 +21,8 @@ public class GameManager : MonoBehaviour
     public GameObject GameStateText;
     
     public string themeSound;
+    public string successSound = "Success";
+    public string failSound = "Fail";
     private AudioManager theAudio;
 
 
@@ -160,6 +162,7 @@ public class GameManager : MonoBehaviour
 
     public void SuccessEffect()     // 성공 이펙트
     {
+        theAudio.Play(successSound);
         StageStateText.SetActive(true);
         StageStateText.GetComponent<TextMeshPro>().text = "Success";
         StageStateText.GetComponent<Animator>().SetTrigger("Success");
@@ -167,6 +170,7 @@ public class GameManager : MonoBehaviour
 
     public void FailEffect()        // 실패 이펙트
     {
+        theAudio.Play(failSound);
         StageStateText.SetActive(true);
         StageStateText.GetComponent<TextMeshPro>().text = "Fail";
         StageStateText.GetComponent<Animator>().SetTrigger("Fail");

@@ -361,9 +361,14 @@ MonoBehaviour:
     Volumn: 1
     loop: 0
     playOnAwake: 0
-  - name: 
-    clip: {fileID: 0}
-    Volumn: 0
+  - name: Success
+    clip: {fileID: 8300000, guid: 4c613dd86c601f14fbd1fdee8d0724c9, type: 3}
+    Volumn: 1
+    loop: 0
+    playOnAwake: 0
+  - name: Fail
+    clip: {fileID: 8300000, guid: b290f0825df44d840a2464328a6ef5b4, type: 3}
+    Volumn: 1
     loop: 0
     playOnAwake: 0
 --- !u!1 &1487092239

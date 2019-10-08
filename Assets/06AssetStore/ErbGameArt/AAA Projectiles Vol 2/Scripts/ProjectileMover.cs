@@ -84,15 +84,8 @@ public class ProjectileMover : MonoBehaviour
                 detachedPrefab.transform.parent = null;
             }
         }
-
-        Debug.Log("destroy");
+        
         theAudio.Play(hitSound);
         Destroy(gameObject);
-    }
-
-    private void OnDestroy()
-    {
-       
-        
     }
 }
