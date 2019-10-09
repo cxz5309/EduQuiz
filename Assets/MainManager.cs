@@ -28,11 +28,6 @@ public class MainManager : MonoBehaviour
         theAudio.Play(themeSound);
     }
 
-    private void Update()
-    {
-        Debug.Log(text.GetComponent<Transform>().position);
-    }
-
     public void OpenGrade()
     {
         GameUI.SetActive(false);

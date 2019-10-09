@@ -30,6 +30,11 @@ TagManager:
   - Inventory
   - Select
   - Setting
+  - Music
+  - Effect
+  - Back
+  - Exit
+  - Weapon
   layers:
   - Default
   - TransparentFX
