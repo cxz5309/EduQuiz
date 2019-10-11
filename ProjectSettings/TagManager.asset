@@ -35,6 +35,8 @@ TagManager:
   - Back
   - Exit
   - Weapon
+  - GamePotal
+  - StorePotal
   layers:
   - Default
   - TransparentFX
