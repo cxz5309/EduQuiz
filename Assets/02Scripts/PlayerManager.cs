@@ -14,17 +14,25 @@ public class PlayerManager : MonoBehaviour
         instance = this;
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.tag == "GamePotal")
+        if (other.gameObject.tag == "GamePotal")
         {
             currentPlace = "GamePotal";
             PopupManager.instance.PopupChange();
+
+            Debug.Log("플레이어 GamePotal");
         }
-        else if (collision.gameObject.tag == "StorePotal")
+        else if (other.gameObject.tag == "StorePotal")
         {
             currentPlace = "StorePotal";
             PopupManager.instance.PopupChange();
+            Debug.Log("플레이어 StorePotal");
         }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        
     }
 }
