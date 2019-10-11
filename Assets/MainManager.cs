@@ -30,7 +30,6 @@ public class MainManager : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(text.GetComponent<Transform>().position);
     }
 
     public void OpenGrade()

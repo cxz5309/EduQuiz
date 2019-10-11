@@ -8,23 +8,44 @@ public class TmpLaycast : MonoBehaviour
     public Camera camera;
     public GameObject Bullet;
     public GameObject FirePos;
-    string tag = "";
+    string thisTag = "";
 
     public bool triggerSwitch;
     public string shotSound;
     private AudioManager theAudio;
 
+    public PredictPath mPredictPath;
+    public Transform mPlayer;
+
     private void Start()
     {
+        mPlayer = transform.parent;
+        mPredictPath = FindObjectOfType<PredictPath>();
         theAudio = FindObjectOfType<AudioManager>();
         ChangeWeapon(DataSave.instance.data.nowWeapon);
     }
 
+    public void PredictPath(bool triggerSwitch)
+    {
+        if (!triggerSwitch)
+        {
+            if (mPredictPath == null) return;
+            mPredictPath.mIsActive = true;
+        }
+        else
+        {
+            if (mPredictPath == null) return;
+            mPredictPath.mIsActive = false;
+        }
+    }
+
     void Update()
     {
+        
         if (Input.GetKeyDown(KeyCode.Space))
         {
             triggerSwitch = (triggerSwitch == true) ? false : true;
+            PredictPath(triggerSwitch);
         }
         if (Input.GetMouseButtonUp(0))
         {
@@ -51,7 +72,7 @@ public class TmpLaycast : MonoBehaviour
                                 case "Basic":
                                 case "Math":
                                 case "English":
-                                    tag = hitInfo.collider.tag;
+                                    thisTag = hitInfo.collider.tag;
                                     MainManager.instance.OpenGrade();
                                     break;
                                 case "Grade1":
@@ -62,7 +83,7 @@ public class TmpLaycast : MonoBehaviour
                                 case "Level1":
                                 case "Level2":
                                 case "Level3":
-                                    ChangeScene(tag);
+                                    ChangeScene(thisTag);
                                     break;
                                 case "Store":
                                     ChangeScene(hitInfo.collider.tag);
@@ -73,8 +94,8 @@ public class TmpLaycast : MonoBehaviour
                         else
                         {
                             if (!triggerSwitch)
-                            { 
-                                gameObject.transform.position = hitInfo.point + new Vector3(0, 3.7f, 0);
+                            {
+                                Teleport();
                             }
                         }
                         if (triggerSwitch)
@@ -135,7 +156,7 @@ public class TmpLaycast : MonoBehaviour
                                 }
                                 else
                                 {
-                                    gameObject.transform.position = hitInfo.point + new Vector3(0, 3.7f, 0);
+                                    Teleport();
                                 }
                             }
                         }
@@ -181,6 +202,14 @@ public class TmpLaycast : MonoBehaviour
                 }
             }
         }
+    }
+
+    void Teleport()
+    {
+        //if (mPredictPath.mIsActive == true) return;
+        Vector3 pos = mPredictPath.mGroundPos;
+        if (pos == Vector3.zero) return;
+        mPlayer.transform.position = pos;
     }
 
     public void ChangeWeapon(int projectileNum)
