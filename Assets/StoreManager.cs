@@ -8,6 +8,7 @@ public class StoreManager : MonoBehaviour
 
     public GameObject storeScreen;
     public GameObject buyScreen;
+    public GameObject clickText;
     public bool getStoreActive;
     public bool getBuyActive;
 
@@ -23,11 +24,13 @@ public class StoreManager : MonoBehaviour
         {
             storeScreen.SetActive(false);
             getStoreActive = false;
+            clickText.SetActive(true);
         }
         else if (storeScreen.activeSelf == false)
         {
             storeScreen.SetActive(true);
             getStoreActive = true;
+            clickText.SetActive(false);
         }
     }
 
