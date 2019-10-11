@@ -63,7 +63,7 @@ public class TmpLaycast : MonoBehaviour
                     case "Main":
                         if (hitInfo.transform.gameObject.layer == 5)
                         {
-                            if (hitInfo.collider.tag == "Close")
+                            if (hitInfo.collider.tag == "Exit")
                             {
                                 Debug.Log("GameClose");
                             }

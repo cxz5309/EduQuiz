@@ -30,6 +30,13 @@ TagManager:
   - Inventory
   - Select
   - Setting
+  - Music
+  - Effect
+  - Back
+  - Exit
+  - Weapon
+  - GamePotal
+  - StorePotal
   layers:
   - Default
   - TransparentFX
