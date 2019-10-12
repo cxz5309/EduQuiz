@@ -205,7 +205,7 @@ public class EnemyInfo_B : MonoBehaviour
         result = enemy.result;
         Debug.Log(result);
         //transform.position = enemy.spawnPos;
-        this.transform.Find("TextMesh").GetComponent<TextMeshPro>().text = enemy.meshNum;
+        this.transform.Find("TextMesh").GetComponent<TextMesh>().text = enemy.meshNum;
         gameObject.SetActive(true);
     }
     
