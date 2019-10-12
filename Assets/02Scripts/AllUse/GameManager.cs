@@ -9,8 +9,6 @@ using TMPro;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    public GameObject EndUI;
-    public GameObject StateUI;
     public GameObject ResultUI;
     //public GameObject HitPanel;
 
@@ -61,7 +59,6 @@ public class GameManager : MonoBehaviour
         WaveManager.instance.InitWave();
         gamestate = Gamestate.GamePlaying;
         Time.timeScale = 1;
-        StateUI.SetActive(true);
         // State UI 활성화
     }
     // 결과 버튼 메소드
@@ -75,7 +72,6 @@ public class GameManager : MonoBehaviour
     IEnumerator coMenuButtonsOn()
     {
         yield return new WaitForSeconds(10f);
-        EndUI.SetActive(true);
         ResultUI.SetActive(false);
         Time.timeScale = 0;
     }
@@ -98,7 +94,6 @@ public class GameManager : MonoBehaviour
             SliderController.instance.WaitSlider();
         gamestate = Gamestate.GameClear;
         StartCoroutine("coResultButtonsOn");
-        StateUI.SetActive(false);
     }
 
     // 게임 오버 메소드
@@ -113,21 +108,38 @@ public class GameManager : MonoBehaviour
         SliderController.instance.WaitSlider();
         StartCoroutine("coResultButtonsOn");
         gamestate = Gamestate.GameOver;
-        StateUI.SetActive(false);
     }
 
     // 게임 일시정지 메소드
     public void GamePause()
     {
-        EndUI.SetActive(true);
+        PlayerManager.instance.currentPopup = "Pause";
+        UniconManager.instance.PopupChange();
+
         gamestate = Gamestate.GamePause;
         Time.timeScale = 0;
     }
 
     public void GamePauseFin()
     {
+        switch (SceneManager.GetActiveScene().name)     // 씬마다 다르게 활성화 해주기
+        {
+            case "BasicScene":
+                PlayerManager.instance.currentPopup = "Basic";
+                break;
+            case "MathScene":
+                PlayerManager.instance.currentPopup = "Math";
+                break;
+            case "EnglishScene":
+                PlayerManager.instance.currentPopup = "English";
+                break;
+            case "OXScene":
+                PlayerManager.instance.currentPopup = "OX";
+                break;
+        }
+        UniconManager.instance.PopupChange();
+
         Time.timeScale = 1;
-        EndUI.SetActive(false);
         gamestate = Gamestate.GamePlaying;
     }
 

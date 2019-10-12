@@ -18,10 +18,9 @@ public class WaveManager : MonoBehaviour
     
     public GameObject Manual;
 
-    private Text waveText = null;          // 웨이브 ui
-    private Text quizText = null;           // 지문 ui
-
-    public Image englishImage;
+    private Text waveText = null;          // 웨이브
+    private Text quizText = null;           // 지문
+    public Image engImage = null;           // 그림
 
     public Transform[] SpawnPoint = new Transform[9];   // 적 생성 위치를 저장하는 배열
     public GameObject[] Enemy = new GameObject[9];        // 적 캐릭터를 저장하는 변수
@@ -32,8 +31,7 @@ public class WaveManager : MonoBehaviour
     public int EnemyKillCnt;
     
     public bool WaveDelaying;
-    private float delayTime = 3.0f;
-    // 3초 딜레이
+    private float delayTime = 3.0f;     // 3초 딜레이
     public GameObject countText;
 
     public int level;
@@ -48,8 +46,18 @@ public class WaveManager : MonoBehaviour
 
     void Start()
     {
-        waveText = GameObject.Find("Title").GetComponent<Text>();
-        quizText = GameObject.Find("Description").GetComponent<Text>();
+        if (GameObject.Find("Title"))
+        {
+            waveText = GameObject.Find("Title").GetComponent<Text>();
+        }
+        if (GameObject.Find("Description"))
+        {
+            quizText = GameObject.Find("Description").GetComponent<Text>();
+        }
+        if (GameObject.Find("EngImage"))
+        {
+            engImage = GameObject.Find("EngImage").GetComponent<Image>();
+        }
 
         initSpawnCount();
 
@@ -195,31 +203,26 @@ public class WaveManager : MonoBehaviour
     public void StartWave()
     {
         curWave++;        // 초기값 -1, 0부터 시작
-        waveText.text = "WAVE : " + (curWave + 1);
-        // 현재 스테이지 출력
+        waveText.text = "WAVE : " + (curWave + 1);  // 현재 스테이지 출력
         SliderController.instance.StartSlider();
 
         switch (SceneManager.GetActiveScene().name)
         {
             case "BasicScene":
             case "OXScene":
-                quizText.text = QuizManager.instance.dictionary[curWave].quiz;
-                // 인덱스 0부터 문제 출력
+                quizText.text = QuizManager.instance.dictionary[curWave].quiz;  // 인덱스 0부터 문제 출력
                 break;
             case "EnglishScene":
                 EnemyKillCnt = 0;
                 Sprite newSprite = QuizManager.instance.dictionary[curWave].sprite;
-                englishImage.overrideSprite = newSprite;
-                // 이미지 출력
+                engImage.overrideSprite = newSprite;    // 이미지 출력
                 break;
         }
 
         if (curWave == hardWave)
         {   // 하드모드 단계를 정해주는 부분
-            hardMode = 1;
-            // 하드모드 온
-            LightChange.GetComponent<Light>().color = new Color(0,0,0,0.7f);
-            // 배경 변경
+            hardMode = 1;   // 하드모드 온
+            LightChange.GetComponent<Light>().color = new Color(0,0,0,0.7f);    // 배경 변경
         }
 
         if (waveEnemyDic.ContainsKey(curWave))

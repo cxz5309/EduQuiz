@@ -38,6 +38,8 @@ TagManager:
   - GamePotal
   - StorePotal
   - Unicon
+  - Home
+  - Next
   layers:
   - Default
   - TransparentFX
