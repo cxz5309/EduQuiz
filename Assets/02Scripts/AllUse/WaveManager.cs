@@ -54,7 +54,7 @@ public class WaveManager : MonoBehaviour
         initSpawnCount();
 
        //PopupMaunal();
-	FirstStart();
+	    FirstStart();
         //StartWave();
         // 처음 웨이브 시작
     }
@@ -109,6 +109,7 @@ public class WaveManager : MonoBehaviour
 
     public void FirstStart()
     {
+        HPManager.instance.initHP();
         countText.SetActive(true);
         Animator ani = countText.GetComponent<Animator>();
         ani.SetTrigger("StartCount");

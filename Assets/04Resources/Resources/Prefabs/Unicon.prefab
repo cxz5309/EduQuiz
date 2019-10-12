@@ -6635,6 +6635,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7625817345329052761}
   - component: {fileID: 7625817345329052758}
+  - component: {fileID: 4033662063515769226}
   m_Layer: 5
   m_Name: HP
   m_TagString: Untagged
@@ -6690,3 +6691,16 @@ MonoBehaviour:
   m_Spacing: {x: 50, y: 50}
   m_Constraint: 1
   m_ConstraintCount: 3
+--- !u!114 &4033662063515769226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7625817345329052760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e59ff9a6db69f664e89d94794443ef58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HP: 0

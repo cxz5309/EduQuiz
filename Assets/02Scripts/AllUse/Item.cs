@@ -9,7 +9,7 @@ public class Item : MonoBehaviour
     public float stopTime = 3f;
     void Start()
     {
-        hpManager = GameObject.Find("HPManager").GetComponent<HPManager>();
+        hpManager = GameObject.Find("HP").GetComponent<HPManager>();
         // Player 오브젝트를 찾아서 PlayerCtrl 스크립트를 가져온다.
     }
 

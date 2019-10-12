@@ -15800,24 +15800,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &8487593987526682285
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8487593987526682287}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 415d16527c280de4bb278a89a372fce8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  popup:
-  - {fileID: 8487593987373154705}
-  - {fileID: 8487593987938450489}
-  - {fileID: 8487593986893628487}
-  - {fileID: 8487593988437358479}
-  - {fileID: 8487593987315067980}
 --- !u!224 &8487593987526682286
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15847,7 +15829,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8487593987526682286}
-  - component: {fileID: 8487593987526682285}
   m_Layer: 5
   m_Name: Popup Screen
   m_TagString: Untagged

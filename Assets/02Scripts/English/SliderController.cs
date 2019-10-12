@@ -30,12 +30,15 @@ public class SliderController : MonoBehaviour
         }
         else
         {
-            if (!WaveManager.instance.WaveDelaying)
+            if (!sliderWait)
             {
-                GameManager.instance.FailEffect();
-                HPManager.instance.HP -= 10;
-                HPManager.instance.HeartCheck();  // 플레이어 체력 감소 후 업데이트
-                WaveManager.instance.WaveDelayStart();
+                if (!WaveManager.instance.WaveDelaying)
+                {
+                    GameManager.instance.FailEffect();
+                    HPManager.instance.HP -= 10;
+                    HPManager.instance.HeartCheck();  // 플레이어 체력 감소 후 업데이트
+                    WaveManager.instance.WaveDelayStart();
+                }
             }
         }
     }

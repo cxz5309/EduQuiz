@@ -16,15 +16,19 @@ public class HPManager : MonoBehaviour {
 
     void Start()
     {
+        initHP();
+    }
+
+    public void initHP()
+    {
         for (int i = 0; i < hpObject.Length; i++)
         {
             hpObject[i] = GameObject.Find("HP" + (i + 1)).gameObject;
         }
-
         HP = 30;
         HeartCheck();
     }
-    
+
     public void HeartCheck()
     {
         if (HP == 60)
