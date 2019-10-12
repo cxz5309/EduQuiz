@@ -202,7 +202,7 @@ public class WaveManager : MonoBehaviour
         {
             case "BasicScene":
             case "OXScene":
-                basicText.text = QuizManager.instance.dictionary[curWave].quiz;
+                quizText.text = QuizManager.instance.dictionary[curWave].quiz;
                 // 인덱스 0부터 문제 출력
                 break;
             case "EnglishScene":
