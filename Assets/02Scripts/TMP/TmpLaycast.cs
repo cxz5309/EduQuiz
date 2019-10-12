@@ -76,7 +76,7 @@ public class TmpLaycast : MonoBehaviour
                         {
                             if (!triggerSwitch)
                             {
-                                transform.position = hitInfo.point + new Vector3(0,3.69f,0);
+                                transform.position = hitInfo.point + new Vector3(0,6.19f,0);
                             }
                         }
                         if (triggerSwitch)
@@ -137,7 +137,7 @@ public class TmpLaycast : MonoBehaviour
                                 }
                                 else
                                 {
-                                    transform.position = hitInfo.point + new Vector3(0, 3.69f, 0);
+                                    transform.position = hitInfo.point + new Vector3(0, 6.19f, 0);
                                 }
                             }
                         }

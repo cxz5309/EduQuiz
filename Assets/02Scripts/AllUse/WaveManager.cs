@@ -16,6 +16,7 @@ public class WaveManager : MonoBehaviour
     public GameObject LightChange;       // 배경 밤으로 변경
     //영우
     public Text stageText;          // 스테이지 ui
+    public GameObject Manual;
 
     public Text basicText;           // 지문 ui
     public Image englishImage;
@@ -89,6 +90,12 @@ public class WaveManager : MonoBehaviour
             GameManager.instance.GameOver();
         }
     }
+
+    public void PopupMaunal()
+    {
+        Manual.SetActive(true);
+    }
+
     public void FirstStart()
     {
         countText.SetActive(true);
@@ -231,6 +238,9 @@ public class WaveManager : MonoBehaviour
                 break;
             case "EnglishScene":
                 enemyMaxCount = 9;
+                break;
+            case "OXScene":
+                enemyMaxCount = 2;
                 break;
         }
     }

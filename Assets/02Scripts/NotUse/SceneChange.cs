@@ -26,7 +26,7 @@ public class SceneChange : MonoBehaviour
     }
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        player.transform.position = new Vector3(0, 2.5f, -4.66f);
+        player.transform.position = new Vector3(0, 5f, -4.66f);
     }
 
     void OnDisable()
