@@ -173,41 +173,32 @@ public class TmpLaycast : MonoBehaviour
                         {
                             Debug.Log(GameManager.instance.gamestate);
 
-                            if (hitInfo.collider.tag == "Close")
+                            switch (hitInfo.collider.tag)
                             {
-                                Debug.Log("GameClose");
-                            }
-
-                            else if (hitInfo.collider.tag == "Pause")
-                            {
-                                if (GameManager.instance.gamestate == GameManager.Gamestate.GamePause)
-                                {
-                                    GameManager.instance.GamePauseFin();
-                                }
-                                else if (GameManager.instance.gamestate == GameManager.Gamestate.GamePlaying)
-                                {
+                                case "Pause":       // 일시정지
                                     GameManager.instance.GamePause();
-                                }
+                                    break;
+                                case "Back":        // 계속하기
+                                    GameManager.instance.GamePauseFin();
+                                    break;
+                                case "Home":        // 홈으로
+                                    ChangeScene("main");
+                                    break;
+                                case "Next":
+                                    Debug.Log("다음게임 계속 진행");            // 다음 게임 계속 진행하기
+                                    break;
                             }
-                            else if(hitInfo.collider.tag == "Right")
+                            
+                            if(hitInfo.collider.tag == "Right")
                             {
                                 WaveManager.instance.CloseManual();
-                            }
-                            else
-                            {
-                                ChangeScene(hitInfo.collider.tag);
-                                Fire(hitInfo.point);
                             }
                         }
                         else
                         {
                             Fire(hitInfo.point);
                         }
-                        // 마우스 왼쪽버튼 클릭하면 총알 발사
-
                         break;
-
-
                 }
             }
         }
