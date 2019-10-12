@@ -66,7 +66,7 @@ public class EnemyInfo_E : MonoBehaviour
                 else if (WaveManager.instance.EnemyKillCnt != isRightOrder())
                 {   // 오답일 때
                     //Sound.instance.InCorrect();
-                    SliderController.instance.ChangeSliderValue(-5f);// 답이 틀릴때마다 타이머 5초씩 감소
+                    SliderController.instance.ChangeSliderValue(-20f);// 답이 틀릴때마다 타이머 4초씩 감소
                 }
             }
         }

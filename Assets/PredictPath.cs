@@ -77,19 +77,21 @@ public class PredictPath : MonoBehaviour
 
         for(int i = 0; i < mCount; i++)
         {
+            Debug.Log(mGroundPos);
+
             if (mRenderList[i].gameObject.activeSelf == false) continue;
 
             if(Physics.Raycast(mRenderList[i].position, Vector3.down, out hit, Mathf.Infinity))
             {
-                if (hit.transform.gameObject.layer == LayerMask.NameToLayer("Ground") == false) continue;
+                //if (hit.transform.gameObject.layer == LayerMask.NameToLayer("Ground") == false) continue;
                 float curDist = Vector3.Distance(mRenderList[i].position, hit.point);
 
                 if (dist < curDist) continue;
                 closeIdx = i;
                 mGroundPos = hit.point;
+                Debug.Log(mGroundPos);
             }
         }
-
         for(int i = closeIdx; i < mCount; i++)
         {
             mRenderList[i].gameObject.SetActive(false);

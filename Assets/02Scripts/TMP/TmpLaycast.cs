@@ -14,29 +14,10 @@ public class TmpLaycast : MonoBehaviour
     public string shotSound;
     private AudioManager theAudio;
 
-    public PredictPath mPredictPath;
-    public Transform mPlayer;
-
     private void Start()
     {
-        mPlayer = transform.parent;
-        mPredictPath = FindObjectOfType<PredictPath>();
         theAudio = FindObjectOfType<AudioManager>();
         ChangeWeapon(DataSave.instance.data.nowWeapon);
-    }
-
-    public void PredictPath(bool triggerSwitch)
-    {
-        if (!triggerSwitch)
-        {
-            if (mPredictPath == null) return;
-            mPredictPath.mIsActive = true;
-        }
-        else
-        {
-            if (mPredictPath == null) return;
-            mPredictPath.mIsActive = false;
-        }
     }
 
     void Update()
@@ -45,8 +26,8 @@ public class TmpLaycast : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             triggerSwitch = (triggerSwitch == true) ? false : true;
-            PredictPath(triggerSwitch);
         }
+        
         if (Input.GetMouseButtonUp(0))
         {
 
@@ -95,7 +76,7 @@ public class TmpLaycast : MonoBehaviour
                         {
                             if (!triggerSwitch)
                             {
-                                Teleport();
+                                transform.position = hitInfo.point + new Vector3(0,3.69f,0);
                             }
                         }
                         if (triggerSwitch)
@@ -156,7 +137,7 @@ public class TmpLaycast : MonoBehaviour
                                 }
                                 else
                                 {
-                                    Teleport();
+                                    transform.position = hitInfo.point + new Vector3(0, 3.69f, 0);
                                 }
                             }
                         }
@@ -204,13 +185,13 @@ public class TmpLaycast : MonoBehaviour
         }
     }
 
-    void Teleport()
-    {
-        //if (mPredictPath.mIsActive == true) return;
-        Vector3 pos = mPredictPath.mGroundPos;
-        if (pos == Vector3.zero) return;
-        mPlayer.transform.position = pos;
-    }
+    //void Teleport()
+    //{
+    //    //if (mPredictPath.mIsActive == true) return;
+    //    Vector3 pos = mPredictPath.mGroundPos;
+    //    if (pos == Vector3.zero) return;
+    //    mPlayer.transform.position = pos;
+    //}
 
     public void ChangeWeapon(int projectileNum)
     {

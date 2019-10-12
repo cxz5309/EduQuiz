@@ -499,6 +499,8 @@ MonoBehaviour:
   FirePos: {fileID: 336358655}
   triggerSwitch: 0
   shotSound: Shot
+  mPredictPath: {fileID: 0}
+  mPlayer: {fileID: 0}
 --- !u!114 &1487092246
 MonoBehaviour:
   m_ObjectHideFlags: 0
