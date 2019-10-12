@@ -15,10 +15,12 @@ public class WaveManager : MonoBehaviour
 
     public GameObject LightChange;       // 배경 밤으로 변경
     //영우
-    public Text stageText;          // 스테이지 ui
+    
     public GameObject Manual;
 
-    public Text basicText;           // 지문 ui
+    private Text waveText = null;          // 웨이브 ui
+    private Text quizText = null;           // 지문 ui
+
     public Image englishImage;
 
     public Transform[] SpawnPoint = new Transform[9];   // 적 생성 위치를 저장하는 배열
@@ -46,6 +48,9 @@ public class WaveManager : MonoBehaviour
 
     void Start()
     {
+        waveText = GameObject.Find("Title").GetComponent<Text>();
+        quizText = GameObject.Find("Description").GetComponent<Text>();
+
         initSpawnCount();
 
         FirstStart();
@@ -178,14 +183,14 @@ public class WaveManager : MonoBehaviour
     public void StartWave()
     {
         curWave++;        // 초기값 -1, 0부터 시작
-        stageText.text = "Stage " + (curWave + 1);
+        waveText.text = "WAVE : " + (curWave + 1);
         // 현재 스테이지 출력
         SliderController.instance.StartSlider();
 
         switch (SceneManager.GetActiveScene().name)
         {
             case "BasicScene":
-                basicText.text = QuizManager.instance.dictionary[curWave].quiz;
+                quizText.text = QuizManager.instance.dictionary[curWave].quiz;
                 // 인덱스 0부터 문제 출력
                 break;
             case "EnglishScene":

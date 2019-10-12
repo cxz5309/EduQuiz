@@ -13,8 +13,14 @@ public class ProjectileMover : MonoBehaviour
     private Rigidbody rb;
     public GameObject[] Detached;
 
+    public string hitSound = "Hit";
+    private AudioManager theAudio;
+
+
     void Start()
     {
+        theAudio = FindObjectOfType<AudioManager>();
+
         rb = GetComponent<Rigidbody>();
         if (flash != null)
         {
@@ -79,6 +85,9 @@ public class ProjectileMover : MonoBehaviour
                 detachedPrefab.transform.parent = null;
             }
         }
+
+        theAudio.Play(hitSound);
+
         Destroy(gameObject);
     }
 }

@@ -37,6 +37,7 @@ TagManager:
   - Weapon
   - GamePotal
   - StorePotal
+  - Unicon
   layers:
   - Default
   - TransparentFX

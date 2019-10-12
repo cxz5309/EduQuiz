@@ -11,7 +11,7 @@ public class TmpLaycast : MonoBehaviour
     string thisTag = "";
 
     public bool triggerSwitch;
-    public string shotSound;
+    public string shotSound = "Shot";
     private AudioManager theAudio;
 
     private void Start()
@@ -44,10 +44,6 @@ public class TmpLaycast : MonoBehaviour
                     case "Main":
                         if (hitInfo.transform.gameObject.layer == 5)
                         {
-                            if (hitInfo.collider.tag == "Exit")
-                            {
-                                Debug.Log("GameClose");
-                            }
                             switch (hitInfo.collider.name)
                             {
                                 case "Basic":
@@ -69,8 +65,35 @@ public class TmpLaycast : MonoBehaviour
                                 case "Store":
                                     ChangeScene(hitInfo.collider.tag);
                                     break;
+
+                                // =============================================================== 새로 추가한것들
+                                case "Confirm":
+                                    if (PlayerManager.instance.currentPopup == "GamePotal")
+                                        Debug.Log("게임시작");     // 겜씸으로 이동 하시죠
+                                    else if(PlayerManager.instance.currentPopup == "StorePotal")
+                                        ChangeScene("store");       // 상점으로 이동 하시죠
+                                    break;
+                                case "Setting":
+                                    PlayerManager.instance.currentPopup = "Setting";
+                                    UniconManager.instance.PopupChange();
+                                    break;
+                                case "Cencel":
+                                case "Back":
+                                    PlayerManager.instance.currentPopup = "Idle";
+                                    UniconManager.instance.PopupChange();
+                                    break;
+                                case "Exit":
+                                    Debug.Log("GameClose");     // 겜 종료 하시죠
+                                    break;
+                                case "Music":
+                                    AudioManager.instance.SetBackGroundMute();
+                                    Debug.Log("배경음 ONOFF");
+                                    break;
+                                case "Effect":
+                                    AudioManager.instance.SetEffectMute();
+                                    Debug.Log("효과음 ONOFF");
+                                    break;
                             }
-                            
                         }
                         else
                         {
