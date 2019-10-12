@@ -31,6 +31,7 @@ public class Item : MonoBehaviour
                 {
                     case "BasicScene":
                     case "MathScene":
+                    case "OXScene":
                         StartTimer();
                         break;
                     case "EnglishScene":

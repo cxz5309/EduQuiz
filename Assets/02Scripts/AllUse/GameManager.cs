@@ -95,9 +95,7 @@ public class GameManager : MonoBehaviour
         GameStateText.SetActive(true);
         GameStateText.GetComponent<TextMeshPro>().text = "GameOver";
         GameStateText.GetComponent<Animator>().SetTrigger("GameOver");
-
-            SliderController.instance.WaitSlider();
-
+        SliderController.instance.WaitSlider();
         StartCoroutine("coResultButtonsOn");
         gamestate = Gamestate.GameOver;
         StateUI.SetActive(false);

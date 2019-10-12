@@ -5,6 +5,7 @@ using System;
 using UnityEngine.AI;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class Enemy
 {
@@ -62,9 +63,8 @@ public class EnemyInfo_B : MonoBehaviour
         {
             case "BasicScene":
             case "MathScene":
+            case "OXScene":
                 Move((State)WaveManager.instance.hardMode);
-                break;
-            case "EnglishScene":
                 break;
         }
     }
@@ -75,23 +75,23 @@ public class EnemyInfo_B : MonoBehaviour
         {
             case "BasicScene":
             case "MathScene":
+            case "OXScene":
                 if (HPManager.instance.HP > 0)
                 {   // 플레이어 ture
                     DistanceToPlayer = Vector3.Distance(transform.position, Player.transform.position);
                     // 적과 플레이어 사이의 거리를 구해서 DistanceToPlayer 변수에 저장
                     // 플레이어 위치는 (0, 0, 0)이기 때문에 Vector3.zero를 사용
-
-                    if (DistanceToPlayer < 5f && !isAtacking)
+                    if (SceneManager.GetActiveScene().name != "OXScene")
                     {
-                        isAtacking = true;
-                        DistanceToPlayer = 5f;
-                        Move(State.Attack);
-                        StartCoroutine(coAttack());
+                        if (DistanceToPlayer < 5f && !isAtacking)
+                        {
+                            isAtacking = true;
+                            DistanceToPlayer = 5f;
+                            Move(State.Attack);
+                            StartCoroutine(coAttack());
+                        }
                     }
                 }
-                break;
-            case "EnglishScene":
-
                 break;
         }
         
@@ -104,17 +104,22 @@ public class EnemyInfo_B : MonoBehaviour
         {
             case State.Walk:
                 MoveSpeed = (DistanceToPlayer-5f) / (WaveManager.instance.waveTime()-3f);
-                ani.SetBool("walk", true);
+                if(SceneManager.GetActiveScene().name!="OXScene")
+                    ani.SetBool("walk", true);
                 break;
             case State.Run:
                 MoveSpeed = (DistanceToPlayer-5f) / (WaveManager.instance.waveTime()-3f);
-                ani.SetBool("run", true);
+                if (SceneManager.GetActiveScene().name != "OXScene")
+                    ani.SetBool("run", true);
                 break;
             case State.Attack:
                 MoveSpeed = 0;
-                ani.SetBool("run", false);
-                ani.SetBool("walk", false);
-                ani.SetBool("right hook", true);        // 적의 Animator의 Shot을 true로 하여 공격하게 함.
+                if (SceneManager.GetActiveScene().name != "OXScene")
+                {
+                    ani.SetBool("run", false);
+                    ani.SetBool("walk", false);
+                    ani.SetBool("right hook", true);        // 적의 Animator의 Shot을 true로 하여 공격하게 함.
+                }
                 break;
             case State.Stop:
                 MoveSpeed = 0;
@@ -166,6 +171,7 @@ public class EnemyInfo_B : MonoBehaviour
             {
                 case "BasicScene":
                 case "MathScene":
+                case "OXScene":
                     // hit 오브젝트를 제거한다.
                     if (isRightResult())
                     {   // 정답일 때
@@ -197,8 +203,9 @@ public class EnemyInfo_B : MonoBehaviour
     public void InitEnemyInfo(Enemy enemy)
     {
         result = enemy.result;
+        Debug.Log(result);
         //transform.position = enemy.spawnPos;
-        this.transform.Find("TextMesh").GetComponent<TextMesh>().text = enemy.meshNum;
+        this.transform.Find("TextMesh").GetComponent<TextMeshPro>().text = enemy.meshNum;
         gameObject.SetActive(true);
     }
     

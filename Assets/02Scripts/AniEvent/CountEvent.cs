@@ -35,10 +35,7 @@ public class CountEvent : StateMachineBehaviour
         {
             animator.gameObject.SetActive(false);
             WaveManager.instance.StartWave();
-
-            
-                    SliderController.instance.ResumeSlider();
-             
+            SliderController.instance.ResumeSlider();
         }
     }
 

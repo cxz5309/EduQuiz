@@ -48,7 +48,7 @@ public class WaveManager : MonoBehaviour
     {
         initSpawnCount();
 
-        FirstStart();
+        PopupMaunal();
         //StartWave();
         // 처음 웨이브 시작
     }
@@ -95,6 +95,11 @@ public class WaveManager : MonoBehaviour
     {
         Manual.SetActive(true);
     }
+    public void CloseManual()
+    {
+        Manual.SetActive(false);
+        FirstStart();
+    }
 
     public void FirstStart()
     {
@@ -123,11 +128,16 @@ public class WaveManager : MonoBehaviour
             case "EnglishScene":
                 defaultTime = 20f;
                 break;
+            case "OXScene":
+                CubeNum = 2;
+                defaultTime = 12;
+                break;
         }
         switch (SceneManager.GetActiveScene().name)
         {
             case "BasicScene":
             case "MathScene":
+            case "OXScene":
                 for (int i = 0; i < lastWave; i++)
                 {
                     enemyList = new List<Enemy>();
@@ -185,6 +195,7 @@ public class WaveManager : MonoBehaviour
         switch (SceneManager.GetActiveScene().name)
         {
             case "BasicScene":
+            case "OXScene":
                 basicText.text = QuizManager.instance.dictionary[curWave].quiz;
                 // 인덱스 0부터 문제 출력
                 break;
@@ -216,6 +227,9 @@ public class WaveManager : MonoBehaviour
                     break;
                 case "EnglishScene":
                     EnemyRandomSpawn_E();
+                    break;
+                case "OXScene":
+                    EnemySpawn_OX();
                     break;
             }
             // 적 위치 랜덤 생성
@@ -291,7 +305,7 @@ public class WaveManager : MonoBehaviour
         }
                 
     }
-        public void EnemyRandomSpawn_E()
+    public void EnemyRandomSpawn_E()
     {
         int[] EnemySpawnChk = new int[enemyMaxCount];
 
@@ -325,6 +339,19 @@ public class WaveManager : MonoBehaviour
             EnemySpawnChk[i] = 0;
         }
     }
+    public void EnemySpawn_OX()
+    {
+        List<Enemy> enemyList = waveEnemyDic[curWave];
+
+        for (int i = 0; i < enemyList.Count; i++)
+        {   // enemyList(적) 수만큼 반복
+                GameObject enemyObj = Instantiate(Enemy[i], SpawnPoint[i].position, SpawnPoint[i].rotation);
+                enemyObj.name = enemyList[i].name;
+                EnemyInfo_B enemyInfo = enemyObj.GetComponent<EnemyInfo_B>();
+                enemyInfo.InitEnemyInfo(enemyList[i]);
+        }
+    }
+
     int EnemyTypeRandom()
     {
         int enemyType = Random.Range(0, Enemy.Length);

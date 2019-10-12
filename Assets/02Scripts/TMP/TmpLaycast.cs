@@ -35,7 +35,7 @@ public class TmpLaycast : MonoBehaviour
 
             RaycastHit hitInfo;
 
-            if (Physics.Raycast(ray, out hitInfo, 100f))
+            if (Physics.Raycast(ray, out hitInfo, 1000f))
             {
                 int l = hitInfo.transform.gameObject.layer;
                 
@@ -145,6 +145,7 @@ public class TmpLaycast : MonoBehaviour
                     case "BasicScene":
                     case "MathScene":
                     case "EnglishScene":
+                    case "OXScene":
                         if (hitInfo.transform.gameObject.layer == 5)
                         {
                             Debug.Log(GameManager.instance.gamestate);
@@ -164,6 +165,10 @@ public class TmpLaycast : MonoBehaviour
                                 {
                                     GameManager.instance.GamePause();
                                 }
+                            }
+                            else if(hitInfo.collider.tag == "Right")
+                            {
+                                WaveManager.instance.CloseManual();
                             }
                             else
                             {

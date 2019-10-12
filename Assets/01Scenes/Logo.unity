@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 267485742}
   - component: {fileID: 267485743}
   - component: {fileID: 267485745}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Main Camera
   m_TagString: Camera
   m_Icon: {fileID: 0}
@@ -217,7 +217,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 336358656}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: FirePos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -388,7 +388,7 @@ GameObject:
   - component: {fileID: 1487092245}
   - component: {fileID: 1487092246}
   - component: {fileID: 1487092248}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: TmpPlayer
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -499,8 +499,6 @@ MonoBehaviour:
   FirePos: {fileID: 336358655}
   triggerSwitch: 0
   shotSound: Shot
-  mPredictPath: {fileID: 0}
-  mPlayer: {fileID: 0}
 --- !u!114 &1487092246
 MonoBehaviour:
   m_ObjectHideFlags: 0

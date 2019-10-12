@@ -7,7 +7,6 @@ using UnityEngine.SceneManagement;
 
 public class Value
 {
-
     public string quiz;     // 문제 지문
     public string[] ans;   // 답
 
@@ -15,7 +14,17 @@ public class Value
     public string[] alphas = new string[10];//영어 알파벳
 
     public int pass;    // 정답 0번자리
-
+    public Value(string _quiz, string _pass)
+    {
+        ans = new string[2];
+        this.quiz = _quiz;
+        this.ans[0] = "O";
+        this.ans[1] = "X";
+        if(_pass == "0")
+            this.pass = 0;
+        else
+            this.pass = 1;
+    }
     public Value(string _quiz, string _ans1, string _ans2, string _ans3, string _ans4, int _pass)
     {
         ans = new string[4];
@@ -115,8 +124,24 @@ public class QuizManager : MonoBehaviour
                 while (source != null)
                 {
                     string[] words = source.Split(',');
-                    
+
                     dictionary.Add(int.Parse(words[0]), new Value(Resources.Load<Sprite>("EnglishIMG/" + words[1]), words[1].ToUpper()));
+                    source = strReader.ReadLine();
+                }
+                strReader.Close();
+                break;
+
+            case "OXScene":
+                data = Resources.Load("OXDatas", typeof(TextAsset)) as TextAsset;
+                strReader = new StringReader(data.text);
+                source = strReader.ReadLine();
+                Debug.Log(source);
+
+                while (source != null)
+                {
+                    string[] words = source.Split(',');
+
+                    dictionary.Add(int.Parse(words[0]), new Value(words[1], words[2]));
                     source = strReader.ReadLine();
                 }
                 strReader.Close();

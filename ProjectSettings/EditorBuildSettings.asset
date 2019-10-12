@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/01Scenes/StoreScene.unity
     guid: 415e447fe7fea20478a58f56921f9ce7
+  - enabled: 1
+    path: Assets/01Scenes/OXScene.unity
+    guid: 7c8a11724d390d5408213aad57ca6c52
   m_configObjects: {}
