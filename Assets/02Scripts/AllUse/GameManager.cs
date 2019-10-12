@@ -14,8 +14,6 @@ public class GameManager : MonoBehaviour
     public GameObject ResultUI;
     //public GameObject HitPanel;
 
-    public Text QuizText;
-
     public GameObject CountText;
     public GameObject StageStateText;
     public GameObject GameStateText;
@@ -36,6 +34,23 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         instance = this;
+
+        switch (SceneManager.GetActiveScene().name)     // 씬 바뀔때 팝업 변경해주기
+        {
+            case "BasicScene":
+                PlayerManager.instance.currentPopup = "Basic";
+                break;
+            case "MathScene":
+                PlayerManager.instance.currentPopup = "Math";
+                break;
+            case "EnglishScene":
+                PlayerManager.instance.currentPopup = "English";
+                break;
+            case "OXScene":
+                PlayerManager.instance.currentPopup = "OX";
+                break;
+        }
+        UniconManager.instance.PopupChange();
     }
 
     void Start()

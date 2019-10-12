@@ -55,12 +55,12 @@ public class Sound
 
     public void SetMuteTrue()
     {
-        source.mute = true;
+        source.mute = false;
     }
 
     public void SetMuteFalse()
     {
-        source.mute = false;
+        source.mute = true;
     }
 }
 
@@ -69,8 +69,10 @@ public class AudioManager : MonoBehaviour
     static public AudioManager instance;
 
     [SerializeField]
-    public Sound[] sounds;
-    public Sound[] effectSounds;
+    public Sound[] sounds;      // 배경음
+    public Sound[] effectSounds;        // 효과음
+    private bool isBackgroundSound;
+    private bool isEffectSound;
 
     void Awake()
     {
@@ -78,6 +80,12 @@ public class AudioManager : MonoBehaviour
         instance = this;    // 싱글톤 사용
         InitSound();
         InitEffectSound();
+    }
+
+    private void Start()
+    {
+        isBackgroundSound = true;
+        isEffectSound = true;
     }
 
     public void InitSound()
@@ -181,40 +189,50 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public void SetBackGroundMute(bool toggle)
+    public void SetBackGroundMute()
     {
-        for (int i = 0; i < 2; i++)
+        if (isBackgroundSound)
         {
-            if (toggle)
+            for (int i = 0; i < sounds.Length; i++)
             {
                 sounds[i].SetMuteFalse();
             }
-            else if (!toggle)
-            {
-                sounds[i].SetMuteTrue();
-            }
+            isBackgroundSound = false;
         }
-    }
-
-    public void SetEffectMute(bool toggle)
-    {
-        for (int i = 2; i < sounds.Length; i++)
+        else if (!isBackgroundSound)
         {
-            if (toggle)
-            {
-                sounds[i].SetMuteFalse();
-            }
-            else if (!toggle)
+            for (int i = 0; i < sounds.Length; i++)
             {
                 sounds[i].SetMuteTrue();
             }
+            isBackgroundSound = true;
         }
     }
 
-    public void SetDestroy()
+    public void SetEffectMute()
     {
-        Destroy(gameObject);
+        if (isEffectSound)
+        {
+            for (int i = 0; i < effectSounds.Length; i++)
+            {
+                effectSounds[i].SetMuteFalse();
+            }
+            isEffectSound = false;
+        }
+        else if (!isEffectSound)
+        {
+            for (int i = 0; i < effectSounds.Length; i++)
+            {
+                effectSounds[i].SetMuteTrue();
+            }
+            isEffectSound = true;
+        }
     }
+
+    //public void SetDestroy()
+    //{
+    //    Destroy(gameObject);
+    //}
 
     private void OnDestroy()
     {

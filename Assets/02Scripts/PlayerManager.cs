@@ -6,7 +6,7 @@ public class PlayerManager : MonoBehaviour
 {
     public static PlayerManager instance;
 
-    public string currentPlace = "";
+    public string currentPopup = "";
 
 
     void Awake()
@@ -14,25 +14,29 @@ public class PlayerManager : MonoBehaviour
         instance = this;
     }
 
+
+
+    public void BackGroundSound()
+    {
+
+    }
+
+    public void EffectSound()
+    {
+
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "GamePotal")
         {
-            currentPlace = "GamePotal";
-            PopupManager.instance.PopupChange();
-
-            Debug.Log("플레이어 GamePotal");
+            currentPopup = "GamePotal";
+            UniconManager.instance.PopupChange();
         }
         else if (other.gameObject.tag == "StorePotal")
         {
-            currentPlace = "StorePotal";
-            PopupManager.instance.PopupChange();
-            Debug.Log("플레이어 StorePotal");
+            currentPopup = "StorePotal";
+            UniconManager.instance.PopupChange();
         }
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        
     }
 }
