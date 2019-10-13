@@ -7,8 +7,6 @@ public class MainManager : MonoBehaviour
 {
     public static MainManager instance;
 
-    public GameObject unicon;
-
     public GameObject GameUI;
     public GameObject GradeUI;
     public GameObject LevelUI;
@@ -27,11 +25,6 @@ public class MainManager : MonoBehaviour
     {
         theAudio = FindObjectOfType<AudioManager>();
         theAudio.Play(themeSound);
-
-        if (!GameObject.FindWithTag("Unicon"))
-        {
-            Instantiate(unicon);        // 유니콘 소환!
-        }
 
         PlayerManager.instance.currentPopup = "Idle";
         UniconManager.instance.PopupChange();
