@@ -7,11 +7,7 @@ public class Item : MonoBehaviour
 {
     private HPManager hpManager;   // PlayerCtrl 스크립트를 가져오는 변수
     public float stopTime = 3f;
-    void Start()
-    {
-        hpManager = GameObject.Find("HP").GetComponent<HPManager>();
-        // Player 오브젝트를 찾아서 PlayerCtrl 스크립트를 가져온다.
-    }
+
 
     // 충돌 처리하는 메소드
     void OnCollisionEnter(Collision coll)
@@ -46,8 +42,8 @@ public class Item : MonoBehaviour
     }
     void GetHp()
     {
-        hpManager.HP += 10;  // 플레이어의 HP 회복
-        hpManager.HeartCheck();   // 플레이어의 HP 업데이트
+        HPManager.instance.HP += 10;  // 플레이어의 HP 회복
+        HPManager.instance.HeartCheck();   // 플레이어의 HP 업데이트
     }
     void StartEnglishTimer()
     {

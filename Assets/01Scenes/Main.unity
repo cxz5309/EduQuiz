@@ -1730,7 +1730,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fcd4f4ec6566c044a90ecd5c679045a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unicon: {fileID: 63217693143852790, guid: 5ba2370b77a94aa48b08146572d6bc9d, type: 3}
   GameUI: {fileID: 1350297486}
   GradeUI: {fileID: 1050835724}
   LevelUI: {fileID: 1304359694}
@@ -25081,6 +25080,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8806487025803239372}
   - component: {fileID: 8806487025803239363}
+  - component: {fileID: 8806487025803239374}
   m_Layer: 0
   m_Name: Unicon
   m_TagString: Unicon
@@ -25088,6 +25088,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &8806487025803239374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8806487025803239373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e59ff9a6db69f664e89d94794443ef58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HP: 0
 --- !u!114 &8833175217628077720
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -157,50 +157,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   color: {r: 0, g: 1, b: 0.06844115, a: 1}
   radius: 0.4
---- !u!1 &54645959
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 54645960}
-  - component: {fileID: 54645961}
-  m_Layer: 0
-  m_Name: HPManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &54645960
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 54645959}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1000785291}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &54645961
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 54645959}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e59ff9a6db69f664e89d94794443ef58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HP: 30
 --- !u!1 &146577743
 GameObject:
   m_ObjectHideFlags: 0
@@ -745,7 +701,7 @@ MonoBehaviour:
   hardWave: 3
   LightChange: {fileID: 170076733}
   Manual: {fileID: 0}
-  englishImage: {fileID: 0}
+  engImage: {fileID: 0}
   SpawnPoint:
   - {fileID: 42326440}
   - {fileID: 326024575}
@@ -1073,7 +1029,6 @@ Transform:
   - {fileID: 448103173}
   - {fileID: 175244078}
   - {fileID: 1522551775}
-  - {fileID: 54645960}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1165,8 +1120,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78316b749b937644f85fd36f8ac030b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EndUI: {fileID: 2339041785769642498}
-  StateUI: {fileID: 1476784803560029}
   ResultUI: {fileID: 1889550854}
   CountText: {fileID: 917762454}
   StageStateText: {fileID: 1629709674}
