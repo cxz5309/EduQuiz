@@ -21,6 +21,7 @@ public class AnimationScript : MonoBehaviour
             {
                 doMoving = false;
                 Destroy(this);
+                CanvasManager.instance.PopupChange("Pause");
             });
         });
     }

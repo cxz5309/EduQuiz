@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UniconManager : MonoBehaviour
+public class CanvasManager : MonoBehaviour
 {
-    static public UniconManager instance;
+    static public CanvasManager instance;
 
     public GameObject[] popup;      // 팝업 종류
+    public string currentPopup;
 
     private Transform playerTr = null;   // 플레이어 위치
     public float distance;      // 플레이어와의 거리
@@ -18,14 +19,13 @@ public class UniconManager : MonoBehaviour
 
     void Awake()
     {
-        DontDestroyOnLoad(gameObject);      // MainManager에서 생성
         instance = this;
     }
 
     void Start()
     {
+        DontDestroyOnLoad(gameObject);
         theAudio = FindObjectOfType<AudioManager>();
-
         if (GameObject.FindWithTag("Player") != null)
         {
             playerTr = GameObject.FindWithTag("Player").GetComponent<Transform>();
@@ -42,7 +42,7 @@ public class UniconManager : MonoBehaviour
         transform.position = Vector3.Lerp(transform.position, new Vector3(playerTr.position.x, playerTr.position.y, playerTr.position.z + distance), Time.deltaTime * speed);
     }
 
-    public void PopupChange()
+    public void PopupChange(string _currentPopup)
     {
         Debug.Log("popup 체인지");
         for (int i = 0; i < popup.Length; i++)      // 현재 팜업 끄기
@@ -52,8 +52,9 @@ public class UniconManager : MonoBehaviour
 
         for (int i = 0; i < popup.Length; i++)      // 현재 팜업 켜기
         {
-            if (popup[i].name == PlayerManager.instance.currentPopup)
+            if (popup[i].name == _currentPopup)
             {
+                currentPopup = _currentPopup;
                 popup[i].SetActive(true);
                 //theAudio.Play(popupChangeSound);
                 return;

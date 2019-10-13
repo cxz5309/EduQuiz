@@ -6,8 +6,6 @@ public class PlayerManager : MonoBehaviour
 {
     public static PlayerManager instance;
 
-    public string currentPopup = "";
-
 
     void Awake()
     {
@@ -30,13 +28,11 @@ public class PlayerManager : MonoBehaviour
     {
         if (other.gameObject.tag == "GamePotal")
         {
-            currentPopup = "GamePotal";
-            UniconManager.instance.PopupChange();
+            CanvasManager.instance.PopupChange("GamePotal");
         }
         else if (other.gameObject.tag == "StorePotal")
         {
-            currentPopup = "StorePotal";
-            UniconManager.instance.PopupChange();
+            CanvasManager.instance.PopupChange("StorePotal");
         }
     }
 }

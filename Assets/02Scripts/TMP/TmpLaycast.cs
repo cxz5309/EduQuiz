@@ -8,7 +8,6 @@ public class TmpLaycast : MonoBehaviour
     public Camera camera;
     public GameObject Bullet;
     public GameObject FirePos;
-    string thisTag = "";
 
     public bool triggerSwitch;
     public string shotSound = "Shot";
@@ -31,57 +30,46 @@ public class TmpLaycast : MonoBehaviour
         
         if (Input.GetMouseButtonUp(0))
         {
-
+            int layerMask = (-1) - (1 << LayerMask.NameToLayer("Ignore Raycast"));
             Ray ray = camera.ScreenPointToRay(Input.mousePosition);
-
             RaycastHit hitInfo;
-
-            if (Physics.Raycast(ray, out hitInfo, 1000f))
+            if (Physics.Raycast(ray, out hitInfo, 1000f, layerMask))
             {
-                int l = hitInfo.transform.gameObject.layer;
-                
+                Debug.Log(hitInfo.transform.gameObject.layer);
+
                 switch (SceneManager.GetActiveScene().name)
                 {
                     case "Main":
                         if (hitInfo.transform.gameObject.layer == 5)
                         {
-                            switch (hitInfo.collider.name)
+                            switch (hitInfo.collider.tag)
                             {
-                                case "Basic":
-                                case "Math":
-                                case "English":
-                                    thisTag = hitInfo.collider.tag;
-                                    MainManager.instance.OpenGrade();
-                                    break;
-                                case "Grade1":
-                                case "Grade2":
-                                case "Grade3":
-                                    MainManager.instance.OpenLevel();
-                                    break;
-                                case "Level1":
-                                case "Level2":
-                                case "Level3":
-                                    ChangeScene(thisTag);
+                                case "basic":
+                                case "math":
+                                case "eng":
+                                    ChangeScene(hitInfo.collider.name);
                                     break;
                                 case "Store":
                                     ChangeScene(hitInfo.collider.tag);
                                     break;
-
                                 // =============================================================== 새로 추가한것들
                                 case "Confirm":
-                                    if (PlayerManager.instance.currentPopup == "GamePotal")
+                                    Debug.Log("이것도 아닌가?");     // 겜씸으로 이동 하시죠
+
+                                    if (CanvasManager.instance.currentPopup == "GamePotal")
+                                    {
+                                        ChangeScene(GameSceneRandomToString());
                                         Debug.Log("게임시작");     // 겜씸으로 이동 하시죠
-                                    else if(PlayerManager.instance.currentPopup == "StorePotal")
+                                    }
+                                    else if (CanvasManager.instance.currentPopup == "StorePotal")
                                         ChangeScene("store");       // 상점으로 이동 하시죠
                                     break;
                                 case "Setting":
-                                    PlayerManager.instance.currentPopup = "Setting";
-                                    UniconManager.instance.PopupChange();
+                                    CanvasManager.instance.PopupChange("Setting");
                                     break;
                                 case "Cencel":
                                 case "Back":
-                                    PlayerManager.instance.currentPopup = "Idle";
-                                    UniconManager.instance.PopupChange();
+                                    CanvasManager.instance.PopupChange("Idle");
                                     break;
                                 case "Exit":
                                     Debug.Log("GameClose");     // 겜 종료 하시죠
@@ -218,6 +206,22 @@ public class TmpLaycast : MonoBehaviour
         Bullet = Resources.Load<GameObject>("Prefabs/Projectile/Projectile " + (++projectileNum).ToString());
     }
     
+    public string GameSceneRandomToString()
+    {
+        Debug.Log("이건 들어오나?");
+        int randomMax = 3;
+        switch(Random.Range(0, randomMax))
+        {
+            case 0:
+                return "basicRetry";
+            case 1:
+                return "mathRetry";
+            case 2:
+                return "englishRetry";
+        }
+        return "main";
+    }
+
     public void ChangeScene(string tag)
     {
         switch (tag)
@@ -225,13 +229,13 @@ public class TmpLaycast : MonoBehaviour
             case "main":
                 SceneManager.LoadScene("Main", LoadSceneMode.Single);
                 break;
-            case "basic":
+            case "Basic":
                 SceneManager.LoadScene("BasicScene", LoadSceneMode.Single);
                 break;
-            case "math":
+            case "Math":
                 SceneManager.LoadScene("MathScene", LoadSceneMode.Single);
                 break;
-            case "eng":
+            case "English":
                 SceneManager.LoadScene("EnglishScene", LoadSceneMode.Single);
                 break;
             case "store":

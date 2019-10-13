@@ -40,6 +40,7 @@ TagManager:
   - Unicon
   - Home
   - Next
+  - Canvas
   layers:
   - Default
   - TransparentFX
@@ -51,7 +52,7 @@ TagManager:
   - 
   - Bullet
   - Enemy
-  - Ground
+  - Item
   - 
   - 
   - 

@@ -9,8 +9,6 @@ using TMPro;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    public GameObject ResultUI;
-    //public GameObject HitPanel;
 
     public GameObject CountText;
     public GameObject StageStateText;
@@ -36,19 +34,18 @@ public class GameManager : MonoBehaviour
         switch (SceneManager.GetActiveScene().name)     // 씬 바뀔때 팝업 변경해주기
         {
             case "BasicScene":
-                PlayerManager.instance.currentPopup = "Basic";
+                CanvasManager.instance.PopupChange("Basic");
                 break;
             case "MathScene":
-                PlayerManager.instance.currentPopup = "Math";
+                CanvasManager.instance.PopupChange("Math");
                 break;
             case "EnglishScene":
-                PlayerManager.instance.currentPopup = "English";
+                CanvasManager.instance.PopupChange("English");
                 break;
             case "OXScene":
-                PlayerManager.instance.currentPopup = "OX";
+                CanvasManager.instance.PopupChange("OX");
                 break;
         }
-        UniconManager.instance.PopupChange();
     }
 
     void Start()
@@ -61,24 +58,26 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
         // State UI 활성화
     }
+
     // 결과 버튼 메소드
     IEnumerator coResultButtonsOn()
     {
         yield return new WaitForSeconds(2.5f);
-        ResultUI.SetActive(true);
+        CanvasManager.instance.PopupChange("Result");
+    }
+
+    
+    public void MenuButtonsOn()
+    {
+        StartCoroutine(coMenuButtonsOn());
     }
 
     // 다시하기 버튼 메소드
     IEnumerator coMenuButtonsOn()
     {
         yield return new WaitForSeconds(10f);
-        ResultUI.SetActive(false);
+        CanvasManager.instance.PopupChange("Pause");
         Time.timeScale = 0;
-    }
-    
-    public void MenuButtonsOn()
-    {
-        StartCoroutine(coMenuButtonsOn());
     }
 
     // 스테이지 클리어 메소드
@@ -87,13 +86,13 @@ public class GameManager : MonoBehaviour
         ItemManager.instance.itemSpawnStop = true;
         EnemyDestroy();
         ItemDestroy();
-        DataSave.instance.data.AddGold(1);
+        //DataSave.instance.data.AddGold(1);
         GameStateText.SetActive(true);
         GameStateText.GetComponent<TextMeshPro>().text = "GameClear";
         GameStateText.GetComponent<Animator>().SetTrigger("GameClear");
-            SliderController.instance.WaitSlider();
+        SliderController.instance.WaitSlider();
         gamestate = Gamestate.GameClear;
-        StartCoroutine("coResultButtonsOn");
+        StartCoroutine(coResultButtonsOn());
     }
 
     // 게임 오버 메소드
@@ -106,15 +105,14 @@ public class GameManager : MonoBehaviour
         GameStateText.GetComponent<TextMeshPro>().text = "GameOver";
         GameStateText.GetComponent<Animator>().SetTrigger("GameOver");
         SliderController.instance.WaitSlider();
-        StartCoroutine("coResultButtonsOn");
+        StartCoroutine(coResultButtonsOn());
         gamestate = Gamestate.GameOver;
     }
 
     // 게임 일시정지 메소드
     public void GamePause()
     {
-        PlayerManager.instance.currentPopup = "Pause";
-        UniconManager.instance.PopupChange();
+        CanvasManager.instance.PopupChange("Pause");
 
         gamestate = Gamestate.GamePause;
         Time.timeScale = 0;
@@ -122,24 +120,22 @@ public class GameManager : MonoBehaviour
 
     public void GamePauseFin()
     {
+        Time.timeScale = 1;
         switch (SceneManager.GetActiveScene().name)     // 씬마다 다르게 활성화 해주기
         {
             case "BasicScene":
-                PlayerManager.instance.currentPopup = "Basic";
+                CanvasManager.instance.PopupChange("Basic");
                 break;
             case "MathScene":
-                PlayerManager.instance.currentPopup = "Math";
+                CanvasManager.instance.PopupChange("Math");
                 break;
             case "EnglishScene":
-                PlayerManager.instance.currentPopup = "English";
+                CanvasManager.instance.PopupChange("English");
                 break;
             case "OXScene":
-                PlayerManager.instance.currentPopup = "OX";
+                CanvasManager.instance.PopupChange("OX");
                 break;
-        }
-        UniconManager.instance.PopupChange();
-
-        Time.timeScale = 1;
+        }        
         gamestate = Gamestate.GamePlaying;
     }
 

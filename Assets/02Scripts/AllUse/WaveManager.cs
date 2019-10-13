@@ -118,6 +118,7 @@ public class WaveManager : MonoBehaviour
     public void FirstStart()
     {
         HPManager.instance.initHP();
+        //quizText.text = "STAGE 국어\n\n문제를 잘 읽고 정답을 맞춰봐!";
         countText.SetActive(true);
         Animator ani = countText.GetComponent<Animator>();
         ani.SetTrigger("StartCount");

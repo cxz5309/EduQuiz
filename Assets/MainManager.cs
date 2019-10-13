@@ -7,14 +7,11 @@ public class MainManager : MonoBehaviour
 {
     public static MainManager instance;
 
-    public GameObject GameUI;
-    public GameObject GradeUI;
-    public GameObject LevelUI;
+    public GameObject canvas;
 
     public string themeSound;
     private AudioManager theAudio;
     
-
 
     private void Awake()
     {
@@ -23,22 +20,12 @@ public class MainManager : MonoBehaviour
 
     private void Start()
     {
+        canvas = GameObject.Find("Unicon").transform.Find("UniconCanvas").gameObject;
+        canvas.gameObject.SetActive(true);
         theAudio = FindObjectOfType<AudioManager>();
         theAudio.Play(themeSound);
 
-        PlayerManager.instance.currentPopup = "Idle";
-        UniconManager.instance.PopupChange();
-    }
-
-    public void OpenGrade()
-    {
-        GameUI.SetActive(false);
-        GradeUI.SetActive(true);
-    }
-    public void OpenLevel()
-    {
-        GradeUI.SetActive(false);
-        LevelUI.SetActive(true);
+        CanvasManager.instance.PopupChange("Idle");
     }
 
     private void OnDestroy()

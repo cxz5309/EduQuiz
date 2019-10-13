@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3834965417455833242}
   - component: {fileID: 566030828964364073}
   - component: {fileID: 4581349161546993875}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: glitter1_add
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4709,7 +4709,7 @@ GameObject:
   - component: {fileID: 6266670642988634113}
   - component: {fileID: 6266670642985209901}
   - component: {fileID: 6266670642986341101}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: pointer_minutes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4784,7 +4784,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6266670642988634115}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: rotation_axis_pointer_hour
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4815,7 +4815,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6266670642988634119}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: rotation_axis_pointer_minutes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4850,7 +4850,7 @@ GameObject:
   - component: {fileID: 6266670642986341097}
   - component: {fileID: 8099391948899950435}
   - component: {fileID: 7557300753489140745}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CLOCK
   m_TagString: Timer
   m_Icon: {fileID: 0}
@@ -4933,6 +4933,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e323fddc9ac4154faebae46ba0f231d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stopTime: 3
 --- !u!65 &7557300753489140745
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4957,7 +4958,7 @@ GameObject:
   - component: {fileID: 6266670642988634123}
   - component: {fileID: 6266670642985209899}
   - component: {fileID: 6266670642986341099}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: pointer_seconds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5032,7 +5033,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6266670642988634125}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: rotation_axis_pointer_seconds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5065,7 +5066,7 @@ GameObject:
   - component: {fileID: 6266670642988634127}
   - component: {fileID: 6266670642985209903}
   - component: {fileID: 6266670642986341103}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: pointer_hour
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5140,7 +5141,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4809412520761007656}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Eff_Rare1_Normal
   m_TagString: Untagged
   m_Icon: {fileID: 0}

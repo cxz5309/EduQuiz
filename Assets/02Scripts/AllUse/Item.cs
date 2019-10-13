@@ -8,6 +8,10 @@ public class Item : MonoBehaviour
     private HPManager hpManager;   // PlayerCtrl 스크립트를 가져오는 변수
     public float stopTime = 3f;
 
+    private void Start()
+    {
+        Physics.IgnoreLayerCollision(10, 9);
+    }
 
     // 충돌 처리하는 메소드
     void OnCollisionEnter(Collision coll)

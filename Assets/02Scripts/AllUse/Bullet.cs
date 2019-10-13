@@ -13,6 +13,7 @@ public class Bullet : MonoBehaviour
     {
         Destroy(gameObject, 3.0f);  // 총알 3초 후 제거
         Physics.IgnoreLayerCollision(8, 5);
+        Physics.IgnoreLayerCollision(8, 2);
         transform.position += transform.forward * 100.0f * Time.deltaTime;
     }
 }

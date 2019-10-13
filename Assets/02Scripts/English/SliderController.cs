@@ -16,9 +16,10 @@ public class SliderController : MonoBehaviour
     void Start()
     {
         slider = GetComponent<Slider>();
-        sliderWait = true;
         StartSlider();
+        sliderWait = true;
     }
+
     void Update()
     {
         if (slider.value > 0)

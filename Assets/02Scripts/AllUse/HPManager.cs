@@ -5,6 +5,7 @@ using UnityEngine;
 public class HPManager : MonoBehaviour {
 
     public static HPManager instance;
+    GameObject HPContainer;
 
     private GameObject[] hpObject = new GameObject[5];      // 플레이어의 몫을 표시할 오브젝트(최대 5개)
     public int HP;          // 플레이어 HP 저장
@@ -16,17 +17,20 @@ public class HPManager : MonoBehaviour {
 
     void Start()
     {
-        initHP();
     }
 
     public void initHP()
     {
-        for (int i = 0; i < hpObject.Length; i++)
-        {
-            hpObject[i] = GameObject.Find("HP" + (i + 1)).gameObject;
-        }
         HP = 30;
-        HeartCheck();
+
+        if (HPContainer = GameObject.FindGameObjectWithTag("HP"))
+        {
+            for (int i = 0; i < hpObject.Length; i++)
+            {
+                hpObject[i] = HPContainer.transform.Find("HP" + (i + 1)).gameObject;
+            }
+            HeartCheck();
+        }
     }
 
     public void HeartCheck()
