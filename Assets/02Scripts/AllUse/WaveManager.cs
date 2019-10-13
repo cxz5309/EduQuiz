@@ -117,6 +117,7 @@ public class WaveManager : MonoBehaviour
 
     public void FirstStart()
     {
+        HPManager.instance.initHP();
         countText.SetActive(true);
         Animator ani = countText.GetComponent<Animator>();
         ani.SetTrigger("StartCount");

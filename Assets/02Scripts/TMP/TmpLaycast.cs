@@ -26,6 +26,7 @@ public class TmpLaycast : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             triggerSwitch = (triggerSwitch == true) ? false : true;
+            Debug.Log(1);
         }
         
         if (Input.GetMouseButtonUp(0))
