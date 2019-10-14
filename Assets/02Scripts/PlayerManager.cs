@@ -6,7 +6,7 @@ public class PlayerManager : MonoBehaviour
 {
     public static PlayerManager instance;
 
-
+    //여기는 플레이어 상태 초기화하는 장소
     void Awake()
     {
         instance = this;

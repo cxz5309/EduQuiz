@@ -50,12 +50,13 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        Time.timeScale = 1;
+
         theAudio = FindObjectOfType<AudioManager>();
         theAudio.Play(themeSound);
-
         WaveManager.instance.InitWave();
         gamestate = Gamestate.GamePlaying;
-        Time.timeScale = 1;
+        SliderController.instance.SliderInit();
         // State UI 활성화
     }
 
@@ -167,7 +168,7 @@ public class GameManager : MonoBehaviour
 
     public void ItemDestroy()
     {
-        GameObject[] allHP = GameObject.FindGameObjectsWithTag("HP");
+        GameObject[] allHP = GameObject.FindGameObjectsWithTag("Potion");
         // allCube에 "enemy" 태그를 가지는 오브젝트 전부 넣어줌.
         foreach (GameObject i in allHP)
         {

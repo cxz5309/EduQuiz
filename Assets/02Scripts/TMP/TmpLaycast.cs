@@ -13,8 +13,12 @@ public class TmpLaycast : MonoBehaviour
     public string shotSound = "Shot";
     private AudioManager theAudio;
 
+    public int[] stage;
+    public int stageOrder = 0;
+
     private void Start()
     {
+        stage = getRandomInt(3, 1, 3);
         theAudio = FindObjectOfType<AudioManager>();
         ChangeWeapon(DataSave.instance.data.nowWeapon);
     }
@@ -25,7 +29,7 @@ public class TmpLaycast : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             triggerSwitch = (triggerSwitch == true) ? false : true;
-            Debug.Log(1);
+            Debug.Log("트리거 변경");
         }
         
         if (Input.GetMouseButtonUp(0))
@@ -35,7 +39,6 @@ public class TmpLaycast : MonoBehaviour
             RaycastHit hitInfo;
             if (Physics.Raycast(ray, out hitInfo, 1000f, layerMask))
             {
-                Debug.Log(hitInfo.transform.gameObject.layer);
 
                 switch (SceneManager.GetActiveScene().name)
                 {
@@ -54,8 +57,7 @@ public class TmpLaycast : MonoBehaviour
                                     break;
                                 // =============================================================== 새로 추가한것들
                                 case "Confirm":
-                                    Debug.Log("이것도 아닌가?");     // 겜씸으로 이동 하시죠
-
+                                    // 겜씸으로 이동 하시죠
                                     if (CanvasManager.instance.currentPopup == "GamePotal")
                                     {
                                         ChangeScene(GameSceneRandomToString());
@@ -160,8 +162,6 @@ public class TmpLaycast : MonoBehaviour
                     case "OXScene":
                         if (hitInfo.transform.gameObject.layer == 5)
                         {
-                            Debug.Log(GameManager.instance.gamestate);
-
                             switch (hitInfo.collider.tag)
                             {
                                 case "Pause":       // 일시정지
@@ -174,6 +174,7 @@ public class TmpLaycast : MonoBehaviour
                                     ChangeScene("main");
                                     break;
                                 case "Next":
+                                    ChangeScene(GameSceneRandomToString());
                                     Debug.Log("다음게임 계속 진행");            // 다음 게임 계속 진행하기
                                     break;
                             }
@@ -208,9 +209,7 @@ public class TmpLaycast : MonoBehaviour
     
     public string GameSceneRandomToString()
     {
-        Debug.Log("이건 들어오나?");
-        int randomMax = 3;
-        switch(Random.Range(0, randomMax))
+        switch(stage[stageOrder])
         {
             case 0:
                 return "basicRetry";
@@ -224,6 +223,7 @@ public class TmpLaycast : MonoBehaviour
 
     public void ChangeScene(string tag)
     {
+        stageOrder++;
         switch (tag)
         {
             case "main":
@@ -258,5 +258,31 @@ public class TmpLaycast : MonoBehaviour
         Instantiate(Bullet, FirePos.transform.position, this.transform.rotation).transform.forward = target - this.transform.position;
         //.GetComponent<Rigidbody>().velocity = (target - this.transform.position) * 10;
         theAudio.Play(shotSound);
+    }
+
+    public int[] getRandomInt(int length, int min, int max)
+    {
+        int[] randArray = new int[length];
+        bool isSame;
+
+        for(int i = 0; i < length; ++i)
+        {
+            while (true)
+            {
+                randArray[i] = Random.Range(min, max);
+                isSame = false;
+
+                for(int j = 0;j<i; ++j)
+                {
+                    if(randArray[j] == randArray[i])
+                    {
+                        isSame = true;
+                        break;
+                    }
+                }
+                if (!isSame) break;
+            }
+        }
+        return randArray;
     }
 }

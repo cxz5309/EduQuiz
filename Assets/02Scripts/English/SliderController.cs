@@ -15,24 +15,29 @@ public class SliderController : MonoBehaviour
     }
     void Start()
     {
+        
+    }
+
+    public void SliderInit()
+    {
         slider = GetComponent<Slider>();
-        StartSlider();
         sliderWait = true;
+        StartSlider();
     }
 
     void Update()
     {
-        if (slider.value > 0)
+        if (!sliderWait)
         {
-            if (!sliderWait)
+            if (slider.value > 0)
             {
+
                 slider.value -= Time.deltaTime * (slider.maxValue / WaveManager.instance.waveTime());
             }
-        }
-        else
-        {
-            if (!sliderWait)
+            else
             {
+
+                Debug.Log(WaveManager.instance.WaveDelaying);
                 if (!WaveManager.instance.WaveDelaying)
                 {
                     GameManager.instance.FailEffect();
@@ -40,11 +45,13 @@ public class SliderController : MonoBehaviour
                     HPManager.instance.HeartCheck();  // 플레이어 체력 감소 후 업데이트
                     WaveManager.instance.WaveDelayStart();
                 }
+
             }
         }
     }
     public void StartSlider()
     {
+        Debug.Log("스타트슬라이더");
         slider.maxValue = 100f;
         slider.value = 100f;  // 제한시간
     }

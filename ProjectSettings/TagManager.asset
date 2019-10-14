@@ -19,8 +19,6 @@ TagManager:
   - Close
   - store
   - enemy
-  - projectile
-  - FxTemporaire
   - NPC
   - Left
   - Right
@@ -28,7 +26,6 @@ TagManager:
   - Confirm
   - Cancel
   - Inventory
-  - Select
   - Setting
   - Music
   - Effect
@@ -41,6 +38,7 @@ TagManager:
   - Home
   - Next
   - Canvas
+  - Potion
   layers:
   - Default
   - TransparentFX

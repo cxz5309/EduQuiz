@@ -296,7 +296,7 @@ PrefabInstance:
     - target: {fileID: 642325574795004879, guid: 5ba2370b77a94aa48b08146572d6bc9d,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 642325574795004879, guid: 5ba2370b77a94aa48b08146572d6bc9d,
         type: 3}
@@ -366,7 +366,7 @@ PrefabInstance:
     - target: {fileID: 3844489090306773205, guid: 5ba2370b77a94aa48b08146572d6bc9d,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8015129620414331642, guid: 5ba2370b77a94aa48b08146572d6bc9d,
         type: 3}
@@ -386,17 +386,17 @@ PrefabInstance:
     - target: {fileID: 3161938082623541627, guid: 5ba2370b77a94aa48b08146572d6bc9d,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5960788693637347233, guid: 5ba2370b77a94aa48b08146572d6bc9d,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3161938082086167182, guid: 5ba2370b77a94aa48b08146572d6bc9d,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 203555904702975736, guid: 5ba2370b77a94aa48b08146572d6bc9d,
         type: 3}
@@ -854,6 +854,8 @@ MonoBehaviour:
   FirePos: {fileID: 336358655}
   triggerSwitch: 0
   shotSound: Shot
+  stage: 
+  stageOrder: 0
 --- !u!114 &1487092246
 MonoBehaviour:
   m_ObjectHideFlags: 0

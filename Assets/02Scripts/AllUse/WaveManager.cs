@@ -36,12 +36,11 @@ public class WaveManager : MonoBehaviour
 
     public int level;
     public float defaultTime;
-    public int hardMode;//영우
+    public int hardMode = 0;//영우
 
     void Awake()
     {
         instance = this;
-        hardMode = 0;//영우
     }
 
     void Start()
@@ -60,9 +59,9 @@ public class WaveManager : MonoBehaviour
         }
 
         initSpawnCount();
-
-       //PopupMaunal();
-	    FirstStart();
+        WaveDelaying = false;
+        //PopupMaunal();
+        FirstStart();
         //StartWave();
         // 처음 웨이브 시작
     }
@@ -79,8 +78,7 @@ public class WaveManager : MonoBehaviour
     {
         WaveDelaying = true;
         GameManager.instance.EnemyDestroy();
-        
-                SliderController.instance.WaitSlider();
+        SliderController.instance.WaitSlider();
         
         yield return new WaitForSeconds(delayTime);
         if (HPManager.instance.HP > 0)
@@ -94,8 +92,7 @@ public class WaveManager : MonoBehaviour
             {
                 GameManager.instance.NextLevel();
             }
-            
-                    SliderController.instance.ResumeSlider();
+            SliderController.instance.ResumeSlider();
              
             WaveDelaying = false;
         }
@@ -205,7 +202,6 @@ public class WaveManager : MonoBehaviour
     {
         curWave++;        // 초기값 -1, 0부터 시작
         waveText.text = "WAVE : " + (curWave + 1);  // 현재 스테이지 출력
-        SliderController.instance.StartSlider();
 
         switch (SceneManager.GetActiveScene().name)
         {
@@ -245,6 +241,8 @@ public class WaveManager : MonoBehaviour
             }
             // 적 위치 랜덤 생성
         }
+        SliderController.instance.StartSlider();
+        SliderController.instance.ResumeSlider();
     }
 
     public float waveTime()

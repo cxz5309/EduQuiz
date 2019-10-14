@@ -11,7 +11,9 @@ public class CountEvent : StateMachineBehaviour
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        if(CountNum==0)
+        SliderController.instance.WaitSlider();
+        Debug.Log("카운트 시작시 웨잇슬라이더");
+        if (CountNum==0)
             animator.gameObject.GetComponent<TextMeshPro>().text = ("Start!");
         else
             animator.gameObject.GetComponent<TextMeshPro>().text = CountNum.ToString();
@@ -20,7 +22,6 @@ public class CountEvent : StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        SliderController.instance.WaitSlider();
     }
 
     //OnStateExit is called when a transition ends and the state machine finishes evaluating this state
@@ -33,10 +34,10 @@ public class CountEvent : StateMachineBehaviour
         }
         else
         {
-            animator.gameObject.SetActive(false);
             WaveManager.instance.StartWave();
             SliderController.instance.StartSlider();
             SliderController.instance.ResumeSlider();
+            animator.gameObject.SetActive(false);
         }
     }
 

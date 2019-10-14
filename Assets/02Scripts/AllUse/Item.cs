@@ -21,8 +21,8 @@ public class Item : MonoBehaviour
             ItemManager.itemCount++;  // 생성가능한 아이템 갯수를 1개 늘려준다.
             ItemManager.instance.itemSpawnChk[int.Parse(gameObject.name)] = 0;  // 체크 0으로
             
-            if (gameObject.CompareTag("HP"))
-            {   // 충돌한 오브젝트의 태그가 HP인 경우
+            if (gameObject.CompareTag("Potion"))
+            {   // 충돌한 오브젝트의 태그가 Potion인 경우
                 GetHp();
             }
             else if (gameObject.CompareTag("Timer"))
