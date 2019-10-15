@@ -12,7 +12,6 @@ public class CountEvent : StateMachineBehaviour
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         SliderController.instance.WaitSlider();
-        Debug.Log("카운트 시작시 웨잇슬라이더");
         if (CountNum==0)
             animator.gameObject.GetComponent<TextMeshPro>().text = ("Start!");
         else

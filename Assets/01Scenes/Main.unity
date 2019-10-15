@@ -709,7 +709,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "\uC218 \uD559"
+  m_Text: "\uACE7"
 --- !u!222 &186579697
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1730,7 +1730,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fcd4f4ec6566c044a90ecd5c679045a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unicon: {fileID: 0}
   themeSound: Main
 --- !u!4 &490903667
 Transform:
@@ -5721,7 +5720,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "\uAD6D \uC5B4"
+  m_Text: "\uC0AD\uC81C\uB420\n"
 --- !u!222 &1876691090
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7046,7 +7045,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "\uC601 \uC5B4"
+  m_Text: "\uC608\uC815\n"
 --- !u!222 &222011961763150646
 CanvasRenderer:
   m_ObjectHideFlags: 0

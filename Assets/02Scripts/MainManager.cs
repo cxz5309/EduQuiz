@@ -7,7 +7,9 @@ public class MainManager : MonoBehaviour
 {
     public static MainManager instance;
 
-    public GameObject canvas;
+    private GameObject unicon;
+    private GameObject uniconCanvas;
+    private GameObject uniconObject;
 
     public string themeSound;
     private AudioManager theAudio;
@@ -20,12 +22,32 @@ public class MainManager : MonoBehaviour
 
     private void Start()
     {
-        canvas = GameObject.Find("Unicon").transform.Find("UniconCanvas").gameObject;
-        canvas.gameObject.SetActive(true);
+        unicon = GameObject.Find("Unicon");
+        uniconCanvas = unicon.transform.Find("UniconCanvas").gameObject;
+        uniconObject = unicon.transform.Find("UniconObject").gameObject;
+        uniconCanvas.gameObject.SetActive(true);
+        uniconObject.gameObject.SetActive(true);
+        UniconText();
+
         theAudio = FindObjectOfType<AudioManager>();
         theAudio.Play(themeSound);
 
         CanvasManager.instance.PopupChange("Idle");
+    }
+
+    public void UniconText()
+    {
+        UniconTextStart();
+        UniconTextEnd();
+    }
+    
+    public void UniconTextStart()
+    {
+        CanvasManager.instance.PopupPosition(-10, -20);
+    }
+    public void UniconTextEnd()
+    {
+        CanvasManager.instance.PopupPosition(0, -10);
     }
 
     private void OnDestroy()

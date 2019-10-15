@@ -10,7 +10,8 @@ public class CanvasManager : MonoBehaviour
     public string currentPopup;
 
     private Transform playerTr = null;   // 플레이어 위치
-    public float distance;      // 플레이어와의 거리
+    public float distanceZ;      // 플레이어와의 Z축거리
+    public float distanceY;      // 플레이어와의 Y축거리
     public float speed;         // 팝업 이동속도
 
     private string popupChangeSound;    // 팝업 바뀔 때 소리
@@ -36,10 +37,15 @@ public class CanvasManager : MonoBehaviour
         }
     }
 
+    public void PopupPosition(int y, int z)
+    {
+        distanceY = y;
+        distanceZ = z;
+    }
     void Update()
     {
 
-        transform.position = Vector3.Lerp(transform.position, new Vector3(playerTr.position.x, playerTr.position.y, playerTr.position.z + distance), Time.deltaTime * speed);
+        transform.position = Vector3.Lerp(transform.position, new Vector3(playerTr.position.x, playerTr.position.y + distanceY, playerTr.position.z + distanceZ), Time.deltaTime * speed);
     }
 
     public void PopupChange(string _currentPopup)

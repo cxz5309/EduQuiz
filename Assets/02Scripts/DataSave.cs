@@ -69,6 +69,9 @@ public class Data
     public void AddGold(int getGold)
     {
         gold += getGold;
+        var inventoryData = DataService.Instance.GetData<Table.Data>(1);
+        inventoryData.gold = gold;
+        int result = DataService.Instance.UpdateData<Table.Data>(inventoryData);
         Debug.Log("gold : " + gold);
     }
 

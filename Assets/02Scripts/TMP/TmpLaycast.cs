@@ -13,14 +13,14 @@ public class TmpLaycast : MonoBehaviour
     public string shotSound = "Shot";
     private AudioManager theAudio;
 
-    //public int[] stage;
-    //public int stageOrder = 0;
-
+    public int[] stage;
+    public int stageOrder = 0;
     private void Start()
     {
-        //stage = getRandomInt(3, 1, 3);
         theAudio = FindObjectOfType<AudioManager>();
         ChangeWeapon(DataSave.instance.data.nowWeapon);
+        stage = new int[10];
+        GetRandomInt();
     }
 
     void Update()
@@ -39,7 +39,7 @@ public class TmpLaycast : MonoBehaviour
             RaycastHit hitInfo;
             if (Physics.Raycast(ray, out hitInfo, 1000f, layerMask))
             {
-
+                Debug.Log(hitInfo.transform.name);
                 switch (SceneManager.GetActiveScene().name)
                 {
                     case "Main":
@@ -86,11 +86,15 @@ public class TmpLaycast : MonoBehaviour
                                     break;
                             }
                         }
+                        else if(hitInfo.transform.gameObject.layer == 11)
+                        {
+                            UniconController.instance.ClickAniEvent(Random.Range(1,7));
+                        }
                         else
                         {
                             if (!triggerSwitch)
                             {
-                                transform.position = hitInfo.point + new Vector3(0,6.19f,0);
+                                transform.position = hitInfo.point + new Vector3(0,4.19f,0);
                             }
                         }
                         if (triggerSwitch)
@@ -151,7 +155,7 @@ public class TmpLaycast : MonoBehaviour
                                 }
                                 else
                                 {
-                                    transform.position = hitInfo.point + new Vector3(0, 6.19f, 0);
+                                    transform.position = hitInfo.point + new Vector3(0, 4.19f, 0);
                                 }
                             }
                         }
@@ -172,9 +176,11 @@ public class TmpLaycast : MonoBehaviour
                                     break;
                                 case "Home":        // 홈으로
                                     ChangeScene("main");
+                                    Debug.Log("재시작시 같은 과목임");            // 다음 게임 계속 진행하기
                                     break;
                                 case "Next":
                                     ChangeScene(GameSceneRandomToString());
+                                    stageOrder++;
                                     Debug.Log("다음게임 계속 진행");            // 다음 게임 계속 진행하기
                                     break;
                             }
@@ -209,7 +215,7 @@ public class TmpLaycast : MonoBehaviour
     
     public string GameSceneRandomToString()
     {
-        switch(Random.Range(0,3))
+        switch(stage[stageOrder])
         {
             case 0:
                 return "basicRetry";
@@ -223,7 +229,6 @@ public class TmpLaycast : MonoBehaviour
 
     public void ChangeScene(string tag)
     {
-        //stageOrder++;
         switch (tag)
         {
             case "main":
@@ -259,30 +264,26 @@ public class TmpLaycast : MonoBehaviour
         //.GetComponent<Rigidbody>().velocity = (target - this.transform.position) * 10;
         theAudio.Play(shotSound);
     }
+    public void GetRandomInt()
+    {
+        int[] stageChk = new int[3];
 
-    //public int[] getRandomInt(int length, int min, int max)
-    //{
-    //    int[] randArray = new int[length];
-    //    bool isSame;
-
-    //    for(int i = 0; i < length; ++i)
-    //    {
-    //        while (true)
-    //        {
-    //            randArray[i] = Random.Range(min, max);
-    //            isSame = false;
-
-    //            for(int j = 0;j<i; ++j)
-    //            {
-    //                if(randArray[j] == randArray[i])
-    //                {
-    //                    isSame = true;
-    //                    break;
-    //                }
-    //            }
-    //            if (!isSame) break;
-    //        }
-    //    }
-    //    return randArray;
-    //}
+        // 랜덤숫자 반복 방지를 위한 체크배열 변수(스폰지역 수만큼 배열크기 지정)
+        for (int i = 0; i < stageChk.Length; i++)
+        {
+            int tmpStage = Random.Range(0, stageChk.Length);
+            // EnemySpawnChk 배열의 크기만큼 랜덤시드
+            if (stageChk[tmpStage] == 0)
+            {   // 체크된 배열이 아닌경우
+                stageChk[tmpStage] = 1;
+                // 해당 랜덤숫자배열 체크
+                stage[i] = tmpStage;
+            }
+            else if (stageChk[tmpStage] == 1)
+            {   // 이미 생성된 랜덤숫자일 때
+                i--;
+                // i를 한단계 되돌려준다.
+            }
+        }
+    }
 }
