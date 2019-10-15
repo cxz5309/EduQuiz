@@ -39,6 +39,7 @@ TagManager:
   - Next
   - Canvas
   - Potion
+  - Retry
   layers:
   - Default
   - TransparentFX
