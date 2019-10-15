@@ -13,12 +13,12 @@ public class TmpLaycast : MonoBehaviour
     public string shotSound = "Shot";
     private AudioManager theAudio;
 
-    public int[] stage;
-    public int stageOrder = 0;
+    //public int[] stage;
+    //public int stageOrder = 0;
 
     private void Start()
     {
-        stage = getRandomInt(3, 1, 3);
+        //stage = getRandomInt(3, 1, 3);
         theAudio = FindObjectOfType<AudioManager>();
         ChangeWeapon(DataSave.instance.data.nowWeapon);
     }
@@ -209,7 +209,7 @@ public class TmpLaycast : MonoBehaviour
     
     public string GameSceneRandomToString()
     {
-        switch(stage[stageOrder])
+        switch(Random.Range(0,3))
         {
             case 0:
                 return "basicRetry";
@@ -223,7 +223,7 @@ public class TmpLaycast : MonoBehaviour
 
     public void ChangeScene(string tag)
     {
-        stageOrder++;
+        //stageOrder++;
         switch (tag)
         {
             case "main":
@@ -260,29 +260,29 @@ public class TmpLaycast : MonoBehaviour
         theAudio.Play(shotSound);
     }
 
-    public int[] getRandomInt(int length, int min, int max)
-    {
-        int[] randArray = new int[length];
-        bool isSame;
+    //public int[] getRandomInt(int length, int min, int max)
+    //{
+    //    int[] randArray = new int[length];
+    //    bool isSame;
 
-        for(int i = 0; i < length; ++i)
-        {
-            while (true)
-            {
-                randArray[i] = Random.Range(min, max);
-                isSame = false;
+    //    for(int i = 0; i < length; ++i)
+    //    {
+    //        while (true)
+    //        {
+    //            randArray[i] = Random.Range(min, max);
+    //            isSame = false;
 
-                for(int j = 0;j<i; ++j)
-                {
-                    if(randArray[j] == randArray[i])
-                    {
-                        isSame = true;
-                        break;
-                    }
-                }
-                if (!isSame) break;
-            }
-        }
-        return randArray;
-    }
+    //            for(int j = 0;j<i; ++j)
+    //            {
+    //                if(randArray[j] == randArray[i])
+    //                {
+    //                    isSame = true;
+    //                    break;
+    //                }
+    //            }
+    //            if (!isSame) break;
+    //        }
+    //    }
+    //    return randArray;
+    //}
 }
