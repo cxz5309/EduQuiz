@@ -13,7 +13,6 @@ public class MainManager : MonoBehaviour
 
     public string themeSound;
     private AudioManager theAudio;
-    
 
     private void Awake()
     {
@@ -31,8 +30,8 @@ public class MainManager : MonoBehaviour
 
         theAudio = FindObjectOfType<AudioManager>();
         theAudio.Play(themeSound);
-
         CanvasManager.instance.PopupChange("Idle");
+
     }
 
     public void UniconText()
