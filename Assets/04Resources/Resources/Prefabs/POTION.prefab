@@ -167,7 +167,7 @@ GameObject:
   - component: {fileID: 6024510303278226497}
   m_Layer: 10
   m_Name: POTION
-  m_TagString: HP
+  m_TagString: Potion
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -146,6 +146,8 @@ public class DataSave : MonoBehaviour
     public static DataSave instance;
     public Data data;
 
+    public int Grade;
+
     //public UserInfo userInfo;
     //public LevelInfo basicLevelInfo;
     //public LevelInfo mahtLevelInfo;

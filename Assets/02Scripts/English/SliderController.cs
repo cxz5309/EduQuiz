@@ -7,8 +7,11 @@ public class SliderController : MonoBehaviour
 {
     public static SliderController instance;
 
-    public bool sliderWait;
+    public bool sliderWait = false;
+    public bool coSliderMoving = false;
+    Coroutine coSliderMove;
     private Slider slider;
+    float time;
     void Awake()
     {
         instance = this;
@@ -16,37 +19,51 @@ public class SliderController : MonoBehaviour
     void Start()
     {
         slider = GetComponent<Slider>();
-        sliderWait = false;
-        SliderStart();
-
     }
-
-    public void SliderInit()
-    {
-    }
-
 
     public void SliderStart()
     {
-        StartCoroutine(coSliderStart());
+        if(coSliderMoving)
+        {
+            sliderWait = false;
+            coSliderMoving = false;
+            StopCoroutine(coSliderMove);
+            coSliderMove = null;
+        }
+        
+        coSliderMove = StartCoroutine(coSliderStart());
     }
 
+    public void SliderEnd()
+    {
+        sliderWait = false;
+        StopCoroutine(coSliderStart());
+    }
     IEnumerator coSliderStart()
     {
+        coSliderMoving = true;
         slider.maxValue = 100f;
         slider.value = 100f;  // 제한시간
-        float time = 5;// WaveManager.instance.waveTime();
+        time = WaveManager.instance.waveTime();
+
         while (time > 0)
         {
+
             if (!sliderWait)
             {
                 time -= Time.fixedDeltaTime;
-                slider.value -= Time.fixedDeltaTime * (slider.maxValue / 5);
+                slider.value -= Time.fixedDeltaTime * (slider.maxValue / WaveManager.instance.waveTime());
             }
             yield return new WaitForFixedUpdate();
         }
-        Debug.Log(5);// WaveManager.instance.waveTime());
-        Debug.Log(time);
+        if (!WaveManager.instance.WaveDelaying)
+        {
+            GameManager.instance.FailEffect();
+            HPManager.instance.HP -= 10;
+            HPManager.instance.HeartCheck();  // 플레이어 체력 감소 후 업데이트
+            WaveManager.instance.WaveDelayStart();
+        }
+        yield break;
     }
 
     void Update()
@@ -73,12 +90,6 @@ public class SliderController : MonoBehaviour
         //    }
         //}
     }
-    public void StartSlider()
-    {
-        Debug.Log("스타트슬라이더");
-        slider.maxValue = 100f;
-        slider.value = 100f;  // 제한시간
-    }
     public void WaitSlider()
     {
         sliderWait = true;
@@ -87,20 +98,27 @@ public class SliderController : MonoBehaviour
     {
         sliderWait = false;
     }
-    public void ChangeSliderValue(float value)
+    public void ChangeSliderValue(float _time)
     {
-        slider.value += value;        
+        slider.value -= _time * (slider.maxValue / WaveManager.instance.waveTime());
+        this.time -= _time;
     }
 
     public void WaitSliderForSeconds(float time)
     {
-        StartCoroutine(coWaitSlider(time));
+        StartCoroutine(coWaitSliderForSeconds(time));
     }
-    IEnumerator coWaitSlider(float time)
+
+    IEnumerator coWaitSliderForSeconds(float time)
     {
-        sliderWait = true;
+        WaitSlider();
         yield return new WaitForSeconds(time);
-        sliderWait = false;
+        ResumeSlider();
+    }
+
+    private void OnDisable()
+    {
+        StopCoroutine(coSliderStart());
     }
 
     private void OnDestroy()

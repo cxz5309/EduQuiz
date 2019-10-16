@@ -28,7 +28,7 @@ public class PlayerManager : MonoBehaviour
     {
         if (other.gameObject.tag == "GamePotal")
         {
-            CanvasManager.instance.PopupChange("GamePotal");
+            CanvasManager.instance.PopupChange("Level");
         }
         else if (other.gameObject.tag == "StorePotal")
         {

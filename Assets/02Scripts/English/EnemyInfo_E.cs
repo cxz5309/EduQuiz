@@ -42,7 +42,6 @@ public class EnemyInfo_E : MonoBehaviour
 
                 GameManager.instance.SuccessEffect();       // 성공 이펙트
 
-
                 if (WaveManager.instance.curWave < QuizManager.instance.dictionary.Count - 1)
                 {   // 문제가 더 남아있을 때
                     WaveManager.instance.EnemyKillCnt = 0;
@@ -66,7 +65,7 @@ public class EnemyInfo_E : MonoBehaviour
                 else if (WaveManager.instance.EnemyKillCnt != isRightOrder())
                 {   // 오답일 때
                     //Sound.instance.InCorrect();
-                    SliderController.instance.ChangeSliderValue(-20f);// 답이 틀릴때마다 타이머 4초씩 감소
+                    SliderController.instance.ChangeSliderValue(4f);// 답이 틀릴때마다 타이머 4초씩 감소
                 }
             }
         }

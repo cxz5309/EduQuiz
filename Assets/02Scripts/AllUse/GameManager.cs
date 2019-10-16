@@ -56,17 +56,8 @@ public class GameManager : MonoBehaviour
         theAudio.Play(themeSound);
         WaveManager.instance.InitWave();
         gamestate = Gamestate.GamePlaying;
-        SliderController.instance.SliderInit();
         // State UI 활성화
     }
-
-    // 결과 버튼 메소드
-    IEnumerator coResultButtonsOn()
-    {
-        yield return new WaitForSeconds(2.5f);
-        CanvasManager.instance.PopupChange("Result");
-    }
-
     
     public void MenuButtonsOn()
     {
@@ -84,6 +75,7 @@ public class GameManager : MonoBehaviour
     // 스테이지 클리어 메소드
     public void GameClear()
     {
+        SliderController.instance.WaitSlider();
         ItemManager.instance.itemSpawnStop = true;
         EnemyDestroy();
         ItemDestroy();
@@ -91,23 +83,32 @@ public class GameManager : MonoBehaviour
         GameStateText.SetActive(true);
         GameStateText.GetComponent<TextMeshPro>().text = "GameClear";
         GameStateText.GetComponent<Animator>().SetTrigger("GameClear");
-        SliderController.instance.WaitSlider();
         gamestate = Gamestate.GameClear;
-        StartCoroutine(coResultButtonsOn());
+        StartCoroutine(coResultButtonsOn(true));
     }
 
     // 게임 오버 메소드
     public void GameOver()
     {
+        SliderController.instance.WaitSlider();
         ItemManager.instance.itemSpawnStop = true;
         EnemyDestroy();
         ItemDestroy();
         GameStateText.SetActive(true);
         GameStateText.GetComponent<TextMeshPro>().text = "GameOver";
         GameStateText.GetComponent<Animator>().SetTrigger("GameOver");
-        SliderController.instance.WaitSlider();
-        StartCoroutine(coResultButtonsOn());
+        StartCoroutine(coResultButtonsOn(false));
         gamestate = Gamestate.GameOver;
+    }
+
+    // 결과 버튼 메소드
+    IEnumerator coResultButtonsOn(bool success)
+    {
+        yield return new WaitForSeconds(2.5f);
+        if(success)
+            CanvasManager.instance.PopupChange("Success");
+        else
+            CanvasManager.instance.PopupChange("Fail");
     }
 
     // 게임 일시정지 메소드

@@ -88,7 +88,7 @@ public class EnemyInfo_B : MonoBehaviour
                             isAtacking = true;
                             DistanceToPlayer = 5f;
                             Move(State.Attack);
-                            StartCoroutine(coAttack());
+                            //StartCoroutine(coAttack());
                         }
                     }
                 }
@@ -204,7 +204,9 @@ public class EnemyInfo_B : MonoBehaviour
     {
         result = enemy.result;
         //transform.position = enemy.spawnPos;
-        this.transform.Find("TextMesh").GetComponent<TextMesh>().text = enemy.meshNum;
+        GameObject textMesh = transform.Find("TextMesh").gameObject;
+        textMesh.GetComponent<TextMesh>().text = enemy.meshNum;
+        textMesh.transform.Find("New Sprite").localScale += new Vector3(enemy.meshNum.Length * 0.25f, 0, 0);
         gameObject.SetActive(true);
     }
     

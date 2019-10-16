@@ -26,27 +26,11 @@ public class MainManager : MonoBehaviour
         uniconObject = unicon.transform.Find("UniconObject").gameObject;
         uniconCanvas.gameObject.SetActive(true);
         uniconObject.gameObject.SetActive(true);
-        UniconText();
 
         theAudio = FindObjectOfType<AudioManager>();
         theAudio.Play(themeSound);
-        CanvasManager.instance.PopupChange("Idle");
 
-    }
-
-    public void UniconText()
-    {
-        UniconTextStart();
-        UniconTextEnd();
-    }
-    
-    public void UniconTextStart()
-    {
-        CanvasManager.instance.PopupPosition(-10, -20);
-    }
-    public void UniconTextEnd()
-    {
-        CanvasManager.instance.PopupPosition(0, -10);
+        CanvasManager.instance.UniconConversation();
     }
 
     private void OnDestroy()

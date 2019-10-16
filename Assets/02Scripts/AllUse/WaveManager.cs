@@ -18,10 +18,6 @@ public class WaveManager : MonoBehaviour
     
     public GameObject Manual;
 
-    private Text waveText = null;          // 웨이브
-    private Text quizText = null;           // 지문
-    public Image engImage = null;           // 그림
-
     public Transform[] SpawnPoint = new Transform[9];   // 적 생성 위치를 저장하는 배열
     public GameObject[] Enemy = new GameObject[9];        // 적 캐릭터를 저장하는 변수
 
@@ -34,7 +30,6 @@ public class WaveManager : MonoBehaviour
     private float delayTime = 3.0f;     // 3초 딜레이
     public GameObject countText;
 
-    public int level;
     public float defaultTime;
     public int hardMode = 0;//영우
 
@@ -47,17 +42,16 @@ public class WaveManager : MonoBehaviour
     {
         if (GameObject.Find("Title"))
         {
-            waveText = GameObject.Find("Title").GetComponent<Text>();
+            CanvasManager.instance.waveText = GameObject.Find("Title").GetComponent<Text>();
         }
         if (GameObject.Find("Description"))
         {
-            quizText = GameObject.Find("Description").GetComponent<Text>();
+            CanvasManager.instance.quizText = GameObject.Find("Description").GetComponent<Text>();
         }
         if (GameObject.Find("EngImage"))
         {
-            engImage = GameObject.Find("EngImage").GetComponent<Image>();
+            CanvasManager.instance.engImage = GameObject.Find("EngImage").GetComponent<Image>();
         }
-
         initSpawnCount();
         WaveDelaying = false;
         //PopupMaunal();
@@ -81,6 +75,7 @@ public class WaveManager : MonoBehaviour
         SliderController.instance.WaitSlider();
         
         yield return new WaitForSeconds(delayTime);
+        SliderController.instance.ResumeSlider();
         if (HPManager.instance.HP > 0)
         {
             if (!waveEnemyDic.ContainsKey(curWave+1))
@@ -91,9 +86,7 @@ public class WaveManager : MonoBehaviour
             else
             {
                 GameManager.instance.NextLevel();
-            }
-            SliderController.instance.ResumeSlider();
-             
+            }             
             WaveDelaying = false;
         }
         else
@@ -115,7 +108,18 @@ public class WaveManager : MonoBehaviour
     public void FirstStart()
     {
         HPManager.instance.initHP();
-        //quizText.text = "STAGE 국어\n\n문제를 잘 읽고 정답을 맞춰봐!";
+        switch (SceneManager.GetActiveScene().name)
+        {
+            case "BasicScene":
+                CanvasManager.instance.SetQuizText("STAGE 국어\n\n문제를 잘 읽고 정답을 맞춰봐!");
+                break;
+            case "MathScene":
+                CanvasManager.instance.SetQuizText("STAGE 수학\n\n수식을 올바르게 완성시켜봐!");
+                break;
+            case "OXScene":
+                CanvasManager.instance.SetQuizText("STAGE OX\n\n맞으면 O, 틀리면 X를 눌러!");
+                break;
+        }
         countText.SetActive(true);
         Animator ani = countText.GetComponent<Animator>();
         ani.SetTrigger("StartCount");
@@ -201,18 +205,18 @@ public class WaveManager : MonoBehaviour
     public void StartWave()
     {
         curWave++;        // 초기값 -1, 0부터 시작
-        waveText.text = "WAVE : " + (curWave + 1);  // 현재 스테이지 출력
+        CanvasManager.instance.SetStageText("WAVE : " + (curWave + 1));  // 현재 스테이지 출)력
 
         switch (SceneManager.GetActiveScene().name)
         {
             case "BasicScene":
             case "OXScene":
-                quizText.text = QuizManager.instance.dictionary[curWave].quiz;  // 인덱스 0부터 문제 출력
+                CanvasManager.instance.SetQuizText(QuizManager.instance.dictionary[curWave].quiz);  // 인덱스 0부터 문제 출력
                 break;
             case "EnglishScene":
                 EnemyKillCnt = 0;
                 Sprite newSprite = QuizManager.instance.dictionary[curWave].sprite;
-                engImage.overrideSprite = newSprite;    // 이미지 출력
+                CanvasManager.instance.SetImage(newSprite);    // 이미지 출력
                 break;
         }
 
@@ -241,13 +245,12 @@ public class WaveManager : MonoBehaviour
             }
             // 적 위치 랜덤 생성
         }
-        SliderController.instance.StartSlider();
-        SliderController.instance.ResumeSlider();
+        SliderController.instance.SliderStart();
     }
 
     public float waveTime()
     {
-        return defaultTime / (1 + (hardMode * 0.5f)) / (1+(level * 0.1f));
+        return defaultTime / (1 + (hardMode * 0.5f));
     }
 
 

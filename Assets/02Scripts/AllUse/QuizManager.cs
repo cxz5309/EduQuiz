@@ -64,17 +64,19 @@ public class QuizManager : MonoBehaviour
     public Dictionary<int, Value> dictionary;
     public Dictionary<int, Value> dictionary_temp;   // 문제를 섞기 위한 임시 변수
 
+    public int grade;
 
     void Awake()
     {
         instance = this;
-
+        grade = DataSave.instance.Grade;
         LoadMap();
         RandomNumber();     // 문제 랜덤섞기
     }
 
     public void LoadMap()
     {
+        Debug.Log("이거시 언제쯤 시작될까");
         dictionary = new Dictionary<int, Value>();
         TextAsset data;
         StringReader strReader;
@@ -83,7 +85,7 @@ public class QuizManager : MonoBehaviour
         switch (SceneManager.GetActiveScene().name)
         {
             case "BasicScene":
-                data = Resources.Load("BasicDatas", typeof(TextAsset)) as TextAsset;
+                data = Resources.Load("BasicDatas" + grade.ToString(), typeof(TextAsset)) as TextAsset;
                 strReader = new StringReader(data.text);
                 source = strReader.ReadLine();
                 int row = 0;
