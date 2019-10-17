@@ -268,6 +268,8 @@ public class TmpLaycast : MonoBehaviour
                 return "mathRetry";
             case "EnglishScene":
                 return "enghishRetry";
+            case "OXScene":
+                return "OXRetry";
         }
     }
 

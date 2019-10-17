@@ -159,6 +159,9 @@ public class Controller : SteamVR_LaserPointer
             case "eng":
                 SceneManager.LoadScene("EnglishScene", LoadSceneMode.Single);
                 break;
+            case "OX":
+                SceneManager.LoadScene("OXScene", LoadSceneMode.Single);
+                break;
             case "main":
                 SceneManager.LoadScene("Main", LoadSceneMode.Single);
                 break;

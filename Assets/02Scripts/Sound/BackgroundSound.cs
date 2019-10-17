@@ -28,6 +28,9 @@ public class BackgroundSound : MonoBehaviour
             case "EnglishScene":
                 EnglishbackGround();
                 break;
+            case "OXScene":
+                //OXbackGround();
+                break;
         }
     }
 

@@ -42,6 +42,11 @@ public class AutoSceneChange : MonoBehaviour
         yield return new WaitForSeconds(1);
         SceneManager.LoadScene("EnglishScene");
     }
+    IEnumerator OXChangeScene()
+    {
+        yield return new WaitForSeconds(1);
+        SceneManager.LoadScene("OXScene");
+    }
     IEnumerator StoreChangeScene()
     {
         yield return new WaitForSeconds(1);
