@@ -11,6 +11,8 @@ public class MainManager : MonoBehaviour
     private GameObject uniconCanvas;
     private GameObject uniconObject;
 
+    public static bool UniconConversationOneTime = false;
+
     public string themeSound;
     private AudioManager theAudio;
 
@@ -30,7 +32,15 @@ public class MainManager : MonoBehaviour
         theAudio = FindObjectOfType<AudioManager>();
         theAudio.Play(themeSound);
 
-        CanvasManager.instance.UniconConversation();
+        if (!UniconConversationOneTime)
+        {
+            UniconConversationOneTime = true;
+            CanvasManager.instance.UniconConversation();
+        }
+        else
+        {
+            CanvasManager.instance.SetIdlePopup();
+        }
     }
 
     private void OnDestroy()

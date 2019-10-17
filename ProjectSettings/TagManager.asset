@@ -11,9 +11,6 @@ TagManager:
   - HP
   - Timer
   - main
-  - basicRetry
-  - mathRetry
-  - englishRetry
   - Pause
   - Camera
   - Close
@@ -24,7 +21,6 @@ TagManager:
   - Right
   - Buy
   - Confirm
-  - Cancel
   - Inventory
   - Setting
   - Music

@@ -11,8 +11,7 @@ public class CanvasManager : MonoBehaviour
     public string currentPopup;
 
     private Transform playerTr = null;   // 플레이어 위치
-    public float distanceZ;      // 플레이어와의 Z축거리
-    public float distanceY;      // 플레이어와의 Y축거리
+    public Vector3 distanceVector;
     public float speed;         // 팝업 이동속도
 
     private string popupChangeSound;    // 팝업 바뀔 때 소리
@@ -50,7 +49,7 @@ public class CanvasManager : MonoBehaviour
         conversations = new string[11]
         { "안녕, 난 '유니'라고 해!\n( < > 버튼을 Click 하세요 )",
           "이곳은 '꿈의 목장'이야.\n너가 원하는 곳으로 돌아다닐 수 있고 동물을 키울 수 있어!",
-          "하지만, 나쁜 몬스터들이 동물을 빼았기 위해 몰려오고 있어!!!",
+          "하지만, 나쁜 몬스터들이 동물을 빼앗기 위해 몰려오고 있어!!!",
           "몬스터 출몰 장소로 이동해서 몬스터를 물리쳐야 해!",
           "퀴즈를 풀어야 잡을 수 있는 아주 악독한 녀석들이지.",
           "몬스터를 물리치는데 성공하면 돈을 얻을 수 있고, 상점에서 새로운 무기와 동물을 살 수 있어",
@@ -65,7 +64,8 @@ public class CanvasManager : MonoBehaviour
     public void UniconConversation()
     {
         PopupChange("Conversation");
-        PopupPosition(-5, -15);
+        PopupPosition(-10, -15);
+        UniconController.instance.UniconPosition(1.38f, 0.5f, 1.6f);
 
         SetConversation();
         StartUniconText();
@@ -117,15 +117,18 @@ public class CanvasManager : MonoBehaviour
     public void EndUniconText()
     {
         TmpLaycast.youCantDoAnything = false;
-
+        SetIdlePopup();
+    }
+    public void SetIdlePopup()
+    {
         PopupChange("Idle");
-        PopupPosition(0, -10);
+        PopupPosition(-5, -10);
+        UniconController.instance.UniconPosition(1.9f, 1f, 2.66f);
     }
 
     public void PopupPosition(int y, int z)
     {
-        distanceY = y;
-        distanceZ = z;
+        distanceVector = new Vector3(0, y, z);
     }
 
     public void SetQuizText(string text)
@@ -144,7 +147,7 @@ public class CanvasManager : MonoBehaviour
     void Update()
     {
 
-        transform.position = Vector3.Lerp(transform.position, new Vector3(playerTr.position.x, playerTr.position.y + distanceY, playerTr.position.z + distanceZ), Time.deltaTime * speed);
+        transform.position = Vector3.Lerp(transform.position, playerTr.position + distanceVector, Time.deltaTime * speed);
     }
 
     public void PopupChange(string _currentPopup)

@@ -126,9 +126,9 @@ public class EnemyInfo_B : MonoBehaviour
                 break;
         }
         nowState = state;    
-        transform.LookAt(Player.transform);
+        transform.LookAt(Player.transform.position + new Vector3(0, -1.8f, 0));
         // 적은 플레이어 방향을 바라봄.
-        GetComponent<Rigidbody>().velocity = transform.forward * MoveSpeed;
+        GetComponent<Rigidbody>().velocity = (transform.forward) * MoveSpeed;
         //transform.position += transform.forward * MoveSpeed * Time.deltaTime;
         // 초당 MoveSpeed의 거리를 이동
     }

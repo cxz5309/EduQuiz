@@ -93,7 +93,6 @@ public class TmpLaycast : MonoBehaviour
                                     case "Setting":
                                         CanvasManager.instance.PopupChange("Setting");
                                         break;
-                                    case "Cencel":
                                     case "Back":
                                         CanvasManager.instance.PopupChange("Idle");
                                         break;
@@ -118,7 +117,7 @@ public class TmpLaycast : MonoBehaviour
                             {
                                 if (!triggerSwitch)
                                 {
-                                    transform.position = hitInfo.point + new Vector3(0, 4.19f, 0);
+                                    transform.position = hitInfo.point + new Vector3(0, 2.69f, 0);
                                 }
                             }
                             if (triggerSwitch)
@@ -128,98 +127,112 @@ public class TmpLaycast : MonoBehaviour
                         }
                         break;
                         case "StoreScene":
-                            if (hitInfo.transform.gameObject.layer == 5)
-                            {
-                                if (StoreManager.instance.getStoreActive == true)
-                                {   // 상점 켜졌을 때
-                                    if (StoreManager.instance.getBuyActive == false)
-                                    {   // 구매창 안켜졌을 때
-                                        switch (hitInfo.collider.tag)
-                                        {
-                                            case "Close":
-                                                StoreManager.instance.SetStoreActive();
-                                                break;
-                                            case "Left":
-                                                SelectBuyWeapon.instance.Left();
-                                                break;
-                                            case "Right":
-                                                SelectBuyWeapon.instance.Right();
-                                                break;
-                                            case "Buy":
-                                                StoreManager.instance.SetBuyActive();
-                                                break;
-                                        }
+                        if (hitInfo.transform.gameObject.layer == 5)
+                        {
+                            if (StoreManager.instance.getStoreActive == true)
+                            {   // 상점 켜졌을 때
+                                if (StoreManager.instance.getBuyActive == false)
+                                {   // 구매창 안켜졌을 때
+                                    switch (hitInfo.collider.tag)
+                                    {
+                                        case "Close":
+                                            StoreManager.instance.SetStoreActive();
+                                            break;
+                                        case "Left":
+                                            SelectBuyWeapon.instance.Left();
+                                            break;
+                                        case "Right":
+                                            SelectBuyWeapon.instance.Right();
+                                            break;
+                                        case "Buy":
+                                            StoreManager.instance.SetBuyActive();
+                                            break;
                                     }
-                                    else
-                                    {   // 구매창 켜졌을 때
-                                        switch (hitInfo.collider.tag)
-                                        {
-                                            case "Confirm":
-                                                DataSave.instance.data.Charge(DataSave.instance.data.gold, 1, Data.ItemType.Weapon, SelectBuyWeapon.instance.chapIndex);
-                                                // SelectBuyWeapon의 현재 선택된 무기 배열 번호를 참조하면 됌
-                                                ChangeWeapon(DataSave.instance.data.nowWeapon);
-                                                break;
-                                            case "Cancel":
-                                                StoreManager.instance.SetBuyActive();
-                                                break;
-                                        }
+                                }
+                                else
+                                {   // 구매창 켜졌을 때
+                                    switch (hitInfo.collider.tag)
+                                    {
+                                        case "Confirm":
+                                            DataSave.instance.data.Charge(DataSave.instance.data.gold, 1, Data.ItemType.Weapon, SelectBuyWeapon.instance.chapIndex);
+                                            // SelectBuyWeapon의 현재 선택된 무기 배열 번호를 참조하면 됌
+                                            ChangeWeapon(DataSave.instance.data.nowWeapon);
+                                            break;
+                                        case "Cancel":
+                                            StoreManager.instance.SetBuyActive();
+                                            break;
                                     }
                                 }
                             }
-                            else
+                        }
+                        else
+                        {
+                            if (StoreManager.instance.getStoreActive == false)
                             {
-                                if (StoreManager.instance.getStoreActive == false)
+                                if (hitInfo.collider.tag == "NPC")
                                 {
-                                    if (hitInfo.collider.tag == "NPC")
-                                    {
-                                        StoreManager.instance.SetStoreActive();
-                                    }
-                                    else if (hitInfo.collider.tag == "main")
-                                    {
-                                        ChangeScene(hitInfo.collider.tag);
-                                    }
-                                    else
-                                    {
-                                        transform.position = hitInfo.point + new Vector3(0, 4.19f, 0);
-                                    }
+                                    StoreManager.instance.SetStoreActive();
+                                }
+                                else if (hitInfo.collider.tag == "main")
+                                {
+                                    ChangeScene(hitInfo.collider.tag);
+                                }
+                                else
+                                {
+                                    transform.position = hitInfo.point + new Vector3(0, 2.69f, 0);
                                 }
                             }
-                            break;
+                        }
+                        break;
                         case "BasicScene":
                         case "MathScene":
                         case "EnglishScene":
                         case "OXScene":
-                            if (hitInfo.transform.gameObject.layer == 5)
+                        if (hitInfo.transform.gameObject.layer == 5)
+                        {
+                            switch (hitInfo.collider.tag)
                             {
-                                switch (hitInfo.collider.tag)
-                                {
-                                    case "Pause":       // 일시정지
-                                        GameManager.instance.GamePause();
-                                        break;
-                                    case "Back":        // 계속하기
-                                        GameManager.instance.GamePauseFin();
-                                        break;
-                                    case "Home":        // 홈으로
-                                        ChangeScene("main");
-                                        Debug.Log("재시작시 같은 과목임");            // 다음 게임 계속 진행하기
-                                        break;
-                                    case "Next":
-                                        stageOrder++;
-                                        ChangeScene(GameSceneRandomToString());
-                                        Debug.Log("다음게임 계속 진행");            // 다음 게임 계속 진행하기
-                                        break;
-                                }
+                                case "Pause":       // 일시정지
+                                    GameManager.instance.GamePause();
+                                    break;
+                                case "Back":        // 계속하기
+                                    GameManager.instance.GamePauseFin();
+                                    break;
+                                case "Retry":
+                                    ChangeScene(GetSceneNameToTag(SceneManager.GetActiveScene().name));
+                                    break;
+                                case "Home":        // 홈으로
+                                    ChangeScene("main");
+                                    Debug.Log("재시작시 같은 과목임");            // 다음 게임 계속 진행하기
+                                    break;
+                                case "Next":
+                                    stageOrder++;
+                                    ChangeScene(GameSceneRandomToString());
+                                    Debug.Log("다음게임 계속 진행");            // 다음 게임 계속 진행하기
+                                    break;
+                            }
 
-                                if (hitInfo.collider.tag == "Right")
-                                {
-                                    WaveManager.instance.CloseManual();
-                                }
+                            if (hitInfo.collider.tag == "Right")
+                            {
+                                WaveManager.instance.CloseManual();
+                            }
+                        }
+                        else if(hitInfo.transform.gameObject.layer == 11)
+                        {
+                            if (GameManager.instance.gamestate != GameManager.Gamestate.GamePause)
+                            {
+                                GameManager.instance.GamePause();
                             }
                             else
                             {
-                                Fire(hitInfo.point);
+                                GameManager.instance.GamePauseFin();
                             }
-                            break;
+                        }
+                        else
+                        {
+                            Fire(hitInfo.point);
+                        }
+                        break;
                     }
                 }
             }
@@ -243,6 +256,21 @@ public class TmpLaycast : MonoBehaviour
         Bullet = Resources.Load<GameObject>("Prefabs/Projectile/Projectile " + (++projectileNum).ToString());
     }
     
+    public string GetSceneNameToTag(string sceneName)
+    {
+        switch (sceneName)
+        {
+            default:
+                return "Main";
+            case "BasicScene":
+                return "basicRetry";
+            case "MathScene":
+                return "mathRetry";
+            case "EnglishScene":
+                return "enghishRetry";
+        }
+    }
+
     public string GameSceneRandomToString()
     {
         switch(stage[stageOrder])

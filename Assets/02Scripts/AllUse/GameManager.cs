@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     public string failSound = "Fail";
     private AudioManager theAudio;
 
+    float tmpTime;
 
     public enum Gamestate
     {
@@ -114,6 +115,7 @@ public class GameManager : MonoBehaviour
     // 게임 일시정지 메소드
     public void GamePause()
     {
+        tmpTime = SliderController.instance.tmpTime;
         CanvasManager.instance.PopupChange("Pause");
 
         gamestate = Gamestate.GamePause;
@@ -139,6 +141,7 @@ public class GameManager : MonoBehaviour
                 break;
         }        
         gamestate = Gamestate.GamePlaying;
+        SliderController.instance.SliderStart(tmpTime);
     }
 
     // 다음 레벨 메소드

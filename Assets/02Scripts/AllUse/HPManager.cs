@@ -35,7 +35,6 @@ public class HPManager : MonoBehaviour {
 
     public void HeartCheck()
     {
-        Debug.Log("씨벌럼의 hp=" + HP);
         if (HP == 60)
         {   // 최대 체력 50
             HP = 50;

@@ -12,6 +12,8 @@ public class SliderController : MonoBehaviour
     Coroutine coSliderMove;
     private Slider slider;
     float time;
+    public float tmpTime = 0;
+
     void Awake()
     {
         instance = this;
@@ -21,7 +23,7 @@ public class SliderController : MonoBehaviour
         slider = GetComponent<Slider>();
     }
 
-    public void SliderStart()
+    public void SliderStart(float reduceTime = 0)
     {
         if(coSliderMoving)
         {
@@ -31,27 +33,28 @@ public class SliderController : MonoBehaviour
             coSliderMove = null;
         }
         
-        coSliderMove = StartCoroutine(coSliderStart());
+        coSliderMove = StartCoroutine(coSliderStart(reduceTime));
     }
 
-    public void SliderEnd()
+    public void SliderEnd(float reduceTime = 0)
     {
         sliderWait = false;
-        StopCoroutine(coSliderStart());
+        StopCoroutine(coSliderStart(reduceTime));
     }
-    IEnumerator coSliderStart()
+    IEnumerator coSliderStart(float reduceTime)
     {
         coSliderMoving = true;
+        time = WaveManager.instance.waveTime() - reduceTime;
         slider.maxValue = 100f;
-        slider.value = 100f;  // 제한시간
-        time = WaveManager.instance.waveTime();
-
+        slider.value = 100f - reduceTime * (slider.maxValue / WaveManager.instance.waveTime());  // 제한시간
+        tmpTime = reduceTime;
         while (time > 0)
         {
 
             if (!sliderWait)
             {
                 time -= Time.fixedDeltaTime;
+                tmpTime += Time.fixedDeltaTime;
                 slider.value -= Time.fixedDeltaTime * (slider.maxValue / WaveManager.instance.waveTime());
             }
             yield return new WaitForFixedUpdate();
@@ -115,11 +118,7 @@ public class SliderController : MonoBehaviour
         yield return new WaitForSeconds(time);
         ResumeSlider();
     }
-
-    private void OnDisable()
-    {
-        StopCoroutine(coSliderStart());
-    }
+    
 
     private void OnDestroy()
     {
