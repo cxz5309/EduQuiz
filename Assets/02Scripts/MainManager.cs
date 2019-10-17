@@ -11,6 +11,8 @@ public class MainManager : MonoBehaviour
     private GameObject uniconCanvas;
     private GameObject uniconObject;
 
+    public GameObject inventory;
+
     public static bool UniconConversationOneTime = false;
 
     public string themeSound;
@@ -40,6 +42,18 @@ public class MainManager : MonoBehaviour
         else
         {
             CanvasManager.instance.SetIdlePopup();
+        }
+    }
+
+    public void InventoryOn()
+    {
+        if (inventory.activeSelf == true)
+        {
+            inventory.SetActive(false);
+        }
+        else if (inventory.activeSelf == false)
+        {
+            inventory.SetActive(true);
         }
     }
 

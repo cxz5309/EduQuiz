@@ -37,6 +37,9 @@ TagManager:
   - Potion
   - Retry
   - Level
+  - Cancel
+  - InventoryPotal
+  - AnimalPotal
   layers:
   - Default
   - TransparentFX
