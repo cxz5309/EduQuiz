@@ -48,7 +48,7 @@ public class CanvasManager : MonoBehaviour
     public void SetConversation()
     {
         conversations = new string[12]
-        { "안녕 난 유니콘 유니야\n이곳에 온걸 환영해!\n아래의 > 버튼을 눌러봐",
+        { "안녕, 난 '유니'라고 해!\n'꿈의 농장'에 온것을 환영해!\n(화살표 버튼을 누르세요.)",
           "처음이 아니라면 아래의 close 버튼을 누르면 바로 시작할 수 있어",
           "여기는 너의 목장이야\n 우리는 이곳에서 동물을 키울 수 있어",
           "지금 나쁜 몬스터들이 너의 동물들을 노리고 있대",
@@ -60,7 +60,7 @@ public class CanvasManager : MonoBehaviour
           "문제를 모두 맞춰 모든 몬스터를 물리치면 구매할 수 있는 돈을 얻을거야",
           "게임중에 쉬고싶거나 나가고싶다면 나를 다시한번 눌러줘",
           "그럼 close 버튼을 눌러 게임을 시작하자"
-          };
+        };
     }
 
     public void UniconConversation()
