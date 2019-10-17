@@ -26,13 +26,37 @@ public class PlayerManager : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "GamePotal")
+        switch (other.gameObject.tag)
         {
-            CanvasManager.instance.PopupChange("Level");
+            case "GamePotal":
+                CanvasManager.instance.PopupChange("Level");
+                break;
+            case "StorePotal":
+                CanvasManager.instance.PopupChange("StorePotal");
+                break;
+            case "AnimalPotal":
+                CanvasManager.instance.PopupChange("Animal");
+                break;
+
+            case "InventoryPotal":
+                MainManager.instance.InventoryOn();
+                break;
         }
-        else if (other.gameObject.tag == "StorePotal")
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        switch (other.gameObject.tag)
         {
-            CanvasManager.instance.PopupChange("StorePotal");
+            case "GamePotal":
+            case "StorePotal":
+            case "AnimalPotal":
+                CanvasManager.instance.PopupChange("Idle");
+                break;
+
+            case "InventoryPotal":
+                MainManager.instance.InventoryOn();
+                break;
         }
     }
 }
