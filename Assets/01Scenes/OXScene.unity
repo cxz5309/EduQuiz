@@ -616,8 +616,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   curWave: -1
-  lastWave: 6
-  hardWave: 3
+  lastWave: 3
+  hardWave: 2
   LightChange: {fileID: 170076733}
   Manual: {fileID: 0}
   SpawnPoint:

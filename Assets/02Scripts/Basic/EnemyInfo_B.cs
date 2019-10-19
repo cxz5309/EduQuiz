@@ -172,6 +172,7 @@ public class EnemyInfo_B : MonoBehaviour
                     if (isRightResult())
                     {   // 정답일 때
                         GameManager.instance.SuccessEffect();
+                        DataSave.instance.score += 100;
                         //Sound.instance.Correct();
                     }
                     else

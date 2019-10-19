@@ -45,6 +45,7 @@ public class GameManager : MonoBehaviour
                 break;
             case "OXScene":
                 CanvasManager.instance.PopupChange("OX");
+                GameObject.Find("Unicon").transform.rotation = Quaternion.Euler(new Vector3(0, 45, 0));
                 break;
         }
     }

@@ -40,6 +40,7 @@ public class EnemyInfo_E : MonoBehaviour
             {   // 해당 웨이브 몬스터 수만큼 적을 죽였다면 스테이지 클리어
                 DamageIffect();     // 적 제거
 
+                DataSave.instance.score += 100;
                 GameManager.instance.SuccessEffect();       // 성공 이펙트
 
                 if (WaveManager.instance.curWave < QuizManager.instance.dictionary.Count - 1)

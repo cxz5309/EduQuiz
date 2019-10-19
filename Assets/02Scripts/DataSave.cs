@@ -50,20 +50,20 @@ public class Data
         {
             this.availableWeapon[i] = int.Parse(inventoryData.available_weapon[i].ToString());
             if (availableWeapon[i] == 1)
-                Debug.Log("이용가능한 웨폰번호 : " + (i+1));
+                Debug.Log("이용가능한 웨폰번호 : " + (i));
         }
         for(int i = 0; i < inventoryData.available_animal.Length; i++)
         {
             this.availableAnimal[i] = int.Parse(inventoryData.available_animal[i].ToString());
             if (availableAnimal[i] == 1)
-                Debug.Log("이용가능한 동물번호 : " + (i+1));
+                Debug.Log("이용가능한 동물번호 : " + (i));
         }
     }
     
     public void AddGold(int getGold)
     {
-        gold += getGold;
         var inventoryData = DataService.Instance.GetData<Table.Data>(1);
+        gold += getGold;
         inventoryData.gold = gold;
         int result = DataService.Instance.UpdateData<Table.Data>(inventoryData);
         Debug.Log("gold : " + gold);
@@ -105,7 +105,7 @@ public class Data
                 inventoryData.available_weapon = new string(phraseAsChars);
             }
 
-           
+            AddGold(chargeGold * -1);
             Debug.Log(chargeGold + "원에 " + weaponNum + "무기 구입");
             availableWeapon[weaponNum] = 1;
         }
@@ -142,6 +142,7 @@ public class Data
                 inventoryData.available_weapon = new string(phraseAsChars);
             }
 
+            AddGold(chargeGold * -1);
 
             Debug.Log(chargeGold + "원에 " + animalNum + "동물 구입");
             availableWeapon[animalNum] = 1;
@@ -162,7 +163,9 @@ public class DataSave : MonoBehaviour
     public static DataSave instance;
     public Data data;
 
-    public int Grade;
+    public int grade;
+    public float maxScore;
+    public float score;
 
     //public UserInfo userInfo;
     //public LevelInfo basicLevelInfo;

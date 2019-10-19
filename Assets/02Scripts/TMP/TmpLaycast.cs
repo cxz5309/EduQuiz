@@ -154,8 +154,9 @@ public class TmpLaycast : MonoBehaviour
                                             switch (hitInfo.collider.tag)
                                             {
                                                 case "Confirm":
-                                                    DataSave.instance.data.Charge(DataSave.instance.data.gold, 1, Data.ItemType.Weapon, StoreManager.instance.GetThisScreenIndex());
+                                                    DataSave.instance.data.Charge(DataSave.instance.data.gold, 50, Data.ItemType.Weapon, StoreManager.instance.GetThisScreenIndex());
                                                     // SelectBuyWeapon의 현재 선택된 무기 배열 번호를 참조하면 됌
+                                                    StoreManager.instance.SetGold();
                                                     ChangeWeapon(DataSave.instance.data.nowWeapon);
                                                     break;
                                                 case "Cancel":
@@ -169,7 +170,8 @@ public class TmpLaycast : MonoBehaviour
                                             switch (hitInfo.collider.tag)
                                             {
                                                 case "Confirm":
-                                                    DataSave.instance.data.Charge(DataSave.instance.data.gold, 1, Data.ItemType.Animal, StoreManager.instance.GetThisScreenIndex());
+                                                    DataSave.instance.data.Charge(DataSave.instance.data.gold, 50, Data.ItemType.Animal, StoreManager.instance.GetThisScreenIndex());
+                                                    StoreManager.instance.SetGold();
                                                     break;
                                                 case "Cancel":
                                                     StoreManager.instance.SetBuyActive();
@@ -237,11 +239,13 @@ public class TmpLaycast : MonoBehaviour
                                     ChangeScene(GetSceneNameToTag(SceneManager.GetActiveScene().name));
                                     break;
                                 case "Home":        // 홈으로
+                                    GameObject.Find("Unicon").transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
                                     ChangeScene("main");
                                     Debug.Log("재시작시 같은 과목임");            // 다음 게임 계속 진행하기
                                     break;
                                 case "Next":
                                     stageOrder++;
+                                    GameObject.Find("Unicon").transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
                                     ChangeScene(GameSceneRandomToString());
                                     Debug.Log("다음게임 계속 진행");            // 다음 게임 계속 진행하기
                                     break;
@@ -275,16 +279,9 @@ public class TmpLaycast : MonoBehaviour
 
     public void PopupGamePotalWithLevel(int grade)
     {
-        DataSave.instance.Grade = grade;
+        DataSave.instance.grade = grade;
         CanvasManager.instance.PopupChange("GamePotal");
     }
-    //void Teleport()
-    //{
-    //    //if (mPredictPath.mIsActive == true) return;
-    //    Vector3 pos = mPredictPath.mGroundPos;
-    //    if (pos == Vector3.zero) return;
-    //    mPlayer.transform.position = pos;
-    //}
 
     public void ChangeWeapon(int projectileNum)
     {
@@ -320,6 +317,8 @@ public class TmpLaycast : MonoBehaviour
                 return "englishRetry";
             case 3:
                 return "OXRetry";
+            case 4:
+                return "resultRetry";
         }
         return "main";
     }
@@ -358,13 +357,18 @@ public class TmpLaycast : MonoBehaviour
             case "store":
                 SceneManager.LoadScene("StoreScene", LoadSceneMode.Single);
                 break;
+            case "resultRetry":
+                SceneManager.LoadScene("ResultLoding", LoadSceneMode.Single);
+                break;
+            case "result":
+                SceneManager.LoadScene("ResultScene", LoadSceneMode.Single);
+                break;
         }
     }
 
     void Fire(Vector3 target)
     {
         Instantiate(Bullet, FirePos.transform.position, this.transform.rotation).transform.forward = target - this.transform.position;
-        //.GetComponent<Rigidbody>().velocity = (target - this.transform.position) * 10;
         theAudio.Play(shotSound);
     }
     public void GetRandomInt()
@@ -388,5 +392,6 @@ public class TmpLaycast : MonoBehaviour
                 // i를 한단계 되돌려준다.
             }
         }
+        stage[4] = 4;
     }
 }

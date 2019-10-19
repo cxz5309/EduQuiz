@@ -23,10 +23,12 @@ public class AutoSceneChange : MonoBehaviour
             case "OXLoding":
                 StartCoroutine(OXChangeScene());
                 break;
+            case "ResultLoding":
+                StartCoroutine(ResultChangeScene());
+                break;
             case "StoreLoding":
                 StartCoroutine(StoreChangeScene());
                 break;
-
         }
     }
 
@@ -49,6 +51,11 @@ public class AutoSceneChange : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         SceneManager.LoadScene("OXScene");
+    }
+    IEnumerator ResultChangeScene()
+    {
+        yield return new WaitForSeconds(1);
+        SceneManager.LoadScene("ResultScene");
     }
     IEnumerator StoreChangeScene()
     {
