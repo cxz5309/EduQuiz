@@ -118,6 +118,7 @@ public class CanvasManager : MonoBehaviour
     {
         TmpLaycast.youCantDoAnything = false;
         SetIdlePopup();
+        MainManager.instance.SetAnimals();
     }
     public void SetIdlePopup()
     {

@@ -1346,8 +1346,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8047890207634571111}
   - component: {fileID: 8047890207643652231}
-  - component: {fileID: 8047890207634137922}
-  - component: {fileID: 8047890207634137924}
   - component: {fileID: 8393357622582151202}
   - component: {fileID: 7716014159733674257}
   m_Layer: 9
@@ -1393,47 +1391,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!195 &8047890207634137922
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8047890207634137927}
-  m_Enabled: 0
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
---- !u!114 &8047890207634137924
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8047890207634137927}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23b928af5f7438345996d107b025e3de, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnEffect: {fileID: 1614462383776798649, guid: 716a25b82d70f34489ea27cdda0cde4e,
-    type: 3}
-  HitEffect: {fileID: 6668631593257200190, guid: d57b9022c19ce6c408efd82e29c2946c,
-    type: 3}
-  MoveSpeed: 4
-  isAtacking: 0
-  dieSound: MonsterDie
 --- !u!65 &8393357622582151202
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1458,7 +1415,7 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
