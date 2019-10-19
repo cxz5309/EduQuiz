@@ -71,8 +71,8 @@ public class AudioManager : MonoBehaviour
     [SerializeField]
     public Sound[] sounds;      // 배경음
     public Sound[] effectSounds;        // 효과음
-    private bool isBackgroundSound;
-    private bool isEffectSound;
+    public bool isBackgroundSound;
+    public bool isEffectSound;
 
     void Awake()
     {
@@ -191,7 +191,7 @@ public class AudioManager : MonoBehaviour
 
     public void SetBackGroundMute()
     {
-        if (isBackgroundSound)
+        if (isBackgroundSound)      // 소리 끄기
         {
             for (int i = 0; i < sounds.Length; i++)
             {
@@ -199,7 +199,7 @@ public class AudioManager : MonoBehaviour
             }
             isBackgroundSound = false;
         }
-        else if (!isBackgroundSound)
+        else if (!isBackgroundSound)        // 소리 켜기
         {
             for (int i = 0; i < sounds.Length; i++)
             {

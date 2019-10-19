@@ -6018,6 +6018,8 @@ MonoBehaviour:
     Volumn: 1
     loop: 0
     playOnAwake: 0
+  isBackgroundSound: 0
+  isEffectSound: 0
 --- !u!1 &1412391966
 GameObject:
   m_ObjectHideFlags: 0
@@ -11086,7 +11088,7 @@ GameObject:
   - component: {fileID: 3269022523088735453}
   - component: {fileID: 6852469378331376244}
   m_Layer: 5
-  m_Name: Off
+  m_Name: MusicOff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12255,7 +12257,7 @@ GameObject:
   - component: {fileID: 7179154109793271219}
   - component: {fileID: 5419712446030687139}
   m_Layer: 5
-  m_Name: Off
+  m_Name: EffectOff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13752,12 +13754,12 @@ GameObject:
   - component: {fileID: 3475814616281292660}
   - component: {fileID: 427971075343742273}
   m_Layer: 5
-  m_Name: On
+  m_Name: MusicOn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!222 &3498958747287573583
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -14479,7 +14481,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3844489088898590478
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14831,6 +14833,7 @@ GameObject:
   - component: {fileID: 3844489089290196358}
   - component: {fileID: 3844489089290196357}
   - component: {fileID: 3844489089290196359}
+  - component: {fileID: 3844489089290196356}
   m_Layer: 5
   m_Name: Effect
   m_TagString: Effect
@@ -14859,6 +14862,20 @@ RectTransform:
   m_AnchoredPosition: {x: 118, y: -90}
   m_SizeDelta: {x: 305, y: 85}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &3844489089290196356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3844489089290196354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ddd83903b882864faef48fe3a1edf97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  on: {fileID: 3844489089524966543}
+  off: {fileID: 3844489090066333931}
 --- !u!114 &3844489089290196357
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15414,6 +15431,7 @@ GameObject:
   - component: {fileID: 3844489089463266390}
   - component: {fileID: 3844489089463266389}
   - component: {fileID: 3844489089463266391}
+  - component: {fileID: 3844489089463266388}
   m_Layer: 5
   m_Name: Music
   m_TagString: Music
@@ -15442,6 +15460,20 @@ RectTransform:
   m_AnchoredPosition: {x: 118, y: -90}
   m_SizeDelta: {x: 305, y: 85}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &3844489089463266388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3844489089463266386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ddd83903b882864faef48fe3a1edf97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  on: {fileID: 3844489088898590477}
+  off: {fileID: 3844489090556170456}
 --- !u!114 &3844489089463266389
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15620,7 +15652,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3844489089524966544
 RectTransform:
   m_ObjectHideFlags: 0
@@ -17867,12 +17899,12 @@ GameObject:
   - component: {fileID: 551075817885368002}
   - component: {fileID: 3183183678425468330}
   m_Layer: 5
-  m_Name: On
+  m_Name: EffectOn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &4581652816358450466
 GameObject:
   m_ObjectHideFlags: 0
@@ -17885,6 +17917,7 @@ GameObject:
   - component: {fileID: 1971152616737480313}
   - component: {fileID: 5446990274715397201}
   - component: {fileID: 1168783395526705855}
+  - component: {fileID: 4581652816358450467}
   m_Layer: 5
   m_Name: Effect
   m_TagString: Effect
@@ -17892,6 +17925,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &4581652816358450467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4581652816358450466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ddd83903b882864faef48fe3a1edf97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  on: {fileID: 4551570883621070601}
+  off: {fileID: 2335820428968475501}
 --- !u!114 &4586355317045079902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17949,7 +17996,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &4673522814712892010
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19289,6 +19336,7 @@ GameObject:
   - component: {fileID: 7508752352859741110}
   - component: {fileID: 7303148582185816485}
   - component: {fileID: 2538605397668855883}
+  - component: {fileID: 6645974981875120379}
   m_Layer: 5
   m_Name: Music
   m_TagString: Music
@@ -19296,6 +19344,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &6645974981875120379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6645974981875120378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ddd83903b882864faef48fe3a1edf97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  on: {fileID: 3489278185946513986}
+  off: {fileID: 633823679314878346}
 --- !u!224 &6778165363261086650
 RectTransform:
   m_ObjectHideFlags: 0
