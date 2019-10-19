@@ -128,7 +128,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &15412502
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9179,7 +9179,7 @@ GameObject:
   - component: {fileID: 1133903873}
   - component: {fileID: 1133903872}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: Exit
   m_TagString: main
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9251,7 +9251,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1133903870}
   m_LocalRotation: {x: -0, y: -0.9997731, z: -0, w: 0.021301515}
-  m_LocalPosition: {x: 3.5779653, y: 0.90999985, z: -16.004398}
+  m_LocalPosition: {x: 3.5779653, y: 0.85, z: -16.51}
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children: []
   m_Father: {fileID: 0}
