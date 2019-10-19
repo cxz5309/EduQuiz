@@ -30,8 +30,8 @@ public class Data
 {
     public int gold = 0;
     public int nowWeapon = 0;
-    private int[] availableWeapon = new int[25]; //0 : 사용불가, 1 : 사용가능
-    private int[] availableAnimal = new int[25]; //0 : 사용불가, 1 : 사용가능, 2 : 사용됨
+    public int[] availableWeapon = new int[25]; //0 : 사용불가, 1 : 사용가능
+    public int[] availableAnimal = new int[25]; //0 : 사용불가, 1 : 사용가능, 2 : 사용됨
     public enum ItemType
     {
         Weapon, Animal
@@ -46,7 +46,6 @@ public class Data
         this.nowWeapon = inventoryData.now_weapon;
         Debug.Log("최초골드:" + this.gold);
         Debug.Log("현재 웨폰:" + this.nowWeapon);
-        Debug.Log("현재 가진 동물:" + this.availableAnimal);
         for (int i=0; i < inventoryData.available_weapon.Length; i++)
         {
             this.availableWeapon[i] = int.Parse(inventoryData.available_weapon[i].ToString());
@@ -60,13 +59,7 @@ public class Data
                 Debug.Log("이용가능한 동물번호 : " + (i+1));
         }
     }
-
-    public Data(int gold, int nowWeapon)
-    {
-        this.nowWeapon = nowWeapon;
-        this.gold = gold;
-    }
-
+    
     public void AddGold(int getGold)
     {
         gold += getGold;
@@ -88,7 +81,7 @@ public class Data
                     ChargeWeapon(chargeGold, itemNum);
                     break;
                 case ItemType.Animal:
-                    ChargeHousing(chargeGold, itemNum);
+                    ChargeAnimal(chargeGold, itemNum);
                     break;
             }
         }
@@ -102,7 +95,6 @@ public class Data
 
         if (availableWeapon[weaponNum] != 1)
         {
-            
             {//available_weapon문자열 수정하기
                 string tmpWeaponList = inventoryData.available_weapon;
                 char[] phraseAsChars = tmpWeaponList.ToCharArray();
@@ -127,18 +119,41 @@ public class Data
         //테이블 값 수정하기
         int result = DataService.Instance.UpdateData<Table.Data>(inventoryData);
     }
-    void ChargeHousing(int chargeGold, int housingNum)
-    {
-        availableAnimal[housingNum] = 1;
-    }
     public void ChangeNowWeaponData(int weaponNum)
     {
         nowWeapon = weaponNum;
     }
-    public void SetHousingData(int housingNum)
+
+    void ChargeAnimal(int chargeGold, int animalNum)
     {
-        availableAnimal[housingNum] = 2;
+        var inventoryData = DataService.Instance.GetData<Table.Data>(1);
+
+        //now_weapon수정하기
+        
+        if (availableAnimal[animalNum] == 0)
+        {
+            {//available_weapon문자열 수정하기
+                string tmpAnimalList = inventoryData.available_animal;
+                char[] phraseAsChars = tmpAnimalList.ToCharArray();
+                if (phraseAsChars[animalNum] == '0')
+                    phraseAsChars[animalNum] = '1';
+                else
+                    phraseAsChars[animalNum] = '0';
+                inventoryData.available_weapon = new string(phraseAsChars);
+            }
+
+
+            Debug.Log(chargeGold + "원에 " + animalNum + "동물 구입");
+            availableWeapon[animalNum] = 1;
+        }
+        else
+        {
+            Debug.Log("이미 가지고있는 동물입니다");
+        }
+        int result = DataService.Instance.UpdateData<Table.Data>(inventoryData);
+        availableAnimal[animalNum] = 1;
     }
+    
 }
 
 

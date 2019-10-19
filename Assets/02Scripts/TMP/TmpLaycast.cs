@@ -169,7 +169,7 @@ public class TmpLaycast : MonoBehaviour
                                             switch (hitInfo.collider.tag)
                                             {
                                                 case "Confirm":
-                                                    Debug.Log("야 한발남았다!");
+                                                    DataSave.instance.data.Charge(DataSave.instance.data.gold, 1, Data.ItemType.Animal, StoreManager.instance.GetThisScreenIndex());
                                                     break;
                                                 case "Cancel":
                                                     StoreManager.instance.SetBuyActive();
