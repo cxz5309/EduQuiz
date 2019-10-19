@@ -96,11 +96,11 @@ public class TmpLaycast : MonoBehaviour
                                         break;
                                     case "Music":
                                         AudioManager.instance.SetBackGroundMute();
-                                        Debug.Log("배경음 ONOFF");
+                                        hitInfo.collider.GetComponent<ButtonToggle>().SetButtonToggle();
                                         break;
                                     case "Effect":
                                         AudioManager.instance.SetEffectMute();
-                                        Debug.Log("효과음 ONOFF");
+                                        hitInfo.collider.GetComponent<ButtonToggle>().SetButtonToggle();
                                         break;
                                 }
                             }
@@ -221,6 +221,15 @@ public class TmpLaycast : MonoBehaviour
                                 case "Pause":       // 일시정지
                                     GameManager.instance.GamePause();
                                     break;
+                                case "Music":
+                                    AudioManager.instance.SetBackGroundMute();
+                                    hitInfo.collider.GetComponent<ButtonToggle>().SetButtonToggle();
+                                    break;
+                                case "Effect":
+                                    AudioManager.instance.SetEffectMute();
+                                    hitInfo.collider.GetComponent<ButtonToggle>().SetButtonToggle();
+                                    break;
+
                                 case "Back":        // 계속하기
                                     GameManager.instance.GamePauseFin();
                                     break;

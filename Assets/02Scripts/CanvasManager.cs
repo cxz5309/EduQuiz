@@ -10,6 +10,7 @@ public class CanvasManager : MonoBehaviour
     public GameObject[] popup;      // 팝업 종류
     public string currentPopup;
 
+
     private Transform playerTr = null;   // 플레이어 위치
     public Vector3 distanceVector;
     public float speed;         // 팝업 이동속도
@@ -24,6 +25,9 @@ public class CanvasManager : MonoBehaviour
     public Text waveText = null;          // 웨이브
     public Text quizText = null;           // 지문
     public Image engImage = null;           // 그림
+
+    private bool startFlag = false;
+
 
     void Awake()
     {
@@ -147,7 +151,6 @@ public class CanvasManager : MonoBehaviour
 
     void Update()
     {
-
         transform.position = Vector3.Lerp(transform.position, playerTr.position + distanceVector, Time.deltaTime * speed);
     }
 
