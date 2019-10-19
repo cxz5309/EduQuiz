@@ -26,9 +26,23 @@ public class SelectBuyWeapon : MonoBehaviour
         Chapters.transform.localPosition = Vector2.Lerp(Chapters.transform.localPosition, nextPos, Time.deltaTime * speed);
     }
 
+    public void ListActive()
+    {
+        for (int i = 0; i < ChapterArr.Length; i++)
+        {
+            ChapterArr[i].SetActive(false);
+        }
+        for (int i = chapIndex - 1; i <= chapIndex + 1; i++)
+        {
+            if (0 > i || i >= ChapterArr.Length) continue;
+            ChapterArr[i].SetActive(true);
+        }
+    }
+
     public void UpdateStage(int index)
     {
         nextPos = new Vector2(distance, Chapters.transform.localPosition.y);
+        ListActive();
         StartCoroutine(ChapterSizeUp(index, true));
     }
 
