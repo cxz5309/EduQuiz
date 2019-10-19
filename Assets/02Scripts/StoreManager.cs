@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class StoreManager : MonoBehaviour
 {
@@ -73,7 +74,15 @@ public class StoreManager : MonoBehaviour
             ThisScreen.SetActive(true);
             getStoreActive = true;
             clickText.SetActive(false);
+            SetGold();
         }
+    }
+
+    public void SetGold()
+    {
+        Text goldText = ThisScreen.transform.Find("Panel").Find("Gold").Find("GoldText").GetComponent<Text>();
+        goldText.text = "GOLD : " + DataSave.instance.data.gold;
+
     }
 
     public void SetBuyActive()      // 구매 화면 활성화 설정

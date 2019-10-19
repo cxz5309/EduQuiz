@@ -14,8 +14,7 @@ public class WaveManager : MonoBehaviour
     public int hardWave = 3;    //하드모드 진입 직전 스테이지
 
     public GameObject LightChange;       // 배경 밤으로 변경
-    //영우
-    
+
     public GameObject Manual;
 
     public Transform[] SpawnPoint = new Transform[9];   // 적 생성 위치를 저장하는 배열
@@ -107,6 +106,8 @@ public class WaveManager : MonoBehaviour
 
     public void FirstStart()
     {
+        DataSave.instance.maxScore += lastWave * 100;
+
         HPManager.instance.initHP();
         switch (SceneManager.GetActiveScene().name)
         {

@@ -38,6 +38,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/01Scenes/OXLoding.unity
     guid: 3696af930ec3cef4c9e38827403f07ad
+  - enabled: 1
+    path: Assets/01Scenes/ResultScene.unity
+    guid: fd825172b78e1554aa535b219d03016b
+  - enabled: 1
+    path: Assets/01Scenes/ResultLoding.unity
+    guid: 77637e57e80e5a64cab42b1e89684f3c
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000

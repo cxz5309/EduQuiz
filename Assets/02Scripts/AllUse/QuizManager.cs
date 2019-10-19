@@ -69,7 +69,7 @@ public class QuizManager : MonoBehaviour
     void Awake()
     {
         instance = this;
-        grade = DataSave.instance.Grade;
+        grade = DataSave.instance.grade;
         LoadMap();
         RandomNumber();     // 문제 랜덤섞기
     }

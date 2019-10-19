@@ -659,7 +659,7 @@ GameObject:
   - component: {fileID: 9077042900205553047}
   m_Layer: 9
   m_Name: TextMesh
-  m_TagString: enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

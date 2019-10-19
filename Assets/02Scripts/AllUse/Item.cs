@@ -58,7 +58,7 @@ public class Item : MonoBehaviour
         GameObject[] allCube = GameObject.FindGameObjectsWithTag("enemy");
         // allCube에 "enemy" 태그를 가지는 오브젝트 전부 넣어줌.
         SliderController.instance.WaitSliderForSeconds(stopTime);
-
+        Debug.Log(allCube.Length);
         foreach (GameObject i in allCube)
         {
             i.GetComponent<EnemyInfo_B>().stopSeconds(stopTime);

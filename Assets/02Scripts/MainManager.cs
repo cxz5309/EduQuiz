@@ -63,7 +63,6 @@ public class MainManager : MonoBehaviour
     {
         for (int i = 0; i < 9; i++)
         {
-            Debug.Log(i + "번째 동물이 떨어진다");
             if (DataSave.instance.data.availableAnimal[i] == 1)
             {
                 Instantiate(animals[i], animalSpwanTr.position + new Vector3(Random.Range(-3,3),0,Random.Range(-5,5)), Quaternion.Euler(new Vector3(0,Random.Range(0,180),0)));

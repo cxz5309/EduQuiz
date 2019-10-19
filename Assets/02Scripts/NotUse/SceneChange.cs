@@ -30,6 +30,7 @@ public class SceneChange : MonoBehaviour
             case "EnglishLoding":
             case "MathLoding":
             case "OXLoding":
+            case "ResultLoding":
                 CanvasManager.instance.PopupChange("Loading");
                 break;
         }
@@ -64,6 +65,10 @@ public class SceneChange : MonoBehaviour
     public void SceneChangeToOX()
     {
         SceneManager.LoadScene("OXScene");
+    }
+    public void SceneChangeToResult()
+    {
+        SceneManager.LoadScene("ResultScene");
     }
     private void OnDestroy()
     {
