@@ -123,7 +123,7 @@ public class CanvasManager : MonoBehaviour
     {
         PopupChange("Idle");
         PopupPosition(-5, -10);
-        UniconController.instance.UniconPosition(1.9f, 1f, 2.66f);
+        UniconController.instance.UniconPosition(2.15f, 1.2f, 2.66f);
     }
 
     public void PopupPosition(int y, int z)

@@ -5,10 +5,6 @@ using UnityEngine.EventSystems;
 
 public class SelectBuyWeapon : MonoBehaviour
 {
-    public static SelectBuyWeapon instance;
-
-    public bool getStoreActive;
-
     public GameObject Chapters;
     public GameObject [] ChapterArr;
 
@@ -19,12 +15,6 @@ public class SelectBuyWeapon : MonoBehaviour
     private int size = 400;
     private int speed = 5;
 
-
-    private void Awake()
-    {
-        instance = this;
-    }
-
     void Start()
     {
         chapIndex = 0;
@@ -33,15 +23,6 @@ public class SelectBuyWeapon : MonoBehaviour
 
     void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.A))
-        //{
-        //    Left();
-        //}
-        //else if (Input.GetKeyDown(KeyCode.D))
-        //{
-        //    Right();
-        //}
-
         Chapters.transform.localPosition = Vector2.Lerp(Chapters.transform.localPosition, nextPos, Time.deltaTime * speed);
     }
 

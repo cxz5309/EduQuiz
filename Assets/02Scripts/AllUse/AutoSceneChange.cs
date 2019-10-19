@@ -20,6 +20,9 @@ public class AutoSceneChange : MonoBehaviour
             case "EnglishLoding":
                 StartCoroutine(EnglishChangeScene());
                 break;
+            case "OXLoding":
+                StartCoroutine(OXChangeScene());
+                break;
             case "StoreLoding":
                 StartCoroutine(StoreChangeScene());
                 break;

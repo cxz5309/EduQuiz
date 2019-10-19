@@ -37,7 +37,7 @@ public class Controller : SteamVR_LaserPointer
                 {
                     if (e.target.gameObject.tag == "NPC")
                     {
-                        StoreManager.instance.SetStoreActive();
+                        //StoreManager.instance.SetStoreActive();
                     }
                     else
                     {

@@ -51,7 +51,7 @@ public class Table
         public int gold { get; set; }
         public int now_weapon { get; set; }
         public string available_weapon { get; set; }
-        public string available_housing { get; set; }
+        public string available_animal { get; set; }
     }
     #endregion
 

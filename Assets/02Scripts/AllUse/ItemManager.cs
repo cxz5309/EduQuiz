@@ -84,7 +84,6 @@ public class ItemManager : MonoBehaviour
             {   // 생성가능한 아이템 개수가 0이 아닐때
                 if (itemSpawnChk[itemPoint] == 0)
                 {   // 아이템이 생성안된 곳일 때
-
                     theAudio.Play(itemSound);
 
                     itemSpawnChk[itemPoint] = 1;    // 생성할 곳 체크

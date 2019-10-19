@@ -206,7 +206,6 @@ public class WaveManager : MonoBehaviour
     {
         curWave++;        // 초기값 -1, 0부터 시작
         CanvasManager.instance.SetStageText("WAVE : " + (curWave + 1));  // 현재 스테이지 출)력
-
         switch (SceneManager.GetActiveScene().name)
         {
             case "BasicScene":
@@ -240,7 +239,7 @@ public class WaveManager : MonoBehaviour
                     EnemyRandomSpawn_E();
                     break;
                 case "OXScene":
-                    EnemySpawn_OX();
+                    EnemyRandomSpawn_OX();
                     break;
             }
             // 적 위치 랜덤 생성
@@ -315,7 +314,6 @@ public class WaveManager : MonoBehaviour
             EnemyInfo_B enemyInfo = enemyObj.GetComponent<EnemyInfo_B>();
             enemyInfo.InitEnemyInfo(enemyList[i]);
         }
-                
     }
     public void EnemyRandomSpawn_E()
     {
@@ -351,19 +349,21 @@ public class WaveManager : MonoBehaviour
             EnemySpawnChk[i] = 0;
         }
     }
-    public void EnemySpawn_OX()
+    public void EnemyRandomSpawn_OX()
     {
+        int[] EnemySpawnChk = new int[enemyMaxCount];
+
         List<Enemy> enemyList = waveEnemyDic[curWave];
 
         for (int i = 0; i < enemyList.Count; i++)
-        {   // enemyList(적) 수만큼 반복
-                GameObject enemyObj = Instantiate(Enemy[i], SpawnPoint[i].position, SpawnPoint[i].rotation);
-                enemyObj.name = enemyList[i].name;
-                EnemyInfo_B enemyInfo = enemyObj.GetComponent<EnemyInfo_B>();
-                enemyInfo.InitEnemyInfo(enemyList[i]);
+        {
+            GameObject enemyObj = Instantiate(Enemy[EnemyTypeRandom()], SpawnPoint[i].position, SpawnPoint[i].rotation);
+            enemyObj.name = enemyList[i].name;
+            enemyObj.transform.localScale = new Vector3(5, 5, 5);
+            EnemyInfo_B enemyInfo = enemyObj.GetComponent<EnemyInfo_B>();
+            enemyInfo.InitEnemyInfo(enemyList[i]);
         }
     }
-
     int EnemyTypeRandom()
     {
         int enemyType = Random.Range(0, Enemy.Length);

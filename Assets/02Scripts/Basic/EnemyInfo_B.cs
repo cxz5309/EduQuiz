@@ -104,22 +104,18 @@ public class EnemyInfo_B : MonoBehaviour
         {
             case State.Walk:
                 MoveSpeed = (DistanceToPlayer-5f) / (WaveManager.instance.waveTime()-3f);
-                if(SceneManager.GetActiveScene().name!="OXScene")
-                    ani.SetBool("walk", true);
+                //ani.SetBool("walk", true);
                 break;
             case State.Run:
                 MoveSpeed = (DistanceToPlayer-5f) / (WaveManager.instance.waveTime()-3f);
-                if (SceneManager.GetActiveScene().name != "OXScene")
-                    ani.SetBool("run", true);
+                //ani.SetBool("run", true);
                 break;
             case State.Attack:
                 MoveSpeed = 0;
-                if (SceneManager.GetActiveScene().name != "OXScene")
-                {
-                    ani.SetBool("run", false);
-                    ani.SetBool("walk", false);
-                    ani.SetBool("right hook", true);        // 적의 Animator의 Shot을 true로 하여 공격하게 함.
-                }
+                ani.Play("attak_1");
+                //ani.SetBool("run", false);
+                //ani.SetBool("walk", false);
+                //ani.SetBool("right hook", true);        // 적의 Animator의 Shot을 true로 하여 공격하게 함.
                 break;
             case State.Stop:
                 MoveSpeed = 0;

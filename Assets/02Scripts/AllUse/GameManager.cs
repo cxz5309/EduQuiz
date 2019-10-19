@@ -55,6 +55,8 @@ public class GameManager : MonoBehaviour
 
         theAudio = FindObjectOfType<AudioManager>();
         theAudio.Play(themeSound);
+        Debug.Log("여기까진 왔니?");
+
         WaveManager.instance.InitWave();
         gamestate = Gamestate.GamePlaying;
         // State UI 활성화

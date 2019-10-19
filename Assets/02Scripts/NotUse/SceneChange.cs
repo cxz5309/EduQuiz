@@ -48,7 +48,11 @@ public class SceneChange : MonoBehaviour
     }
     public void SceneChangeToEnglish()
     {
-        SceneManager.LoadScene("English");
+        SceneManager.LoadScene("EnglishScene");
+    }
+    public void SceneChangeToOX()
+    {
+        SceneManager.LoadScene("OXScene");
     }
     private void OnDestroy()
     {

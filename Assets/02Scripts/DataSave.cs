@@ -31,10 +31,10 @@ public class Data
     public int gold = 0;
     public int nowWeapon = 0;
     private int[] availableWeapon = new int[25]; //0 : 사용불가, 1 : 사용가능
-    private int[] availableHousing = new int[25]; //0 : 사용불가, 1 : 사용가능, 2 : 사용됨
+    private int[] availableAnimal = new int[25]; //0 : 사용불가, 1 : 사용가능, 2 : 사용됨
     public enum ItemType
     {
-        Weapon, Housing
+        Weapon, Animal
     }
 
     //기본 생성자, logo씬 awake시(캐릭터자체에 달려있는 DataSave awake시) db에 있는 정보 받아오기
@@ -46,17 +46,18 @@ public class Data
         this.nowWeapon = inventoryData.now_weapon;
         Debug.Log("최초골드:" + this.gold);
         Debug.Log("현재 웨폰:" + this.nowWeapon);
+        Debug.Log("현재 가진 동물:" + this.availableAnimal);
         for (int i=0; i < inventoryData.available_weapon.Length; i++)
         {
             this.availableWeapon[i] = int.Parse(inventoryData.available_weapon[i].ToString());
             if (availableWeapon[i] == 1)
                 Debug.Log("이용가능한 웨폰번호 : " + (i+1));
         }
-        for(int i = 0; i < inventoryData.available_housing.Length; i++)
+        for(int i = 0; i < inventoryData.available_animal.Length; i++)
         {
-            this.availableHousing[i] = int.Parse(inventoryData.available_housing[i].ToString());
-            if (availableWeapon[i] == 1)
-                Debug.Log("이용가능한 하우징번호 : " + (i+1));
+            this.availableAnimal[i] = int.Parse(inventoryData.available_animal[i].ToString());
+            if (availableAnimal[i] == 1)
+                Debug.Log("이용가능한 동물번호 : " + (i+1));
         }
     }
 
@@ -78,7 +79,7 @@ public class Data
     public void Charge(int nowGold, int chargeGold, ItemType itemType, int itemNum)
     {
         if (nowGold < chargeGold) {
-            Debug.Log("돈 부족");
+            StoreManager.instance.SetNotice();
         }
         else {
             switch (itemType)
@@ -86,7 +87,7 @@ public class Data
                 case ItemType.Weapon:
                     ChargeWeapon(chargeGold, itemNum);
                     break;
-                case ItemType.Housing:
+                case ItemType.Animal:
                     ChargeHousing(chargeGold, itemNum);
                     break;
             }
@@ -128,7 +129,7 @@ public class Data
     }
     void ChargeHousing(int chargeGold, int housingNum)
     {
-        availableHousing[housingNum] = 1;
+        availableAnimal[housingNum] = 1;
     }
     public void ChangeNowWeaponData(int weaponNum)
     {
@@ -136,7 +137,7 @@ public class Data
     }
     public void SetHousingData(int housingNum)
     {
-        availableHousing[housingNum] = 2;
+        availableAnimal[housingNum] = 2;
     }
 }
 

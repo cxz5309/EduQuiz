@@ -70,11 +70,6 @@ public class TmpLaycast : MonoBehaviour
                             {
                                 switch (hitInfo.collider.tag)
                                 {
-                                    case "basic":
-                                    case "math":
-                                    case "eng":
-                                        ChangeScene(hitInfo.collider.name);
-                                        break;
                                     case "Store":
                                         ChangeScene(hitInfo.collider.tag);
                                         break;
@@ -130,19 +125,19 @@ public class TmpLaycast : MonoBehaviour
                         if (hitInfo.transform.gameObject.layer == 5)
                         {
                             if (StoreManager.instance.getStoreActive == true)
-                            {   // 상점 켜졌을 때
+                            {   // 상점창이 등장한 후
                                 if (StoreManager.instance.getBuyActive == false)
                                 {   // 구매창 안켜졌을 때
                                     switch (hitInfo.collider.tag)
                                     {
                                         case "Close":
-                                            StoreManager.instance.SetStoreActive();
+                                            StoreManager.instance.SetStoreActive(hitInfo.collider.name);
                                             break;
                                         case "Left":
-                                            SelectBuyWeapon.instance.Left();
+                                            StoreManager.instance.ThisScreenLeft();
                                             break;
                                         case "Right":
-                                            SelectBuyWeapon.instance.Right();
+                                            StoreManager.instance.ThisScreenRight();
                                             break;
                                         case "Buy":
                                             StoreManager.instance.SetBuyActive();
@@ -150,37 +145,68 @@ public class TmpLaycast : MonoBehaviour
                                     }
                                 }
                                 else
-                                {   // 구매창 켜졌을 때
-                                    switch (hitInfo.collider.tag)
+                                {
+                                    // 구매창 켜졌을 때
+                                    if (StoreManager.instance.NoticeScreen.activeSelf == false)
                                     {
-                                        case "Confirm":
-                                            DataSave.instance.data.Charge(DataSave.instance.data.gold, 1, Data.ItemType.Weapon, SelectBuyWeapon.instance.chapIndex);
-                                            // SelectBuyWeapon의 현재 선택된 무기 배열 번호를 참조하면 됌
-                                            ChangeWeapon(DataSave.instance.data.nowWeapon);
-                                            break;
-                                        case "Cancel":
-                                            StoreManager.instance.SetBuyActive();
-                                            break;
+                                        if (StoreManager.instance.storeSelectName == "Weapon")
+                                        {
+                                            switch (hitInfo.collider.tag)
+                                            {
+                                                case "Confirm":
+                                                    DataSave.instance.data.Charge(DataSave.instance.data.gold, 1, Data.ItemType.Weapon, StoreManager.instance.GetThisScreenIndex());
+                                                    // SelectBuyWeapon의 현재 선택된 무기 배열 번호를 참조하면 됌
+                                                    ChangeWeapon(DataSave.instance.data.nowWeapon);
+                                                    break;
+                                                case "Cancel":
+                                                    StoreManager.instance.SetBuyActive();
+                                                    break;
+                                            }
+                                        }
+                                        else if (StoreManager.instance.storeSelectName == "Animal")
+                                        {
+                                            // 구매창 켜졌을 때
+                                            switch (hitInfo.collider.tag)
+                                            {
+                                                case "Confirm":
+                                                    Debug.Log("야 한발남았다!");
+                                                    break;
+                                                case "Cancel":
+                                                    StoreManager.instance.SetBuyActive();
+                                                    break;
+                                            }
+                                        }
+                                    }
+                                    else
+                                    {
+                                        if (hitInfo.collider.tag == "Confirm")
+                                            StoreManager.instance.SetNotice();
                                     }
                                 }
+                            }
+                            else
+                            {   //상점이 아직 안켜졌을때
+                                //동물과 무기 선택창, 픽된 이름으로 상점을 선택
+                                StoreManager.instance.SetStoreActive(hitInfo.collider.name);
                             }
                         }
                         else
                         {
-                            if (StoreManager.instance.getStoreActive == false)
+                            if (hitInfo.collider.tag == "NPC")
                             {
-                                if (hitInfo.collider.tag == "NPC")
-                                {
-                                    StoreManager.instance.SetStoreActive();
-                                }
-                                else if (hitInfo.collider.tag == "main")
-                                {
-                                    ChangeScene(hitInfo.collider.tag);
-                                }
-                                else
-                                {
-                                    transform.position = hitInfo.point + new Vector3(0, 2.69f, 0);
-                                }
+                                StoreManager.instance.SetStoreSelect();
+                            }
+                            else if (hitInfo.collider.tag == "main")
+                            {
+                                ChangeScene(hitInfo.collider.tag);
+                            }
+                            else if(hitInfo.collider.tag == "Close")
+                            {
+                                StoreManager.instance.SetStoreSelect();
+                            }
+                            else
+                            {
+                                transform.position = hitInfo.point + new Vector3(0, 2.69f, 0);
                             }
                         }
                         break;
@@ -283,6 +309,8 @@ public class TmpLaycast : MonoBehaviour
                 return "mathRetry";
             case 2:
                 return "englishRetry";
+            case 3:
+                return "OXRetry";
         }
         return "main";
     }
@@ -303,8 +331,11 @@ public class TmpLaycast : MonoBehaviour
             case "English":
                 SceneManager.LoadScene("EnglishScene", LoadSceneMode.Single);
                 break;
-            case "store":
-                SceneManager.LoadScene("StoreScene", LoadSceneMode.Single);
+            case "OX":
+                SceneManager.LoadScene("OXScene", LoadSceneMode.Single);
+                break;
+            case "OXRetry":
+                SceneManager.LoadScene("OXLoding", LoadSceneMode.Single);
                 break;
             case "basicRetry":
                 SceneManager.LoadScene("BasicLoding", LoadSceneMode.Single);
@@ -314,6 +345,9 @@ public class TmpLaycast : MonoBehaviour
                 break;
             case "englishRetry":
                 SceneManager.LoadScene("EnglishLoding", LoadSceneMode.Single);
+                break;
+            case "store":
+                SceneManager.LoadScene("StoreScene", LoadSceneMode.Single);
                 break;
         }
     }
@@ -326,7 +360,7 @@ public class TmpLaycast : MonoBehaviour
     }
     public void GetRandomInt()
     {
-        int[] stageChk = new int[3];
+        int[] stageChk = new int[4];
 
         // 랜덤숫자 반복 방지를 위한 체크배열 변수(스폰지역 수만큼 배열크기 지정)
         for (int i = 0; i < stageChk.Length; i++)
