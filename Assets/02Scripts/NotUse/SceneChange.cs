@@ -20,10 +20,21 @@ public class SceneChange : MonoBehaviour
     {
         instance = this;
     }
+
     private void Start()
     {
         Time.timeScale = 1;
+        switch (SceneManager.GetActiveScene().name)
+        {
+            case "BasicLoding":
+            case "EnglishLoding":
+            case "MathLoding":
+            case "OXLoding":
+                CanvasManager.instance.PopupChange("Loading");
+                break;
+        }
     }
+
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         player.transform.position = new Vector3(0, 1.5f, -4.66f);
