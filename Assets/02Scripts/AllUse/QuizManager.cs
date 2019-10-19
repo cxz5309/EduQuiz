@@ -102,7 +102,7 @@ public class QuizManager : MonoBehaviour
                 break;
 
             case "MathScene":
-                data = Resources.Load("MathDatas", typeof(TextAsset)) as TextAsset;
+                data = Resources.Load("MathDatas" + grade.ToString(), typeof(TextAsset)) as TextAsset;
                 strReader = new StringReader(data.text);
                 source = strReader.ReadLine();
 
@@ -119,7 +119,7 @@ public class QuizManager : MonoBehaviour
                 break;
 
             case "EnglishScene":
-                data = Resources.Load("EnglishDatas", typeof(TextAsset)) as TextAsset;
+                data = Resources.Load("EnglishDatas" + grade.ToString(), typeof(TextAsset)) as TextAsset;
                 strReader = new StringReader(data.text);
                 source = strReader.ReadLine();
 
@@ -134,7 +134,7 @@ public class QuizManager : MonoBehaviour
                 break;
 
             case "OXScene":
-                data = Resources.Load("OXDatas", typeof(TextAsset)) as TextAsset;
+                data = Resources.Load("OXDatas" + grade.ToString(), typeof(TextAsset)) as TextAsset;
                 strReader = new StringReader(data.text);
                 source = strReader.ReadLine();
                 Debug.Log(source);
